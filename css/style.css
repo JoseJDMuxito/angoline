@@ -2,7 +2,7 @@
   width: 100%;
   height: 90px;
   background-color:lightgrey;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 20px 20px;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
