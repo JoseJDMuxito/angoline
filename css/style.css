@@ -1,6 +1,6 @@
 .div {
   width: 100%;
-  height: 60px;
+  height: 50px;
   background-color:whitesmoke;
   border-radius: 0 0 10px 10px;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
@@ -108,3 +108,5 @@ a:active {
 .icon {
   margin: 10px;
   font-size: 40px; /* Tamanho dos ícones */
+}
+
