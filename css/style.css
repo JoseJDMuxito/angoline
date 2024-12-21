@@ -106,3 +106,6 @@ a:active {
   background-color: #247527;
 }
 
+.icon {
+  margin: 10px;
+  font-size: 40px; /* Tamanho dos ícones */
