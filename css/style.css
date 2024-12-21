@@ -1,0 +1,74 @@
+.div {
+  width: 100%;
+  height: 50px;
+  background-color: #247527;
+  border-radius: 0 0 10px 10px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+.di {
+  height: 250px;
+  border-radius: 30px 30px 0 0;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+.d {
+  height: 400px;
+  border-radius: 20px 20px 20px 20px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+
+.d1 {
+  border-radius: 10px 10px 10px 10px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+/* Estilo do botão fixo no canto superior direito */
+.theme-toggle {
+  position: relative;
+  top: 55px;
+  left: 10px;
+}
+body{
+  transition: background-color 0.5s ease, background-image 0.5s ease;
+  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+}
+
+.switch {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Quando o checkbox está ativo */
+input[type="checkbox"]:checked + .switch {
+  background-color: #4caf50;
+}
+
+input[type="checkbox"]:checked + .switch:before {
+  transform: translateX(25px);
+}
+
+/* Escondendo o checkbox */
+input[type="checkbox"] {
+  display:none;
+}
