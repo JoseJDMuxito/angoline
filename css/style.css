@@ -430,5 +430,5 @@ animation: gradientAnimation 10s ease infinite; /* Aplicar a animação */
 }
 
 .active {
-  background-color: rgba(18, 18, 18, 0.5);
+  background-color: rgba(179, 0, 95, 0.67);
 }
