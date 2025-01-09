@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>angoline</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    html,body,h1,h2,h3,h4,pre {font-family:"Lato", sans-serif}
+  </style>
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<!-- Header Fixo -->
+<div class="w3-top oval div hei" id="bubble-container" style="position: fixed; top: 0; width: 100%; display: flex; align-items: center; z-index: 1000;">
+
+  <!-- Logotipo -->
+  <div class="w3-col s3" style="padding: 10px;">
+    <img src="favicon-96x96.png" alt="Ícone" style="width: 29.5px; height: 29.5px; border-radius: 40%;">
+  </div>
+
+  <!-- Links (Serviços, Sobre, Contato) -->
+  <div class="w3-col s3 custom-link" style="text-align: center;">
+    <a href="servico/servico.html" target="_self" style="color: white; font-family: 'Poppins', sans-serif; font-weight: 300; text-decoration: none;" data-key='services'>Serviços</a>
+  </div>
+  <div class="w3-col s3 custom-link" style="text-align: center;">
+    <a href="comecar/comecar.html" target="_self" style="color: white; font-family: 'Poppins', sans-serif; font-weight: 300; text-decoration: none;" data-key='start'>Começar</a>
+  </div>
+
+  <div class="w3-col s3 custom-link" style="text-align: center;">
+    <a href="time/time.html" target="_self" style="color: white; font-family: 'Poppins', sans-serif; font-weight: 300; text-decoration: none;" data-key='team'>Equipa</a>
+  </div>
+
+  <!-- Botão de Idiomas -->
+  <div class="language-selector" style="margin-left: auto; padding: 10px;">
+    <button id="language-button" style="font-size: 20px">🌐</button>
+    <div id="language-options">
+      <button class="lang-option" data-lang="pt">
+        <img src="img/Flag_of_Portugal.svg" alt="Português"> Português
+      </button>
+      <button class="lang-option" data-lang="en">
+        <img src="img/UK.png" alt="Inglês"> English
+      </button>
+      <button class="lang-option" data-lang="fr">
+        <img src="img/Flag_of_France.svg" alt="Francês"> Français
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modo escuro e claro -->
+<div class="theme-toggle" style="margin-top: -10px;">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch" class="switch"></label>
+</div>
+<!-- Content -->
+<div class="w3-content">
+
+  <!-- Slideshow -->
+  <div class="w3-container" style="margin-top: 30px;">
+    <div class="w3-panel">
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 1000; color: rgba(255,20,147,0.5)" id="title"><span translate="no">Angoline</span></h1>
+      <p style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 20px" id="description">A melhor plataforma para fazer câmbio e comprar moedas de forma fácil e segura</p>
+    </div>
+
+    <!-- Estrutura HTML -->
+    <div class="slideshow-container">
+      <div class="w3-display-container mySlides">
+        <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_3e370750.jpg" alt="Câmbio">
+        <div class="w3-display-topleft w3-container w3-padding-32">
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 500; font-size: 20px; border-radius: 8px 8px 8px 8px" id="p1">Câmbio</span>
+        </div>
+      </div>
+
+      <div class="w3-display-container mySlides">
+        <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_a4ece395.jpg" alt="Transferências">
+        <div class="w3-display-middle w3-container w3-padding-32">
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 500; font-size: 20px; border-radius: 8px 8px 8px 8px" id="p2">Transferências</span>
+        </div>
+      </div>
+
+      <div class="w3-display-container mySlides">
+        <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_d924df8a.jpg" alt="Vendemos">
+        <div class="w3-display-topright w3-container w3-padding-32">
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 500; font-size: 20px; border-radius: 8px 8px 8px 8px" id="p3">Divisas : € e Kz</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicadores -->
+    <div style="text-align: center; margin-top: 10px;">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+
+    <div class="w3-container custom-block w3-card-4" style="margin-top: 50px; margin-bottom: -500px; border-radius: 10px 10px 10px 10px;">
+      <div class="w3-section">
+        <h3 style="text-align: center; font-weight: 500;" id="currencyConverter">Conversor</h3>
+        <div id="group-1" class="input-group">
+          <label for="campo-1" style="font-weight: 500;">
+            EUR
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">
+          </label>
+          <input class="w3-input w3-border w3-hover-border-black cus  w3-opacity d1" type="text" id="campo-1" placeholder="Insira o valor" style="width: 100%;">
+          <div class="error" id="error-1" data-key='insiraOnlyNumbers'>Insira apenas números</div>
+        </div>
+      </div>
+
+      <div class="switch-btn" style="text-align: center; margin-bottom: -25px;">
+        <button id="switch-btn">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+      </div>
+
+      <div class="w3-section">
+        <div id="group-2" class="input-group">
+          <label for="campo-2" style="font-weight: 500;">
+            AOA
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">
+          </label>
+          <input class="w3-input  w3-opacity d1"  type="text" readonly id="campo-2" placeholder="Resultado" style="width: 100%; pointer-events: none;">
+        </div>
+      </div>
+
+      <div class="result" id="resultado" style="margin-top: 15px; font-weight: bold;"></div>
+      <!-- Histórico dos cálculos -->
+      <div id="historico" style="margin-top: 20px;">
+        <p class="w3-opacity" style="font-weight: 500;" id="history">Histórico de câmbio</p>
+        <ul id="history-list" class="w3-opacity" style="font-weight: 500;"></ul>
+        <button data-key='clearHistory' class="w3-opacity" id="clear-history" style="border-radius: 10px 10px 10px 10px; cursor: pointer; background:linear-gradient(to right, rgba(255, 0, 0, 0.16), rgba(0, 119, 255, 0.16));">Limpar</button>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="text-align: center; margin-top: 550px" id="conversion-message">
+    Já fez a sua conversão?
+  </h4>
+  <h4 style="text-align: center;">
+    <a data-key='clickOn' href="comecar/comecar.html">Clique aqui!</a>
+  </h4>
+  <p style="text-align: center; margin-top: 50px; margin-bottom: -500px"><img src="favicon-96x96.png" alt="Ícone" style="width: 60px; height: 60px; border-radius: 50%;"></p>
+
+</div>
+
+  <!-- Footer -->
+
+<footer class="w3-container custom-block w3-padding-32  w3-center w3-card-4 d2" style="margin-top:600px">
+  <p class="w3-opacity" style="font-size: 25px"><img src="favicon-96x96.png" alt="Ícone" style="width: 40px; height: 40px; border-radius: 40%;">goline</p>
+
+  <hr style="border: 1px solid rgba(0,0,0,0.2);">
+
+  <!-- Grid -->
+  <div>
+    <div style="display: flex; justify-content: center; gap: 1px; flex-wrap: wrap;" class="cont">
+      <div class="w3-col l3 m6">
+        <p class="w3-opacity" style="font-weight: 1000" data-key='legalInfo'><u>Informações legais</u></p>
+        <pre><p class="w3-opacity"><a href="#" class="custom-lin" data-key='aboutAuthor'>Sobre o Autor</a>   <a href="#" class="custom-lin" data-key='termsOfUse'>Termos de Uso</a></p></pre>
+        <pre class="w3-opacity"><a href="#" class="custom-lin" data-key='privacyPolicy'>Política de Privacidade</a></pre>
+      </div>
+
+      <div class="w3-col l3 m6">
+        <p class="w3-opacity" style="font-weight: 1000" data-key='usefulLinks'><u>Links úteis</u></p>
+        <p  class="w3-opacity" ><a href="#" class="custom-lin" data-key='aboutSite'>Sobre o Site</a>
+        <p  class="w3-opacity"><a href="#" class="custom-lin" data-key='faq'>FAQ</a></p>
+      </div>
+
+      <div class="w3-col l3 m6">
+        <p class="w3-opacity" style="font-weight: 1000" data-key='socialMedia'><u>Redes sociais</u></p>
+        <pre class="w3-xlarge w3-section w3-opacity"><a href="https://github.com/JoseJDMuxito" target="_blank" class="custom-l"><i class="fa-brands fa-github"></i></a> <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter"></i></a> <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l"><i class="fab fa-linkedin"></i></a> </pre>
+      </div>
+    </div>
+
+    <hr style="border: 1px solid rgba(0,0,0,0.2);">
+
+    <p class="w3-opacity" style="font-size: 15px" data-key='footer'>Criado por José Muxito</p>
+  </div>
+</footer>
+
+  <script>
+    var slideIndex = 0;
+
+    function showSlides() {
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; // Esconder todas as imagens
+      }
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", ""); // Remover estado ativo dos indicadores
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1; // Voltar para a primeira imagem
+      }
+      slides[slideIndex - 1].style.display = "block"; // Mostrar a imagem atual
+      dots[slideIndex - 1].className += " active"; // Adicionar estado ativo ao indicador atual
+      setTimeout(showSlides, 3000); // Alterar a cada 3 segundos
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1; // Definir slide atual
+      showSlides(); // Atualizar visualização
+    }
+
+    // Iniciar o slideshow automático
+    showSlides();
+
+  </script>
+
+<script src="js/app.js"></script>
+<script src="js/translations.js"></script>
+
+</body>
+</html>

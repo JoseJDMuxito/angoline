@@ -1,0 +1,434 @@
+.div {
+  height: 50px;
+}
+
+.di {
+  height: 250px;
+  border-radius: 10px 10px 0 0;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+.d {
+  height: 250px;
+  border-radius: 10px 10px 10px 10px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+
+.d1 {
+  border-radius: 10px 10px 10px 10px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+
+.d2 {
+  border-radius: 15px 15px 0 0;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+
+.d3 {
+  border-radius: 0 0 10px 10px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+
+.d4 {
+  border-radius: 5px 5px 5px 5px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+.d5 {
+  border-radius: 10px 10px 10px 10px;
+  padding: 1px 15px 1px 15px;
+  /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
+}
+
+/* Estilo do botão fixo no canto superior direito */
+.theme-toggle {
+  position: relative;
+  top: 65px;
+  left: 2px;
+}
+body {
+  transition: background-color 0.5s ease, background-image 0.5s ease;
+  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+}
+
+
+.switch {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Quando o checkbox está ativo */
+input[type="checkbox"]:checked + .switch {
+  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+}
+
+input[type="checkbox"]:checked + .switch:before {
+  transform: translateX(25px);
+}
+
+/* Escondendo o checkbox */
+input[type="checkbox"] {
+  display:none;
+}
+
+.icon {
+  margin: 10px;
+  font-size: 40px; /* Tamanho dos ícones */
+}
+
+.custom-link {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-link:visited {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-link:hover {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  background-color: #555;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.custom-link:active {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+
+.custom-lin {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-lin:visited {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-lin:hover {
+  text-decoration: underline; /* Adiciona sublinhado no hover */
+}
+
+.custom-lin:active {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  border-radius: 10px 10px 10px 10px;
+  padding:  3px 10px 3px 10px;
+}
+
+.custom-l {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+
+}
+
+
+.custom-l:visited {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-l:hover {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  border-radius: 5px 5px 5px 5px;
+  padding:  0.5px 3px 0.5px 3px;
+}
+
+.custom-l:active {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  border-radius: 5px 5px 5px 5px;
+  padding:  0.5px 3px 0.5px 3px;
+}
+
+
+
+.custom-linki {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(0, 119, 255, 0.2));
+
+}
+
+
+.custom-linki:visited {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+
+.custom-linki:hover {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+}
+
+.custom-linki:active {
+  text-decoration: none; /* Adiciona sublinhado no hover */
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  border-radius: 10px 10px 10px 10px;
+  padding:  0.5px 5px 0.5px 5px;
+}
+
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+.result {
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.switch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+.switch-btn button {
+  color: #121212;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.switch-btn button:hover {
+  text-decoration: none;
+}
+
+.switch-btn button:active {
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+}
+
+.containe {
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilo para o botão flutuante */
+.whatsapp-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px; /* Alterar para "left" se preferir */
+  background-color: #00cf00;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+}
+
+.custom-block{
+
+}
+
+
+.language-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#language-button {
+  background-color: rgba(18, 18, 18, 0.5);
+  color: #121212;
+  border: none;
+  padding: 2px 4px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+#language-button:hover {
+  background-color: #555;
+}
+
+#language-options {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  right: 5px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 10px;
+  gap: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#language-options.active {
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.lang-option img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.lang-option:hover {
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(0, 119, 255, 0.1));
+}
+
+
+.slideshow-container {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+}
+
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+.w3-display-topleft {
+  top: 10px;
+  left: 10px;
+}
+
+.w3-display-middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.w3-display-topright {
+  top: 10px;
+  right: 10px;
+}
+
+.w3-animate-bottom {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Definir o background animado */
+.hei {
+  background: linear-gradient(45deg, gray, #121212, #121212);
+background-size: 400% 400%; /* Tornar o gradiente maior para criar o movimento */
+animation: gradientAnimation 10s ease infinite; /* Aplicar a animação */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgba(18, 18, 18, 0.5);
+}
