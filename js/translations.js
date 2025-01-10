@@ -3,7 +3,7 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "A melhor plataforma para fazer câmbio e comprar moedas de forma fácil e segura",
+    description: "Plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura",
     p1: "Câmbio",
     p2: "Transferências",
     p3: "Divisas : € e Kz.",
@@ -60,7 +60,7 @@ const translations = {
   },
   en: {
     title: "Angoline",
-    description: "The best platform for exchanging and purchasing currencies easily and securely",
+    description: "The ideal platform for exchanging and purchasing currencies easily and securely",
     p1: "Exchange",
     p2: "Transfers",
     p3: "Currencies: € and Kz",
@@ -117,7 +117,7 @@ const translations = {
   },
   fr: {
     title: "Angoline",
-    description: "La meilleure plateforme pour changer et acheter des devises facilement et en toute sécurité",
+    description: "La plateforme idéale pour changer et acheter des devises facilement et en toute sécurité",
     p1: "Change",
     p2: "Transferts",
     p3: "Devises : € et Kz",
