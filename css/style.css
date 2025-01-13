@@ -1,3 +1,36 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Garante que o body tenha altura completa */
+}
+
+/* Estilizando o layout principal */
+.wrapper {
+  display: flex;
+  flex-direction: column; /* Layout vertical */
+  min-height: 20vh; /* Altura mínima igual à altura da tela */
+}
+
+/* Área de conteúdo */
+.content {
+  flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
+  padding: 100px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  text-align: center;
+  padding: 10px;
+}
+
+
 .div {
   height: 50px;
 }
@@ -44,12 +77,7 @@
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
-/* Estilo do botão fixo no canto superior direito */
-.theme-toggle {
-  position: relative;
-  top: 65px;
-  left: 2px;
-}
+
 body {
   transition: background-color 0.5s ease, background-image 0.5s ease;
   background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
@@ -58,20 +86,21 @@ body {
 
 .switch {
   display: inline-block;
-  width: 50px;
+  width: 40px;
   height: 25px;
   background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
   border-radius: 25px;
   position: relative;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 9px;
 }
 
 .switch:before {
   content: '';
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color: rgba(255,20,147,0.5);
   border-radius: 50%;
   position: absolute;
   top: 2.5px;
@@ -82,11 +111,11 @@ body {
 
 /* Quando o checkbox está ativo */
 input[type="checkbox"]:checked + .switch {
-  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+  background:black;
 }
 
 input[type="checkbox"]:checked + .switch:before {
-  transform: translateX(25px);
+  transform: translateX(15px);
 }
 
 /* Escondendo o checkbox */
@@ -237,7 +266,8 @@ input[type="checkbox"] {
 }
 
 .containe {
-  max-width: 600px;
+  height: 230px;
+  max-width: 900px;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -285,18 +315,16 @@ input[type="checkbox"] {
 }
 
 #language-button {
-  background-color: rgba(18, 18, 18, 0.5);
-  color: #121212;
+
   border: none;
-  padding: 2px 4px;
-  border-radius: 40px;
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 23px;
   transition: background-color 0.3s;
 }
 
 #language-button:hover {
-  background-color: #555;
+  background-color: rgba(85, 85, 85, 0.5);
 }
 
 #language-options {
@@ -338,7 +366,7 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .lang-option:hover {
@@ -399,25 +427,6 @@ input[type="checkbox"] {
 }
 
 
-/* Definir o background animado */
-.hei {
-  background: linear-gradient(45deg, gray, #121212, #121212);
-background-size: 400% 400%; /* Tornar o gradiente maior para criar o movimento */
-animation: gradientAnimation 10s ease infinite; /* Aplicar a animação */
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .dot {
   height: 10px;
   width: 10px;
@@ -432,3 +441,4 @@ animation: gradientAnimation 10s ease infinite; /* Aplicar a animação */
 .active {
   background-color: rgba(179, 0, 95, 0.67);
 }
+

@@ -3,13 +3,14 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "Plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura",
+    description: "A plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura",
     p1: "Câmbio",
     p2: "Transferências",
     p3: "Divisas : € e Kz.",
-    services: "Serviços",
-    team: "Equipa",
-    start: "Começar",
+    services: "<i class=\"fa fa-th\"></i> SERVIÇOS",
+    team: "<i class=\"fa fa-user\"></i> EQUIPA",
+    start: "<i class=\"fa fa-usd\"></i> COMEÇAR",
+    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> MODO ESCURO",
     currencyWidget: "Taxa de câmbio",
     exchangeRate1: "1 € = 1150 Kz - (€ para Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz para €)",
@@ -64,9 +65,10 @@ const translations = {
     p1: "Exchange",
     p2: "Transfers",
     p3: "Currencies: € and Kz",
-    services: "Services",
-    team: "Team",
-    start: "Start",
+    services: "<i class=\"fa fa-th\"></i> SERVICES",
+    team: "<i class=\"fa fa-user\"></i> TEAM",
+    start: "<i class=\"fa fa-usd\"></i> START",
+    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> DARK MODE",
     currencyWidget: "Exchange Rate",
     exchangeRate1: "1 € = 1150 Kz - (€ to Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz to €)",
@@ -121,9 +123,10 @@ const translations = {
     p1: "Change",
     p2: "Transferts",
     p3: "Devises : € et Kz",
-    services: "Services",
-    team: "Équipe",
-    start: "Commencer",
+    services: "<i class=\"fa fa-th\"></i> SERVICES",
+    team: "<i class=\"fa fa-user\"></i> ÉQUIPE",
+    start: "<i class=\"fa fa-usd\"></i> COMMENCER",
+    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> MODE SOMBRE",
     currencyWidget: "Taux de change",
     exchangeRate1: "1 € = 1150 Kz - (€ vers Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz vers €)",
@@ -199,6 +202,7 @@ function applyTranslation(lang) {
     const updateTextContent = (selector, key) => {
       const element = document.querySelector(selector);
       if (element) element.textContent = translations[lang][key];
+      if (element) element.innerHTML = translations[lang][key]; // Usando innerHTML em vez de textContent
     };
 
     updateTextContent("#title", "title");
@@ -318,6 +322,11 @@ function applyTranslation(lang) {
     const thankYou = document.getElementById("thankYou");
     const servicesAvailable = document.getElementById("servicesAvailable");
     const ourTeamMessage = document.getElementById("our-team-message");
+    const services = document.getElementById("services");
+    const start = document.getElementById("start");
+    const team = document.getElementById("team");
+    const darkmode = document.getElementById("darkmode");
+
 
     if (campo1) {
       campo1.setAttribute("placeholder", translations[lang].insertValue);
@@ -336,6 +345,18 @@ function applyTranslation(lang) {
     }
     if (ourTeamMessage) {
       ourTeamMessage.innerHTML = translations[lang].ourTeamAvailable;
+    }
+    if (services) {
+      services.innerHTML = translations[lang].services;
+    }
+    if (start) {
+      start.innerHTML = translations[lang].start;
+    }
+    if (team) {
+      team.innerHTML = translations[lang].team;
+    }
+    if (darkmode) {
+      darkmode.innerHTML = translations[lang].darkmode;
     }
 
 

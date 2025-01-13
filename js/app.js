@@ -23,6 +23,7 @@ themeSwitch.addEventListener('change', () => {
   }
 });
 
+
 // Função para aplicar estilos do modo escuro
 function applyDarkModeStyles() {
   const customBlocks = document.querySelectorAll('.custom-block');
