@@ -3,7 +3,7 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "A plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura",
+    description: "A plataforma ideal<br>para fazer câmbio e comprar moedas de forma fácil e segura",
     p1: "Câmbio",
     p2: "Transferências",
     p3: "Divisas : € e Kz.",
@@ -24,11 +24,11 @@ const translations = {
     legalInfo: "Informações legais",
     usefulLinks: "Links úteis",
     socialMedia: "Redes sociais",
-    aboutSite: "Sobre o Site",
+    aboutSite: "Sobre",
     faq: "FAQ",
-    aboutAuthor: "Sobre o Autor",
-    termsOfUse: "Termos de Uso",
-    privacyPolicy: "Política de Privacidade",
+    aboutAuthor: "Autor",
+    termsOfUse: "Termos",
+    privacyPolicy: "Privacidade",
     ourServices: "Os nossos serviços",
     currencySale: "Venda de moedas",
     currencyDescription: "Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.",
@@ -61,7 +61,7 @@ const translations = {
   },
   en: {
     title: "Angoline",
-    description: "The ideal platform for exchanging and purchasing currencies easily and securely",
+    description: "The ideal platform<br>for exchanging and purchasing currencies easily and securely",
     p1: "Exchange",
     p2: "Transfers",
     p3: "Currencies: € and Kz",
@@ -82,11 +82,11 @@ const translations = {
     legalInfo: "Legal information",
     usefulLinks: "Useful links",
     socialMedia: "Social media",
-    aboutSite: "About the Site",
+    aboutSite: "About",
     faq: "FAQ",
-    aboutAuthor: "About the Author",
-    termsOfUse: "Terms of Use",
-    privacyPolicy: "Privacy Policy",
+    aboutAuthor: "Author",
+    termsOfUse: "Terms",
+    privacyPolicy: "Privacy",
     ourServices: "Our services",
     currencySale: "Currency sale",
     currencyDescription: "We sell and offer instant currency exchanges with the following currencies: € and Kz.",
@@ -119,7 +119,7 @@ const translations = {
   },
   fr: {
     title: "Angoline",
-    description: "La plateforme idéale pour changer et acheter des devises facilement et en toute sécurité",
+    description: "La plateforme idéale<br>pour changer et acheter des devises facilement et en toute sécurité",
     p1: "Change",
     p2: "Transferts",
     p3: "Devises : € et Kz",
@@ -140,11 +140,11 @@ const translations = {
     legalInfo: "Informations légales",
     usefulLinks: "Liens utiles",
     socialMedia: "Réseaux sociaux",
-    aboutSite: "À propos du site",
+    aboutSite: "Sur",
     faq: "FAQ",
-    aboutAuthor: "À propos de l'auteur",
-    termsOfUse: "Conditions d'utilisation",
-    privacyPolicy: "Politique de Confidentialité",
+    aboutAuthor: "L'auteur",
+    termsOfUse: "Conditions",
+    privacyPolicy: "Confidentialité",
     ourServices: "Nos services",
     currencySale: "Vente de devises",
     currencyDescription: "Nous vendons et proposons des échanges de devises instantanés avec les devises suivantes : € et Kz.",
@@ -206,7 +206,7 @@ function applyTranslation(lang) {
     };
 
     updateTextContent("#title", "title");
-    updateTextContent("#description", "description");
+
     updateTextContent("#p1", "p1");
     updateTextContent("#p2", "p2");
     updateTextContent("#p3", "p3");
@@ -326,6 +326,7 @@ function applyTranslation(lang) {
     const start = document.getElementById("start");
     const team = document.getElementById("team");
     const darkmode = document.getElementById("darkmode");
+    const description = document.getElementById("description");
 
 
     if (campo1) {
@@ -358,7 +359,9 @@ function applyTranslation(lang) {
     if (darkmode) {
       darkmode.innerHTML = translations[lang].darkmode;
     }
-
+    if (description) {
+      description.innerHTML = translations[lang].description;
+    }
 
 
     // Atualizar novos placeholders (currencyOptionsPlaceholder e transactionTypePlaceholder)
