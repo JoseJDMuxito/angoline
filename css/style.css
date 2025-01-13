@@ -111,7 +111,7 @@ body {
 
 /* Quando o checkbox está ativo */
 input[type="checkbox"]:checked + .switch {
-  background:black;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 input[type="checkbox"]:checked + .switch:before {
