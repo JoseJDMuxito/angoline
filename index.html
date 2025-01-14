@@ -42,7 +42,7 @@
       </a>
 
       <div class="language-selector w3-right" style="margin-right: 10px; margin-top: 3px; gap: 5px">
-        <img id="language-flag" src="" alt="Idioma Atual"  style="height: 30px; width: 30px ; border-radius: 10px;">
+        <img id="language-flag" src="img/Flag_of_Portugal.svg" alt="Idioma"  style="height: 30px; width: 30px ; border-radius: 10px;">
         <i class="fa-solid fa-arrows-rotate"  id="language-button" style="font-size: 20px; "></i>
       </div>
 
@@ -65,10 +65,10 @@
   <!-- Sidebar on small screens when clicking the menu icon -->
   <nav class="custom-block w3-sidebar w3-bar-block  w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;  border-radius: 0 15px 15px 0; background-color: whitesmoke;" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 lang-option"><i class="fa-solid fa-house"></i></a>
-    <a href="servico/servico.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i></i> SERVIÇOS</a>
+    <a href="servico/servico.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
     <a href="comecar/comecar.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="start"><i class="fa fa-usd"></i> COMEÇAR</a>
     <a href="time/time.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="team" ><i class="fa fa-user"></i> EQUIPA</a>
-    <label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button lang-option"><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label>
+    <a><label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button lang-option" ><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label></a>
   </nav>
 
 </div>
@@ -176,18 +176,17 @@
     <p class="w3-opacity" style="font-size: 14px" data-key='footer'>Criado por José Muxito</p>
   </footer>
 
-</div>
 
   <script>
-    var slideIndex = 0;
+    let slideIndex = 0;
 
     function showSlides() {
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (var i = 0; i < slides.length; i++) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for ( let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none"; // Esconder todas as imagens
       }
-      for (var i = 0; i < dots.length; i++) {
+      for (let  i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", ""); // Remover estado ativo dos indicadores
       }
       slideIndex++;
@@ -207,16 +206,9 @@
     // Iniciar o slideshow automático
     showSlides();
 
-    // Modal Image Gallery
-    function onClick(element) {
-      document.getElementById("img01").src = element.src;
-      document.getElementById("modal01").style.display = "block";
-      var captionText = document.getElementById("caption");
-      captionText.innerHTML = element.alt;
-    }
 
     // Toggle between showing and hiding the sidebar when clicking the menu icon
-    var mySidebar = document.getElementById("mySidebar");
+    let mySidebar = document.getElementById("mySidebar");
 
     function w3_open() {
       if (mySidebar.style.display === 'block') {

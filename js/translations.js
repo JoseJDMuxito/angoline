@@ -10,7 +10,7 @@ const translations = {
     services: "<i class=\"fa-solid fa-wallet\"></i> SERVIÇOS",
     team: "<i class=\"fa fa-user\"></i> EQUIPA",
     start: "<i class=\"fa fa-usd\"></i> COMEÇAR",
-    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> MODO ESCURO",
+    darkmode: "<i class=\"fa-solid fa-moon\" style=\"font-size: 20px;\"></i> MODO ESCURO",
     currencyWidget: "Taxa de câmbio",
     exchangeRate1: "1 € = 1150 Kz - (€ para Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz para €)",
@@ -68,7 +68,7 @@ const translations = {
     services: "<i class=\"fa-solid fa-wallet\"></i> SERVICES",
     team: "<i class=\"fa fa-user\"></i> TEAM",
     start: "<i class=\"fa fa-usd\"></i> START",
-    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> DARK MODE",
+    darkmode: "<i class=\"fa-solid fa-moon\" style=\"font-size: 20px;\"></i> DARK MODE",
     currencyWidget: "Exchange Rate",
     exchangeRate1: "1 € = 1150 Kz - (€ to Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz to €)",
@@ -126,7 +126,7 @@ const translations = {
     services: "<i class=\"fa-solid fa-wallet\"></i> SERVICES",
     team: "<i class=\"fa fa-user\"></i> ÉQUIPE",
     start: "<i class=\"fa fa-usd\"></i> COMMENCER",
-    darkmode: "<i class=\"fa-solid fa-moon custom-l\" style=\"font-size: 20px; margin-left: 15px\"></i> MODE SOMBRE",
+    darkmode: "<i class=\"fa-solid fa-moon\" style=\"font-size: 20px;\"></i> MODE SOMBRE",
     currencyWidget: "Taux de change",
     exchangeRate1: "1 € = 1150 Kz - (€ vers Kz)",
     exchangeRate2: "1250 Kz = 1 € - (Kz vers €)",
@@ -179,7 +179,6 @@ const translations = {
 
 // Elementos
 const languageButton = document.getElementById("language-button");
-const languageFlag = document.getElementById("language-flag");
 const languageOptions = document.getElementById("language-options");
 const langOptionButtons = document.querySelectorAll(".lang-option");
 
@@ -194,20 +193,26 @@ function detectLanguage() {
 function updateButtonFlag(language) {
   const selectedOption = document.querySelector(`.lang-option[data-lang="${language}"] img`);
   if (selectedOption) {
-    languageFlag.src = selectedOption.src;
-    languageFlag.alt = selectedOption.alt;
-    languageFlag.style.display = "block";
+    const languageFlag = document.getElementById("language-flag");
+    if (languageFlag) {
+      languageFlag.src = selectedOption.src;
+      languageFlag.alt = selectedOption.alt;
+      languageFlag.style.display = "block";
+    }
   }
 }
 
 // Aplica a tradução com base no idioma selecionado
 function applyTranslation(lang) {
   if (translations[lang]) {
+
     // Atualiza elementos específicos
     const updateTextContent = (selector, key) => {
       const element = document.querySelector(selector);
       if (element) element.innerHTML = translations[lang][key];
     };
+
+
 
     updateTextContent("#title", "title");
     updateTextContent("#p1", "p1");
@@ -219,6 +224,9 @@ function applyTranslation(lang) {
     updateTextContent("#currencyWidget", "currencyWidget");
     updateTextContent("#exchangeRate1", "exchangeRate1");
     updateTextContent("#exchangeRate2", "exchangeRate2");
+    updateTextContent("#history", "history");
+    updateTextContent("[data-key='clearHistory']", "clearHistory");
+    updateTextContent("#currencyConverter", "currencyConverter");
 
     // Atualiza o rodapé
     document.querySelectorAll("[data-key='footer']").forEach((element) => {
@@ -312,11 +320,6 @@ function applyTranslation(lang) {
       element.textContent = translations[lang].clickOn;
     });
 
-
-
-    updateTextContent("#history", "history");
-    updateTextContent("[data-key='clearHistory']", "clearHistory");
-    updateTextContent("#currencyConverter", "currencyConverter");
 
     // Atualizar placeholders
     const campo1 = document.getElementById("campo-1");
@@ -416,3 +419,4 @@ langOptionButtons.forEach((button) => {
 document.addEventListener("DOMContentLoaded", () => {
   detectLanguage();
 });
+
