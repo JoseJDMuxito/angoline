@@ -22,12 +22,41 @@ html, body {
   padding: 100px;
 }
 
-/* Footer */
-.footer {
-  background-color: #333; /* Cor de fundo */
-  color: white; /* Cor do texto */
-  text-align: center;
-  padding: 10px;
+
+   /* Estilo básico para o footer */
+ footer {
+   display: flex;
+   justify-content: space-between; /* Palavras espaçadas horizontalmente */
+   align-items: center;
+   padding: 10px 20px;
+   background-color: whitesmoke;
+   font-size: 1rem;
+   height: 10vh;
+ }
+
+footer span {
+  margin: 0 10px; /* Espaçamento horizontal entre palavras */
+}
+
+/* Quando a tela for muito pequena */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column; /* Alinhar verticalmente */
+    gap: 5px; /* Menor espaçamento vertical entre palavras */
+    align-items: center; /* Palavras alinhadas à esquerda */
+    height: 20vh;
+  }
+
+  footer span {
+    margin: 0; /* Remove o espaçamento horizontal */
+  }
+}
+
+/* Responsividade para telas muito grandes */
+@media (min-width: 1200px) {
+  footer {
+    height: 8vh; /* Diminui a altura do footer em telas grandes */
+  }
 }
 
 
@@ -55,7 +84,7 @@ html, body {
 
 
 .d2 {
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
@@ -277,7 +306,7 @@ input[type="checkbox"] {
 /* Estilo para o botão flutuante */
 .whatsapp-button {
   position: fixed;
-  bottom: 10px;
+  bottom: 70px;
   right: 10px; /* Alterar para "left" se preferir */
   background-color: #00cf00;
   color: white;
