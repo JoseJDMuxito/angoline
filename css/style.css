@@ -135,12 +135,12 @@ body {
   top: 2.5px;
   left: 5px;
   transition: transform 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Quando o checkbox está ativo */
 input[type="checkbox"]:checked + .switch {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(0, 0, 0);
 }
 
 input[type="checkbox"]:checked + .switch:before {
@@ -219,15 +219,15 @@ input[type="checkbox"] {
 .custom-l:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
-  border-radius: 5px 5px 5px 5px;
-  padding:  0.5px 3px 0.5px 3px;
+  border-radius: 10px;
+  padding:  5px 3px 5px 3px;
 }
 
 .custom-l:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
-  border-radius: 5px 5px 5px 5px;
-  padding:  0.5px 3px 0.5px 3px;
+  border-radius: 10px;
+  padding:  5px 3px 5px 3px;
 }
 
 
@@ -337,12 +337,6 @@ input[type="checkbox"] {
 }
 
 
-.language-selector {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 #language-button {
 
   border: none;
@@ -353,7 +347,7 @@ input[type="checkbox"] {
 }
 
 #language-button:hover {
-  background-color: rgba(85, 85, 85, 0.5);
+  background-color: white;
 }
 
 #language-options {
@@ -471,3 +465,47 @@ input[type="checkbox"] {
   background-color: rgba(179, 0, 95, 0.67);
 }
 
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 35px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border: 2px solid #555;
+  border-width: 2px 2px 0 0;
+}
+
+.arrow.up {
+  transform: rotate(-45deg);
+  margin-bottom: 4px;
+}
+
+.arrow.down {
+  transform: rotate(135deg);
+  margin-top: 4px;
+}

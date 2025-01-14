@@ -26,9 +26,9 @@
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
 
-        <a href="servico/servico.html" class="w3-bar-item w3-button"  data-key='services' style="border-radius: 10px"><i class="fa fa-th"></i> SERVIÇOS</a>
-        <a href="comecar/comecar.html" class="w3-bar-item w3-button" data-key='start' style="border-radius: 10px"><i class="fa fa-usd"></i> COMEÇAR</a>
-        <a href="time/time.html" class="w3-bar-item w3-button" data-key='team' style="border-radius: 10px"><i class="fa fa-user"></i> EQUIPA</a>
+        <a href="servico/servico.html" class="w3-bar-item w3-button lang-option"  data-key='services'><i class="fa fa-th"></i> SERVIÇOS</a>
+        <a href="comecar/comecar.html" class="w3-bar-item w3-button lang-option" data-key='start'><i class="fa fa-usd"></i> COMEÇAR</a>
+        <a href="time/time.html" class="w3-bar-item w3-button lang-option" data-key='team' ><i class="fa fa-user"></i> EQUIPA</a>
 
         <!-- Modo escuro e claro -->
           <input type="checkbox" id="theme-switch">
@@ -38,10 +38,14 @@
 
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()" style="border-radius: 10px; padding-left: 10px; padding-right: 10px; ">
-        <i class="fa fa-bars" style="font-size: 25px;"></i>
+        <i class="fa fa-bars " style="font-size: 25px;"></i>
       </a>
 
-      <button style="height: 30px; width: 30px ; border-radius: 20px 20px 20px 20px; margin-top: 7px; margin-right: 10px " class="w3-right" ><img id="language-button" src="img/Flag_of_France.svg" alt="Francês" style="height: 25px; width: 25px ;border-radius: 20px 20px 20px 20px;"></button>
+      <div class="language-selector w3-right" style="margin-right: 10px; margin-top: 3px; gap: 5px">
+        <img id="language-flag" src="" alt="Idioma Atual"  style="height: 30px; width: 30px ; border-radius: 10px;">
+        <i class="fa-solid fa-arrows-rotate"  id="language-button" style="font-size: 20px; "></i>
+      </div>
+
       <!-- Botão de Idiomas -->
       <div id="language-options">
         <button class="lang-option" data-lang="pt">
@@ -60,11 +64,11 @@
 
   <!-- Sidebar on small screens when clicking the menu icon -->
   <nav class="custom-block w3-sidebar w3-bar-block  w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;  border-radius: 0 15px 15px 0; background-color: whitesmoke;" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16" style="border-radius: 10px"><i class="fa-solid fa-house"></i></a>
-    <a href="servico/servico.html" onclick="w3_close()" class="w3-bar-item w3-button" id="services"  style="border-radius: 10px"><i class="fa-solid fa-wallet"></i></i> SERVIÇOS</a>
-    <a href="comecar/comecar.html" onclick="w3_close()" class="w3-bar-item w3-button" id="start"  style="border-radius: 10px"><i class="fa fa-usd"></i> COMEÇAR</a>
-    <a href="time/time.html" onclick="w3_close()" class="w3-bar-item w3-button" id="team"  style="border-radius: 10px"><i class="fa fa-user"></i> EQUIPA</a>
-    <label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button" style="border-radius: 10px; margin-left: -15px"><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 lang-option"><i class="fa-solid fa-house"></i></a>
+    <a href="servico/servico.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i></i> SERVIÇOS</a>
+    <a href="comecar/comecar.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="start"><i class="fa fa-usd"></i> COMEÇAR</a>
+    <a href="time/time.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="team" ><i class="fa fa-user"></i> EQUIPA</a>
+    <label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button lang-option"><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label>
   </nav>
 
 </div>
@@ -164,7 +168,8 @@
     <span ><a class="w3-bar-item  w3-wide" style="color: rgba(4,50,166,0.8) ;font-weight: 600; font-size: 16px"> <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px; "> Agoline</a></span>
     <pre><span class=" w3-opacity"><a href="#" class="custom-lin" data-key='aboutSite'>Sobre</a>         <a href="#" class="custom-lin" data-key='termsOfUse'>Termos</a>         <a href="#" class="custom-lin" data-key='privacyPolicy'>Privacidade</a></span></pre>
     <span class=" w3-opacity">
-      <a href="https://github.com/JoseJDMuxito" target="_blank" class="custom-l"><i class="fa-brands fa-github" style="font-size: 25px"></i></a>
+      <a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l"><i class="fa-brands fa-facebook" style="font-size: 25px"></i></a>
+      <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l"><i class="fa-brands fa-instagram" style="font-size: 25px"></i></a>
       <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>
       <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l" style="font-size: 25px"><i class="fab fa-linkedin"></i></a>
     </span>
@@ -209,7 +214,6 @@
       var captionText = document.getElementById("caption");
       captionText.innerHTML = element.alt;
     }
-
 
     // Toggle between showing and hiding the sidebar when clicking the menu icon
     var mySidebar = document.getElementById("mySidebar");
