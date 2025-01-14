@@ -26,9 +26,9 @@
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
 
-        <a href="servico/servico.html" class="w3-bar-item w3-button lang-option"  data-key='services'><i class="fa fa-th"></i> SERVIÇOS</a>
-        <a href="comecar/comecar.html" class="w3-bar-item w3-button lang-option" data-key='start'><i class="fa fa-usd"></i> COMEÇAR</a>
-        <a href="time/time.html" class="w3-bar-item w3-button lang-option" data-key='team' ><i class="fa fa-user"></i> EQUIPA</a>
+        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button lang-option"  data-i18n='services'><i class="fa fa-th"></i> SERVIÇOS</a>
+        <a href="comecar/comecar.html" target="_self" class="w3-bar-item w3-button lang-option" data-i18n='start'><i class="fa fa-usd"></i> COMEÇAR</a>
+        <a href="time/time.html"  target="_self" class="w3-bar-item w3-button lang-option" data-i18n='team' ><i class="fa fa-user"></i> EQUIPA</a>
 
         <!-- Modo escuro e claro -->
           <input type="checkbox" id="theme-switch">
@@ -51,7 +51,7 @@
         <button class="lang-option" data-lang="pt">
           <img src="img/Flag_of_Portugal.svg" alt="Português"> Português
         </button>
-        <button class="lang-option" data-lang="en">
+        <button class="lang-option" data-lang="en" >
           <img src="img/UK.png" alt="Inglês"> English
         </button>
         <button class="lang-option" data-lang="fr">
@@ -65,9 +65,9 @@
   <!-- Sidebar on small screens when clicking the menu icon -->
   <nav class="custom-block w3-sidebar w3-bar-block  w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;  border-radius: 0 15px 15px 0; background-color: whitesmoke;" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 lang-option"><i class="fa-solid fa-house"></i></a>
-    <a href="servico/servico.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
-    <a href="comecar/comecar.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="start"><i class="fa fa-usd"></i> COMEÇAR</a>
-    <a href="time/time.html" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="team" ><i class="fa fa-user"></i> EQUIPA</a>
+    <a href="servico/servico.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
+    <a href="comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="start"><i class="fa fa-usd"></i> COMEÇAR</a>
+    <a href="time/time.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="team" ><i class="fa fa-user"></i> EQUIPA</a>
     <a><label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button lang-option" ><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label></a>
   </nav>
 
@@ -81,7 +81,7 @@
   <div class="w3-container" style="margin-top: -120px;">
     <div class="w3-panel">
       <h1 style="font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 1000; color: rgba(255,20,147,0.5)" ><span translate="no"><i class="fa-solid fa-building-columns"></i> <i class="fas fa-hand-holding-usd icon"  style="font-size: 60px"></i></span></h1>
-      <p style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px" id="description">A plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura</p>
+      <p style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px" data-i18n='description'>A plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura</p>
     </div>
 
     <!-- Estrutura HTML -->
@@ -173,7 +173,7 @@
       <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>
       <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l" style="font-size: 25px"><i class="fab fa-linkedin"></i></a>
     </span>
-    <p class="w3-opacity" style="font-size: 14px" data-key='footer'>Criado por José Muxito</p>
+    <p class="w3-opacity" style="font-size: 14px" data-i18n='footer'>Criado por José Muxito</p>
   </footer>
 
 
@@ -227,6 +227,7 @@
 
 <script src="js/app.js"></script>
 <script src="js/translations.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
