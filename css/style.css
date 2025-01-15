@@ -273,14 +273,13 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   margin: 15px 0;
+
 }
 .switch-btn button {
   color: #121212;
+  border-radius: 50px;
   border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -288,10 +287,11 @@ input[type="checkbox"] {
 }
 .switch-btn button:hover {
   text-decoration: none;
+  background: rgba(255, 20, 147, 0.3);
 }
 
 .switch-btn button:active {
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background: whitesmoke;
 }
 
 .containe {
@@ -469,7 +469,7 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 50px;
   height: 33px;
   border: 2px solid #ccc;
   border-radius: 10px;
