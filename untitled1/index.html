@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site com Tradução</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #language-selector {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <h1>Bem-vindo ao meu site!</h1>
+  <p>Sobre Nós</p>
+</div>
+<select id="language-selector">
+  <option value="en">English</option>
+  <option value="pt">Português</option>
+  <option value="es">Español</option>
+</select>
+
+<script>
+  const translations = {
+    en: {
+      welcome: "Welcome to my website!",
+      about: "About Us"
+    },
+    pt: {
+      welcome: "Bem-vindo ao meu site!",
+      about: "Sobre Nós"
+    },
+    es: {
+      welcome: "¡Bienvenido a mi sitio web!",
+      about: "Sobre Nosotros"
+    }
+  };
+
+  const rootElement = document.getElementById('root');
+  const selector = document.getElementById('language-selector');
+
+  function App() {
+    const [language, setLanguage] = React.useState('en');
+
+    React.useEffect(() => {
+      selector.addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+    }, []);
+
+    return (
+      <div>
+        <h1>{translations[language].welcome}</h1>
+        <p>{translations[language].about}</p>
+      </div>
+    );
+  }
+
+  ReactDOM.render(<App />, rootElement);
+</script>
+</body>
+</html>

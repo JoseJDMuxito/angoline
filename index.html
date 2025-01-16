@@ -14,36 +14,35 @@
   </style>
 </head>
 
-<body >
+<body>
 <!-- Header Fixo -->
 <div class="wrapper">
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar" >
-
-     <a class="w3-bar-item  w3-wide" style="color: rgba(4,50,166,0.8) ;font-weight: 600; font-size: 16px"> <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px; "> Agoline</a>
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a class="w3-bar-item w3-wide" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
+        <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
+      </a>
 
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-
-        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button lang-option"  data-i18n='services'><i class="fa fa-th"></i> SERVIÇOS</a>
-        <a href="comecar/comecar.html" target="_self" class="w3-bar-item w3-button lang-option" data-i18n='start'><i class="fa fa-usd"></i> COMEÇAR</a>
-        <a href="time/time.html"  target="_self" class="w3-bar-item w3-button lang-option" data-i18n='team' ><i class="fa fa-user"></i> EQUIPA</a>
+        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button" data-i18n="services"><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
+        <a href="comecar/comecar.html" target="_self" class="w3-bar-item w3-button" data-i18n="start"><i class="fa fa-usd"></i> COMEÇAR</a>
+        <a href="time/time.html" target="_self" class="w3-bar-item w3-button" data-i18n="team"><i class="fa fa-user"></i> EQUIPA</a>
 
         <!-- Modo escuro e claro -->
-          <input type="checkbox" id="theme-switch">
-          <label for="theme-switch" class="switch" style="margin-right: 10px; margin-left: 10px"></label>
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch" class="switch" style="margin-right: 10px; margin-left: 10px"></label>
       </div>
 
-
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()" style="border-radius: 10px; padding-left: 10px; padding-right: 10px; ">
-        <i class="fa fa-bars " style="font-size: 25px;"></i>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()" style="border-radius: 10px; padding-left: 10px; padding-right: 10px;">
+        <i class="fa fa-bars" style="font-size: 25px;"></i>
       </a>
 
       <div class="language-selector w3-right" style="margin-right: 10px; margin-top: 5px; gap: 5px">
-        <img id="language-flag" src="img/Flag_of_Portugal.svg" alt="Idioma"  style="height: 30px; width: 30px ; border-radius: 10px;">
-        <i class="fa-duotone fa-solid fa-up-down w3-opacity"  id="language-button" style="font-size: 20px; "></i>
+        <img id="language-flag" src="img/Flag_of_Portugal.svg" alt="Idioma" style="height: 30px; width: 30px; border-radius: 10px;">
+        <i class="fa-duotone fa-solid fa-up-down w3-opacity" id="language-button" style="font-size: 20px;"></i>
       </div>
 
       <!-- Botão de Idiomas -->
@@ -51,37 +50,52 @@
         <button class="lang-option" data-lang="pt">
           <img src="img/Flag_of_Portugal.svg" alt="Português"> Português
         </button>
-        <button class="lang-option" data-lang="en" >
+        <button class="lang-option" data-lang="en">
           <img src="img/UK.png" alt="Inglês"> English
         </button>
         <button class="lang-option" data-lang="fr">
           <img src="img/Flag_of_France.svg" alt="Francês"> Français
         </button>
       </div>
-
     </div>
   </div>
 
   <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="custom-block w3-sidebar w3-bar-block  w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;  border-radius: 0 15px 15px 0; background-color: whitesmoke;" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 lang-option"><i class="fa-solid fa-house"></i></a>
-    <a href="servico/servico.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="services"  ><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
-    <a href="comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="start"><i class="fa fa-usd"></i> COMEÇAR</a>
-    <a href="time/time.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button lang-option" id="team" ><i class="fa fa-user"></i> EQUIPA</a>
-    <a><label for="theme-switch" onclick="w3_close()" id="darkmode" class=" w3-button lang-option" ><i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO</label></a>
+  <nav class="custom-block w3-sidebar w3-bar-block w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; border-radius: 0 15px 15px 0; background-color: whitesmoke;" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <a href="servico/servico.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button" data-i18n="services">
+      <i class="fa-solid fa-wallet"></i> SERVIÇOS
+    </a>
+    <a href="comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button" data-i18n="start">
+      <i class="fa fa-usd"></i> COMEÇAR
+    </a>
+    <a href="time/time.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button" data-i18n="team">
+      <i class="fa fa-user"></i> EQUIPA
+    </a>
+    <a>
+      <label for="theme-switch" onclick="w3_close()" class="w3-button" data-i18n="darkmode">
+        <i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO
+      </label>
+    </a>
   </nav>
-
 </div>
 
 <!-- Content -->
 <div class="w3-content">
-
-
   <!-- Slideshow -->
   <div class="w3-container" style="margin-top: -120px;">
     <div class="w3-panel">
-      <h1 style="font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 1000; color: rgba(255,20,147,0.5)" ><span translate="no"><i class="fa-solid fa-building-columns"></i> <i class="fas fa-hand-holding-usd icon"  style="font-size: 60px"></i></span></h1>
-      <p style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px" data-i18n='description'>A plataforma ideal para fazer câmbio e comprar moedas de forma fácil e segura</p>
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 50px; font-weight: 1000; color: rgba(255,20,147,0.5)">
+        <span translate="no">
+          <i class="fa-solid fa-building-columns"></i>
+          <i class="fas fa-hand-holding-usd icon" style="font-size: 60px"></i>
+        </span>
+      </h1>
+      <p style="font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 30px" data-i18n="description">
+        A plataforma ideal<br>para fazer câmbio e comprar moedas de forma fácil e segura
+      </p>
     </div>
 
     <!-- Estrutura HTML -->
@@ -89,21 +103,21 @@
       <div class="w3-display-container mySlides">
         <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_3e370750.jpg" alt="Câmbio">
         <div class="w3-display-topleft w3-container w3-padding-32">
-          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px 8px 8px 8px" data-i18n='p1'>Câmbio</span>
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px" data-i18n="p1">Câmbio</span>
         </div>
       </div>
 
       <div class="w3-display-container mySlides">
         <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_a4ece395.jpg" alt="Transferências">
         <div class="w3-display-middle w3-container w3-padding-32">
-          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px 8px 8px 8px" data-i18n='p2'>Transferências</span>
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px" data-i18n="p2">Transferências</span>
         </div>
       </div>
 
       <div class="w3-display-container mySlides">
         <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_d924df8a.jpg" alt="Vendemos">
         <div class="w3-display-topright w3-container w3-padding-32">
-          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px 8px 8px 8px" data-i18n='p3'>Divisas : € e Kz</span>
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px" data-i18n="p3">Divisas : € e Kz</span>
         </div>
       </div>
     </div>
@@ -115,17 +129,16 @@
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
-
-    <div class="w3-container custom-block w3-card-4" style="margin-top: 50px; margin-bottom: -500px; border-radius: 10px 10px 10px 10px;">
+    <div class="w3-container custom-block w3-card-4" style="margin-top: 50px; margin-bottom: -500px; border-radius: 10px;">
       <div class="w3-section">
-        <h3 style="text-align: center; font-weight: 500;" data-i18n='currencyConverter'>Conversor</h3>
+        <h3 style="text-align: center; font-weight: 500;" data-i18n="currencyConverter">Conversor</h3>
         <div id="group-1" class="input-group">
           <label for="campo-1" style="font-weight: 500;">
             EUR
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">
           </label>
-          <input class="w3-input w3-border w3-hover-border-black cus  w3-opacity d1" type="text" data-i18n=' insertValue' id="campo-1" placeholder="Insira o valor" style="width: 100%;">
-          <div class="error" id="error-1" data-i18='insiraOnlyNumbers'>Insira apenas números</div>
+          <input class="w3-input w3-border w3-hover-border-black cus w3-opacity d1" type="text" id="campo-1" data-i18n="insertValue" placeholder="Insira o valor" style="width: 100%;">
+          <div class="error" id="error-1" data-i18n="insiraOnlyNumbers">Insira apenas números</div>
         </div>
       </div>
 
@@ -141,93 +154,101 @@
             AOA
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">
           </label>
-          <input class="w3-input  w3-opacity d1"  type="text" readonly id="campo-2" placeholder="Resultado" style="width: 100%; pointer-events: none;">
+          <input class="w3-input w3-opacity d1" type="text" readonly id="campo-2" data-i18n="resultado" placeholder="Resultado" style="width: 100%; pointer-events: none;">
         </div>
       </div>
 
       <div class="result" id="resultado" style="margin-top: 15px; font-weight: bold;"></div>
+
       <!-- Histórico dos cálculos -->
       <div id="historico" style="margin-top: 20px;">
-        <p class="w3-opacity" style="font-weight: 500;" id="history">Histórico de câmbio</p>
+        <p class="w3-opacity" style="font-weight: 500;" data-i18n="history">Histórico de câmbio</p>
         <ul id="history-list" class="w3-opacity" style="font-weight: 500;"></ul>
-        <button data-key='clearHistory' class="w3-opacity" id="clear-history" style="border-radius: 10px 10px 10px 10px; cursor: pointer; background:linear-gradient(to right, rgba(255, 0, 0, 0.16), rgba(0, 119, 255, 0.16));">Limpar</button>
+        <button class="w3-opacity" id="clear-history" style="border-radius: 10px; cursor: pointer; background:linear-gradient(to right, rgba(255, 0, 0, 0.16), rgba(0, 119, 255, 0.16));" data-i18n="clearHistory">Limpar</button>
       </div>
     </div>
   </div>
 
-  <h4 style="text-align: center; margin-top: 550px" id="conversion-message">
+  <h4 style="text-align: center; margin-top: 550px" data-i18n="conversionMessage">
     Já fez a sua conversão?
   </h4>
   <h4 style="text-align: center; margin-bottom: 50px">
-    <a data-key='clickOn' href="comecar/comecar.html">Clique aqui!</a>
+    <a href="comecar/comecar.html" data-i18n="clickOn">Clique aqui!</a>
   </h4>
 </div>
 
-  <!-- Footer -->
-  <footer class="custom-block d2">
-    <span ><a class="w3-bar-item  w3-wide" style="color: rgba(4,50,166,0.8) ;font-weight: 600; font-size: 16px"> <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px; "> Agoline</a></span>
-    <pre><span class=" w3-opacity"><a href="#" class="custom-lin" data-key='aboutSite'>Sobre</a>         <a href="#" class="custom-lin" data-key='termsOfUse'>Termos</a>         <a href="#" class="custom-lin" data-key='privacyPolicy'>Privacidade</a></span></pre>
-    <span class=" w3-opacity">
-      <a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l"><i class="fa-brands fa-facebook" style="font-size: 25px"></i></a>
-      <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l"><i class="fa-brands fa-instagram" style="font-size: 25px"></i></a>
-      <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>
-      <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l" style="font-size: 25px"><i class="fab fa-linkedin"></i></a>
-    </span>
-    <p class="w3-opacity" style="font-size: 14px" data-i18n='footer'>Criado por José Muxito</p>
-  </footer>
+<!-- Footer -->
+<footer class="custom-block d2">
+  <span>
+    <a class="w3-bar-item w3-wide" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
+      <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
+    </a>
+  </span>
+  <pre><span class="w3-opacity"><a href="#" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="#" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
+  <span class="w3-opacity">
+    <a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l">
+      <i class="fa-brands fa-facebook" style="font-size: 25px"></i>
+    </a>
+    <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l">
+      <i class="fa-brands fa-instagram" style="font-size: 25px"></i>
+    </a>
+    <a href="https://x.com/jose__muxito" target="_blank" class="custom-l">
+      <i class="fa-brands fa-x-twitter" style="font-size: 25px"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l">
+      <i class="fab fa-linkedin" style="font-size: 25px"></i>
+    </a>
+  </span>
+  <p class="w3-opacity" style="font-size: 14px" data-i18n="footer">Criado por José Muxito</p>
+</footer>
 
+<script>
+  let slideIndex = 0;
 
-  <script>
-    let slideIndex = 0;
-
-    function showSlides() {
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for ( let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Esconder todas as imagens
-      }
-      for (let  i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", ""); // Remover estado ativo dos indicadores
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1; // Voltar para a primeira imagem
-      }
-      slides[slideIndex - 1].style.display = "block"; // Mostrar a imagem atual
-      dots[slideIndex - 1].className += " active"; // Adicionar estado ativo ao indicador atual
-      setTimeout(showSlides, 3000); // Alterar a cada 3 segundos
+  function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
-
-    function currentSlide(n) {
-      slideIndex = n - 1; // Definir slide atual
-      showSlides(); // Atualizar visualização
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
     }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000);
+  }
 
-    // Iniciar o slideshow automático
+  function currentSlide(n) {
+    slideIndex = n - 1;
     showSlides();
+  }
 
+  showSlides();
 
-    // Toggle between showing and hiding the sidebar when clicking the menu icon
-    let mySidebar = document.getElementById("mySidebar");
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  let mySidebar = document.getElementById("mySidebar");
 
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
     }
+  }
 
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-    }
+  function w3_close() {
+    mySidebar.style.display = "none";
+  }
+</script>
 
-  </script>
-
-<script src="js/app.js"></script>
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>

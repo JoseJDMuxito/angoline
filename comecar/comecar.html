@@ -9,7 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com /css2?family=Poppins:wght@700& display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
     html,body,h1,h2,h3,h4,pre {font-family:"Lato", sans-serif}
   </style>
@@ -17,53 +17,66 @@
 <body>
 
 <!-- Modo escuro e claro -->
-
-  <input type="checkbox" id="theme-switch">
+<input type="checkbox" id="theme-switch">
 <i class="fa-solid fa-arrow-left" onclick="history.back()" style="cursor: pointer; margin: 10px; font-size: 25px"></i>
-  <!-- Contact -->
+
+<!-- Contact -->
 <div class="w3-container" style="margin-top: -70px;">
   <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-border-dark-grey w3-padding-16" data-key='tellUs'>Compre a sua moeda</span>
-    <p class="w3-opacity" data-key='sendRequest'>Envia-nos o seu pedido</p>
+    <span class="w3-xlarge w3-border-dark-grey w3-padding-16" data-i18n="tellUs">Compre a sua moeda</span>
+    <p class="w3-opacity" data-i18n="sendRequest">Envia-nos o seu pedido</p>
   </div>
 
-  <form class="w3-container containe  custom-block w3-card-4 " id="whatsapp-form" target="_blank" style="margin-top:-50px; border-radius: 10px 10px 10px 10px;"  >
+  <form class="w3-container containe custom-block w3-card-4" id="whatsapp-form" target="_blank" style="margin-top:-50px; border-radius: 10px;">
     <div class="w3-section">
-      <label for="name-1" data-key='currencyToBuy'>Moeda a comprar</label>
-      <input  class="w3-input w3-border w3-hover-border-black w3-opacity d1" type="text" id="name-1" placeholder="€, EUR, Kz ou AOA" required>
-      <span id="error-1" class="error" data-key='insertOnlyCurrency'>Insira apenas €, EUR, Kz ou AOA</span>
+      <label for="name-1" data-i18n="currencyToBuy">Moeda a comprar</label>
+      <input class="w3-input w3-border w3-hover-border-black w3-opacity d1" type="text" id="name-1" data-i18n="currencyOptionsPlaceholder" placeholder="€, EUR, Kz ou AOA" required>
+      <span id="error-1" class="error" data-i18n="insertOnlyCurrency">Insira apenas €, EUR, Kz ou AOA</span>
     </div>
     <div class="w3-section">
-      <label for="message-2" data-key='amountToPay'>Montante a pagar</label>
-      <input  class="w3-input w3-border w3-hover-border-black  w3-opacity d1" type="text" id="message-2" placeholder="Digite o valor">
-      <span id="error-2" class="error" data-key='insiraOnlyNumbers'>Insira apenas números</span>
+      <label for="message-2" data-i18n="amountToPay">Montante a pagar</label>
+      <input class="w3-input w3-border w3-hover-border-black w3-opacity d1" type="text" id="message-2" data-i18n="transactionTypePlaceholder" placeholder="Digite o valor">
+      <span id="error-2" class="error" data-i18n="insiraOnlyNumbers">Insira apenas números</span>
     </div>
-    <pre><button type="submit" class="w3-button w3-block w3-black d1" data-key='send'>Enviar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></button></pre>
+    <pre><button type="submit" class="w3-button w3-block w3-black d1" data-i18n="send">Enviar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></button></pre>
   </form>
 </div>
 
-<h4 style="text-align: center; margin-top: 50px; " id="thankYou">
+<h4 style="text-align: center; margin-top: 50px" data-i18n="thankYou">
   Obrigado por utilizar os nossos serviços<br>Volte sempre!
 </h4>
 
-<p style="text-align: center; margin-top: 30px"><img src="../img/LOGO.jpg" alt="Ícone" style="width: 60px; height: 60px; border-radius: 50%;"></p>
+<p style="text-align: center; margin-top: 30px">
+  <img src="../img/LOGO.jpg" alt="Ícone" style="width: 60px; height: 60px; border-radius: 50%;">
+</p>
 
-  <!-- Footer -->
+<!-- Footer -->
 <footer class="custom-block d2" style="margin-top: 230px;">
-  <span ><a class="w3-bar-item  w3-wide" style="color: rgba(4,50,166,0.8) ;font-weight: 600; font-size: 16px"> <img src="../img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px; "> Agoline</a></span>
-  <pre><span class=" w3-opacity"><a href="#" class="custom-lin" data-key='aboutSite'>Sobre</a>         <a href="#" class="custom-lin" data-key='termsOfUse'>Termos</a>         <a href="#" class="custom-lin" data-key='privacyPolicy'>Privacidade</a></span></pre>
-  <span class=" w3-opacity">
-      <a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l"><i class="fa-brands fa-facebook" style="font-size: 25px"></i></a>
-      <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l"><i class="fa-brands fa-instagram" style="font-size: 25px"></i></a>
-      <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>
-      <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l" style="font-size: 25px"><i class="fab fa-linkedin"></i></a>
-    </span>
-  <p class="w3-opacity" style="font-size: 14px" data-i18n='footer'>Criado por José Muxito</p>
+  <span>
+    <a class="w3-bar-item w3-wide" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
+      <img src="../img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
+    </a>
+  </span>
+  <pre><span class="w3-opacity"><a href="#" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="#" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
+  <span class="w3-opacity">
+    <a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l">
+      <i class="fa-brands fa-facebook" style="font-size: 25px"></i>
+    </a>
+    <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l">
+      <i class="fa-brands fa-instagram" style="font-size: 25px"></i>
+    </a>
+    <a href="https://x.com/jose__muxito" target="_blank" class="custom-l">
+      <i class="fa-brands fa-x-twitter" style="font-size: 25px"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l">
+      <i class="fab fa-linkedin" style="font-size: 25px"></i>
+    </a>
+  </span>
+  <p class="w3-opacity" style="font-size: 14px" data-i18n="footer">Criado por José Muxito</p>
 </footer>
 
-
 <script>
-  document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+  document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const siteWhatsAppNumber = "33772026889";
@@ -73,12 +86,10 @@
     const error2 = document.getElementById("error-2");
 
     const currencySymbols = {
-
       "€": "Kz",
       "EUR": "Kz",
       "Kz": "€",
       "AOA": "€"
-
     };
 
     const validCurrencies = Object.keys(currencySymbols);
@@ -167,8 +178,8 @@ Montante a pagar: ${messageValue} ${currencySymbol}`
   });
 
 </script>
-  <script src="../js/app.js"></script>
-  <script src="../js/translations.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/translations.js"></script>
 <script src="../js/main.js" ></script>
 
 
