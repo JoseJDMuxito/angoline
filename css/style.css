@@ -409,6 +409,17 @@ input[type="checkbox"] {
   background: #ffffff;
 }
 
+
+.slideshow-containe {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+
+
+}
+
 .mySlides {
   display: none;
   position: relative;

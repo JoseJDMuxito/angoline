@@ -23,19 +23,60 @@
 <!-- Contact -->
 <div class="w3-container" style="margin-top: -70px;">
   <div class="w3-center w3-padding-64" id="contact">
-    <span class="w3-xlarge w3-border-dark-grey w3-padding-16" data-i18n="tellUs">Compre a sua moeda</span>
-    <p class="w3-opacity" data-i18n="sendRequest">Envia-nos o seu pedido</p>
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" data-i18n="">Sobre o Site</span>
   </div>
-
 </div>
 
-<h4 style="text-align: center; margin-top: 50px" data-i18n="thankYou">
-  Obrigado por utilizar os nossos serviços<br>Volte sempre!
-</h4>
+<div class=" slideshow-containe ">
 
-<p style="text-align: center; margin-top: 30px">
-  <img src="../img/LOGO.jpg" alt="Ícone" style="width: 60px; height: 60px; border-radius: 50%;">
+<p class="w3-opacity" style="font-size: 25px; font-weight: 700">Angoline é um site de câmbio e venda de moedas, prático e confiável.</p>
+
+<h4>Angoline Company</h4>
+<p  class="w3-opacity" style="font-size: 20px;">Na Angoline, valorizamos a confiança e a satisfação dos nossos clientes, garantindo segurança em cada etapa do processo.</p>
+
+  <h4>Nosso Compromisso</h4>
+  <p  class="w3-opacity"  style="font-size: 20px;">Na Angoline, o nosso compromisso é com você. Trabalhamos continuamente para garantir a excelência em nossos serviços.</p>
+
+<h4>Nota de Agradecimento</h4>
+<p  class="w3-opacity"  style="font-size: 20px;">Gostaria de expressar minha mais profunda gratidão a todas as pessoas que contribuíram direta ou indiretamente para a criação do Angoline. Este projeto não seria possível sem o apoio de:</p>
+<ul  class="w3-opacity"  style="font-size: 20px;">
+  <li>Amigos que estiveram ao meu lado durante todo o processo.</li>
+</ul>
+<p  class="w3-opacity"  style="font-size: 20px;">Em especial, agradeço profundamente à minha <strong>equipa</strong>, formada por pessoas que confiaram em mim e ofereceram seus dados pessoais para que se tornassem membros da Angoline.</p>
+<p  class="w3-opacity"  style="font-size: 20px;">A inspiração para o Angoline nasceu do desejo de criar algo significativo e acessível, e cada pessoa que participou desse ptojecto desempenhou um papel fundamental na sua realização. Este site é um reflexo da colaboração, do apoio e das ideias que recebi ao longo do caminho. A todos vocês, meu mais sincero obrigado!</p>
+
+<h4>Entre em Contato</h4>
+<p  class="w3-opacity" >Para mais informações ou sugestões, entre em contato conosco:</p>
+<ul>
+  <li>E-mail: <a href="mailto:email@angoline.com">email@angoline.com</a></li>
+</ul>
+<p  class="w3-opacity">Siga-nos nas redes sociais!</p>
+</div>
+
+<p style="text-align: center; margin-top: 20px;">
+  <img src="../img/LOGO.jpg" alt="Ícone" style="width: 50px; height: 50px; border-radius: 50%;">
 </p>
+
+<div style=" margin-top: 50px;  margin-bottom: 800px">
+
+  <div class="w3-third w3-margin-bottom">
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-card-4 d1">
+      <img src="../img/CIO.jpg" alt="José Muxito" style="width:100%" class="d1">
+      <div class="w3-container" style="height: 170px">
+        <h3>José Muxito</h3>
+        <p class="w3-opacity" data-i18n="ceoAndFounder">CEO & fundador</p>
+        <p data-i18n="studentLyon">Estudante na Universidade Claude Bernard Lyon 1, França.</p>
+        <pre><a href="https://wa.me/33761936803" class="w3-button w3-block w3-black d1" target="_blank" data-i18n="contactUs">Contactar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></a></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="custom-block d2" style="margin-top: 230px;">
@@ -51,109 +92,6 @@
   <p class="w3-opacity" style="font-size: 14px" data-i18n="footer">Criado por José Muxito</p>
 </footer>
 
-<script>
-  document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const siteWhatsAppNumber = "33772026889";
-    const name1 = document.getElementById("name-1");
-    const message2 = document.getElementById("message-2");
-    const error1 = document.getElementById("error-1");
-    const error2 = document.getElementById("error-2");
-
-    const currencySymbols = {
-      "€": "Kz",
-      "EUR": "Kz",
-      "Kz": "€",
-      "AOA": "€"
-    };
-
-    const validCurrencies = Object.keys(currencySymbols);
-    const selectedCurrency = name1.value.trim();
-
-    if (!validCurrencies.includes(selectedCurrency)) {
-      error1.style.display = "block";
-      name1.value = "";
-      return;
-    } else {
-      error1.style.display = "none";
-    }
-
-    const currencySymbol = currencySymbols[selectedCurrency];
-    const messageValue = message2.value.replace(currencySymbol, "").replace(/\s/g, "").replace(/[^\d]/g, "");
-
-    if (!/^\d+$/.test(messageValue)) {
-      error2.style.display = "block";
-      message2.value = "";
-      return;
-    } else {
-      error2.style.display = "none";
-    }
-
-    const url = `https://wa.me/${siteWhatsAppNumber}?text=${encodeURIComponent(
-      `Olá!
-Moeda a comprar: ${name1.value}
-Montante a pagar: ${messageValue} ${currencySymbol}`
-    )}`;
-
-    window.open(url, "_blank");
-  });
-
-  // Evento para atualizar dinamicamente o símbolo da moeda na segunda barra
-  document.getElementById("name-1").addEventListener("input", function () {
-    const name1 = document.getElementById("name-1");
-    const message2 = document.getElementById("message-2");
-
-    const currencySymbols = {
-
-      "€": "Kz",
-      "EUR": "Kz",
-      "Kz": "€",
-      "AOA": "€"
-
-    };
-
-    const selectedCurrency = name1.value.trim();
-    const currencySymbol = currencySymbols[selectedCurrency] || "";
-
-    message2.placeholder = currencySymbol ? ` ${currencySymbol}` : "";
-
-    message2.addEventListener("input", function () {
-      let currentValue = message2.value.replace(currencySymbol, "").replace(/[^\d]/g, "").trim();
-
-      if (currentValue === "") {
-        message2.value = "";
-        return;
-      }
-
-      // Formata o valor numérico
-      const formattedValue = Intl.NumberFormat("pt-PT", {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      }).format(currentValue);
-
-      // Atualiza o valor e mantém o cursor antes do símbolo
-      message2.value = `${formattedValue} ${currencySymbol}`;
-
-      // Coloca o cursor antes do símbolo
-      const cursorPosition = message2.value.length - currencySymbol.length - 1;
-      message2.setSelectionRange(cursorPosition, cursorPosition);
-    });
-
-    // Corrige comportamento ao sair do campo
-    message2.addEventListener("blur", function () {
-      let currentValue = message2.value.replace(currencySymbol, "").replace(/[^\d]/g, "").trim();
-      if (currentValue !== "" && currencySymbol) {
-        const formattedValue = Intl.NumberFormat("pt-PT", {
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0,
-        }).format(currentValue);
-        message2.value = `${formattedValue} ${currencySymbol}`;
-      }
-    });
-  });
-
-</script>
 <script src="../js/app.js"></script>
 <script src="../js/translations.js"></script>
 <script src="../js/main.js" ></script>
