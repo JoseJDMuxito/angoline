@@ -261,7 +261,7 @@ const translations = {
     ourTeamAvailable: "Notre équipe est à votre disposition<br>Contactez-nous à tout moment!",
     clickOn: "Cliquez ici!",
     siteDescription: "Angoline est un site de change et de vente de devises pratique et fiable.",
-    companyName: "Société Angoline",
+    companyName: "Angoline Company",
     companyValues: "Chez Angoline, nous valorisons la confiance et la satisfaction de nos clients, garantissant la sécurité à chaque étape du processus.",
     authorGoals: "Objectifs de l'Auteur",
     authorIntroduction: "Moi, José Muxito, j'ai créé ce site dans le but de servir d'espace d'apprentissage et d'expérimentation dans le développement web.\n" +
@@ -283,7 +283,7 @@ const translations = {
     aboutSit: "À propos du Site",
     "exchangeRateQuestion": "Quel est le taux de change utilisé sur le site?",
     "exchangeRateAnswer": "Nous travaillons exclusivement avec la conversion entre <strong>euros</strong> et <strong>kwanzas</strong>, et le taux de change peut varier en fonction des fluctuations du marché financier." +
-      "<br><strong>Nous vous recommandons de consulter le convertisseur de devises disponible sur la page principale avant d'effectuer toute transaction.</strong>",
+      "<br><strong>Nous vous recommandons de consulter le convertisseur de devises disponible sur la page d'accueil avant d'effectuer toute transaction.</strong>",
     "currencyExchangeServiceQuestion": "Comment fonctionnent les services de change ?",
     "currencyExchangeServiceAnswer": "Sur la page principale, nous mettons à disposition un convertisseur de devises qui permet de calculer les valeurs entre <strong>Kwanza (Kz)</strong> et <strong>Euro (€)</strong>." +
       "<br>Cela aide les utilisateurs à avoir une idée claire des taux et des valeurs avant d'effectuer toute transaction.",
