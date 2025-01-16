@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title>servico</title>
+  <title>comecar</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,62 +14,50 @@
     html,body,h1,h2,h3,h4,pre {font-family:"Lato", sans-serif}
   </style>
 </head>
-
 <body>
+
 <!-- Modo escuro e claro -->
 <input type="checkbox" id="theme-switch">
-<i class="fa-solid fa-arrow-left" onclick="history.back()" style="cursor: pointer; font-size: 25px; margin: 10px"></i>
+<i class="fa-solid fa-arrow-left" onclick="history.back()" style="cursor: pointer; margin: 10px; font-size: 25px"></i>
 
-<!-- Botão flutuante do WhatsApp -->
-<button class="whatsapp-button" id="whatsapp-button">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</button>
-
-<!-- Grid -->
+<!-- Contact -->
 <div class="w3-container" style="margin-top: -70px;">
-  <div class="w3-row w3-row-padding w3-container" id="plans">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" data-i18n="ourServices">Os nossos serviços</span>
-    </div>
-
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="../comecar/comecar.html"><i class="fas fa-hand-holding-usd icon"></i></a>
-        <h3 data-i18n="currencySale">Venda de moedas</h3>
-        <p data-i18n="currencyDescription">Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.<br><br><br></p>
-      </div>
-
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="../comecar/comecar.html"><i class="fas fa-exchange-alt icon"></i></a>
-        <h3 data-i18n="transfers">Transferências</h3>
-        <p data-i18n="transferDescription">Realizamos transferências bancárias seguras e rápidas entre diferentes instituições financeiras angolanas : BAI, BIC, BFA...</p>
-      </div>
-
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="https://wa.me/244948925827"><i class="fa fa-cog icon"></i></a>
-        <h3 data-i18n="support">Suporte</h3>
-        <p data-i18n="supportDescription">Oferecemos serviço gratuito para quaisquer dificuldades ou dúvidas relacionadas aos nossos serviços.</p>
-        <p data-i18n="whatsappInfo">Basta clicar no ícone do WhatsApp localizado no canto inferior direito do ecrã.<br><br></p>
-      </div>
-    </div>
+  <div class="w3-center w3-padding-64" id="contact">
+    <span class="w3-xlarge w3-border-dark-grey w3-padding-16" data-i18n="tellUs">Compre a sua moeda</span>
+    <p class="w3-opacity" data-i18n="sendRequest">Envia-nos o seu pedido</p>
   </div>
+
+  <form class="w3-container containe custom-block w3-card-4" id="whatsapp-form" target="_blank" style="margin-top:-50px; border-radius: 10px;">
+    <div class="w3-section">
+      <label for="name-1" data-i18n="currencyToBuy">Moeda a comprar</label>
+      <input class="w3-input w3-border w3-hover-border-black w3-opacity d1" type="text" id="name-1" data-i18n="currencyOptionsPlaceholder" placeholder="€, EUR, Kz ou AOA" required>
+      <span id="error-1" class="error" data-i18n="insertOnlyCurrency">Insira apenas €, EUR, Kz ou AOA</span>
+    </div>
+    <div class="w3-section">
+      <label for="message-2" data-i18n="amountToPay">Montante a pagar</label>
+      <input class="w3-input w3-border w3-hover-border-black w3-opacity d1" type="text" id="message-2" data-i18n="transactionTypePlaceholder" placeholder="Digite o valor">
+      <span id="error-2" class="error" data-i18n="insiraOnlyNumbers">Insira apenas números</span>
+    </div>
+    <pre><button type="submit" class="w3-button w3-block w3-black d1" data-i18n="send">Enviar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></button></pre>
+  </form>
 </div>
 
-<h4 style="text-align: center; margin-top: 50px" data-i18n="servicesAvailable">
-  Usufrua dos nossos serviços!<br>Disponíveis 24/24
+<h4 style="text-align: center; margin-top: 50px" data-i18n="thankYou">
+  Obrigado por utilizar os nossos serviços<br>Volte sempre!
 </h4>
-<p style="text-align: center; margin-top: 50px; margin-bottom: -500px">
+
+<p style="text-align: center; margin-top: 30px">
   <img src="../img/LOGO.jpg" alt="Ícone" style="width: 60px; height: 60px; border-radius: 50%;">
 </p>
 
 <!-- Footer -->
-<footer class="custom-block d2" style="margin-top: 670px;">
+<footer class="custom-block d2" style="margin-top: 230px;">
   <span>
     <a class="w3-bar-item w3-wide" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
       <img src="../img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
     </a>
   </span>
-  <pre><span class="w3-opacity"><a href="#" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="#" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
+  <pre><span class="w3-opacity"><a href="../sobre/sobre.html" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="#" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
 
   <pre><span class="w3-opacity"><a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l"><i class="fa-brands fa-facebook" style="font-size: 25px"></i></a>   <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l"><i class="fa-brands fa-instagram" style="font-size: 25px"></i></a>   <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>   <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l"><i class="fab fa-linkedin" style="font-size: 25px"></i></a></span></pre>
 
@@ -77,19 +65,112 @@
 </footer>
 
 <script>
-  // Configuração do número WhatsApp
-  const whatsappNumber = "244948925827";
+  document.getElementById("whatsapp-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  // Ação ao clicar no botão
-  document.getElementById("whatsapp-button").addEventListener("click", function() {
-    const whatsappURL = `https://wa.me/${whatsappNumber}`;
-    window.open(whatsappURL, "_blank");
+    const siteWhatsAppNumber = "33772026889";
+    const name1 = document.getElementById("name-1");
+    const message2 = document.getElementById("message-2");
+    const error1 = document.getElementById("error-1");
+    const error2 = document.getElementById("error-2");
+
+    const currencySymbols = {
+      "€": "Kz",
+      "EUR": "Kz",
+      "Kz": "€",
+      "AOA": "€"
+    };
+
+    const validCurrencies = Object.keys(currencySymbols);
+    const selectedCurrency = name1.value.trim();
+
+    if (!validCurrencies.includes(selectedCurrency)) {
+      error1.style.display = "block";
+      name1.value = "";
+      return;
+    } else {
+      error1.style.display = "none";
+    }
+
+    const currencySymbol = currencySymbols[selectedCurrency];
+    const messageValue = message2.value.replace(currencySymbol, "").replace(/\s/g, "").replace(/[^\d]/g, "");
+
+    if (!/^\d+$/.test(messageValue)) {
+      error2.style.display = "block";
+      message2.value = "";
+      return;
+    } else {
+      error2.style.display = "none";
+    }
+
+    const url = `https://wa.me/${siteWhatsAppNumber}?text=${encodeURIComponent(
+      `Olá!
+Moeda a comprar: ${name1.value}
+Montante a pagar: ${messageValue} ${currencySymbol}`
+    )}`;
+
+    window.open(url, "_blank");
   });
-</script>
 
-<script src="../js/translations.js"></script>
-<script src="../js/main.js"></script>
+  // Evento para atualizar dinamicamente o símbolo da moeda na segunda barra
+  document.getElementById("name-1").addEventListener("input", function () {
+    const name1 = document.getElementById("name-1");
+    const message2 = document.getElementById("message-2");
+
+    const currencySymbols = {
+
+      "€": "Kz",
+      "EUR": "Kz",
+      "Kz": "€",
+      "AOA": "€"
+
+    };
+
+    const selectedCurrency = name1.value.trim();
+    const currencySymbol = currencySymbols[selectedCurrency] || "";
+
+    message2.placeholder = currencySymbol ? ` ${currencySymbol}` : "";
+
+    message2.addEventListener("input", function () {
+      let currentValue = message2.value.replace(currencySymbol, "").replace(/[^\d]/g, "").trim();
+
+      if (currentValue === "") {
+        message2.value = "";
+        return;
+      }
+
+      // Formata o valor numérico
+      const formattedValue = Intl.NumberFormat("pt-PT", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(currentValue);
+
+      // Atualiza o valor e mantém o cursor antes do símbolo
+      message2.value = `${formattedValue} ${currencySymbol}`;
+
+      // Coloca o cursor antes do símbolo
+      const cursorPosition = message2.value.length - currencySymbol.length - 1;
+      message2.setSelectionRange(cursorPosition, cursorPosition);
+    });
+
+    // Corrige comportamento ao sair do campo
+    message2.addEventListener("blur", function () {
+      let currentValue = message2.value.replace(currencySymbol, "").replace(/[^\d]/g, "").trim();
+      if (currentValue !== "" && currencySymbol) {
+        const formattedValue = Intl.NumberFormat("pt-PT", {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(currentValue);
+        message2.value = `${formattedValue} ${currencySymbol}`;
+      }
+    });
+  });
+
+</script>
 <script src="../js/app.js"></script>
+<script src="../js/translations.js"></script>
+<script src="../js/main.js" ></script>
+
 
 </body>
 </html>
