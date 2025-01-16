@@ -59,6 +59,47 @@ const translations = {
     ceoAndFounder: "CEO & fundador",
     ourTeamAvailable: "A nossa equipa está ao vosso dispor<br>Contacte-nos sempre que quiser!",
     clickOn: "Clique aqui!",
+    siteDescription: "Angoline é um site de câmbio e venda de moedas, prático e confiável.",
+    companyName: "Angoline Company",
+    companyValues: "Na Angoline, valorizamos a confiança e a satisfação dos nossos clientes, garantindo segurança em cada etapa do processo.",
+    authorGoals: "Objectivos do Autor",
+    authorIntroduction: "Eu, José Muxito, criei este site com o objetivo de servir como um espaço de aprendizado e experimentação no desenvolvimento web.\n" +
+      "      <br>Como estudante em Engenharia Elétrica e Informática Industrial (GEII), busco enriquecer minha bagagem acadêmica ao explorar novas tecnologias, linguagens de programação e metodologias.\n" +
+      "      <br>Este projeto é fruto de curiosidade e paixão pela programação, com a intenção de criar, inovar e desenvolver habilidades práticas.\n" +
+      "      <br>Além disso, este site reflete meu compromisso em explorar o universo digital por hobby e aprendizado contínuo.",
+    gratitudeNote: "Nota de Agradecimento",
+    gratitudeMessage: "Gostaria de expressar minha mais profunda gratidão a todas as pessoas que contribuíram direta ou indiretamente para a criação do Angoline." +
+      "<br>Este projeto não seria possível sem o apoio de:",
+    teamMention: "Em especial, agradeço profundamente à minha <strong>equipa</strong>, formada por pessoas que confiaram em mim e ofereceram seus dados pessoais para que se tornassem membros da Angoline.",
+    contactUsInfo: "Entre em Contato",
+    emailInfo: "E-mail: email@angoline.com",
+    followUs: "Siga-nos nas redes sociais!",
+    contactUsInf: "Para mais informações ou sugestões, entre em contato conosco.",
+    gratitudeMessag: "Amigos que estiveram ao meu lado durante todo o processo.",
+    teamMentio: "A inspiração para o Angoline nasceu do desejo de criar algo significativo e acessível, e cada pessoa que participou desse projeto desempenhou um papel fundamental na sua realização.  \n" +
+      "<br>Este site é um reflexo da colaboração, do apoio e das ideias que recebi ao longo do caminho.  \n" +
+      "<br><strong>A todos vocês, meu mais sincero obrigado!</strong>",
+    aboutSit: "Sobre o Site",
+  "exchangeRateQuestion": "Qual é a taxa de câmbio usada no site?",
+    "exchangeRateAnswer": "Trabalhamos exclusivamente com a conversão entre <strong>euros</strong> e <strong>kwanzas</strong>, e a taxa de câmbio pode variar de acordo com as oscilações do mercado financeiro." +
+      "<br><strong>Recomendamos que consulte o conversor de moedas disponível na página principal, antes de realizar suas transações.</strong>",
+    "currencyExchangeServiceQuestion": "Como funcionam os serviços de câmbio?",
+    "currencyExchangeServiceAnswer": "Na página principal, disponibilizamos um conversor de moedas que permite calcular valores entre <strong>Kwanza (Kz)</strong> e <strong>Euro (€)</strong>." +
+      "<br>Isso ajuda os usuários a terem uma ideia clara das taxas e valores antes de realizar qualquer transação.",
+    "howToBuyCurrencyQuestion": "Como efetuar a compra de moedas?",
+    "howToBuyCurrencyAnswer": "Para efetuar a compra de moedas, o usuário deve seguir os passos abaixo:",
+    "step1": "Acessar a página <strong>“Começar”</strong> no site.",
+    "step2": "Inserir o tipo de moeda que deseja comprar (Kwanza ou Euro).",
+    "step3": "Inserir o valor a pagar na moeda oposta (por exemplo, se comprar Euros, paga em Kwanza).",
+    "step4": "Clicar no botão <strong>“Enviar”</strong>.",
+    "paymentProcessA": "<strong>A)</strong> Após enviar as informações, o cliente será automaticamente redirecionado para a página oficial da <strong>Angolan Company</strong> no WhatsApp, onde será atendido por um membro da nossa equipe.",
+    "paymentProcessB": "<strong>B)</strong> Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angolan Company.",
+    "paymentProcessC": "<strong>C)</strong> Após a confirmação do pagamento, nossa equipe fará a transferência do montante (a moeda desejada) ao cliente de forma segura e eficiente.",
+    "supportMessage": "\"Se precisar de suporte técnico, clique no ícone do WhatsApp\".",
+
+
+
+
   },
   en: {
     title: "Angoline",
@@ -118,6 +159,48 @@ const translations = {
     ceoAndFounder: "CEO & founder",
     ourTeamAvailable: "Our team is at your service<br>Contact us anytime!",
     clickOn: "Click here!",
+    siteDescription: "Angoline is a practical and reliable currency exchange and sales website.",
+    companyName: "Angoline Company",
+    companyValues: "At Angoline, we value trust and customer satisfaction, ensuring security at every step of the process.",
+    authorGoals: "Author's Goals",
+    authorIntroduction: "I, José Muxito, created this website with the goal of serving as a space for learning and experimentation in web development.\n" +
+      "                <br>As a student of Electrical Engineering and Industrial Computing (GEII), I seek to enrich my academic background by exploring new technologies, programming languages, and methodologies.\n" +
+      "                <br>This project is the result of curiosity and passion for programming, with the intention of creating, innovating, and developing practical skills.\n" +
+      "                <br>Additionally, this website reflects my commitment to exploring the digital universe as a hobby and for continuous learning.",
+    gratitudeNote: "Gratitude Note",
+    gratitudeMessage: "I would like to express my deepest gratitude to everyone who directly or indirectly contributed to the creation of Angoline." +
+      "<br>This project would not be possible without the support of:",
+    teamMention: "Special thanks to my <strong>team</strong>, composed of people who trusted me and provided their personal data to become members of Angoline.",
+    contactUsInfo: "Get in Touch",
+    emailInfo: "Email: email@angoline.com",
+    followUs: "Follow us on social media!",
+    contactUsInf: " For more information or suggestions, contact us.",
+    gratitudeMessag: " Friends who have been by my side throughout the entire process.\n",
+    teamMentio: "The inspiration for Angoline came from the desire to create something meaningful and accessible, and every person who participated in this project played a crucial role in its realization.  \n" +
+      "<br>This website is a reflection of the collaboration, support, and ideas I received along the way.  \n" +
+      "<br><strong>To all of you, my sincerest thanks!</strong>",
+    aboutSit: "About the Website",
+    "exchangeRateQuestion": "What is the exchange rate used on the website?",
+    "exchangeRateAnswer": "We work exclusively with the conversion between <strong>euros</strong> and <strong>kwanzas</strong>, and the exchange rate may vary according to financial market fluctuations." +
+      "<br><strong>We recommend checking the currency converter available on the main page before making any transactions.</strong>",
+    "currencyExchangeServiceQuestion": "How do the currency exchange services work?",
+    "currencyExchangeServiceAnswer": "On the main page, we provide a currency converter that allows you to calculate values between <strong>Kwanza (Kz)</strong> and <strong>Euro (€)</strong>." +
+      "<br>This helps users have a clear idea of the rates and values before making any transactions.",
+    "howToBuyCurrencyQuestion": "How to purchase currency?",
+    "howToBuyCurrencyAnswer": "To purchase currency, the user must follow the steps below:",
+    "step1": "Go to the <strong>'Start'</strong> page on the website.",
+    "step2": "Enter the type of currency you want to buy (Kwanza or Euro).",
+    "step3": "Enter the amount to pay in the opposite currency (for example, if buying Euros, pay in Kwanza).",
+    "step4": "Click the <strong>'Submit'</strong> button.",
+    "paymentProcessA": "<strong>A)</strong> After submitting the information, the customer will be automatically redirected to the official <strong>Angolan Company</strong> WhatsApp page, where they will be assisted by a team member.",
+    "paymentProcessB": "<strong>B)</strong> During the service, the customer will send the agreed amount to one of the Angolan Company contributors.",
+    "paymentProcessC": "<strong>C)</strong> After payment confirmation, our team will securely and efficiently transfer the requested currency to the customer.",
+    "supportMessage": "\"If you need technical support, click on the WhatsApp icon\".",
+
+
+
+
+
   },
   fr: {
     title: "Angoline",
@@ -177,6 +260,44 @@ const translations = {
     ceoAndFounder: "CEO et fondateur",
     ourTeamAvailable: "Notre équipe est à votre disposition<br>Contactez-nous à tout moment!",
     clickOn: "Cliquez ici!",
+    siteDescription: "Angoline est un site de change et de vente de devises pratique et fiable.",
+    companyName: "Société Angoline",
+    companyValues: "Chez Angoline, nous valorisons la confiance et la satisfaction de nos clients, garantissant la sécurité à chaque étape du processus.",
+    authorGoals: "Objectifs de l'Auteur",
+    authorIntroduction: "Moi, José Muxito, j'ai créé ce site dans le but de servir d'espace d'apprentissage et d'expérimentation dans le développement web.\n" +
+      "                    <br>En tant qu'étudiant en Génie Électrique et Informatique Industrielle (GEII), je cherche à enrichir mon parcours académique en explorant de nouvelles technologies, langages de programmation et méthodologies.\n" +
+      "                    <br>Ce projet est le fruit de la curiosité et de la passion pour la programmation, avec l'intention de créer, innover et développer des compétences pratiques.\n" +
+      "                    <br>De plus, ce site reflète mon engagement à explorer l'univers numérique par hobby et apprentissage continu.",
+    gratitudeNote: "Note de Gratitude",
+    gratitudeMessage: "Je voudrais exprimer ma plus profonde gratitude à toutes les personnes qui ont contribué directement ou indirectement à la création d'Angoline." +
+      "<br>Ce projet ne serait pas possible sans le soutien de:",
+    teamMention: "Un grand merci à mon <strong>équipe</strong>, composée de personnes qui m'ont fait confiance et ont fourni leurs données personnelles pour devenir membres d'Angoline.",
+    contactUsInfo: "Contactez-nous",
+    emailInfo: "Email : email@angoline.com",
+    followUs: "Suivez-nous sur les réseaux sociaux!",
+    contactUsInf: "  Pour plus d'informations ou des suggestions, contactez-nous.",
+    gratitudeMessag: "Des amis qui ont été à mes côtés tout au long du processus.",
+    teamMentio: "L'inspiration pour Angoline est née du désir de créer quelque chose de significatif et d'accessibile, et chaque personne ayant participé à ce projet a joué un rôle clé dans sa réalisation.  \n" +
+      "<br>Ce site est le reflet de la collaboration, du soutien et des idées que j'ai reçues tout au long du processus.  \n" +
+      "<br><strong>A vous tous, mes plus sincères remerciements !</strong>",
+    aboutSit: "À propos du Site",
+    "exchangeRateQuestion": "Quel est le taux de change utilisé sur le site?",
+    "exchangeRateAnswer": "Nous travaillons exclusivement avec la conversion entre <strong>euros</strong> et <strong>kwanzas</strong>, et le taux de change peut varier en fonction des fluctuations du marché financier." +
+      "<br><strong>Nous vous recommandons de consulter le convertisseur de devises disponible sur la page principale avant d'effectuer toute transaction.</strong>",
+    "currencyExchangeServiceQuestion": "Comment fonctionnent les services de change ?",
+    "currencyExchangeServiceAnswer": "Sur la page principale, nous mettons à disposition un convertisseur de devises qui permet de calculer les valeurs entre <strong>Kwanza (Kz)</strong> et <strong>Euro (€)</strong>." +
+      "<br>Cela aide les utilisateurs à avoir une idée claire des taux et des valeurs avant d'effectuer toute transaction.",
+    "howToBuyCurrencyQuestion": "Comment acheter des devises ?",
+    "howToBuyCurrencyAnswer": "Pour acheter des devises, l'utilisateur doit suivre les étapes ci-dessous :",
+    "step1": "Accédez à la page <strong>'Commencer'</strong> sur le site.",
+    "step2": "Sélectionnez le type de devise que vous souhaitez acheter (Kwanza ou Euro).",
+    "step3": "Entrez le montant à payer dans la devise opposée (par exemple, si vous achetez des Euros, vous payez en Kwanza).",
+    "step4": "Cliquez sur le bouton <strong>'Envoyer'</strong>.",
+    "paymentProcessA": "<strong>A)</strong> Après avoir soumis les informations, le client sera automatiquement redirigé vers la page officielle WhatsApp de <strong>Angolan Company</strong>, où il sera assisté par un membre de notre équipe.",
+    "paymentProcessB": "<strong>B)</strong> Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolan Company.",
+    "paymentProcessC": "<strong>C)</strong> Après confirmation du paiement, notre équipe effectuera le transfert sécurisé et efficace du montant (devise souhaitée) au client.",
+    "supportMessage": "\"Si vous avez besoin d'une assistance technique, cliquez sur l'icône WhatsApp\".",
+
   }
 };
 
