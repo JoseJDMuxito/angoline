@@ -80,23 +80,43 @@ const translations = {
       "<br>Este site é um reflexo da colaboração, do apoio e das ideias que recebi ao longo do caminho.  \n" +
       "<br><strong>A todos vocês, meu mais sincero obrigado!</strong>",
     aboutSit: "Sobre o Site",
-  "exchangeRateQuestion": "Qual é a taxa de câmbio usada no site?",
+  "exchangeRateQuestion": "1. Qual é a taxa de câmbio usada no site?",
     "exchangeRateAnswer": "Trabalhamos exclusivamente com a conversão entre <strong>euros</strong> e <strong>kwanzas</strong>, e a taxa de câmbio pode variar de acordo com as oscilações do mercado financeiro." +
       "<br><strong>Recomendamos que consulte o conversor de moedas disponível na página principal, antes de realizar suas transações.</strong>",
-    "currencyExchangeServiceQuestion": "Como funcionam os serviços de câmbio?",
+    "currencyExchangeServiceQuestion": "2. Como funcionam os serviços de câmbio?",
     "currencyExchangeServiceAnswer": "Na página principal, disponibilizamos um conversor de moedas que permite calcular valores entre <strong>Kwanza (Kz)</strong> e <strong>Euro (€)</strong>." +
       "<br>Isso ajuda os usuários a terem uma ideia clara das taxas e valores antes de realizar qualquer transação.",
-    "howToBuyCurrencyQuestion": "Como efetuar a compra de moedas?",
+    "howToBuyCurrencyQuestion": "3. Como efetuar a compra de moedas?",
     "howToBuyCurrencyAnswer": "Para efetuar a compra de moedas, o usuário deve seguir os passos abaixo:",
     "step1": "Acessar a página <strong>“Começar”</strong> no site.",
     "step2": "Inserir o tipo de moeda que deseja comprar (Kwanza ou Euro).",
     "step3": "Inserir o valor a pagar na moeda oposta (por exemplo, se comprar Euros, paga em Kwanza).",
     "step4": "Clicar no botão <strong>“Enviar”</strong>.",
-    "paymentProcessA": "<strong>A)</strong> Após enviar as informações, o cliente será automaticamente redirecionado para a página oficial da <strong>Angolan Company</strong> no WhatsApp, onde será atendido por um membro da nossa equipe.",
-    "paymentProcessB": "<strong>B)</strong> Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angolan Company.",
-    "paymentProcessC": "<strong>C)</strong> Após a confirmação do pagamento, nossa equipe fará a transferência do montante (a moeda desejada) ao cliente de forma segura e eficiente.",
+    "paymentProcessA": "Após enviar as informações, o cliente será automaticamente redirecionado para a página oficial da <strong>Angolan Company</strong> no WhatsApp, onde será atendido por um membro da nossa equipe.",
+    "paymentProcessB": "Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angolan Company.",
+    "paymentProcessC": "Após a confirmação do pagamento, nossa equipe fará a transferência do montante (a moeda desejada) ao cliente de forma segura e eficiente.",
     "supportMessage": "\"Se precisar de suporte técnico, clique no ícone do WhatsApp\".",
 
+
+
+      titl: "Termos de Serviço",
+      introductionTitle: "1. Visão Geral",
+      introductionText: "Bem-vindo ao Angoline, um site de câmbio e venda de moedas. Ao utilizar nossos serviços, você concorda com os presentes Termos de Serviço.",
+      servicesTitle: "2. Serviços Oferecidos",
+      servicesText: "O Angoline oferece aos usuários um conversor de moedas, além de suporte via WhatsApp para facilitar transações de câmbio entre euros e kwanzas.",
+      responsibilitiesTitle: "3. Responsabilidades do Usuário",
+      responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
+      privacyTitle: "Política de Privacidade",
+      privacyIntroductionTitle: "Introdução",
+      privacyIntroductionText: "Esta Política de Privacidade descreve como coletamos, utilizamos e protegemos suas informações. Ao utilizar nosso site, você concorda com estas práticas.",
+      dataCollectionTitle: "Informações Coletadas",
+      dataCollectionText: "Coletamos informações pessoais como nome, e-mail e dados de navegação para melhorar os serviços e processar transações.",
+      securityTitle: "Segurança dos Dados",
+      securityText: "Adotamos medidas técnicas e organizacionais para proteger suas informações contra acessos não autorizados.",
+      contactTitle: "Contato",
+      contactText: "Em caso de dúvidas sobre esta Política de Privacidade, entre em contato pelo e-mail: email@angoline.com.",
+      liabilityTitle: "4. Limitação de Responsabilidade",
+      liabilityText: "O Angle Line não se responsabiliza por perdas financeiras causadas por flutuações de câmbio ou interrupção no serviço.",
 
 
 
@@ -180,22 +200,44 @@ const translations = {
       "<br>This website is a reflection of the collaboration, support, and ideas I received along the way.  \n" +
       "<br><strong>To all of you, my sincerest thanks!</strong>",
     aboutSit: "About the Website",
-    "exchangeRateQuestion": "What is the exchange rate used on the website?",
+    "exchangeRateQuestion": "1. What is the exchange rate used on the website?",
     "exchangeRateAnswer": "We work exclusively with the conversion between <strong>euros</strong> and <strong>kwanzas</strong>, and the exchange rate may vary according to financial market fluctuations." +
       "<br><strong>We recommend checking the currency converter available on the main page before making any transactions.</strong>",
-    "currencyExchangeServiceQuestion": "How do the currency exchange services work?",
+    "currencyExchangeServiceQuestion": "2. How do the currency exchange services work?",
     "currencyExchangeServiceAnswer": "On the main page, we provide a currency converter that allows you to calculate values between <strong>Kwanza (Kz)</strong> and <strong>Euro (€)</strong>." +
       "<br>This helps users have a clear idea of the rates and values before making any transactions.",
-    "howToBuyCurrencyQuestion": "How to purchase currency?",
+    "howToBuyCurrencyQuestion": "3. How to purchase currency?",
     "howToBuyCurrencyAnswer": "To purchase currency, the user must follow the steps below:",
     "step1": "Go to the <strong>'Start'</strong> page on the website.",
     "step2": "Enter the type of currency you want to buy (Kwanza or Euro).",
     "step3": "Enter the amount to pay in the opposite currency (for example, if buying Euros, pay in Kwanza).",
     "step4": "Click the <strong>'Submit'</strong> button.",
-    "paymentProcessA": "<strong>A)</strong> After submitting the information, the customer will be automatically redirected to the official <strong>Angolan Company</strong> WhatsApp page, where they will be assisted by a team member.",
-    "paymentProcessB": "<strong>B)</strong> During the service, the customer will send the agreed amount to one of the Angolan Company contributors.",
-    "paymentProcessC": "<strong>C)</strong> After payment confirmation, our team will securely and efficiently transfer the requested currency to the customer.",
+    "paymentProcessA": "After submitting the information, the customer will be automatically redirected to the official <strong>Angolan Company</strong> WhatsApp page, where they will be assisted by a team member.",
+    "paymentProcessB": "During the service, the customer will send the agreed amount to one of the Angolan Company contributors.",
+    "paymentProcessC": "After payment confirmation, our team will securely and efficiently transfer the requested currency to the customer.",
     "supportMessage": "\"If you need technical support, click on the WhatsApp icon\".",
+
+
+    titl: "Terms of Service",
+    introductionTitle: "1. Overview",
+    introductionText: "Welcome to Angoline, a currency exchange and sales site. By using our services, you agree to these Terms of Service.",
+    servicesTitle: "2. Services Offered",
+    servicesText: "Angoline offers users a currency converter, as well as WhatsApp support to facilitate currency exchange transactions between euros and kwanzas.",
+    responsibilitiesTitle: "3. User Responsibilities",
+    responsibilitiesText: "The user agrees to use the site legally and provide accurate information during transactions.",
+    privacyTitle: "Privacy Policy",
+    privacyIntroductionTitle: "Introduction",
+    privacyIntroductionText: "This Privacy Policy describes how we collect, use, and protect your information. By using our site, you agree to these practices.",
+    dataCollectionTitle: "Information Collected",
+    dataCollectionText: "We collect personal information such as name, email, and browsing data to improve services and process transactions.",
+    securityTitle: "Data Security",
+    securityText: "We adopt technical and organizational measures to protect your information from unauthorized access.",
+    contactTitle: "Contact",
+    contactText: "If you have any questions about this Privacy Policy, please contact us at email@angoline.com.",
+
+
+    liabilityTitle: "4. Limitation of Liability",
+    liabilityText: "Angle Line is not responsible for financial losses caused by currency fluctuations or service interruptions.",
 
 
 
@@ -281,23 +323,45 @@ const translations = {
       "<br>Ce site est le reflet de la collaboration, du soutien et des idées que j'ai reçues tout au long du processus.  \n" +
       "<br><strong>A vous tous, mes plus sincères remerciements !</strong>",
     aboutSit: "À propos du Site",
-    "exchangeRateQuestion": "Quel est le taux de change utilisé sur le site?",
+    "exchangeRateQuestion": "1. Quel est le taux de change utilisé sur le site?",
     "exchangeRateAnswer": "Nous travaillons exclusivement avec la conversion entre <strong>euros</strong> et <strong>kwanzas</strong>, et le taux de change peut varier en fonction des fluctuations du marché financier." +
       "<br><strong>Nous vous recommandons de consulter le convertisseur de devises disponible sur la page d'accueil avant d'effectuer toute transaction.</strong>",
-    "currencyExchangeServiceQuestion": "Comment fonctionnent les services de change ?",
+    "currencyExchangeServiceQuestion": "2. Comment fonctionnent les services de change ?",
     "currencyExchangeServiceAnswer": "Sur la page principale, nous mettons à disposition un convertisseur de devises qui permet de calculer les valeurs entre <strong>Kwanza (Kz)</strong> et <strong>Euro (€)</strong>." +
       "<br>Cela aide les utilisateurs à avoir une idée claire des taux et des valeurs avant d'effectuer toute transaction.",
-    "howToBuyCurrencyQuestion": "Comment acheter des devises ?",
+    "howToBuyCurrencyQuestion": "3. Comment acheter des devises ?",
     "howToBuyCurrencyAnswer": "Pour acheter des devises, l'utilisateur doit suivre les étapes ci-dessous :",
     "step1": "Accédez à la page <strong>'Commencer'</strong> sur le site.",
     "step2": "Sélectionnez le type de devise que vous souhaitez acheter (Kwanza ou Euro).",
     "step3": "Entrez le montant à payer dans la devise opposée (par exemple, si vous achetez des Euros, vous payez en Kwanza).",
     "step4": "Cliquez sur le bouton <strong>'Envoyer'</strong>.",
-    "paymentProcessA": "<strong>A)</strong> Après avoir soumis les informations, le client sera automatiquement redirigé vers la page officielle WhatsApp de <strong>Angolan Company</strong>, où il sera assisté par un membre de notre équipe.",
-    "paymentProcessB": "<strong>B)</strong> Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolan Company.",
-    "paymentProcessC": "<strong>C)</strong> Après confirmation du paiement, notre équipe effectuera le transfert sécurisé et efficace du montant (devise souhaitée) au client.",
+    "paymentProcessA": "Après avoir soumis les informations, le client sera automatiquement redirigé vers la page officielle WhatsApp de <strong>Angolan Company</strong>, où il sera assisté par un membre de notre équipe.",
+    "paymentProcessB": "Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolan Company.",
+    "paymentProcessC": "Après confirmation du paiement, notre équipe effectuera le transfert sécurisé et efficace du montant (devise souhaitée) au client.",
     "supportMessage": "\"Si vous avez besoin d'une assistance technique, cliquez sur l'icône WhatsApp\".",
+
+
+    titl: "Conditions de Service",
+    introductionTitle: "1. Aperçu",
+    introductionText: "Bienvenue sur Angoline, un site d'échange et de vente de devises. En utilisant nos services, vous acceptez ces Conditions de Service.",
+    servicesTitle: "2. Services Offerts",
+    servicesText: "Angoline propose aux utilisateurs un convertisseur de devises, ainsi qu'un support via WhatsApp pour faciliter les transactions de change entre euros et kwanzas.",
+    responsibilitiesTitle: "3. Responsabilités de l'Utilisateur",
+    responsibilitiesText: "L'utilisateur s'engage à utiliser le site légalement et à fournir des informations exactes lors des transactions.",
+    privacyTitle: "Politique de Confidentialité",
+    privacyIntroductionTitle: "Introduction",
+    privacyIntroductionText: "Cette Politique de Confidentialité décrit comment nous collectons, utilisons et protégeons vos informations. En utilisant notre site, vous acceptez ces pratiques.",
+    dataCollectionTitle: "Informations Collectées",
+    dataCollectionText: "Nous collectons des informations personnelles telles que le nom, l'email et les données de navigation pour améliorer les services et traiter les transactions.",
+    securityTitle: "Sécurité des Données",
+    securityText: "Nous adoptons des mesures techniques et organisationnelles pour protéger vos informations contre tout accès non autorisé.",
+    contactTitle: "Contact",
+    contactText: "Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter à email@angoline.com.",
+
+    liabilityTitle: "4. Limitation de Responsabilité",
+    liabilityText: "Angle Line n'est pas responsable des pertes financières causées par les fluctuations de change ou les interruptions de service.",
 
   }
 };
+
 

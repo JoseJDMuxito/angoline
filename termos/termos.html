@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" xmlns="http://www.w3.org/1999/html">
 <head>
-  <title>servico</title>
+  <title>comecar</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,8 +14,8 @@
     html,body,h1,h2,h3,h4,pre {font-family:"Lato", sans-serif}
   </style>
 </head>
-
 <body>
+
 <!-- Modo escuro e claro -->
 <input type="checkbox" id="theme-switch">
 <i class="fa-solid fa-arrow-left custom-link" onclick="history.back()" style="cursor: pointer; font-size: 30px"></i>
@@ -25,68 +25,64 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </button>
 
-<!-- Grid -->
-<div style="margin-top: -70px">
-<div class="w3-container">
-  <div class="w3-row w3-row-padding w3-container" id="plans">
-    <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" data-i18n="ourServices">Os nossos serviços</span>
-    </div>
-
-    <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="../comecar/comecar.html"><i class="fas fa-hand-holding-usd icon"></i></a>
-        <h3 data-i18n="currencySale">Venda de moedas</h3>
-        <p data-i18n="currencyDescription">Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.<br><br><br></p>
-      </div>
-
-      <div class="w3-third w3-margin-bottom">
-      </div>
-
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="https://wa.me/244948925827"><i class="fa fa-cog icon"></i></a>
-        <h3 data-i18n="support">Suporte</h3>
-        <p data-i18n="supportDescription">Oferecemos serviço gratuito para quaisquer dificuldades ou dúvidas relacionadas aos nossos serviços.</p>
-        <p data-i18n="whatsappInfo">Basta clicar no ícone do WhatsApp.<br><br></p>
-      </div>
-
-        <div class="w3-third w3-margin-bottom"></div>
-
-        <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-          <a href="../comecar/comecar.html"><i class="fas fa-exchange-alt icon"></i></a>
-          <h3 data-i18n="transfers">Transferências</h3>
-          <p data-i18n="transferDescription">Realizamos transferências bancárias seguras e rápidas entre diferentes instituições financeiras angolanas : BAI, BIC, BFA...</p>
-        </div>
-
-        <div class="w3-third w3-margin-bottom"></div>
-      </div>
-
-
+<!-- Contact -->
+<div class="w3-container" style="margin-top: -70px;">
+  <div class="w3-center w3-padding-64" id="contact">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16"  data-i18n="titl">Termos de Uso</span>
   </div>
 </div>
 
-<h4 style="text-align: center; margin-top: 20px" data-i18n="servicesAvailable">
-  Usufrua dos nossos serviços!<br>Disponíveis 24/24
-</h4>
-<p style="text-align: center; margin-top: 20px; ">
+
+  <div class="dynamic-margin">
+
+      <h4 data-i18n="introductionTitle">Visão Geral</h4>
+      <p class="w3-opacity" data-i18n="introductionText">
+        Bem-vindo ao Angoline, um site de câmbio e venda de moedas. Ao utilizar nossos serviços, você concorda com os presentes Termos de Serviço.
+      </p>
+
+      <h4 data-i18n="servicesTitle">Serviços Oferecidos</h4>
+      <p class="w3-opacity" data-i18n="servicesText">
+        O Angoline oferece aos usuários um conversor de moedas, além de suporte via WhatsApp para facilitar transações de câmbio entre euros e kwanzas.
+      </p>
+
+      <h4 data-i18n="responsibilitiesTitle">Responsabilidades do Usuário</h4>
+      <p class="w3-opacity" data-i18n="responsibilitiesText">
+        O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.
+      </p>
+
+      <h4 data-i18n="liabilityTitle">Limitação de Responsabilidade</h4>
+      <p class="w3-opacity" data-i18n="liabilityText">
+        O Angoline não se responsabiliza por perdas financeiras causadas por flutuações de câmbio ou interrupções no serviço.
+      </p>
+    <h4 class="w3-opacity dynamic-margin center" data-i18n="supportMessage">"Se precisar de suporte técnico, clique no ícone do WhatsApp".</h4>
+
+    <h4 data-i18n="contactUsInfo">Entre em Contato</h4>
+    <p  class="w3-opacity" data-i18n="contactUsInf">Para mais informações ou sugestões, entre em contato conosco:</p>
+    <p class="w3-opacity" data-i18n="emailInfo">
+      E-mail: <a href="mailto:email@angoline.com">email@angoline.com</a>
+    </p>
+    <p class="w3-opacity" data-i18n="followUs">Siga-nos nas redes sociais!</p>
+  </div>
+
+
+<p style="text-align: center; margin-top: 20px;">
   <img src="../img/LOGO.jpg" alt="Ícone" style="width: 40px; height: 40px; border-radius: 50%;">
 </p>
-</div>
-
 
 <!-- Footer -->
-<footer class="custom-block d2" style="margin-top: 80px;">
+<footer class="custom-block d2" style="margin-top: 150px;">
   <span>
     <a class="w3-bar-item w3-wide" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
       <img src="../img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
     </a>
   </span>
-  <pre><span class="w3-opacity"><a href="../sobre/sobre.html" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="../termos/termos.html" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
+  <pre><span class="w3-opacity"><a href="../sobre/sobre.html" class="custom-lin" data-i18n="aboutSite">Sobre</a>         <a href="#" class="custom-lin" data-i18n="termsOfUse">Termos</a>         <a href="#" class="custom-lin" data-i18n="privacyPolicy">Privacidade</a></span></pre>
 
   <pre><span class="w3-opacity"><a href="https://www.facebook.com/jose.gelson.988" target="_blank" class="custom-l"><i class="fa-brands fa-facebook" style="font-size: 25px"></i></a>   <a href="https://www.instagram.com/muxito_jos/" target="_blank" class="custom-l"><i class="fa-brands fa-instagram" style="font-size: 25px"></i></a>   <a href="https://x.com/jose__muxito" target="_blank" class="custom-l"><i class="fa-brands fa-x-twitter" style="font-size: 25px"></i></a>   <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" target="_blank" class="custom-l"><i class="fab fa-linkedin" style="font-size: 25px"></i></a></span></pre>
 
   <p class="w3-opacity" style="font-size: 14px" data-i18n="footer">Criado por José Muxito</p>
 </footer>
+
 
 <script>
   // Configuração do número WhatsApp
@@ -99,9 +95,10 @@
   });
 </script>
 
-<script src="../js/translations.js"></script>
-<script src="../js/main.js"></script>
 <script src="../js/app.js"></script>
+<script src="../js/translations.js"></script>
+<script src="../js/main.js" ></script>
+
 
 </body>
 </html>

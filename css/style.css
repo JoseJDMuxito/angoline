@@ -476,3 +476,40 @@ input[type="checkbox"] {
   position: relative;
   cursor: pointer;
 }
+
+
+/* Definição geral da classe */
+.dynamic-margin {
+  margin-left: 16px;
+  margin-right: 16px;
+  text-align: left; /* Alinhamento inicial */
+}
+
+/* Estilo para ecrãs pequenos (máximo 768px) */
+@media (max-width: 768px) {
+  .dynamic-margin {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+/* Estilo para ecrãs maiores (mínimo 769px) */
+@media (min-width: 769px) {
+  .dynamic-margin {
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+}
+
+/* Modificadores para alinhar texto */
+.dynamic-margin.center {
+  text-align: center;
+}
+
+.dynamic-margin.right {
+  text-align: right;
+}
+
+.dynamic-margin.left {
+  text-align: left;
+}
