@@ -161,3 +161,48 @@ campo1.addEventListener('input', debounce(() => {
 clearHistoryBtn.addEventListener('click', () => {
   historyList.innerHTML = ''; // Remove todos os itens do histórico
 });
+
+
+let slideIndex = 0;
+
+function showSlides() {
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 3000);
+}
+
+function currentSlide(n) {
+  slideIndex = n - 1;
+  showSlides();
+}
+
+showSlides();
+
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+let mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+function w3_close() {
+  mySidebar.style.display = "none";
+}

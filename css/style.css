@@ -171,14 +171,14 @@ input[type="checkbox"] {
   text-decoration: none; /* Adiciona sublinhado no hover */
   border-radius: 10px;
   padding: 1px;
-  background-color: whitesmoke;
+  background-color: rgba(255, 20, 147, 0.3);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .custom-link:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background-color: whitesmoke;
+  background-color: rgba(255, 20, 147, 0.3);
   border-radius: 10px 10px 10px 10px;
 }
 
