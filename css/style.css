@@ -346,7 +346,7 @@ input[type="checkbox"] {
 }
 
 #language-button:hover {
-  background-color: white;
+
 }
 
 #language-options {
@@ -354,7 +354,6 @@ input[type="checkbox"] {
   position: absolute;
   top: 100%;
   right: 5px;
-  background-color: whitesmoke;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   flex-direction: column;
@@ -392,7 +391,7 @@ input[type="checkbox"] {
 }
 
 .lang-option:hover {
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(0, 119, 255, 0.1));
+  background:lightgray;
 }
 
 
