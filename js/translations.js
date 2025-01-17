@@ -96,35 +96,34 @@ const translations = {
     "paymentProcessB": "Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angolan Company.",
     "paymentProcessC": "Após a confirmação do pagamento, nossa equipe fará a transferência do montante (a moeda desejada) ao cliente de forma segura e eficiente.",
     "supportMessage": "\"Se precisar de suporte técnico, clique no ícone do WhatsApp\".",
-
-
-
-      titl: "Termos de Uso",
-      introductionTitle: "1. Visão Geral",
-      introductionText: "Bem-vindo ao Angoline, um site de câmbio e venda de moedas." +
-        "<br>Ao utilizar nossos serviços, você concorda com os presentes Termos de Uso.",
-      servicesTitle: "2. Serviços Oferecidos",
-      servicesText: "O Angoline oferece aos usuários um conversor de moedas, além de suporte via WhatsApp para facilitar transações de câmbio entre euros e kwanzas.",
-      responsibilitiesTitle: "3. Responsabilidades do Usuário",
-      responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
-      privacyTitle: "Política de Privacidade",
-      privacyIntroductionTitle: "1. Visão Geral",
-      privacyIntroductionText: " Esta Política de Privacidade descreve como coletamos, utilizamos e protegemos suas informações.<br>Ao utilizar nosso site, você concorda com estas práticas.\n" +
-        "      <br>Nosso site não coleta informações diretamente de seus visitantes.\n" +
-        "      <br>Todas as transações são realizadas por meio de comunicação direta com nossos colaboradores via WhatsApp, onde as informações necessárias para o processamento das operações são fornecidas pelos próprios usuários.\n",
-      dataCollectionTitle: "2. Informações Coletadas",
-      dataCollectionText: "As únicas informações coletadas são aquelas necessárias para realizar transações financeiras, como dados bancários fornecidos pelos usuários diretamente aos nossos colaboradores." +
-        "<br>Nenhuma informação é coletada pelo site, e esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
-      securityTitle: "4. Segurança dos Dados",
-      securityText: "Após a transação, todas as informações são excluídas, protegendo os dados do usuário de forma rigorosa contra acessos não autorizados ou compartilhamentos indevidos.",
-
-      liabilityTitle: "4. Limitação de Responsabilidade",
-      liabilityText: "A Angoline não se responsabiliza por perdas financeiras causadas por flutuações de câmbio ou interrupção no serviço.",
-
+    titl: "Termos de Uso",
+    introductionTitle: "1. Visão Geral",
+    introductionText: "Bem-vindo ao Angoline, um site de câmbio e venda de moedas." +
+      "<br>Ao utilizar nossos serviços, você concorda com os presentes Termos de Uso.",
+    servicesTitle: "2. Serviços Oferecidos",
+    servicesText: "O Angoline oferece aos usuários um conversor de moedas, além de suporte via WhatsApp para facilitar transações de câmbio entre euros e kwanzas.",
+    responsibilitiesTitle: "3. Responsabilidades do Usuário",
+    responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
+    privacyTitle: "Política de Privacidade",
+    privacyIntroductionTitle: "1. Visão Geral",
+    privacyIntroductionText: " Esta Política de Privacidade descreve como coletamos, utilizamos e protegemos suas informações.<br>Ao utilizar nosso site, você concorda com estas práticas.\n" +
+      "      <br>Nosso site não coleta informações diretamente de seus visitantes.\n" +
+      "      <br>Todas as transações são realizadas por meio de comunicação direta com nossos colaboradores via WhatsApp, onde as informações necessárias para o processamento das operações são fornecidas pelos próprios usuários.\n",
+    dataCollectionTitle: "2. Informações Coletadas",
+    dataCollectionText: "As únicas informações coletadas são aquelas necessárias para realizar transações financeiras, como dados bancários fornecidos pelos usuários diretamente aos nossos colaboradores." +
+      "<br>Nenhuma informação é coletada pelo site, e esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
+    securityTitle: "4. Segurança dos Dados",
+    securityText: "Após a transação, todas as informações são excluídas, protegendo os dados do usuário de forma rigorosa contra acessos não autorizados ou compartilhamentos indevidos.",
+    liabilityTitle: "4. Limitação de Responsabilidade",
+    liabilityText: "A Angoline não se responsabiliza por perdas financeiras causadas por flutuações de câmbio ou interrupção no serviço.",
     dataUsageTitle: "3. Uso das Informações",
     dataUsageText: "As informações coletadas durante as transações são utilizadas exclusivamente para processar pagamentos e finalizar a operação de câmbio.\n" +
-      "      <br>Não compartilhamos esses dados com terceiros."
-
+      "      <br>Não compartilhamos esses dados com terceiros.",
+    thirdPartyLinksTitle: "5. Links de Terceiros",
+    thirdPartyLinksText: "O site Angoline não contém links para sites de terceiros.",
+    intellectualPropertyTitle: "6. Propriedade Intelectual",
+    intellectualPropertyText: "Todos os textos do site Angoline são de propriedade do Angoline." +
+      "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
   },
   en: {
     title: "Angoline",
@@ -221,8 +220,6 @@ const translations = {
     "paymentProcessB": "During the service, the customer will send the agreed amount to one of the Angolan Company contributors.",
     "paymentProcessC": "After payment confirmation, our team will securely and efficiently transfer the requested currency to the customer.",
     "supportMessage": "\"If you need technical support, click on the WhatsApp icon\".",
-
-
     titl: "Terms of Service",
     introductionTitle: "1. Overview",
     introductionText: "Welcome to Angoline, a currency exchange and sales site." +
@@ -241,16 +238,16 @@ const translations = {
       "      <br>No information is collected by the website, and these data are treated with utmost confidentiality, being deleted after the completion of each transaction.\n",
     securityTitle: "4. Data Security",
     securityText: "After the transaction, all information is deleted, rigorously protecting user data against unauthorized access or improper sharing.\n",
-
     liabilityTitle: "4. Limitation of Liability",
     liabilityText: "Angoline is not responsible for financial losses caused by currency fluctuations or service interruptions.",
-
     dataUsageTitle: "3. Use of Information",
     dataUsageText: "The information collected during transactions is used exclusively to process payments and complete the currency exchange operation.\n" +
-      "      <br>We do not share this data with third parties.\n"
-
-
-
+      "      <br>We do not share this data with third parties.\n",
+    thirdPartyLinksTitle: "5. Third-Party Links",
+    thirdPartyLinksText: "The Angoline website does not contain links to third-party sites.",
+    intellectualPropertyTitle: "6. Intellectual Property",
+    intellectualPropertyText: "All texts on the Angoline website are owned by Angoline." +
+      "<br>Some images used on the site are public domain and were obtained from sources that allow free use."
   },
   fr: {
     title: "Angoline",
@@ -347,8 +344,6 @@ const translations = {
     "paymentProcessB": "Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolan Company.",
     "paymentProcessC": "Après confirmation du paiement, notre équipe effectuera le transfert sécurisé et efficace du montant (devise souhaitée) au client.",
     "supportMessage": "\"Si vous avez besoin d'une assistance technique, cliquez sur l'icône WhatsApp\".",
-
-
     titl: "Conditions de Service",
     introductionTitle: "1. Aperçu",
     introductionText: "Bienvenue sur Angoline, un site d'échange et de vente de devises.<br>En utilisant nos services, vous acceptez ces Conditions de Service.",
@@ -366,15 +361,16 @@ const translations = {
       "      <br>Aucune information n'est collectée par le site, et ces données sont traitées avec la plus grande confidentialité, étant supprimées après l'achèvement de chaque transaction.\n",
     securityTitle: "4. Sécurité des Données",
     securityText: "Après la transaction, toutes les informations sont supprimées, protégeant rigoureusement les données des utilisateurs contre tout accès non autorisé ou partage inapproprié.\n",
-
     liabilityTitle: "4. Limitation de Responsabilité",
     liabilityText: "Angoline n'est pas responsable des pertes financières causées par les fluctuations de change ou les interruptions de service.",
-
-
-      dataUsageTitle: "3. Utilisation des Informations",
-      dataUsageText: "Les informations collectées pendant les transactions sont utilisées exclusivement pour traiter les paiements et finaliser l'opération de change.\n" +
-        "      <br>Nous ne partageons pas ces données avec des tiers.\n"
-
+    dataUsageTitle: "3. Utilisation des Informations",
+    dataUsageText: "Les informations collectées pendant les transactions sont utilisées exclusivement pour traiter les paiements et finaliser l'opération de change.\n" +
+      "      <br>Nous ne partageons pas ces données avec des tiers.\n",
+    thirdPartyLinksTitle: "5. Liens de Tiers",
+    thirdPartyLinksText: "Le site Angoline ne contient pas de liens vers des sites tiers.",
+    intellectualPropertyTitle: "6. Propriété Intellectuelle",
+    intellectualPropertyText: "Tous les textes sur le site Angoline sont la propriété d'Angoline." +
+      "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre."
   }
 };
 
