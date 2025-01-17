@@ -341,7 +341,7 @@ input[type="checkbox"] {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 23px;
+  font-size: 20px;
   transition: background-color 0.3s;
 }
 
@@ -353,7 +353,7 @@ input[type="checkbox"] {
   display: flex;
   position: absolute;
   top: 100%;
-  right: 5px;
+  right: 3px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   flex-direction: column;
@@ -467,8 +467,8 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 33px;
+  width: 45px;
+  height: 30px;
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: white;
@@ -512,3 +512,19 @@ input[type="checkbox"] {
 .dynamic-margin.left {
   text-align: left;
 }
+
+
+.seta {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.cima {
+  border-bottom: 10px solid black;
+  margin-bottom: 5px;
+}
+.baixo {
+  border-top: 10px solid black;
+  margin-top: 5px;
+  }
