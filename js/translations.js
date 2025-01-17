@@ -109,7 +109,7 @@ const translations = {
       "      <br>Todas as transações são realizadas por meio de comunicação direta com nossos colaboradores via WhatsApp, onde as informações necessárias para o processamento das operações são fornecidas pelos próprios usuários.\n",
     dataCollectionTitle: "2. Informações Coletadas",
     dataCollectionText: "As únicas informações coletadas são aquelas necessárias para realizar transações financeiras, como dados bancários fornecidos pelos usuários diretamente aos nossos colaboradores." +
-      "<br>Nenhuma informação é coletada pelo site, e esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
+      "<br>Esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
     securityTitle: "4. Segurança dos Dados",
     securityText: "Após a transação, todas as informações são excluídas, protegendo os dados do usuário de forma rigorosa contra acessos não autorizados ou compartilhamentos indevidos.",
     liabilityTitle: "3. Limitação de Responsabilidade",
@@ -231,7 +231,7 @@ const translations = {
       "      <br>All transactions are conducted through direct communication with our collaborators via WhatsApp, where the necessary information for processing operations is provided by the users themselves.\n",
     dataCollectionTitle: "2. Information Collected",
     dataCollectionText: "The only information collected is that which is necessary to carry out financial transactions, such as banking details provided by users directly to our collaborators.\n" +
-      "      <br>No information is collected by the website, and these data are treated with utmost confidentiality, being deleted after the completion of each transaction.\n",
+      "      <br>These data are treated with utmost confidentiality, being deleted after the completion of each transaction.\n",
     securityTitle: "4. Data Security",
     securityText: "After the transaction, all information is deleted, rigorously protecting user data against unauthorized access or improper sharing.\n",
     liabilityTitle: "3. Limitation of Liability",
@@ -352,7 +352,7 @@ const translations = {
       "      <br>Toutes les transactions sont effectuées via une communication directe avec nos collaborateurs sur WhatsApp, où les informations nécessaires au traitement des opérations sont fournies par les utilisateurs eux-mêmes.\n",
     dataCollectionTitle: "2. Informations Collectées",
     dataCollectionText: "Les seules informations collectées sont celles nécessaires pour effectuer des transactions financières, telles que les coordonnées bancaires fournies directement par les utilisateurs à nos collaborateurs.\n" +
-      "      <br>Aucune information n'est collectée par le site, et ces données sont traitées avec la plus grande confidentialité, étant supprimées après l'achèvement de chaque transaction.\n",
+      "      <br>Ces données sont traitées avec la plus grande confidentialité, étant supprimées après l'achèvement de chaque transaction.\n",
     securityTitle: "4. Sécurité des Données",
     securityText: "Après la transaction, toutes les informations sont supprimées, protégeant rigoureusement les données des utilisateurs contre tout accès non autorisé ou partage inapproprié.\n",
     liabilityTitle: "4. Limitation de Responsabilité",
