@@ -100,9 +100,7 @@ const translations = {
     introductionTitle: "1. Visão Geral",
     introductionText: "Bem-vindo ao Angoline, um site de câmbio e venda de moedas." +
       "<br>Ao utilizar nossos serviços, você concorda com os presentes Termos de Uso.",
-    servicesTitle: "2. Serviços Oferecidos",
-    servicesText: "O Angoline oferece aos usuários um conversor de moedas, além de suporte via WhatsApp para facilitar transações de câmbio entre euros e kwanzas.",
-    responsibilitiesTitle: "3. Responsabilidades do Usuário",
+    responsibilitiesTitle: "2. Responsabilidades do Usuário",
     responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
     privacyTitle: "Política de Privacidade",
     privacyIntroductionTitle: "1. Visão Geral",
@@ -114,14 +112,14 @@ const translations = {
       "<br>Nenhuma informação é coletada pelo site, e esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
     securityTitle: "4. Segurança dos Dados",
     securityText: "Após a transação, todas as informações são excluídas, protegendo os dados do usuário de forma rigorosa contra acessos não autorizados ou compartilhamentos indevidos.",
-    liabilityTitle: "4. Limitação de Responsabilidade",
+    liabilityTitle: "3. Limitação de Responsabilidade",
     liabilityText: "A Angoline não se responsabiliza por perdas financeiras causadas por flutuações de câmbio ou interrupção no serviço.",
     dataUsageTitle: "3. Uso das Informações",
     dataUsageText: "As informações coletadas durante as transações são utilizadas exclusivamente para processar pagamentos e finalizar a operação de câmbio.\n" +
       "      <br>Não compartilhamos esses dados com terceiros.",
-    thirdPartyLinksTitle: "5. Links de Terceiros",
+    thirdPartyLinksTitle: "4. Links de Terceiros",
     thirdPartyLinksText: "O site Angoline não contém links para sites de terceiros.",
-    intellectualPropertyTitle: "6. Propriedade Intelectual",
+    intellectualPropertyTitle: "5. Propriedade Intelectual",
     intellectualPropertyText: "Todos os textos do site Angoline são de propriedade do Angoline." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
   },
@@ -224,9 +222,7 @@ const translations = {
     introductionTitle: "1. Overview",
     introductionText: "Welcome to Angoline, a currency exchange and sales site." +
       "<br>By using our services, you agree to these Terms of Service.",
-    servicesTitle: "2. Services Offered",
-    servicesText: "Angoline offers users a currency converter, as well as WhatsApp support to facilitate currency exchange transactions between euros and kwanzas.",
-    responsibilitiesTitle: "3. User Responsibilities",
+    responsibilitiesTitle: "2. User Responsibilities",
     responsibilitiesText: "The user agrees to use the site legally and provide accurate information during transactions.",
     privacyTitle: "Privacy Policy",
     privacyIntroductionTitle: "1. Overview",
@@ -238,14 +234,14 @@ const translations = {
       "      <br>No information is collected by the website, and these data are treated with utmost confidentiality, being deleted after the completion of each transaction.\n",
     securityTitle: "4. Data Security",
     securityText: "After the transaction, all information is deleted, rigorously protecting user data against unauthorized access or improper sharing.\n",
-    liabilityTitle: "4. Limitation of Liability",
+    liabilityTitle: "3. Limitation of Liability",
     liabilityText: "Angoline is not responsible for financial losses caused by currency fluctuations or service interruptions.",
     dataUsageTitle: "3. Use of Information",
     dataUsageText: "The information collected during transactions is used exclusively to process payments and complete the currency exchange operation.\n" +
       "      <br>We do not share this data with third parties.\n",
-    thirdPartyLinksTitle: "5. Third-Party Links",
+    thirdPartyLinksTitle: "4. Third-Party Links",
     thirdPartyLinksText: "The Angoline website does not contain links to third-party sites.",
-    intellectualPropertyTitle: "6. Intellectual Property",
+    intellectualPropertyTitle: "5. Intellectual Property",
     intellectualPropertyText: "All texts on the Angoline website are owned by Angoline." +
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use."
   },
@@ -347,9 +343,7 @@ const translations = {
     titl: "Conditions de Service",
     introductionTitle: "1. Aperçu",
     introductionText: "Bienvenue sur Angoline, un site d'échange et de vente de devises.<br>En utilisant nos services, vous acceptez ces Conditions de Service.",
-    servicesTitle: "2. Services Offerts",
-    servicesText: "Angoline propose aux utilisateurs un convertisseur de devises, ainsi qu'un support via WhatsApp pour faciliter les transactions de change entre euros et kwanzas.",
-    responsibilitiesTitle: "3. Responsabilités de l'Utilisateur",
+    responsibilitiesTitle: "2. Responsabilités de l'Utilisateur",
     responsibilitiesText: "L'utilisateur s'engage à utiliser le site légalement et à fournir des informations exactes lors des transactions.",
     privacyTitle: "Politique de Confidentialité",
     privacyIntroductionTitle: "1. Aperçu",
@@ -366,9 +360,9 @@ const translations = {
     dataUsageTitle: "3. Utilisation des Informations",
     dataUsageText: "Les informations collectées pendant les transactions sont utilisées exclusivement pour traiter les paiements et finaliser l'opération de change.\n" +
       "      <br>Nous ne partageons pas ces données avec des tiers.\n",
-    thirdPartyLinksTitle: "5. Liens de Tiers",
+    thirdPartyLinksTitle: "4. Liens de Tiers",
     thirdPartyLinksText: "Le site Angoline ne contient pas de liens vers des sites tiers.",
-    intellectualPropertyTitle: "6. Propriété Intellectuelle",
+    intellectualPropertyTitle: "5. Propriété Intellectuelle",
     intellectualPropertyText: "Tous les textes sur le site Angoline sont la propriété d'Angoline." +
       "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre."
   }
