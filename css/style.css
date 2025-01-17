@@ -169,18 +169,17 @@ input[type="checkbox"] {
 
 .custom-link:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  border-radius: 10px 10px 10px 10px;
-  padding: 10px;
-  background-color: #555;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: whitesmoke;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .custom-link:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background-color: whitesmoke;
   border-radius: 10px 10px 10px 10px;
-  padding: 10px;
 }
 
 
