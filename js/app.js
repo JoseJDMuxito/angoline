@@ -28,7 +28,7 @@ themeSwitch.addEventListener('change', () => {
 function applyDarkModeStyles() {
   const customBlocks = document.querySelectorAll('.custom-block');
   customBlocks.forEach((block) => {
-    block.style.backgroundColor = 'rgba(60, 60, 60, 0.9)'; // Ou qualquer cor preferida
+    block.style.backgroundColor = 'rgba(50, 50, 50, 1)'; // Ou qualquer cor preferida
     block.style.color = '#ffffff'; // Exemplo: texto em vermelho
   });
 }
