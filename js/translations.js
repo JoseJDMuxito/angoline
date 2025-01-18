@@ -102,9 +102,7 @@ const translations = {
     responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
     privacyTitle: "Política de Privacidade",
     privacyIntroductionTitle: "1. Visão Geral",
-    privacyIntroductionText: " Esta Política de Privacidade descreve como coletamos, utilizamos e protegemos suas informações.<br>Ao utilizar nosso site, você concorda com estas práticas.\n" +
-      "      <br>Nosso site não coleta informações diretamente de seus visitantes.\n" +
-      "      <br>Todas as transações são realizadas por meio de comunicação direta com nossos colaboradores via WhatsApp, onde as informações necessárias para o processamento das operações são fornecidas pelos próprios usuários.\n",
+    privacyIntroductionText: " Esta Política de Privacidade descreve como coletamos, utilizamos e protegemos suas informações.<br>Ao utilizar nosso site, você concorda com estas práticas.\n",
     dataCollectionTitle: "2. Informações Coletadas",
     dataCollectionText: "As únicas informações coletadas são aquelas necessárias para realizar transações financeiras, como dados bancários fornecidos pelos usuários diretamente aos nossos colaboradores." +
       "<br>Esses dados são tratados com extrema confidencialidade, sendo eliminados após o término de cada transação.",
@@ -227,9 +225,7 @@ const translations = {
     responsibilitiesText: "The user agrees to use the site legally and provide accurate information during transactions.",
     privacyTitle: "Privacy Policy",
     privacyIntroductionTitle: "1. Overview",
-    privacyIntroductionText: "This Privacy Policy describes how we collect, use, and protect your information.<br>By using our website, you agree to these practices.\n" +
-      "      <br>Our website does not directly collect information from its visitors.\n" +
-      "      <br>All transactions are conducted through direct communication with our collaborators via WhatsApp, where the necessary information for processing operations is provided by the users themselves.\n",
+    privacyIntroductionText: "This Privacy Policy describes how we collect, use, and protect your information.<br>By using our website, you agree to these practices.\n",
     dataCollectionTitle: "2. Information Collected",
     dataCollectionText: "The only information collected is that which is necessary to carry out financial transactions, such as banking details provided by users directly to our collaborators.\n" +
       "      <br>These data are treated with utmost confidentiality, being deleted after the completion of each transaction.\n",
@@ -352,9 +348,7 @@ const translations = {
     responsibilitiesText: "L'utilisateur s'engage à utiliser le site légalement et à fournir des informations exactes lors des transactions.",
     privacyTitle: "Politique de Confidentialité",
     privacyIntroductionTitle: "1. Aperçu",
-    privacyIntroductionText: "Cette Politique de Confidentialité décrit comment nous collectons, utilisons et protégeons vos informations.<br>En utilisant notre site, vous acceptez ces pratiques.\n" +
-      "      <br>Notre site ne collecte pas directement d'informations auprès de ses visiteurs.\n" +
-      "      <br>Toutes les transactions sont effectuées via une communication directe avec nos collaborateurs sur WhatsApp, où les informations nécessaires au traitement des opérations sont fournies par les utilisateurs eux-mêmes.\n",
+    privacyIntroductionText: "Cette Politique de Confidentialité décrit comment nous collectons, utilisons et protégeons vos informations.<br>En utilisant notre site, vous acceptez ces pratiques.\n",
     dataCollectionTitle: "2. Informations Collectées",
     dataCollectionText: "Les seules informations collectées sont celles nécessaires pour effectuer des transactions financières, telles que les coordonnées bancaires fournies directement par les utilisateurs à nos collaborateurs.\n" +
       "      <br>Ces données sont traitées avec la plus grande confidentialité, étant supprimées après l'achèvement de chaque transaction.\n",
