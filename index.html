@@ -135,9 +135,11 @@
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
-    <div class="w3-container custom-block w3-card-4" style="margin-top: 20px; margin-bottom: -500px; border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    <div class="w3-container custom-block w3-card-4" style="margin-top: 20px; margin-bottom: -500px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); position: relative;">
       <div class="w3-section">
-        <h4 style="text-align: center; font-weight: 500; color: lightskyblue" data-i18n="currencyConverter"><i class="fa fa-usd" ></i> Conversor</h4>
+        <h4 style="text-align: center; font-weight: 500; color: lightskyblue" data-i18n="currencyConverter">
+          <i class="fa fa-usd"></i> Conversor
+        </h4>
         <hr style="border-width: 1px; border-style: solid; margin-top: -10px">
         <div id="group-1" class="input-group">
           <label for="campo-1" style="font-weight: 500;">
@@ -145,7 +147,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">
           </label>
           <input class="w3-input w3-border w3-hover-border-black cus w3-opacity d1 custom-block" type="text" id="campo-1" data-i18n="insertValue" placeholder="Insira o valor" style="width: 100%;">
-          <div class="error" id="error-1" data-i18n="insiraOnlyNumbers">Insira apenas números</div>
+          <div class="error" id="error-1" style="display: none; color: red;" data-i18n="insiraOnlyNumbers">Insira apenas números</div>
         </div>
       </div>
 
@@ -161,7 +163,7 @@
             AOA
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">
           </label>
-          <input class="w3-input w3-opacity d1  custom-block" type="text" readonly id="campo-2" data-i18n="resultado" placeholder="Resultado" style="width: 100%; pointer-events: none;">
+          <input class="w3-input w3-opacity d1 custom-block" type="text" readonly id="campo-2" data-i18n="resultado" placeholder="Resultado" style="width: 100%; pointer-events: none;">
         </div>
       </div>
 
@@ -171,11 +173,24 @@
       <div id="historico" style="margin-top: 20px;">
         <p class="w3-opacity" style="font-weight: 500;" data-i18n="history">Histórico de câmbio</p>
         <ul id="history-list" class="w3-opacity" style="font-weight: 500;"></ul>
-        <div class="custom-block" id="clear-history" style="border-radius: 5px; cursor: pointer; " data-i18n=""><i class="fa-solid fa-trash-can"></i></div>
+        <div class="custom-block" id="clear-history" style="border-radius: 5px; cursor: pointer;" data-i18n="">
+          <i class="fa-solid fa-trash-can"></i>
+        </div>
       </div>
-    </div>
-  </div>
 
+      <!-- Botão COMPRAR AGORA -->
+      <button id="comprarAgora" style="display: none; position: absolute; bottom: 20px; right: 20px; background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+        COMPRAR AGORA
+      </button>
+    </div>
+
+    <!-- Modal de Resumo -->
+    <div id="modalResumo" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <p>VOCÊ VAI PAGAR: <span id="resumoPagar"></span></p>
+      <p>VOCÊ VAI RECEBER: <span id="resumoReceber"></span></p>
+      <button id="cancelar" style="background-color: #dc3545; color: white; border: none; border-radius: 5px; padding: 10px; margin: 5px;">CANCELAR</button>
+      <button id="confirmar" style="background-color: #28a745; color: white; border: none; border-radius: 5px; padding: 10px; margin: 5px;">CONFIRMAR</button>
+    </div>
   <h4 style="text-align: center; margin-top: 520px" data-i18n="conversionMessage">
     Já fez a sua conversão?
   </h4>
@@ -183,7 +198,7 @@
     <a href="comecar/comecar.html" data-i18n="clickOn">Clique aqui! <i class="fa-solid fa-hand" style="color: orange"></i></a>
   </h4>
 </div>
-
+</div>
 <!-- Footer -->
 <footer class="custom-block d2" style="border-top: 1px solid lightgray;">
   <span class="w3-opacity">
@@ -198,6 +213,135 @@
 
   <p class="w3-opacity" style="font-size: 14px" data-i18n="footer">Criado por José Muxito</p>
 </footer>
+
+
+<script>
+  // Conversor de moedas
+
+  const taxaEuroParaKwanza = 1150;
+  const taxaKwanzaParaEuro = 1250;
+
+  const campo1 = document.getElementById('campo-1');
+  const campo2 = document.getElementById('campo-2');
+  const resultadoDiv = document.getElementById('resultado');
+  const switchBtn = document.getElementById('switch-btn');
+  const historyList = document.getElementById('history-list');
+  const clearHistoryBtn = document.getElementById('clear-history');
+  const error1 = document.getElementById('error-1');
+  const comprarAgoraBtn = document.getElementById("comprarAgora");
+  const modalResumo = document.getElementById("modalResumo");
+  const resumoPagar = document.getElementById("resumoPagar");
+  const resumoReceber = document.getElementById("resumoReceber");
+  const cancelarBtn = document.getElementById("cancelar");
+  const confirmarBtn = document.getElementById("confirmar");
+
+  let isEuroToKwanza = true;
+  let colaboradores = [
+    { numero: "5581999999999", ocupado: false },
+    { numero: "5581888888888", ocupado: true },
+    { numero: "5581777777777", ocupado: false }
+  ];
+
+  // Função debounce para controlar a digitação e evitar cálculos excessivos
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+
+  // Função para calcular a conversão
+  function calcular() {
+    const valorCampo1 = parseFloat(campo1.value);
+
+    if (!valorCampo1 || valorCampo1 <= 0) {
+      campo2.value = '';
+      resultadoDiv.textContent = '';
+      error1.style.display = "block"; // Exibe erro para entradas inválidas
+      return;
+    }
+
+    error1.style.display = "none"; // Esconde erro para entradas válidas
+
+    if (isEuroToKwanza) {
+      const valorKwanza = valorCampo1 * taxaEuroParaKwanza;
+      campo2.value = valorKwanza.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} € = ${valorKwanza.toFixed(2)} Kz`;
+      adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "€", "Kz");
+    } else {
+      const valorEuro = valorCampo1 / taxaKwanzaParaEuro;
+      campo2.value = valorEuro.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} Kz = ${valorEuro.toFixed(2)} €`;
+      adicionarAoHistorico(valorCampo1, valorEuro.toFixed(2), "Kz", "€");
+    }
+
+    comprarAgoraBtn.style.display = "block";
+  }
+
+  // Adicionar ao histórico
+  function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
+    const novoItem = document.createElement('li');
+    novoItem.textContent = `${origem} ${moedaOrigem} = ${destino} ${moedaDestino}`;
+    historyList.appendChild(novoItem);
+  }
+
+  // Alternar entre Euro e Kwanza
+  switchBtn.addEventListener('click', () => {
+    isEuroToKwanza = !isEuroToKwanza;
+
+    const group1Label = document.querySelector('#group-1 label');
+    const group2Label = document.querySelector('#group-2 label');
+
+    if (isEuroToKwanza) {
+      group1Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">`;
+      group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">`;
+    } else {
+      group1Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">`;
+      group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">`;
+    }
+
+    campo1.value = '';
+    campo2.value = '';
+    resultadoDiv.textContent = '';
+    error1.style.display = 'none';
+  });
+
+  // Aplicar a função debounce no evento de input
+  campo1.addEventListener('input', debounce(() => {
+    calcular();
+  }, 500));
+
+  // Botão "COMPRAR AGORA"
+  comprarAgoraBtn.addEventListener("click", () => {
+    resumoPagar.textContent = campo1.value;
+    resumoReceber.textContent = campo2.value;
+    modalResumo.style.display = "block";
+  });
+
+  // Botão CANCELAR
+  cancelarBtn.addEventListener("click", () => {
+    modalResumo.style.display = "none";
+  });
+
+  // Botão CONFIRMAR
+  confirmarBtn.addEventListener("click", () => {
+    const colaboradorDisponivel = colaboradores.find(c => !c.ocupado);
+    if (colaboradorDisponivel) {
+      const numero = colaboradorDisponivel.numero;
+      const mensagem = `Olá,\nVocê vai pagar: ${campo1.value}\nVocê vai receber: ${campo2.value}`;
+      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, "_blank");
+      modalResumo.style.display = "none";
+    } else {
+      alert("Todos os colaboradores estão ocupados no momento. Tente novamente mais tarde.");
+    }
+  });
+
+  // Limpar histórico
+  clearHistoryBtn.addEventListener("click", () => {
+    historyList.innerHTML = '';
+  });
+</script>
 
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
