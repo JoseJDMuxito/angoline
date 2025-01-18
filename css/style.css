@@ -528,3 +528,40 @@ input[type="checkbox"] {
   border-top: 10px solid black;
   margin-top: 5px;
   }
+
+
+
+
+.faq-question {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.faq-answer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.faq-list {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.faq-support {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.faq-contact {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
