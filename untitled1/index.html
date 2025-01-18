@@ -1,68 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site com Tradução</title>
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <title>Like System</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
     }
-    #language-selector {
-      margin: 20px 0;
+    .like-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .like-button {
+      font-size: 30px;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+      background: none;
+    }
+    .like-button.liked {
+      color: blue;
+    }
+    .like-count {
+      font-size: 24px;
     }
   </style>
 </head>
 <body>
-<div id="root">
-  <h1>Bem-vindo ao meu site!</h1>
-  <p>Sobre Nós</p>
+<div class="like-container">
+  <button id="likeButton" class="like-button">👍</button>
+  <span id="likeCount" class="like-count">0</span>
 </div>
-<select id="language-selector">
-  <option value="en">English</option>
-  <option value="pt">Português</option>
-  <option value="es">Español</option>
-</select>
 
 <script>
-  const translations = {
-    en: {
-      welcome: "Welcome to my website!",
-      about: "About Us"
-    },
-    pt: {
-      welcome: "Bem-vindo ao meu site!",
-      about: "Sobre Nós"
-    },
-    es: {
-      welcome: "¡Bienvenido a mi sitio web!",
-      about: "Sobre Nosotros"
-    }
-  };
+  const likeButton = document.getElementById('likeButton');
+  const likeCount = document.getElementById('likeCount');
+  let isLiked = false;
 
-  const rootElement = document.getElementById('root');
-  const selector = document.getElementById('language-selector');
-
-  function App() {
-    const [language, setLanguage] = React.useState('en');
-
-    React.useEffect(() => {
-      selector.addEventListener('change', (e) => {
-        setLanguage(e.target.value);
-      });
-    }, []);
-
-    return (
-      <div>
-        <h1>{translations[language].welcome}</h1>
-        <p>{translations[language].about}</p>
-      </div>
-    );
+  // Fetch initial like count from the server
+  async function fetchLikes() {
+    const response = await fetch('/api/likes');
+    const data = await response.json();
+    likeCount.textContent = data.likes;
   }
 
-  ReactDOM.render(<App />, rootElement);
+  // Update like status
+  async function toggleLike() {
+    isLiked = !isLiked;
+    likeButton.classList.toggle('liked', isLiked);
+
+    const response = await fetch('/api/likes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ liked: isLiked }),
+    });
+    const data = await response.json();
+    likeCount.textContent = data.likes;
+  }
+
+  likeButton.addEventListener('click', toggleLike);
+  fetchLikes();
 </script>
 </body>
 </html>

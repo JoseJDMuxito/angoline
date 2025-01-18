@@ -61,7 +61,7 @@ const translations = {
     clickOn: "Clique aqui! <i class=\"fa-solid fa-hand\" style=\"color: orange\"></i>",
     siteDescription: "Angoline é um site de câmbio e venda de moedas, prático e confiável.",
     companyName: "Angoline Company",
-    companyValues: "Na Angoline, valorizamos a confiança e a satisfação dos nossos clientes, garantindo segurança em cada etapa do processo.",
+    companyValues: "Valorizamos a confiança e a satisfação dos nossos clientes, garantindo segurança em cada etapa do processo.",
     authorGoals: "Objectivos do Autor",
     authorIntroduction: "Eu, José Muxito, criei este site com o objetivo de servir como um espaço de aprendizado e experimentação no desenvolvimento web.\n" +
       "      <br>Como estudante em Engenharia Elétrica e Informática Industrial (GEII), busco enriquecer minha bagagem acadêmica ao explorar novas tecnologias, linguagens de programação e metodologias.\n" +
@@ -97,8 +97,7 @@ const translations = {
     "supportMessage": "\"Se precisar de suporte técnico, clique no ícone do WhatsApp\".",
     titl: "Termos de Uso",
     introductionTitle: "1. Visão Geral",
-    introductionText: "Bem-vindo ao Angoline, um site de câmbio e venda de moedas." +
-      "<br>Ao utilizar nossos serviços, você concorda com os presentes Termos de Uso.",
+    introductionText: "Ao utilizar nossos serviços, você concorda com os presentes Termos de Uso.",
     responsibilitiesTitle: "2. Responsabilidades do Usuário",
     responsibilitiesText: "O usuário concorda em utilizar o site de forma legal e fornecer informações precisas durante as transações.",
     privacyTitle: "Política de Privacidade",
@@ -116,10 +115,11 @@ const translations = {
     dataUsageTitle: "3. Uso das Informações",
     dataUsageText: "As informações coletadas durante as transações são utilizadas exclusivamente para processar pagamentos e finalizar a operação de câmbio.\n" +
       "      <br>Não compartilhamos esses dados com terceiros.",
-    thirdPartyLinksTitle: "4. Links de Terceiros",
-    thirdPartyLinksText: "O site Angoline não contém links para sites de terceiros.",
-    intellectualPropertyTitle: "5. Propriedade Intelectual",
-    intellectualPropertyText: "Todos os textos do site Angoline são de propriedade do Angoline." +
+    thirdPartyLinksTitle: "5. Interrupções no Serviço",
+    thirdPartyLinksText: " O site poderá ser interrompido temporariamente para manutenção ou melhorias.\n" +
+      "      <br>Faremos o possível para minimizar qualquer inconveniente.",
+    intellectualPropertyTitle: "4. Propriedade Intelectual",
+    intellectualPropertyText: "Todos os textos do site Angoline, assim como seu design, são de nossa propriedade." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
     clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
   },
@@ -183,7 +183,7 @@ const translations = {
     clickOn: "Click here! <i class=\"fa-solid fa-hand\" style=\"color: orange\"></i>",
     siteDescription: "Angoline is a practical and reliable currency exchange and sales website.",
     companyName: "Angoline Company",
-    companyValues: "At Angoline, we value trust and customer satisfaction, ensuring security at every step of the process.",
+    companyValues: "We value trust and customer satisfaction, ensuring security at every step of the process.",
     authorGoals: "Author's Goals",
     authorIntroduction: "I, José Muxito, created this website with the goal of serving as a space for learning and experimentation in web development.\n" +
       "                <br>As a student of Electrical Engineering and Industrial Computing (GEII), I seek to enrich my academic background by exploring new technologies, programming languages, and methodologies.\n" +
@@ -219,8 +219,7 @@ const translations = {
     "supportMessage": "\"If you need technical support, click on the WhatsApp icon\".",
     titl: "Terms of Use",
     introductionTitle: "1. Overview",
-    introductionText: "Welcome to Angoline, a currency exchange and sales site." +
-      "<br>By using our services, you agree to these Terms of Service.",
+    introductionText: "By using our services, you agree to these Terms of Use.",
     responsibilitiesTitle: "2. User Responsibilities",
     responsibilitiesText: "The user agrees to use the site legally and provide accurate information during transactions.",
     privacyTitle: "Privacy Policy",
@@ -238,10 +237,11 @@ const translations = {
     dataUsageTitle: "3. Use of Information",
     dataUsageText: "The information collected during transactions is used exclusively to process payments and complete the currency exchange operation.\n" +
       "      <br>We do not share this data with third parties.\n",
-    thirdPartyLinksTitle: "4. Third-Party Links",
-    thirdPartyLinksText: "The Angoline website does not contain links to third-party sites.",
-    intellectualPropertyTitle: "5. Intellectual Property",
-    intellectualPropertyText: "All texts on the Angoline website are owned by Angoline." +
+    thirdPartyLinksTitle: "5. Service Interruptions",
+    thirdPartyLinksText: "The website may be temporarily interrupted for maintenance or improvements." +
+      "<br>We will do our best to minimize any inconvenience.",
+    intellectualPropertyTitle: "4. Intellectual Property",
+    intellectualPropertyText: "All the texts on the Angoline website, as well as its design, are our property." +
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use.",
     clikon:"After clicking 'Send', you will be assisted by one of our team members via WhatsApp.",
   },
@@ -305,7 +305,7 @@ const translations = {
     clickOn: "Cliquez ici! <i class=\"fa-solid fa-hand\" style=\"color: orange\"></i>",
     siteDescription: "Angoline est un site de change et de vente de devises pratique et fiable.",
     companyName: "Angoline Company",
-    companyValues: "Chez Angoline, nous valorisons la confiance et la satisfaction de nos clients, garantissant la sécurité à chaque étape du processus.",
+    companyValues: "Nous valorisons la confiance et la satisfaction de nos clients, garantissant la sécurité à chaque étape du processus.",
     authorGoals: "Objectifs de l'Auteur",
     authorIntroduction: "Moi, José Muxito, j'ai créé ce site dans le but de servir d'espace d'apprentissage et d'expérimentation dans le développement web.\n" +
       "                    <br>En tant qu'étudiant en Génie Électrique et Informatique Industrielle (GEII), je cherche à enrichir mon parcours académique en explorant de nouvelles technologies, langages de programmation et méthodologies.\n" +
@@ -341,7 +341,7 @@ const translations = {
     "supportMessage": "\"Si vous avez besoin d'une assistance technique, cliquez sur l'icône WhatsApp\".",
     titl: "Conditions d'utilisation",
     introductionTitle: "1. Aperçu",
-    introductionText: "Bienvenue sur Angoline, un site d'échange et de vente de devises.<br>En utilisant nos services, vous acceptez ces Conditions de Service.",
+    introductionText: "En utilisant nos services, vous acceptez ces Conditions d'utilisation.",
     responsibilitiesTitle: "2. Responsabilités de l'Utilisateur",
     responsibilitiesText: "L'utilisateur s'engage à utiliser le site légalement et à fournir des informations exactes lors des transactions.",
     privacyTitle: "Politique de Confidentialité",
@@ -359,10 +359,11 @@ const translations = {
     dataUsageTitle: "3. Utilisation des Informations",
     dataUsageText: "Les informations collectées pendant les transactions sont utilisées exclusivement pour traiter les paiements et finaliser l'opération de change.\n" +
       "      <br>Nous ne partageons pas ces données avec des tiers.\n",
-    thirdPartyLinksTitle: "4. Liens de Tiers",
-    thirdPartyLinksText: "Le site Angoline ne contient pas de liens vers des sites tiers.",
-    intellectualPropertyTitle: "5. Propriété Intellectuelle",
-    intellectualPropertyText: "Tous les textes sur le site Angoline sont la propriété d'Angoline." +
+    thirdPartyLinksTitle: "5. Interruptions de Service",
+    thirdPartyLinksText: "Le site peut être temporairement interrompu pour maintenance ou améliorations." +
+      "<br>Nous ferons de notre mieux pour minimiser les désagréments.",
+    intellectualPropertyTitle: "4. Propriété Intellectuelle",
+    intellectualPropertyText: "Tous les textes sur le site Angoline, ainsi que son design, sont notre propriété." +
       "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre.",
     clikon:"Après avoir cliqué sur 'Envoyer', vous serez assisté par l'un de nos collaborateurs via WhatsApp.",
   }
