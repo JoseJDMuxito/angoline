@@ -137,9 +137,9 @@
 
     <div class="w3-container custom-block w3-card-4" style="margin-top: 20px; margin-bottom: -500px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); position: relative;">
       <div class="w3-section">
-        <h4 style="text-align: center; font-weight: 500; color: lightskyblue" data-i18n="currencyConverter">
+        <h3 style="text-align: center; font-weight: 500; color: lightskyblue" data-i18n="currencyConverter">
           <i class="fa fa-usd"></i> Conversor
-        </h4>
+        </h3>
         <hr style="border-width: 1px; border-style: solid; margin-top: -10px">
         <div id="group-1" class="input-group">
           <label for="campo-1" style="font-weight: 500;">
@@ -191,12 +191,15 @@
       <button id="cancelar" style="background-color: #dc3545; color: white; border: none; border-radius: 5px; padding: 10px; margin: 5px;">CANCELAR</button>
       <button id="confirmar" style="background-color: #28a745; color: white; border: none; border-radius: 5px; padding: 10px; margin: 5px;">CONFIRMAR</button>
     </div>
-  <h4 style="text-align: center; margin-top: 520px" data-i18n="conversionMessage">
-    Já fez a sua conversão?
-  </h4>
-  <h4 style="text-align: center; margin-bottom: 50px">
-    <a href="comecar/comecar.html" data-i18n="clickOn">Clique aqui! <i class="fa-solid fa-hand" style="color: orange"></i></a>
-  </h4>
+
+    <h4 style="text-align: center; margin-top: 520px" data-i18n="thankYou">
+      Obrigado por utilizar os nossos serviços<br>Volte sempre! <i class="fa-solid fa-handshake" style="color: orange"></i>
+    </h4>
+
+    <p style="text-align: center; margin-bottom: 50px">
+      <img src="img/LOGO.jpg" alt="Ícone" style="width: 40px; height: 40px; border-radius: 50%;">
+    </p>
+
 </div>
 </div>
 <!-- Footer -->
@@ -237,12 +240,12 @@
 
   let isEuroToKwanza = true;
   let colaboradores = [
-    { numero: "5581999999999", ocupado: false },
-    { numero: "5581888888888", ocupado: true },
-    { numero: "5581777777777", ocupado: false }
+    { numero: "", ocupado: false },
+    { numero: "", ocupado: true },
+    { numero: "", ocupado: false }
   ];
 
-  // Função debounce para controlar a digitação e evitar cálculos excessivos
+  // Função debounce para evitar cálculos excessivos
   function debounce(func, delay) {
     let timeout;
     return function (...args) {
@@ -258,11 +261,11 @@
     if (!valorCampo1 || valorCampo1 <= 0) {
       campo2.value = '';
       resultadoDiv.textContent = '';
-      error1.style.display = "block"; // Exibe erro para entradas inválidas
+      error1.style.display = "block";
       return;
     }
 
-    error1.style.display = "none"; // Esconde erro para entradas válidas
+    error1.style.display = "none";
 
     if (isEuroToKwanza) {
       const valorKwanza = valorCampo1 * taxaEuroParaKwanza;
@@ -307,15 +310,18 @@
     error1.style.display = 'none';
   });
 
-  // Aplicar a função debounce no evento de input
+  // Aplicar debounce ao campo de entrada
   campo1.addEventListener('input', debounce(() => {
     calcular();
   }, 500));
 
   // Botão "COMPRAR AGORA"
   comprarAgoraBtn.addEventListener("click", () => {
-    resumoPagar.textContent = campo1.value;
-    resumoReceber.textContent = campo2.value;
+    const valorPagar = campo1.value;
+    const valorReceber = campo2.value;
+
+    resumoPagar.textContent = `${valorPagar} ${isEuroToKwanza ? '€' : 'Kz'}`;
+    resumoReceber.textContent = `${valorReceber} ${isEuroToKwanza ? 'Kz' : '€'}`;
     modalResumo.style.display = "block";
   });
 
@@ -327,10 +333,13 @@
   // Botão CONFIRMAR
   confirmarBtn.addEventListener("click", () => {
     const colaboradorDisponivel = colaboradores.find(c => !c.ocupado);
+
     if (colaboradorDisponivel) {
       const numero = colaboradorDisponivel.numero;
-      const mensagem = `Olá,\nVocê vai pagar: ${campo1.value}\nVocê vai receber: ${campo2.value}`;
-      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, "_blank");
+      const mensagem = `Olá,\nVocê vai pagar: ${campo1.value} ${isEuroToKwanza ? '€' : 'Kz'}\nVocê vai receber: ${campo2.value} ${isEuroToKwanza ? 'Kz' : '€'}`;
+
+      // Redirecionar com mensagem automática
+      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}&send_message=true`, "_blank");
       modalResumo.style.display = "none";
     } else {
       alert("Todos os colaboradores estão ocupados no momento. Tente novamente mais tarde.");
