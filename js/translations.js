@@ -65,8 +65,7 @@ const translations = {
     authorGoals: "Objectivos do Autor",
     authorIntroduction: "Eu, José Muxito, criei este site com o objetivo de servir como um espaço de aprendizado e experimentação no desenvolvimento web.\n" +
       "      <br>Como estudante em Engenharia Elétrica e Informática Industrial (GEII), busco enriquecer minha bagagem acadêmica ao explorar novas tecnologias, linguagens de programação e metodologias.\n" +
-      "      <br>Este projeto é fruto de curiosidade e paixão pela programação, com a intenção de criar, inovar e desenvolver habilidades práticas.\n" +
-      "      <br>Além disso, este site reflete meu compromisso em explorar o universo digital por hobby e aprendizado contínuo.",
+      "      <br>Este projeto é fruto de curiosidade e paixão pela programação, com a intenção de criar, inovar e desenvolver habilidades práticas.\n",
     gratitudeNote: "Nota de Agradecimento",
     gratitudeMessage: "Gostaria de expressar minha mais profunda gratidão a todas as pessoas que contribuíram direta ou indiretamente para a criação do Angoline." +
       "<br>Este projeto não seria possível sem o apoio de:",
@@ -92,8 +91,8 @@ const translations = {
     "step2": "Inserir o tipo de moeda que deseja comprar (Kwanza ou Euro).",
     "step3": "Inserir o valor a pagar na moeda oposta (por exemplo, se comprar Euros, paga em Kwanza).",
     "step4": "Clicar no botão <strong>“Enviar”</strong>.",
-    "paymentProcessA": "Após enviar as informações, o cliente será automaticamente redirecionado para a página oficial da <strong>Angolan Company</strong> no WhatsApp, onde será atendido por um membro da nossa equipe.",
-    "paymentProcessB": "Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angolan Company.",
+    "paymentProcessA": "Após enviar as informações, o cliente será automaticamente redirecionado para a página oficial da <strong>Angoline Company</strong> no WhatsApp, onde será atendido por um membro da nossa equipe.",
+    "paymentProcessB": "Durante o atendimento, o cliente enviará o valor combinado para um dos contribuintes da Angoline Company.",
     "paymentProcessC": "Após a confirmação do pagamento, nossa equipe fará a transferência do montante (a moeda desejada) ao cliente de forma segura e eficiente.",
     "supportMessage": "\"Se precisar de suporte técnico, clique no ícone do WhatsApp\".",
     titl: "Termos de Uso",
@@ -188,8 +187,7 @@ const translations = {
     authorGoals: "Author's Goals",
     authorIntroduction: "I, José Muxito, created this website with the goal of serving as a space for learning and experimentation in web development.\n" +
       "                <br>As a student of Electrical Engineering and Industrial Computing (GEII), I seek to enrich my academic background by exploring new technologies, programming languages, and methodologies.\n" +
-      "                <br>This project is the result of curiosity and passion for programming, with the intention of creating, innovating, and developing practical skills.\n" +
-      "                <br>Additionally, this website reflects my commitment to exploring the digital universe as a hobby and for continuous learning.",
+      "                <br>This project is the result of curiosity and passion for programming, with the intention of creating, innovating, and developing practical skills.\n",
     gratitudeNote: "Gratitude Note",
     gratitudeMessage: "I would like to express my deepest gratitude to everyone who directly or indirectly contributed to the creation of Angoline." +
       "<br>This project would not be possible without the support of:",
@@ -215,8 +213,8 @@ const translations = {
     "step2": "Enter the type of currency you want to buy (Kwanza or Euro).",
     "step3": "Enter the amount to pay in the opposite currency (for example, if buying Euros, pay in Kwanza).",
     "step4": "Click the <strong>'Submit'</strong> button.",
-    "paymentProcessA": "After submitting the information, the customer will be automatically redirected to the official <strong>Angolan Company</strong> WhatsApp page, where they will be assisted by a team member.",
-    "paymentProcessB": "During the service, the customer will send the agreed amount to one of the Angolan Company contributors.",
+    "paymentProcessA": "After submitting the information, the customer will be automatically redirected to the official <strong>Angoline Company</strong> WhatsApp page, where they will be assisted by a team member.",
+    "paymentProcessB": "During the service, the customer will send the agreed amount to one of the Angoline Company contributors.",
     "paymentProcessC": "After payment confirmation, our team will securely and efficiently transfer the requested currency to the customer.",
     "supportMessage": "\"If you need technical support, click on the WhatsApp icon\".",
     titl: "Terms of Use",
@@ -311,8 +309,7 @@ const translations = {
     authorGoals: "Objectifs de l'Auteur",
     authorIntroduction: "Moi, José Muxito, j'ai créé ce site dans le but de servir d'espace d'apprentissage et d'expérimentation dans le développement web.\n" +
       "                    <br>En tant qu'étudiant en Génie Électrique et Informatique Industrielle (GEII), je cherche à enrichir mon parcours académique en explorant de nouvelles technologies, langages de programmation et méthodologies.\n" +
-      "                    <br>Ce projet est le fruit de la curiosité et de la passion pour la programmation, avec l'intention de créer, innover et développer des compétences pratiques.\n" +
-      "                    <br>De plus, ce site reflète mon engagement à explorer l'univers numérique par hobby et apprentissage continu.",
+      "                    <br>Ce projet est le fruit de la curiosité et de la passion pour la programmation, avec l'intention de créer, innover et développer des compétences pratiques.\n",
     gratitudeNote: "Note de Gratitude",
     gratitudeMessage: "Je voudrais exprimer ma plus profonde gratitude à toutes les personnes qui ont contribué directement ou indirectement à la création d'Angoline." +
       "<br>Ce projet ne serait pas possible sans le soutien de:",
@@ -338,8 +335,8 @@ const translations = {
     "step2": "Sélectionnez le type de devise que vous souhaitez acheter (Kwanza ou Euro).",
     "step3": "Entrez le montant à payer dans la devise opposée (par exemple, si vous achetez des Euros, vous payez en Kwanza).",
     "step4": "Cliquez sur le bouton <strong>'Envoyer'</strong>.",
-    "paymentProcessA": "Après avoir soumis les informations, le client sera automatiquement redirigé vers la page officielle WhatsApp de <strong>Angolan Company</strong>, où il sera assisté par un membre de notre équipe.",
-    "paymentProcessB": "Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolan Company.",
+    "paymentProcessA": "Après avoir soumis les informations, le client sera automatiquement redirigé vers la page officielle WhatsApp de <strong>Angoline Company</strong>, où il sera assisté par un membre de notre équipe.",
+    "paymentProcessB": "Lors de l'assistance, le client enverra le montant convenu à l'un des contributeurs de l'Angolin Company.",
     "paymentProcessC": "Après confirmation du paiement, notre équipe effectuera le transfert sécurisé et efficace du montant (devise souhaitée) au client.",
     "supportMessage": "\"Si vous avez besoin d'une assistance technique, cliquez sur l'icône WhatsApp\".",
     titl: "Conditions d'utilisation",
