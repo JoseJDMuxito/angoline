@@ -5,8 +5,8 @@ const translations = {
     title: "Angoline",
     description: "Plataforma ideal<br>para fazer câmbio e comprar moedas de forma fácil e segura",
     p1: "Câmbio",
-    p2: "Transferências",
-    p3: "Divisas : € e Kz.",
+    p2: "X-FUTUR3",
+    p3: "EUR & AOA.",
     services: "<i class=\"fa-solid fa-wallet\" style='color: saddlebrown'></i> SERVIÇOS",
     team: "<i class=\"fa fa-user\" style=\"color: blue\"></i> EQUIPA",
     start: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> COMEÇAR",
@@ -123,12 +123,15 @@ const translations = {
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
     clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
   },
+
+
+
   en: {
     title: "Angoline",
     description: "Ideal platform<br>for exchanging and purchasing currencies easily and securely",
     p1: "Exchange",
-    p2: "Transfers",
-    p3: "Currencies: € and Kz",
+    p2: "X-FUTUR3",
+    p3: "EUR & AOA",
     services: "<i class=\"fa-solid fa-wallet\" style='color: saddlebrown'></i> SERVICES",
     team: "<i class=\"fa fa-user\" style=\"color: blue\"></i> TEAM",
     start: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> START",
@@ -245,12 +248,15 @@ const translations = {
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use.",
     clikon:"After clicking 'Send', you will be assisted by one of our team members via WhatsApp.",
   },
+
+
+
   fr: {
     title: "Angoline",
     description: "Plateforme idéale<br>pour changer et acheter des devises facilement et en toute sécurité",
     p1: "Change",
-    p2: "Transferts",
-    p3: "Devises : € et Kz",
+    p2: "X-FUTUR3",
+    p3: "EUR & AOA",
     services: "<i class=\"fa-solid fa-wallet\" style='color: saddlebrown'></i> SERVICES",
     team: "<i class=\"fa fa-user\" style=\"color: blue\"></i> ÉQUIPE",
     start: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> COMMENCER",
