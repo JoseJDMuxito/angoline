@@ -109,7 +109,7 @@ footer span {
 
 body {
   transition: background-color 0.5s ease, background-image 0.5s ease;
-  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+  background:linear-gradient(to right, rgba(255, 0, 0, 0.1), rgba(0, 119, 255, 0.1));
 }
 
 
@@ -294,7 +294,7 @@ input[type="checkbox"] {
 }
 
 .containe {
-  height: 230px;
+  height: 330px;
   max-width: 900px;
   margin: auto;
   border-radius: 10px;
@@ -469,7 +469,7 @@ input[type="checkbox"] {
   justify-content: center;
   width: 45px;
   height: 30px;
-  border: 2px solid #ccc;
+  border: 2px solid lightgray;
   border-radius: 10px;
   background-color: white;
   position: relative;

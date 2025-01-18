@@ -22,15 +22,15 @@
   <div class="w3-top">
     <div class="w3-bar custom-block w3-card" id="myNavbar">
       <a class="w3-bar-item w3-wide custom-block" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
-        <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline
+        <img src="img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Agoline Company
       </a>
 
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="services"><i class="fa-solid fa-wallet"></i> SERVIÇOS</a>
-        <a href="comecar/comecar.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="start"><i class="fa fa-usd"></i> COMEÇAR</a>
-        <a href="time/time.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user"></i> EQUIPA</a>
-        <a href="faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="FAQ"><i class="fa-solid fa-question"></i> FAQ</a>
+        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="services"><i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS</a>
+        <a href="comecar/comecar.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="start"><i class="fa-solid fa-credit-card" style="color: orange"></i> COMEÇAR</a>
+        <a href="time/time.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
+        <a href="faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-question" style="color: red"></i> FAQ</a>
 
         <!-- Modo escuro e claro -->
         <input type="checkbox" id="theme-switch">
@@ -68,16 +68,16 @@
       <i class="fa-solid fa-house"></i>
     </a>
     <a href="servico/servico.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="services">
-      <i class="fa-solid fa-wallet"></i> SERVIÇOS
+      <i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS
     </a>
     <a href="comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="start">
-      <i class="fa fa-usd"></i> COMEÇAR
+      <i class="fa-solid fa-credit-card" style="color: orange"></i> COMEÇAR
     </a>
     <a href="time/time.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="team">
-      <i class="fa fa-user"></i> EQUIPA
+      <i class="fa fa-user" style="color: blue"></i> EQUIPA
     </a>
-    <a href="faq/faq.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="FAQ">
-      <i class="fa-solid fa-question"></i> FAQ
+    <a href="faq/faq.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="">
+      <i class="fa-solid fa-question" style="color: red"></i> FAQ
     </a>
     <a>
       <label for="theme-switch" onclick="w3_close()" class="w3-button d1 " data-i18n="darkmode">
@@ -109,7 +109,7 @@
       <div class="w3-display-container mySlides">
         <img src="img/WhatsApp%20Image%202024-12-20%20à%2021.24.20_3e370750.jpg" alt="Câmbio">
         <div class="w3-display-topleft w3-container w3-padding-32">
-          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px" data-i18n="p1">Câmbio</span>
+          <span class="w3-white w3-padding-large w3-animate-bottom" style="font-weight: 700; font-size: 20px; border-radius: 8px; " data-i18n="p1">Câmbio</span>
         </div>
       </div>
 
@@ -137,7 +137,8 @@
 
     <div class="w3-container custom-block w3-card-4" style="margin-top: 50px; margin-bottom: -500px; border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.3);">
       <div class="w3-section">
-        <h3 style="text-align: center; font-weight: 500;" data-i18n="currencyConverter"><i class="fa-solid fa-credit-card"></i> Conversor</h3>
+        <h4 style="text-align: center; font-weight: 500; color: blue" data-i18n="currencyConverter"><i class="fa fa-usd" ></i> Conversor</h4>
+        <hr style="border-width: 1px; border-style: solid; margin-top: -10px">
         <div id="group-1" class="input-group">
           <label for="campo-1" style="font-weight: 500;">
             EUR
@@ -170,7 +171,7 @@
       <div id="historico" style="margin-top: 20px;">
         <p class="w3-opacity" style="font-weight: 500;" data-i18n="history">Histórico de câmbio</p>
         <ul id="history-list" class="w3-opacity" style="font-weight: 500;"></ul>
-        <button class="w3-opacity" id="clear-history" style="border-radius: 10px; cursor: pointer; background:linear-gradient(to right, rgba(255, 0, 0, 0.16), rgba(0, 119, 255, 0.16));" data-i18n="clearHistory">Limpar</button>
+        <div class="custom-block" id="clear-history" style="border-radius: 5px; cursor: pointer; " data-i18n=""><i class="fa-solid fa-trash-can"></i></div>
       </div>
     </div>
   </div>
@@ -179,15 +180,15 @@
     Já fez a sua conversão?
   </h4>
   <h4 style="text-align: center; margin-bottom: 50px">
-    <a href="comecar/comecar.html" data-i18n="clickOn">Clique aqui!</a>
+    <a href="comecar/comecar.html" data-i18n="clickOn">Clique aqui! <i class="fa-solid fa-hand" style="color: orange"></i></a>
   </h4>
 </div>
 
 <!-- Footer -->
-<footer class="custom-block d2">
-  <span>
-    <a class="w3-bar-item w3-wide custom-block" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
-      <img src="img/LOGO.jpg" alt="LOGO" style="height: 20px; width: 20px; border-radius: 40px;"> Agoline
+<footer class="custom-block d2" style="border-top: 1px solid lightgray;">
+  <span class="w3-opacity">
+    <a class="w3-bar-item w3-wide custom-block " style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
+      <img src="img/LOGO.jpg" alt="LOGO" style="height: 20px; width: 20px; border-radius: 40px;"> Agoline Company
     </a>
   </span>
 
