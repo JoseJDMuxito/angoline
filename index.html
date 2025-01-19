@@ -346,11 +346,21 @@
     }
   });
 
+  confirmarBtn.addEventListener("click", async () => {
+    const valorPagar = campo1.value;
+    const valorReceber = campo2.value;
+    await handleTransaction(valorPagar, valorReceber, isEuroToKwanza);
+    modalResumo.style.display = "none";
+  });
+
+
   // Limpar histórico
   clearHistoryBtn.addEventListener("click", () => {
     historyList.innerHTML = '';
   });
 </script>
+
+<script src="js/whatsapp.js"></script>
 
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
