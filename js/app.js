@@ -115,8 +115,7 @@ function w3_close() {
 
 
 
-
-//Conversor
+// Conversor
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
 
@@ -133,6 +132,9 @@ const resumoPagar = document.getElementById("resumoPagar");
 const resumoReceber = document.getElementById("resumoReceber");
 const cancelarBtn = document.getElementById("cancelar");
 const confirmarBtn = document.getElementById("confirmar");
+
+// Adicione o ID ou classe para "Histórico de câmbio" no HTML e selecione aqui
+const historicoCambio = document.getElementById('historico-cambio'); // Substitua pelo seu ID ou classe
 
 let isEuroToKwanza = true;
 
@@ -181,6 +183,12 @@ function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
   const novoItem = document.createElement('li');
   novoItem.textContent = `${origem} ${moedaOrigem} = ${destino} ${moedaDestino}`;
   historyList.appendChild(novoItem);
+
+  // Mostrar o botão de limpar histórico após o primeiro câmbio
+  clearHistoryBtn.style.display = 'block';
+  historicoCambio.style.display = 'block';
+
+
 }
 
 // Alternar entre Euro e Kwanza
@@ -217,6 +225,9 @@ comprarAgoraBtn.addEventListener("click", () => {
   resumoPagar.textContent = ` ${valorPagar} ${isEuroToKwanza ? '€' : 'Kz'}`;
   resumoReceber.textContent = ` ${valorReceber} ${isEuroToKwanza ? 'Kz' : '€'}`;
   modalResumo.style.display = "block";
+
+  comprarAgoraBtn.style.display = "none";
+
 });
 
 // Botão CANCELAR
@@ -231,16 +242,22 @@ confirmarBtn.addEventListener("click", () => {
 
   modalResumo.style.display = "none";
 
-  // Mensagem que será enviada automaticamente
   const mensagem = encodeURIComponent(
     `Olá! \nEu vou pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}.\nEu vou receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}.`
   );
 
-  // Enviar automaticamente para o WhatsApp
   window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}&send=true`, '_blank');
 });
 
 // Limpar histórico
 clearHistoryBtn.addEventListener("click", () => {
   historyList.innerHTML = '';
+  clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
+  historicoCambio.style.display = 'none';
+
 });
+
+clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
+historicoCambio.style.display = 'none';
+
+
