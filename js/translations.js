@@ -120,6 +120,12 @@ const translations = {
     intellectualPropertyText: "Todos os textos do site Angoline, assim como seu design, são de nossa propriedade." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
     clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
+    buyNow: "Comprar agora",
+    youWillReceive: "Você vai receber :",
+    youWillPay: "Você vai pagar :",
+    reverseExchangeTryAgain: "Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.",
+    confirm: "Confirmar",
+    cancel: "Cancelar",
   },
 
 
@@ -243,6 +249,12 @@ const translations = {
     intellectualPropertyText: "All the texts on the Angoline website, as well as its design, are our property." +
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use.",
     clikon:"After clicking 'Send', you will be assisted by one of our team members via WhatsApp.",
+    buyNow: "Buy now",
+    youWillReceive: "You will receive :",
+    youWillPay: "You will pay :",
+    reverseExchangeTryAgain: "If this is not correct, reverse the exchange direction and try again, please.",
+    confirm: "Confirm",
+    cancel: "Cancel",
   },
 
 
@@ -366,6 +378,12 @@ const translations = {
     intellectualPropertyText: "Tous les textes sur le site Angoline, ainsi que son design, sont notre propriété." +
       "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre.",
     clikon:"Après avoir cliqué sur 'Envoyer', vous serez assisté par l'un de nos collaborateurs via WhatsApp.",
+    buyNow: "Acheter maintenant",
+    youWillReceive: "Vous recevrez :",
+    youWillPay: "Vous paierez : ",
+    reverseExchangeTryAgain: "Si ce n'est pas correct, inversez le sens du change et réessayez, s'il vous plaît.",
+    confirm: "Confirmer",
+    cancel: "Annuler",
   }
 };
 
