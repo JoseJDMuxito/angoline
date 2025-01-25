@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <title>servico</title>
+  <title>equipa</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
-    html,body,h1,h2,h3,h4,pre {font-family:"Lato", sans-serif}
+    html,body,h1,h2,h3,h4,pre,p {font-family:"Lato", sans-serif}
   </style>
 </head>
-
 <body>
+
 <!-- Header Fixo -->
 <div class="wrapper">
   <!-- Navbar (sit on top) -->
@@ -29,7 +29,7 @@
       <div class="w3-right w3-hide-small">
         <a href="../servico/servico.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="services"><i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS</a>
         <a href="../comecar/comecar.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="start"><i class="fa-solid fa-credit-card" style="color: orange"></i> COMEÇAR</a>
-        <a href="../equipa/equipa.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
+        <a href="/equipa.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
         <a href="../faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-question" style="color: red"></i> FAQ</a>
 
         <!-- Modo escuro e claro -->
@@ -73,7 +73,7 @@
     <a href="../comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="start">
       <i class="fa-solid fa-credit-card" style="color: orange"></i> COMEÇAR
     </a>
-    <a href="../equipa/equipa.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="team">
+    <a href="/equipa.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="team">
       <i class="fa fa-user" style="color: blue"></i> EQUIPA
     </a>
     <a href="#" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="">
@@ -87,59 +87,71 @@
   </nav>
 </div>
 
-<!-- Botão flutuante do WhatsApp -->
-<button class="whatsapp-button" id="whatsapp-button">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</button>
-
 <!-- Grid -->
-<div style="margin-top: -160px">
-<div class="w3-container">
-  <div class="w3-row w3-row-padding w3-container" id="plans">
+<div class="w3-container" style="margin-top: -160px;">
+  <div class="w3-row-padding" id="about">
     <div class="w3-center w3-padding-64">
-      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" data-i18n="ourServices">Os nossos serviços</span>
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16" data-i18n="whoWeAre">Quem nós somos</span>
     </div>
 
-    <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="../comecar/comecar.html"><i class="fas fa-hand-holding-usd icon" style="color: rgba(255,165,0,0.5)"></i></a>
-        <h3 data-i18n="currencySale">Venda de moedas</h3>
-        <p data-i18n="currencyDescription">Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.<br><br><br></p>
-      </div>
-
-      <div class="w3-third w3-margin-bottom">
-      </div>
-
-      <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="https://wa.me/244948925827"><i class="fa fa-cog icon" style="color: grey"></i></a>
-        <h3 data-i18n="support">Suporte</h3>
-        <p data-i18n="supportDescription">Oferecemos serviço gratuito para quaisquer dificuldades ou dúvidas relacionadas aos nossos serviços.</p>
-        <p data-i18n="whatsappInfo">Basta clicar no ícone do WhatsApp.<br><br></p>
-      </div>
-
-        <div class="w3-third w3-margin-bottom"></div>
-
-        <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-          <a href="../comecar/comecar.html"><i class="fas fa-exchange-alt icon" style="color: lightskyblue"></i></a>
-          <h3 data-i18n="transfers">Transferências</h3>
-          <p data-i18n="transferDescription">Realizamos transferências bancárias seguras e rápidas entre diferentes instituições financeiras angolanas : BAI, BIC, BFA...</p>
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4 d1">
+        <img src="../img/irina.jpg" alt="Irina Chipoia" style="width:100%" class="d1">
+        <div class="w3-container" style="height: 170px">
+          <h3>Irina Chipoia</h3>
+          <p class="w3-opacity" data-i18n="exchangeManager">Gestora de câmbio</p>
+          <p><br></p>
+          <pre><a href="https://wa.me/33628947112" class="w3-button w3-block w3-black d1" target="_blank" data-i18n="contactUs">Contactar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></a></pre>
         </div>
-
-        <div class="w3-third w3-margin-bottom"></div>
       </div>
+    </div>
 
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4 d1">
+        <img src="../img/moises.jpg" alt="Moisés Teresa" style="width:100%" class="d1">
+        <div class="w3-container" style="height: 170px">
+          <h3>Moisés Teresa</h3>
+          <p class="w3-opacity" data-i18n="coFounder">Co-fundador</p>
+          <p data-i18n="studentOrleans">Estudante na Universidade de Orléans Châteauroux, França.</p>
+          <pre><a href="https://wa.me/244924459808" class="w3-button w3-block w3-black d1" target="_blank" data-i18n="contactUs">Contactar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></a></pre>
+        </div>
+      </div>
+    </div>
 
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4 d1">
+        <img src="../img/alberto.jpg" alt="Alberto Viegas" style="width:100%" class="d1">
+        <div class="w3-container" style="height: 170px">
+          <h3>Alberto Viegas</h3>
+          <p class="w3-opacity" data-i18n="transactionOperator">Operador de transações</p>
+          <p data-i18n="studentLyon">Estudante na Universidade Claude Bernard Lyon 1, França.</p>
+          <pre><a href="https://wa.me/33761936803" class="w3-button w3-block w3-black d1" target="_blank" data-i18n="contactUs">Contactar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></a></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4 d1">
+        <img src="../img/.jpg" alt="Membro" style="width:100%" class="d1">
+        <div class="w3-container" style="height: 170px">
+          <h3>Membro n° 4</h3>
+          <p class="w3-opacity" data-i18n="">Indefinido</p>
+          <p data-i18n="">Indefinido.</p>
+          <pre><a href="https://wa.me/" class="w3-button w3-block w3-black d1" target="_blank" data-i18n="contactUs">Contactar   <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 25px"></i></a></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+    </div>
   </div>
 </div>
 
-<h4 style="text-align: center; margin-top: 20px" data-i18n="servicesAvailable">
-  Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class="fa-solid fa-check-circle" style="color: green"></i>
-</h4>
-</div>
-
-
 <!-- Footer -->
-<footer class="custom-block d2" style="margin-top: 80px; border-top: 1px solid lightgray;">
+<footer class="custom-block d2" style="border-top: 1px solid lightgray;">
   <span  class="w3-opacity">
     <a class="w3-bar-item w3-wide custom-block" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
       <img src="../img/LOGO.jpg" alt="LOGO" STYLE="height: 20px; width: 20px; border-radius: 40px;"> Angoline
@@ -153,14 +165,6 @@
 </footer>
 
 <script>
-  // Configuração do número WhatsApp
-  const whatsappNumber = "244948925827";
-
-  // Ação ao clicar no botão
-  document.getElementById("whatsapp-button").addEventListener("click", function() {
-    const whatsappURL = `https://wa.me/${whatsappNumber}`;
-    window.open(whatsappURL, "_blank");
-  });
 
   // Toggle between showing and hiding the sidebar when clicking the menu icon
   let mySidebar = document.getElementById("mySidebar");
@@ -274,9 +278,7 @@
 
   showSlides();
 </script>
-
 <script src="../js/translations.js"></script>
 <script src="../js/main.js"></script>
-
 </body>
 </html>
