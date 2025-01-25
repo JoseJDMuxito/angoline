@@ -126,6 +126,8 @@ const translations = {
     reverseExchangeTryAgain: "Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.",
     confirm: "Confirmar",
     cancel: "Cancelar",
+    studentComte: "Coordenador de Marketing",
+    studentComt: "Estudante na Universidade Franche Comté, França",
   },
 
 
@@ -255,6 +257,8 @@ const translations = {
     reverseExchangeTryAgain: "If this is not correct, reverse the exchange direction and try again, please.",
     confirm: "Confirm",
     cancel: "Cancel",
+    studentComte: " Marketing Coordinator",
+    studentComt: "Student at the University of Franche-Comté, France",
   },
 
 
@@ -384,7 +388,7 @@ const translations = {
     reverseExchangeTryAgain: "Si ce n'est pas correct, inversez le sens du change et réessayez, s'il vous plaît.",
     confirm: "Confirmer",
     cancel: "Annuler",
+    studentComte: "Coordinateur de Marketing",
+    studentComt: "Étudiant à l'Université de Franche-Comté, France",
   }
 };
-
-
