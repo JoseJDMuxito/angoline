@@ -128,6 +128,7 @@ const translations = {
     cancel: "Cancelar",
     studentComte: "Coordenador de Marketing",
     studentComt: "Estudante na Universidade Franche Comté, França",
+    waiting : "Aguarde, estamos à procura de um colaborador...\n",
   },
 
 
@@ -259,6 +260,7 @@ const translations = {
     cancel: "Cancel",
     studentComte: " Marketing Coordinator",
     studentComt: "Student at the University of Franche-Comté, France",
+    waiting : "Please wait, we are looking for a collaborator...\n",
   },
 
 
@@ -390,5 +392,6 @@ const translations = {
     cancel: "Annuler",
     studentComte: "Coordinateur de Marketing",
     studentComt: "Étudiant à l'Université de Franche-Comté, France",
+    waiting : "Veuillez patienter, nous recherchons un collaborateur...\n",
   }
 };
