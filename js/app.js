@@ -261,3 +261,63 @@ clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o hist
 historicoCambio.style.display = 'none';
 
 
+// Função para buscar um funcionário disponível
+async function procurarFuncionario(valorPagar, valorReceber) {
+  modalResumo.style.display = "none";
+  exibirMensagemAguarde();
+
+  for (const numero of shuffleArray(funcionarios)) {
+    const disponibilidade = await verificarDisponibilidade(numero);
+    if (disponibilidade) {
+      enviarDetalhesAoFuncionario(numero, valorPagar, valorReceber);
+      return;
+    }
+  }
+  alert("Nenhum funcionário está disponível no momento. Tente novamente mais tarde.");
+}
+
+// Exibe uma animação de espera enquanto busca um funcionário
+function exibirMensagemAguarde() {
+  const aguardeDiv = document.createElement("div");
+  aguardeDiv.id = "aguarde";
+  aguardeDiv.innerHTML = "<p>Aguarde um instante...</p><div class='loading-spinner'></div>";
+  document.body.appendChild(aguardeDiv);
+}
+
+// Embaralha a lista de funcionários para escolha aleatória
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// Verifica se um funcionário está disponível via WhatsApp
+async function verificarDisponibilidade(numero) {
+  try {
+    const response = await fetch(`https://api.whatsapp.com/send?phone=${numero}`);
+    return response.ok;
+  } catch (error) {
+    console.error("Erro ao verificar disponibilidade: ", error);
+    return false;
+  }
+}
+
+// Envia os detalhes da transação para o funcionário disponível
+function enviarDetalhesAoFuncionario(numero, valorPagar, valorReceber) {
+  const mensagem = encodeURIComponent(
+    `Olá! Um cliente deseja atendimento.\nEle pagará: ${valorPagar} €.\nEle receberá: ${valorReceber} Kz.`
+  );
+  window.open(`https://wa.me/${numero}?text=${mensagem}&send=true`, '_blank');
+  removerMensagemAguarde();
+}
+
+// Remove a animação de espera
+function removerMensagemAguarde() {
+  const aguardeDiv = document.getElementById("aguarde");
+  if (aguardeDiv) aguardeDiv.remove();
+}
+
+// Inicia a busca por um funcionário ao confirmar a transação
+confirmarBtn.addEventListener("click", () => {
+  const valorPagar = campo1.value;
+  const valorReceber = campo2.value;
+  procurarFuncionario(valorPagar, valorReceber);
+});
