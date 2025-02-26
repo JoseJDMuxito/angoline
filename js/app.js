@@ -136,9 +136,6 @@ const historicoCambio = document.getElementById('historico-cambio'); // Substitu
 
 let isEuroToKwanza = true;
 
-// Número fixo do WhatsApp (somente um número) – utilizado originalmente
-/*const numeroWhatsApp = "330772026889";*/
-
 // Lista de colaboradores (até 10 números) – insira aqui os números reais dos colaboradores
 const listaFuncionarios = [
   "224924459808",
@@ -242,10 +239,10 @@ cancelarBtn.addEventListener("click", () => {
   NOVA FUNCIONALIDADE MODIFICADA:
   Ao clicar em CONFIRMAR, o sistema exibirá um modal de espera com a mensagem:
   "Aguarde, estamos à procura de um colaborador..."
-  O modal ficará visível por 3 segundos. Após esse tempo, o sistema selecionará aleatoriamente
-  um colaborador dentre os 10 disponíveis e exibirá a mensagem "Colaborador encontrado!".
-  Em seguida, o sistema direcionará automaticamente o usuário para o WhatsApp do colaborador escolhido,
-  com a mensagem pré-formatada, sem necessidade de interação adicional do usuário.
+  O modal ficará visível por 2 segundos. Após esse tempo, o sistema selecionará aleatoriamente
+  um colaborador dentre os 10 disponíveis e redirecionará automaticamente o usuário para o WhatsApp do colaborador,
+  com a mensagem pré-formatada (com "Olá," seguido dos valores em linhas separadas), enviada automaticamente,
+  sem exibir nenhuma mensagem adicional.
 */
 
 // Função para selecionar um colaborador aleatório da lista
@@ -308,7 +305,7 @@ confirmarBtn.addEventListener("click", () => {
   // Exibe o modal de aguarde
   showAguardeModal();
 
-  // Aguarda 3 segundos antes de prosseguir
+  // Aguarda 2 segundos antes de prosseguir
   setTimeout(() => {
     // Seleciona um colaborador aleatório
     const colaboradorSelecionado = selecionarColaborador();
@@ -323,9 +320,6 @@ confirmarBtn.addEventListener("click", () => {
     // Esconde o modal de aguarde
     hideAguardeModal();
 
-    // Informa que o colaborador foi encontrado
-    alert("Colaborador encontrado!");
-
     // Formata a mensagem para WhatsApp (com "Olá," seguido dos valores em linhas separadas)
     const mensagem = encodeURIComponent(
       `Olá,\nValor a pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}\nValor a receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}`
@@ -333,7 +327,7 @@ confirmarBtn.addEventListener("click", () => {
 
     // Redireciona automaticamente para o WhatsApp do colaborador com a mensagem pré-preenchida e enviada automaticamente
     window.open(`https://wa.me/${colaboradorSelecionado}?text=${mensagem}&send=true`, '_blank');
-  }, 3000);
+  }, 2000);
 });
 
 // Limpar histórico
@@ -345,4 +339,3 @@ clearHistoryBtn.addEventListener("click", () => {
 
 clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
-
