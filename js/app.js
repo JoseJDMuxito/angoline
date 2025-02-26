@@ -113,7 +113,6 @@ function w3_close() {
 }
 
 
-
 // Conversor
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
@@ -138,14 +137,14 @@ const historicoCambio = document.getElementById('historico-cambio'); // Substitu
 let isEuroToKwanza = true;
 
 // Número fixo do WhatsApp (somente um número) – utilizado originalmente
-const numeroWhatsApp = "330772026889";
+/*const numeroWhatsApp = "330772026889";*/
 
-// Lista de funcionários (números reais para envio via WhatsApp)
-// Para testes, adicione números reais. A funcionalidade simula o envio e a resposta via prompt.
+// Lista de colaboradores (até 10 números) – insira aqui os números reais dos colaboradores
 const listaFuncionarios = [
-  "5511999999999",
-  "5511888888888",
-  "5511777777777"
+  "224924459808",
+  "33761936803",
+  "33628947112",
+  "33762627101"
 ];
 
 // Função debounce para evitar cálculos excessivos
@@ -240,45 +239,22 @@ cancelarBtn.addEventListener("click", () => {
 });
 
 /*
-  NOVA FUNCIONALIDADE:
-  Ao clicar em CONFIRMAR, o sistema mostrará uma mensagem para o cliente aguardar enquanto procura um colaborador.
-  Em seguida, ele enviará via WhatsApp (por meio da abertura de janela com a URL do WhatsApp) uma mensagem para um colaborador aleatório,
-  perguntando "Você está disponível?". Caso o colaborador responda "Não" (simulado via prompt), o sistema buscará outro colaborador.
-  Se um colaborador responder "Sim", o sistema enviará os dados do resumo (valor a pagar/receber) para esse colaborador e a conversa será iniciada.
-  Caso nenhum colaborador esteja disponível, o cliente será informado.
+  NOVA FUNCIONALIDADE MODIFICADA:
+  Ao clicar em CONFIRMAR, o sistema exibirá um modal de espera com a mensagem:
+  "Aguarde, estamos à procura de um colaborador..."
+  O modal ficará visível por 3 segundos. Após esse tempo, o sistema selecionará aleatoriamente
+  um colaborador dentre os 10 disponíveis e exibirá a mensagem "Colaborador encontrado!".
+  Em seguida, o sistema direcionará automaticamente o usuário para o WhatsApp do colaborador escolhido,
+  com a mensagem pré-formatada, sem necessidade de interação adicional do usuário.
 */
 
-// Função que simula o envio de mensagem para um colaborador e aguarda a resposta (para demonstração usa confirm())
-function buscarFuncionarioDisponivel() {
-  return new Promise((resolve, reject) => {
-    let funcionariosDisponiveis = [...listaFuncionarios];
-
-    function tentarProximo() {
-      if (funcionariosDisponiveis.length === 0) {
-        reject("Nenhum colaborador disponível.");
-        return;
-      }
-      // Seleciona aleatoriamente um colaborador
-      const index = Math.floor(Math.random() * funcionariosDisponiveis.length);
-      const funcionario = funcionariosDisponiveis.splice(index, 1)[0];
-
-      // Envia mensagem para o colaborador perguntando se está disponível
-      const mensagemDisponibilidade = encodeURIComponent("Olá, você está disponível?");
-      window.open(`https://wa.me/${funcionario}?text=${mensagemDisponibilidade}&send=true`, '_blank');
-
-      // Simula o tempo de espera pela resposta (por exemplo, 5 segundos)
-      setTimeout(() => {
-        // Simulação: pergunta via prompt se o colaborador respondeu "Sim"
-        const resposta = confirm(`O colaborador ${funcionario} respondeu "Sim"? Clique em OK para Sim ou Cancelar para Não.`);
-        if (resposta) {
-          resolve(funcionario);
-        } else {
-          tentarProximo();
-        }
-      }, 5000);
-    }
-    tentarProximo();
-  });
+// Função para selecionar um colaborador aleatório da lista
+function selecionarColaborador() {
+  if (listaFuncionarios.length === 0) {
+    return null;
+  }
+  const index = Math.floor(Math.random() * listaFuncionarios.length);
+  return listaFuncionarios[index];
 }
 
 // Criação de um modal de "Aguarde" com spinner
@@ -299,7 +275,7 @@ aguardeModal.innerHTML = `
     <div class="spinner" style="margin-bottom: 10px;">
       <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
     </div>
-    <div>Aguarde, estamos procurando um colaborador...</div>
+    <div>Aguarde, estamos à procura de um colaborador...</div>
   </div>
 `;
 document.body.appendChild(aguardeModal);
@@ -321,31 +297,43 @@ function hideAguardeModal() {
   aguardeModal.style.display = "none";
 }
 
-// Botão CONFIRMAR – implementação com nova funcionalidade
+// Botão CONFIRMAR – nova implementação
 confirmarBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
 
+  // Fecha o modal de resumo imediatamente
   modalResumo.style.display = "none";
 
-  // Exibe mensagem/modal para o cliente aguardar
+  // Exibe o modal de aguarde
   showAguardeModal();
 
-  // Inicia o processo de busca por um colaborador disponível
-  buscarFuncionarioDisponivel()
-    .then((numeroFuncionario) => {
-      // Se um colaborador estiver disponível, envia os dados via WhatsApp para ele
-      const mensagem = encodeURIComponent(
-        `Olá! \nEu vou pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}.\nEu vou receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}.`
-      );
-      window.open(`https://wa.me/${numeroFuncionario}?text=${mensagem}&send=true`, '_blank');
-      hideAguardeModal();
-      alert("Um colaborador disponível foi encontrado e a conversa foi iniciada!");
-    })
-    .catch((error) => {
+  // Aguarda 3 segundos antes de prosseguir
+  setTimeout(() => {
+    // Seleciona um colaborador aleatório
+    const colaboradorSelecionado = selecionarColaborador();
+
+    // Se nenhum colaborador estiver disponível, informa o cliente
+    if (!colaboradorSelecionado) {
       hideAguardeModal();
       alert("Nenhum colaborador disponível no momento. Tente novamente mais tarde.");
-    });
+      return;
+    }
+
+    // Esconde o modal de aguarde
+    hideAguardeModal();
+
+    // Informa que o colaborador foi encontrado
+    alert("Colaborador encontrado!");
+
+    // Formata a mensagem para WhatsApp (com "Olá," seguido dos valores em linhas separadas)
+    const mensagem = encodeURIComponent(
+      `Olá,\nValor a pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}\nValor a receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}`
+    );
+
+    // Redireciona automaticamente para o WhatsApp do colaborador com a mensagem pré-preenchida e enviada automaticamente
+    window.open(`https://wa.me/${colaboradorSelecionado}?text=${mensagem}&send=true`, '_blank');
+  }, 3000);
 });
 
 // Limpar histórico
@@ -355,6 +343,6 @@ clearHistoryBtn.addEventListener("click", () => {
   historicoCambio.style.display = 'none';
 });
 
-clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
+clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
 
