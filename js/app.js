@@ -114,7 +114,6 @@ function w3_close() {
 
 
 
-
 // Conversor
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
@@ -138,8 +137,16 @@ const historicoCambio = document.getElementById('historico-cambio'); // Substitu
 
 let isEuroToKwanza = true;
 
-// Número fixo do WhatsApp (somente um número)
+// Número fixo do WhatsApp (somente um número) – utilizado originalmente
 const numeroWhatsApp = "330772026889";
+
+// Lista de funcionários (números reais para envio via WhatsApp)
+// Para testes, adicione números reais. A funcionalidade simula o envio e a resposta via prompt.
+const listaFuncionarios = [
+  "5511999999999",
+  "5511888888888",
+  "5511777777777"
+];
 
 // Função debounce para evitar cálculos excessivos
 function debounce(func, delay) {
@@ -187,8 +194,6 @@ function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
   // Mostrar o botão de limpar histórico após o primeiro câmbio
   clearHistoryBtn.style.display = 'block';
   historicoCambio.style.display = 'block';
-
-
 }
 
 // Alternar entre Euro e Kwanza
@@ -227,7 +232,6 @@ comprarAgoraBtn.addEventListener("click", () => {
   modalResumo.style.display = "block";
 
   comprarAgoraBtn.style.display = "none";
-
 });
 
 // Botão CANCELAR
@@ -235,18 +239,113 @@ cancelarBtn.addEventListener("click", () => {
   modalResumo.style.display = "none";
 });
 
-// Botão CONFIRMAR
+/*
+  NOVA FUNCIONALIDADE:
+  Ao clicar em CONFIRMAR, o sistema mostrará uma mensagem para o cliente aguardar enquanto procura um colaborador.
+  Em seguida, ele enviará via WhatsApp (por meio da abertura de janela com a URL do WhatsApp) uma mensagem para um colaborador aleatório,
+  perguntando "Você está disponível?". Caso o colaborador responda "Não" (simulado via prompt), o sistema buscará outro colaborador.
+  Se um colaborador responder "Sim", o sistema enviará os dados do resumo (valor a pagar/receber) para esse colaborador e a conversa será iniciada.
+  Caso nenhum colaborador esteja disponível, o cliente será informado.
+*/
+
+// Função que simula o envio de mensagem para um colaborador e aguarda a resposta (para demonstração usa confirm())
+function buscarFuncionarioDisponivel() {
+  return new Promise((resolve, reject) => {
+    let funcionariosDisponiveis = [...listaFuncionarios];
+
+    function tentarProximo() {
+      if (funcionariosDisponiveis.length === 0) {
+        reject("Nenhum colaborador disponível.");
+        return;
+      }
+      // Seleciona aleatoriamente um colaborador
+      const index = Math.floor(Math.random() * funcionariosDisponiveis.length);
+      const funcionario = funcionariosDisponiveis.splice(index, 1)[0];
+
+      // Envia mensagem para o colaborador perguntando se está disponível
+      const mensagemDisponibilidade = encodeURIComponent("Olá, você está disponível?");
+      window.open(`https://wa.me/${funcionario}?text=${mensagemDisponibilidade}&send=true`, '_blank');
+
+      // Simula o tempo de espera pela resposta (por exemplo, 5 segundos)
+      setTimeout(() => {
+        // Simulação: pergunta via prompt se o colaborador respondeu "Sim"
+        const resposta = confirm(`O colaborador ${funcionario} respondeu "Sim"? Clique em OK para Sim ou Cancelar para Não.`);
+        if (resposta) {
+          resolve(funcionario);
+        } else {
+          tentarProximo();
+        }
+      }, 5000);
+    }
+    tentarProximo();
+  });
+}
+
+// Criação de um modal de "Aguarde" com spinner
+const aguardeModal = document.createElement("div");
+aguardeModal.id = "aguardeModal";
+aguardeModal.style.position = "fixed";
+aguardeModal.style.top = "0";
+aguardeModal.style.left = "0";
+aguardeModal.style.width = "100%";
+aguardeModal.style.height = "100%";
+aguardeModal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+aguardeModal.style.display = "none";
+aguardeModal.style.justifyContent = "center";
+aguardeModal.style.alignItems = "center";
+aguardeModal.style.zIndex = "1000";
+aguardeModal.innerHTML = `
+  <div style="text-align: center; color: #fff;">
+    <div class="spinner" style="margin-bottom: 10px;">
+      <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+    </div>
+    <div>Aguarde, estamos procurando um colaborador...</div>
+  </div>
+`;
+document.body.appendChild(aguardeModal);
+
+// Adiciona animação CSS para o spinner
+const styleElem = document.createElement("style");
+styleElem.innerHTML = `
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}`;
+document.head.appendChild(styleElem);
+
+function showAguardeModal() {
+  aguardeModal.style.display = "flex";
+}
+
+function hideAguardeModal() {
+  aguardeModal.style.display = "none";
+}
+
+// Botão CONFIRMAR – implementação com nova funcionalidade
 confirmarBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
 
   modalResumo.style.display = "none";
 
-  const mensagem = encodeURIComponent(
-    `Olá! \nEu vou pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}.\nEu vou receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}.`
-  );
+  // Exibe mensagem/modal para o cliente aguardar
+  showAguardeModal();
 
-  window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}&send=true`, '_blank');
+  // Inicia o processo de busca por um colaborador disponível
+  buscarFuncionarioDisponivel()
+    .then((numeroFuncionario) => {
+      // Se um colaborador estiver disponível, envia os dados via WhatsApp para ele
+      const mensagem = encodeURIComponent(
+        `Olá! \nEu vou pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}.\nEu vou receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}.`
+      );
+      window.open(`https://wa.me/${numeroFuncionario}?text=${mensagem}&send=true`, '_blank');
+      hideAguardeModal();
+      alert("Um colaborador disponível foi encontrado e a conversa foi iniciada!");
+    })
+    .catch((error) => {
+      hideAguardeModal();
+      alert("Nenhum colaborador disponível no momento. Tente novamente mais tarde.");
+    });
 });
 
 // Limpar histórico
@@ -254,70 +353,8 @@ clearHistoryBtn.addEventListener("click", () => {
   historyList.innerHTML = '';
   clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
   historicoCambio.style.display = 'none';
-
 });
 
 clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
 historicoCambio.style.display = 'none';
 
-
-// Função para buscar um funcionário disponível
-async function procurarFuncionario(valorPagar, valorReceber) {
-  modalResumo.style.display = "none";
-  exibirMensagemAguarde();
-
-  for (const numero of shuffleArray(funcionarios)) {
-    const disponibilidade = await verificarDisponibilidade(numero);
-    if (disponibilidade) {
-      enviarDetalhesAoFuncionario(numero, valorPagar, valorReceber);
-      return;
-    }
-  }
-  alert("Nenhum funcionário está disponível no momento. Tente novamente mais tarde.");
-}
-
-// Exibe uma animação de espera enquanto busca um funcionário
-function exibirMensagemAguarde() {
-  const aguardeDiv = document.createElement("div");
-  aguardeDiv.id = "aguarde";
-  aguardeDiv.innerHTML = "<p>Aguarde um instante...</p><div class='loading-spinner'></div>";
-  document.body.appendChild(aguardeDiv);
-}
-
-// Embaralha a lista de funcionários para escolha aleatória
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-// Verifica se um funcionário está disponível via WhatsApp
-async function verificarDisponibilidade(numero) {
-  try {
-    const response = await fetch(`https://api.whatsapp.com/send?phone=${numero}`);
-    return response.ok;
-  } catch (error) {
-    console.error("Erro ao verificar disponibilidade: ", error);
-    return false;
-  }
-}
-
-// Envia os detalhes da transação para o funcionário disponível
-function enviarDetalhesAoFuncionario(numero, valorPagar, valorReceber) {
-  const mensagem = encodeURIComponent(
-    `Olá! Um cliente deseja atendimento.\nEle pagará: ${valorPagar} €.\nEle receberá: ${valorReceber} Kz.`
-  );
-  window.open(`https://wa.me/${numero}?text=${mensagem}&send=true`, '_blank');
-  removerMensagemAguarde();
-}
-
-// Remove a animação de espera
-function removerMensagemAguarde() {
-  const aguardeDiv = document.getElementById("aguarde");
-  if (aguardeDiv) aguardeDiv.remove();
-}
-
-// Inicia a busca por um funcionário ao confirmar a transação
-confirmarBtn.addEventListener("click", () => {
-  const valorPagar = campo1.value;
-  const valorReceber = campo2.value;
-  procurarFuncionario(valorPagar, valorReceber);
-});
