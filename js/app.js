@@ -138,7 +138,7 @@ let isEuroToKwanza = true;
 
 // Lista de colaboradores (até 10 números) – insira aqui os números reais dos colaboradores
 const listaFuncionarios = [
-  "224924459808",
+  "244924459808",
   "33761936803",
   "33628947112",
   "33762627101"
