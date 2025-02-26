@@ -237,12 +237,11 @@ cancelarBtn.addEventListener("click", () => {
 
 /*
   NOVA FUNCIONALIDADE MODIFICADA:
-  Ao clicar em CONFIRMAR, o sistema exibirá um modal de espera com a mensagem:
-  "Aguarde, estamos à procura de um colaborador..."
-  O modal ficará visível por 2 segundos. Após esse tempo, o sistema selecionará aleatoriamente
-  um colaborador dentre os 10 disponíveis e redirecionará automaticamente o usuário para o WhatsApp do colaborador,
-  com a mensagem pré-formatada (com "Olá," seguido dos valores em linhas separadas), enviada automaticamente,
-  sem exibir nenhuma mensagem adicional.
+  Ao clicar em CONFIRMAR, o sistema verifica se os campos de resumo possuem valores numéricos válidos.
+  Se não houver valores (ou se houver apenas letras), exibirá um erro: "faça o seu câmbio".
+  Caso haja valores numéricos, será exibido um modal de espera por 2 segundos e, em seguida,
+  o usuário será redirecionado automaticamente para o WhatsApp do colaborador selecionado,
+  com a mensagem pré-formatada (com "Olá," seguido dos valores em linhas separadas), enviada automaticamente.
 */
 
 // Função para selecionar um colaborador aleatório da lista
@@ -296,6 +295,17 @@ function hideAguardeModal() {
 
 // Botão CONFIRMAR – nova implementação
 confirmarBtn.addEventListener("click", () => {
+  // Verifica se os campos do conversor possuem valores numéricos válidos
+  const valorPagarParsed = parseFloat(campo1.value);
+  const valorReceberParsed = parseFloat(campo2.value);
+  if (
+    isNaN(valorPagarParsed) || isNaN(valorReceberParsed) ||
+    campo1.value.trim() === "" || campo2.value.trim() === ""
+  ) {
+    alert("faça o seu câmbio");
+    return;
+  }
+
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
 
@@ -339,3 +349,4 @@ clearHistoryBtn.addEventListener("click", () => {
 
 clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
+
