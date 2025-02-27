@@ -3,7 +3,8 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "Plataforma ideal<br>para fazer câmbio e comprar moedas de forma fácil e segura",
+    description: "Plataforma ideal para fazer câmbio",
+    descriptio: "Converse com os melhores vendedores de moeda diretamente no WhatsApp",
     p1: "Câmbio",
     p2: "X-FUTUR3",
     p3: "EUR & AOA.",
@@ -120,7 +121,7 @@ const translations = {
     intellectualPropertyText: "Todos os textos do site Angoline, assim como seu design, são de nossa propriedade." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
     clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
-    buyNow: "Comprar agora",
+    buyNow: "Comprar agora <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
     youWillReceive: "Você vai receber :",
     youWillPay: "Você vai pagar :",
     reverseExchangeTryAgain: "Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.",
@@ -135,7 +136,8 @@ const translations = {
 
   en: {
     title: "Angoline",
-    description: "Ideal platform<br>for exchanging and purchasing currencies easily and securely",
+    description: "Ideal platform for exchanging currencies",
+    descriptio: "Chat with the best currency sellers directly on WhatsApp",
     p1: "Exchange",
     p2: "X-FUTUR3",
     p3: "EUR & AOA",
@@ -252,7 +254,7 @@ const translations = {
     intellectualPropertyText: "All the texts on the Angoline website, as well as its design, are our property." +
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use.",
     clikon:"After clicking 'Send', you will be assisted by one of our team members via WhatsApp.",
-    buyNow: "Buy now",
+    buyNow: "Buy now <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
     youWillReceive: "You will receive :",
     youWillPay: "You will pay :",
     reverseExchangeTryAgain: "If this is not correct, reverse the exchange direction and try again, please.",
@@ -267,7 +269,8 @@ const translations = {
 
   fr: {
     title: "Angoline",
-    description: "Plateforme idéale<br>pour changer et acheter des devises facilement et en toute sécurité",
+    description: "Plateforme idéale pour changer des devises",
+    descriptio: "Discutez avec les meilleurs vendeurs de devises directement sur WhatsApp",
     p1: "Change",
     p2: "X-FUTUR3",
     p3: "EUR & AOA",
@@ -384,7 +387,7 @@ const translations = {
     intellectualPropertyText: "Tous les textes sur le site Angoline, ainsi que son design, sont notre propriété." +
       "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre.",
     clikon:"Après avoir cliqué sur 'Envoyer', vous serez assisté par l'un de nos collaborateurs via WhatsApp.",
-    buyNow: "Acheter maintenant",
+    buyNow: "Acheter maintenant <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
     youWillReceive: "Vous recevrez :",
     youWillPay: "Vous paierez : ",
     reverseExchangeTryAgain: "Si ce n'est pas correct, inversez le sens du change et réessayez, s'il vous plaît.",
