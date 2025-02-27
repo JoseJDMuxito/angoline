@@ -373,7 +373,6 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     item.style.padding = "10px";
     item.style.borderBottom = "1px solid #ddd";
 
-    // Imagem do colaborador – edite o caminho no array para usar a imagem local
     const img = document.createElement("img");
     img.src = colab.img;
     img.alt = colab.name;
@@ -382,7 +381,6 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     img.style.borderRadius = "50%";
     img.style.marginRight = "10px";
 
-    // Nome do colaborador – edite o nome no array para personalizar
     const span = document.createElement("span");
     span.textContent = colab.name;
 
@@ -424,47 +422,20 @@ historicoCambio.style.display = 'none';
 // ==============================
 // NOVA FUNCIONALIDADE: Exibir modal simples de vendedores (para o botão "Ver Vendedores")
 // ==============================
-function mostrarModalVendedoresSimples() {
-  const modal = document.getElementById("modalColaboradores");
-
-  // Esconder informações indesejadas: "What's Trade" e "Selecione um Vendedor"
-  // Supondo que esses textos estejam em elementos com as classes abaixo:
-  const whatsTrade = modal.querySelector('.whats-trade');
-  const selecioneVendedor = modal.querySelector('.selecione-vendedor');
-  if (whatsTrade) {
-    whatsTrade.style.display = 'none';
-  }
-  if (selecioneVendedor) {
-    selecioneVendedor.style.display = 'none';
-  }
-
-  // Extra: Remover qualquer elemento que contenha exatamente a frase "Selecione um Vendedor"
-  Array.from(modal.querySelectorAll('*')).forEach(function(el) {
-    if (el.textContent.trim() === "Selecione um Vendedor") {
-      el.style.display = 'none';
-    }
-  });
-
-  // Esconder a linha horizontal (caso exista algum <hr> no modal)
-  const hrElements = modal.querySelectorAll("hr");
-  hrElements.forEach(hr => hr.style.display = "none");
-
-  // Limpa a lista atual de vendedores
-  const lista = document.getElementById("listaColaboradores");
+function mostrarModalVendedores() {
+  const modal = document.getElementById("modalVendedores");
+  const lista = document.getElementById("listaVendedores");
   lista.innerHTML = "";
 
-  // Popula a lista com apenas imagem e nome dos vendedores (itens sem ação de clique)
   colaboradores.forEach(colab => {
     const item = document.createElement("li");
     item.className = "colaborador-item";
     item.style.display = "flex";
     item.style.alignItems = "center";
-    // Desabilita qualquer ação de clique
-    item.style.pointerEvents = "none";
+    item.style.pointerEvents = "none"; // desabilita ações de clique
     item.style.padding = "10px";
     item.style.borderBottom = "1px solid #ddd";
 
-    // Cria a imagem do vendedor
     const img = document.createElement("img");
     img.src = colab.img;
     img.alt = colab.name;
@@ -473,7 +444,6 @@ function mostrarModalVendedoresSimples() {
     img.style.borderRadius = "50%";
     img.style.marginRight = "10px";
 
-    // Cria o nome do vendedor
     const span = document.createElement("span");
     span.textContent = colab.name;
 
@@ -483,24 +453,17 @@ function mostrarModalVendedoresSimples() {
     lista.appendChild(item);
   });
 
-  // Garante que o modal permita scroll caso a lista seja longa
   modal.style.overflowY = "auto";
   modal.style.display = "flex";
 }
 
-// Evento para o novo botão "Ver Vendedores"
+// Evento para o botão "Ver Vendedores"
 const btnVendedores = document.getElementById("btn-vendedores");
 btnVendedores.addEventListener("click", () => {
-  // Garante que os elementos indesejados estejam ocultos
-  const modal = document.getElementById("modalColaboradores");
-  const whatsTrade = modal.querySelector('.whats-trade');
-  const selecioneVendedor = modal.querySelector('.selecione-vendedor');
-  if (whatsTrade) {
-    whatsTrade.style.display = 'none';
-  }
-  if (selecioneVendedor) {
-    selecioneVendedor.style.display = 'none';
-  }
-  mostrarModalVendedoresSimples();
+  mostrarModalVendedores();
 });
 
+// Evento para o botão "Fechar" do modal de vendedores
+document.getElementById("btnFecharVendedores").addEventListener("click", () => {
+  document.getElementById("modalVendedores").style.display = "none";
+});

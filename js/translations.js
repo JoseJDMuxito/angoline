@@ -132,6 +132,7 @@ const translations = {
     waiting : "Aguarde, estamos à procura de um vendedor...\n",
     seller: "Selecione um Vendedor",
     closeit: "Fechar",
+    sellerAvalavbe: "Vendedores Disponíveis",
   },
 
 
@@ -267,6 +268,7 @@ const translations = {
     waiting : "Please wait, we are looking for a seller...\n",
     seller: "Select a Seller",
     closeit: "Close",
+    sellerAvalavbe: "Available Sellers",
   },
 
 
@@ -402,5 +404,6 @@ const translations = {
     waiting : "Veuillez patienter, nous recherchons un vandeur...\n",
     seller: "Sélectionnez un Vendeur",
     closeit: "Fermer",
+    sellerAvalavbe: "Vendeurs Disponibles",
   }
 };
