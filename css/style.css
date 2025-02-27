@@ -565,3 +565,26 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
+
+@media (max-width: 480px) {
+  #modalColaboradores .modal-content {
+    width: 90%;
+  }
+}
+/* Efeito de hover removido */
+.btn-fechar {
+  border: none;
+  cursor: pointer;
+}
+.btn-fechar:hover {
+}
+
+/* Transição suave para a rotação e mudança de cor */
+#theme-toggle-mobile i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Classe para a animação de rotação */
+.animate-icon {
+  transform: rotate(360deg);
+}

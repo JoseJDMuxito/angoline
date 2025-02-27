@@ -1,18 +1,23 @@
-// Seleciona o botão de alternância
-const themeSwitch = document.getElementById('theme-switch');
+// Seleciona os botões de alternância
+const themeSwitch = document.getElementById('theme-switch'); // botão desktop (já existente)
+const themeSwitchMobile = document.getElementById('theme-switch-mobile'); // botão mobile (versão com ícone de sol/lua)
+const themeToggleMobile = document.getElementById('theme-toggle-mobile'); // label do botão mobile
 
 // Verifica e aplica o tema salvo no localStorage
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
-  themeSwitch.checked = true;
+  if (themeSwitch) themeSwitch.checked = true;
+  if (themeSwitchMobile) themeSwitchMobile.checked = true;
   applyDarkModeStyles();
 } else {
+  if (themeSwitch) themeSwitch.checked = false;
+  if (themeSwitchMobile) themeSwitchMobile.checked = false;
   applyLightModeStyles();
 }
 
-// Alterna entre os modos escuro e claro
-themeSwitch.addEventListener('change', () => {
-  if (themeSwitch.checked) {
+// Função para alternar entre os temas
+function toggleTheme(isDark) {
+  if (isDark) {
     document.body.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark');
     applyDarkModeStyles();
@@ -21,15 +26,34 @@ themeSwitch.addEventListener('change', () => {
     localStorage.setItem('theme', 'light');
     applyLightModeStyles();
   }
-});
+  // Atualiza o ícone do botão mobile
+  updateMobileThemeIcon();
+}
 
+// Eventos para o botão desktop
+if (themeSwitch) {
+  themeSwitch.addEventListener('change', () => {
+    toggleTheme(themeSwitch.checked);
+    // Sincroniza o estado com o botão mobile, se existir
+    if (themeSwitchMobile) themeSwitchMobile.checked = themeSwitch.checked;
+  });
+}
+
+// Eventos para o botão mobile
+if (themeSwitchMobile) {
+  themeSwitchMobile.addEventListener('change', () => {
+    toggleTheme(themeSwitchMobile.checked);
+    // Sincroniza o estado com o botão desktop, se existir
+    if (themeSwitch) themeSwitch.checked = themeSwitchMobile.checked;
+  });
+}
 
 // Função para aplicar estilos do modo escuro
 function applyDarkModeStyles() {
   const customBlocks = document.querySelectorAll('.custom-block');
   customBlocks.forEach((block) => {
     block.style.backgroundColor = 'rgba(50, 50, 50, 1)'; // Ou qualquer cor preferida
-    block.style.color = '#ffffff'; // Exemplo: texto em vermelho
+    block.style.color = '#ffffff';
   });
 }
 
@@ -38,11 +62,11 @@ function applyLightModeStyles() {
   const customBlocks = document.querySelectorAll('.custom-block');
   customBlocks.forEach((block) => {
     block.style.backgroundColor = 'whitesmoke'; // Ou qualquer cor preferida
-    block.style.color = 'black'; // Exemplo: texto em azul
+    block.style.color = 'black';
   });
 }
 
-// Estilo do modo escuro (adicionado dinamicamente)
+// Adiciona estilos para a classe "dark-mode" dinamicamente
 const darkModeStyle = document.createElement('style');
 darkModeStyle.innerHTML = `
   .dark-mode {
@@ -51,6 +75,28 @@ darkModeStyle.innerHTML = `
   }
 `;
 document.head.appendChild(darkModeStyle);
+
+// Função para atualizar o ícone do botão mobile com animação
+function updateMobileThemeIcon() {
+  if (themeSwitchMobile && themeSwitchMobile.checked) {
+    // Modo escuro: ícone de lua com cor personalizada
+    themeToggleMobile.innerHTML = `<i class="fa-solid fa-moon" style="color: #90A4AE; font-size: 24px;"></i>`;
+  } else {
+    // Modo claro: ícone de sol com cor personalizada
+    themeToggleMobile.innerHTML = `<i class="fa-solid fa-sun" style="color: #FFC107; font-size: 24px;"></i>`;
+  }
+  // Adiciona uma animação simples de rotação
+  const icon = themeToggleMobile.querySelector('i');
+  icon.classList.add('animate-icon');
+  setTimeout(() => {
+    icon.classList.remove('animate-icon');
+  }, 300);
+}
+
+// Atualiza o ícone do botão mobile ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+  updateMobileThemeIcon();
+});
 
 
 
@@ -112,11 +158,11 @@ function w3_close() {
   mySidebar.style.display = "none";
 }
 
-
-// Conversor
+// Taxas de conversão
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
 
+// Seleção de elementos HTML
 const campo1 = document.getElementById('campo-1');
 const campo2 = document.getElementById('campo-2');
 const resultadoDiv = document.getElementById('resultado');
@@ -130,18 +176,21 @@ const resumoPagar = document.getElementById("resumoPagar");
 const resumoReceber = document.getElementById("resumoReceber");
 const cancelarBtn = document.getElementById("cancelar");
 const confirmarBtn = document.getElementById("confirmar");
+// Elemento para exibir o histórico de câmbio
+const historicoCambio = document.getElementById('historico-cambio');
 
-// Adicione o ID ou classe para "Histórico de câmbio" no HTML e selecione aqui
-const historicoCambio = document.getElementById('historico-cambio'); // Substitua pelo seu ID ou classe
-
+// Controle de conversão
 let isEuroToKwanza = true;
 
-// Lista de colaboradores (até 10 números) – insira aqui os números reais dos colaboradores
-const listaFuncionarios = [
-  "244924459808",
-  "33761936803",
-  "33628947112",
-  "33762627101"
+/*
+ * Aqui você insere os dados reais dos colaboradores.
+ * Para alterar os nomes, telefones e imagens, basta editar os valores deste array.
+ */
+const colaboradores = [
+  { phone: "33628947112",  name: "Irina Chipoia", img: "img/irina.jpg" },
+  { phone: "244924459808", name: "Moisés Teresa", img: "img/moises.jpg" },
+  { phone: "33761936803",  name: "Alberto Viegas", img: "img/alberto.jpg" },
+  { phone: "33762627101",  name: "Catarino Mahula", img: "img/catarino.jpg" }
 ];
 
 // Função debounce para evitar cálculos excessivos
@@ -178,16 +227,17 @@ function calcular() {
     adicionarAoHistorico(valorCampo1, valorEuro.toFixed(2), "Kz", "€");
   }
 
+  // Exibe o botão "COMPRAR AGORA" somente após uma conversão válida
   comprarAgoraBtn.style.display = "block";
 }
 
-// Adicionar ao histórico
+// Função para adicionar a operação ao histórico
 function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
   const novoItem = document.createElement('li');
   novoItem.textContent = `${origem} ${moedaOrigem} = ${destino} ${moedaDestino}`;
   historyList.appendChild(novoItem);
 
-  // Mostrar o botão de limpar histórico após o primeiro câmbio
+  // Exibe o botão de limpar histórico (apenas após a primeira conversão)
   clearHistoryBtn.style.display = 'block';
   historicoCambio.style.display = 'block';
 }
@@ -211,6 +261,8 @@ switchBtn.addEventListener('click', () => {
   campo2.value = '';
   resultadoDiv.textContent = '';
   error1.style.display = 'none';
+  // Oculta o botão "COMPRAR AGORA" ao alternar moedas
+  comprarAgoraBtn.style.display = 'none';
 });
 
 // Aplicar debounce ao campo de entrada
@@ -218,7 +270,7 @@ campo1.addEventListener('input', debounce(() => {
   calcular();
 }, 500));
 
-// Botão "COMPRAR AGORA"
+// Botão "COMPRAR AGORA" – exibe o modal de resumo
 comprarAgoraBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
@@ -230,30 +282,12 @@ comprarAgoraBtn.addEventListener("click", () => {
   comprarAgoraBtn.style.display = "none";
 });
 
-// Botão CANCELAR
+// Botão "CANCELAR" – fecha o modal de resumo
 cancelarBtn.addEventListener("click", () => {
   modalResumo.style.display = "none";
 });
 
-/*
-  NOVA FUNCIONALIDADE MODIFICADA:
-  Ao clicar em CONFIRMAR, o sistema verifica se os campos de resumo possuem valores numéricos válidos.
-  Se não houver valores (ou se houver apenas letras), exibirá um erro: "faça o seu câmbio".
-  Caso haja valores numéricos, será exibido um modal de espera por 2 segundos e, em seguida,
-  o usuário será redirecionado automaticamente para o WhatsApp do colaborador selecionado,
-  com a mensagem pré-formatada (com "Olá," seguido dos valores em linhas separadas), enviada automaticamente.
-*/
-
-// Função para selecionar um colaborador aleatório da lista
-function selecionarColaborador() {
-  if (listaFuncionarios.length === 0) {
-    return null;
-  }
-  const index = Math.floor(Math.random() * listaFuncionarios.length);
-  return listaFuncionarios[index];
-}
-
-// Criação de um modal de "Aguarde" com spinner
+// Criação do modal de "Aguarde" com spinner
 const aguardeModal = document.createElement("div");
 aguardeModal.id = "aguardeModal";
 aguardeModal.style.position = "fixed";
@@ -271,12 +305,12 @@ aguardeModal.innerHTML = `
     <div class="spinner" style="margin-bottom: 10px;">
       <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
     </div>
-    <div  data-i18n="waiting">Aguarde, estamos à procura de um colaborador...</div>
+    <div data-i18n="waiting">Aguarde, estamos à procura de um colaborador...</div>
   </div>
 `;
 document.body.appendChild(aguardeModal);
 
-// Adiciona animação CSS para o spinner
+// Animação CSS para o spinner
 const styleElem = document.createElement("style");
 styleElem.innerHTML = `
 @keyframes spin {
@@ -285,6 +319,7 @@ styleElem.innerHTML = `
 }`;
 document.head.appendChild(styleElem);
 
+// Funções para exibir e esconder o modal de aguarde
 function showAguardeModal() {
   aguardeModal.style.display = "flex";
 }
@@ -293,11 +328,11 @@ function hideAguardeModal() {
   aguardeModal.style.display = "none";
 }
 
-// Botão CONFIRMAR – nova implementação
+// Botão "CONFIRMAR" – após 2 segundos, exibe a lista de colaboradores (funcionalidade original)
 confirmarBtn.addEventListener("click", () => {
-  // Verifica se os campos do conversor possuem valores numéricos válidos
   const valorPagarParsed = parseFloat(campo1.value);
   const valorReceberParsed = parseFloat(campo2.value);
+
   if (
     isNaN(valorPagarParsed) || isNaN(valorReceberParsed) ||
     campo1.value.trim() === "" || campo2.value.trim() === ""
@@ -309,44 +344,163 @@ confirmarBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
 
-  // Fecha o modal de resumo imediatamente
+  // Fecha o modal de resumo e exibe o modal de aguarde
   modalResumo.style.display = "none";
-
-  // Exibe o modal de aguarde
   showAguardeModal();
 
-  // Aguarda 2 segundos antes de prosseguir
   setTimeout(() => {
-    // Seleciona um colaborador aleatório
-    const colaboradorSelecionado = selecionarColaborador();
-
-    // Se nenhum colaborador estiver disponível, informa o cliente
-    if (!colaboradorSelecionado) {
-      hideAguardeModal();
-      alert("Nenhum colaborador disponível no momento. Tente novamente mais tarde.");
-      return;
-    }
-
-    // Esconde o modal de aguarde
     hideAguardeModal();
-
-    // Formata a mensagem para WhatsApp (com "Olá," seguido dos valores em linhas separadas)
-    const mensagem = encodeURIComponent(
-      `Olá,\nValor a pagar: ${valorPagar} ${isEuroToKwanza ? "€" : "Kz"}\nValor a receber: ${valorReceber} ${isEuroToKwanza ? "Kz" : "€"}`
-    );
-
-    // Redireciona automaticamente para o WhatsApp do colaborador com a mensagem pré-preenchida e enviada automaticamente
-    window.open(`https://wa.me/${colaboradorSelecionado}?text=${mensagem}&send=true`, '_blank');
+    mostrarModalColaboradores(valorPagar, valorReceber);
   }, 2000);
 });
 
-// Limpar histórico
+// Função para exibir o modal com a lista de colaboradores (funcionalidade original)
+function mostrarModalColaboradores(valorPagar, valorReceber) {
+  const modal = document.getElementById("modalColaboradores");
+  const lista = document.getElementById("listaColaboradores");
+  lista.innerHTML = "";
+
+  // Define os símbolos de moeda de acordo com a conversão
+  const moedaPagar = isEuroToKwanza ? '€' : 'Kz';
+  const moedaReceber = isEuroToKwanza ? 'Kz' : '€';
+
+  colaboradores.forEach(colab => {
+    const item = document.createElement("li");
+    item.className = "colaborador-item";
+    item.style.display = "flex";
+    item.style.alignItems = "center";
+    item.style.cursor = "pointer";
+    item.style.padding = "10px";
+    item.style.borderBottom = "1px solid #ddd";
+
+    // Imagem do colaborador – edite o caminho no array para usar a imagem local
+    const img = document.createElement("img");
+    img.src = colab.img;
+    img.alt = colab.name;
+    img.style.width = "40px";
+    img.style.height = "40px";
+    img.style.borderRadius = "50%";
+    img.style.marginRight = "10px";
+
+    // Nome do colaborador – edite o nome no array para personalizar
+    const span = document.createElement("span");
+    span.textContent = colab.name;
+
+    item.appendChild(img);
+    item.appendChild(span);
+
+    // Ao clicar, redireciona para o WhatsApp com a mensagem pré-formatada
+    item.addEventListener("click", () => {
+      const mensagem = encodeURIComponent(
+        `Olá,\nValor a pagar: ${valorPagar} ${moedaPagar}\nValor a receber: ${valorReceber} ${moedaReceber}`
+      );
+      window.open(`https://wa.me/${colab.phone}?text=${mensagem}&send=true`, '_blank');
+      modal.style.display = "none";
+    });
+
+    lista.appendChild(item);
+  });
+
+  // Exibe o modal centralizado
+  modal.style.display = "flex";
+}
+
+// Evento para o botão "Fechar" do modal de colaboradores
+document.getElementById("btnFecharColaboradores").addEventListener("click", () => {
+  document.getElementById("modalColaboradores").style.display = "none";
+});
+
+// Limpar histórico – volta ao estado original (botão aparece apenas após a primeira conversão)
 clearHistoryBtn.addEventListener("click", () => {
   historyList.innerHTML = '';
-  clearHistoryBtn.style.display = 'none'; // Esconder o botão após limpar o histórico
+  clearHistoryBtn.style.display = 'none';
   historicoCambio.style.display = 'none';
 });
 
+// Estado inicial do botão de limpar histórico e do container de histórico
 clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
+
+// ==============================
+// NOVA FUNCIONALIDADE: Exibir modal simples de vendedores (para o botão "Ver Vendedores")
+// ==============================
+function mostrarModalVendedoresSimples() {
+  const modal = document.getElementById("modalColaboradores");
+
+  // Esconder informações indesejadas: "What's Trade" e "Selecione um Vendedor"
+  // Supondo que esses textos estejam em elementos com as classes abaixo:
+  const whatsTrade = modal.querySelector('.whats-trade');
+  const selecioneVendedor = modal.querySelector('.selecione-vendedor');
+  if (whatsTrade) {
+    whatsTrade.style.display = 'none';
+  }
+  if (selecioneVendedor) {
+    selecioneVendedor.style.display = 'none';
+  }
+
+  // Extra: Remover qualquer elemento que contenha exatamente a frase "Selecione um Vendedor"
+  Array.from(modal.querySelectorAll('*')).forEach(function(el) {
+    if (el.textContent.trim() === "Selecione um Vendedor") {
+      el.style.display = 'none';
+    }
+  });
+
+  // Esconder a linha horizontal (caso exista algum <hr> no modal)
+  const hrElements = modal.querySelectorAll("hr");
+  hrElements.forEach(hr => hr.style.display = "none");
+
+  // Limpa a lista atual de vendedores
+  const lista = document.getElementById("listaColaboradores");
+  lista.innerHTML = "";
+
+  // Popula a lista com apenas imagem e nome dos vendedores (itens sem ação de clique)
+  colaboradores.forEach(colab => {
+    const item = document.createElement("li");
+    item.className = "colaborador-item";
+    item.style.display = "flex";
+    item.style.alignItems = "center";
+    // Desabilita qualquer ação de clique
+    item.style.pointerEvents = "none";
+    item.style.padding = "10px";
+    item.style.borderBottom = "1px solid #ddd";
+
+    // Cria a imagem do vendedor
+    const img = document.createElement("img");
+    img.src = colab.img;
+    img.alt = colab.name;
+    img.style.width = "40px";
+    img.style.height = "40px";
+    img.style.borderRadius = "50%";
+    img.style.marginRight = "10px";
+
+    // Cria o nome do vendedor
+    const span = document.createElement("span");
+    span.textContent = colab.name;
+
+    item.appendChild(img);
+    item.appendChild(span);
+
+    lista.appendChild(item);
+  });
+
+  // Garante que o modal permita scroll caso a lista seja longa
+  modal.style.overflowY = "auto";
+  modal.style.display = "flex";
+}
+
+// Evento para o novo botão "Ver Vendedores"
+const btnVendedores = document.getElementById("btn-vendedores");
+btnVendedores.addEventListener("click", () => {
+  // Garante que os elementos indesejados estejam ocultos
+  const modal = document.getElementById("modalColaboradores");
+  const whatsTrade = modal.querySelector('.whats-trade');
+  const selecioneVendedor = modal.querySelector('.selecione-vendedor');
+  if (whatsTrade) {
+    whatsTrade.style.display = 'none';
+  }
+  if (selecioneVendedor) {
+    selecioneVendedor.style.display = 'none';
+  }
+  mostrarModalVendedoresSimples();
+});
 

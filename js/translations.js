@@ -4,7 +4,8 @@ const translations = {
   pt: {
     title: "Angoline",
     description: "Plataforma ideal para fazer câmbio",
-    descriptio: "Converse com os melhores vendedores de moeda diretamente no WhatsApp",
+    descriptio: "Faça o seu câmbio e compre a sua moeda. Serás atendido por um dos nossos vendedores",
+    list : "Ver lista",
     p1: "Câmbio",
     p2: "X-FUTUR3",
     p3: "EUR & AOA.",
@@ -130,6 +131,8 @@ const translations = {
     studentComte: "Coordenador de Marketing",
     studentComt: "Estudante na Universidade Franche Comté, França",
     waiting : "Aguarde, estamos à procura de um colaborador...\n",
+    seller: "Selecione um Vendedor",
+    closeit: "Fechar",
   },
 
 
@@ -137,7 +140,8 @@ const translations = {
   en: {
     title: "Angoline",
     description: "Ideal platform for exchanging currencies",
-    descriptio: "Chat with the best currency sellers directly on WhatsApp",
+    descriptio: "Exchange your money and buy your currency. You will be assisted by one of our sellers",
+    list : "See the list",
     p1: "Exchange",
     p2: "X-FUTUR3",
     p3: "EUR & AOA",
@@ -263,6 +267,8 @@ const translations = {
     studentComte: " Marketing Coordinator",
     studentComt: "Student at the University of Franche-Comté, France",
     waiting : "Please wait, we are looking for a collaborator...\n",
+    seller: "Select a Seller",
+    closeit: "Close",
   },
 
 
@@ -270,7 +276,8 @@ const translations = {
   fr: {
     title: "Angoline",
     description: "Plateforme idéale pour changer des devises",
-    descriptio: "Discutez avec les meilleurs vendeurs de devises directement sur WhatsApp",
+    descriptio: "Faites votre échange et achetez votre devise. Vous serez assisté par l'un de nos vendeurs",
+    list : "Voir la liste",
     p1: "Change",
     p2: "X-FUTUR3",
     p3: "EUR & AOA",
@@ -396,5 +403,7 @@ const translations = {
     studentComte: "Coordinateur de Marketing",
     studentComt: "Étudiant à l'Université de Franche-Comté, France",
     waiting : "Veuillez patienter, nous recherchons un collaborateur...\n",
+    seller: "Sélectionnez un Vendeur",
+    closeit: "Fermer",
   }
 };
