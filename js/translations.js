@@ -122,7 +122,7 @@ const translations = {
     intellectualPropertyText: "Todos os textos do site Angoline, assim como seu design, são de nossa propriedade." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
     clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
-    buyNow: "Comprar agora <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
+    buyNow: "Comprar agora",
     youWillReceive: "Você vai receber :",
     youWillPay: "Você vai pagar :",
     reverseExchangeTryAgain: "Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.",
@@ -130,7 +130,7 @@ const translations = {
     cancel: "Cancelar",
     studentComte: "Coordenador de Marketing",
     studentComt: "Estudante na Universidade Franche Comté, França",
-    waiting : "Aguarde, estamos à procura de um colaborador...\n",
+    waiting : "Aguarde, estamos à procura de um vendedor...\n",
     seller: "Selecione um Vendedor",
     closeit: "Fechar",
   },
@@ -258,7 +258,7 @@ const translations = {
     intellectualPropertyText: "All the texts on the Angoline website, as well as its design, are our property." +
       "<br>Some images used on the site are public domain and were obtained from sources that allow free use.",
     clikon:"After clicking 'Send', you will be assisted by one of our team members via WhatsApp.",
-    buyNow: "Buy now <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
+    buyNow: "Buy now",
     youWillReceive: "You will receive :",
     youWillPay: "You will pay :",
     reverseExchangeTryAgain: "If this is not correct, reverse the exchange direction and try again, please.",
@@ -266,7 +266,7 @@ const translations = {
     cancel: "Cancel",
     studentComte: " Marketing Coordinator",
     studentComt: "Student at the University of Franche-Comté, France",
-    waiting : "Please wait, we are looking for a collaborator...\n",
+    waiting : "Please wait, we are looking for a seller...\n",
     seller: "Select a Seller",
     closeit: "Close",
   },
@@ -394,7 +394,7 @@ const translations = {
     intellectualPropertyText: "Tous les textes sur le site Angoline, ainsi que son design, sont notre propriété." +
       "<br>Certaines images utilisées sur le site sont du domaine public et proviennent de sources autorisant une utilisation libre.",
     clikon:"Après avoir cliqué sur 'Envoyer', vous serez assisté par l'un de nos collaborateurs via WhatsApp.",
-    buyNow: "Acheter maintenant <i class=\"fa-brands fa-whatsapp\" style=\"color: #25D366; font-size: 25px\"></i>",
+    buyNow: "Acheter maintenant",
     youWillReceive: "Vous recevrez :",
     youWillPay: "Vous paierez : ",
     reverseExchangeTryAgain: "Si ce n'est pas correct, inversez le sens du change et réessayez, s'il vous plaît.",
@@ -402,7 +402,7 @@ const translations = {
     cancel: "Annuler",
     studentComte: "Coordinateur de Marketing",
     studentComt: "Étudiant à l'Université de Franche-Comté, France",
-    waiting : "Veuillez patienter, nous recherchons un collaborateur...\n",
+    waiting : "Veuillez patienter, nous recherchons un vandeur...\n",
     seller: "Sélectionnez un Vendeur",
     closeit: "Fermer",
   }

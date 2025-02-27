@@ -305,7 +305,7 @@ aguardeModal.innerHTML = `
     <div class="spinner" style="margin-bottom: 10px;">
       <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
     </div>
-    <div data-i18n="waiting">Aguarde, estamos à procura de um colaborador...</div>
+    <div data-i18n="waiting">Aguarde, estamos à procura de um vendedor...</div>
   </div>
 `;
 document.body.appendChild(aguardeModal);
