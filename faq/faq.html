@@ -76,8 +76,12 @@
       <i class="fa-solid fa-question" style="color: red"></i> FAQ
     </a>
     <a>
-      <label for="theme-switch" onclick="w3_close()" class="w3-button d1 " data-i18n="darkmode">
-        <i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO
+      <!-- Input oculto para controle do tema (versão mobile) -->
+      <input type="checkbox" id="theme-switch-mobile" style="display: none;">
+
+      <!-- Botão de tema (versão mobile) que alterna entre ícone de sol e lua -->
+      <label for="theme-switch-mobile" id="theme-toggle-mobile" onclick="w3_close()" class="w3-button d1">
+        <!-- O ícone será inserido via JavaScript -->
       </label>
     </a>
   </nav>
@@ -293,11 +297,9 @@
   showSlides();
 </script>
 
-
-
 <script src="../js/translations.js"></script>
 <script src="../js/main.js" ></script>
-
+<script src="../js/app.js"></script>
 
 </body>
 </html>

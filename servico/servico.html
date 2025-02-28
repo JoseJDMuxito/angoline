@@ -69,15 +69,19 @@
     <a href="#" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="services">
       <i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS
     </a>
-    <a href="../comecar/comecar.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="start">
-      <i class="fa-solid fa-credit-card" style="color: orange"></i> COMEÇAR
+    <a href="../equipa/equipa.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="team">
+      <i class="fa fa-user" style="color: blue"></i> EQUIPA
     </a>
     <a href="../faq/faq.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="">
       <i class="fa-solid fa-question" style="color: red"></i> FAQ
     </a>
     <a>
-      <label for="theme-switch" onclick="w3_close()" class="w3-button d1 " data-i18n="darkmode">
-        <i class="fa-solid fa-moon" style="font-size: 20px;"></i> MODO ESCURO
+      <!-- Input oculto para controle do tema (versão mobile) -->
+      <input type="checkbox" id="theme-switch-mobile" style="display: none;">
+
+      <!-- Botão de tema (versão mobile) que alterna entre ícone de sol e lua -->
+      <label for="theme-switch-mobile" id="theme-toggle-mobile" onclick="w3_close()" class="w3-button d1">
+        <!-- O ícone será inserido via JavaScript -->
       </label>
     </a>
   </nav>
@@ -107,7 +111,7 @@
       </div>
 
       <div class="w3-col l3 m6 custom-block w3-container w3-padding-16 w3-hover-shadow d1">
-        <a href="https://wa.me/244948925827"><i class="fa fa-cog icon" style="color: grey"></i></a>
+        <a href="https://wa.me/33772026889"><i class="fa fa-cog icon" style="color: grey"></i></a>
         <h3 data-i18n="support">Suporte</h3>
         <p data-i18n="supportDescription">Oferecemos serviço gratuito para quaisquer dificuldades ou dúvidas relacionadas aos nossos serviços.</p>
         <p data-i18n="whatsappInfo">Basta clicar no ícone do WhatsApp.<br><br></p>
@@ -150,7 +154,7 @@
 
 <script>
   // Configuração do número WhatsApp
-  const whatsappNumber = "244948925827";
+  const whatsappNumber = "33772026889";
 
   // Ação ao clicar no botão
   document.getElementById("whatsapp-button").addEventListener("click", function() {
@@ -273,6 +277,7 @@
 
 <script src="../js/translations.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/app.js"></script>
 
 </body>
 </html>
