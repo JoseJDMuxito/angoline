@@ -117,7 +117,7 @@ body {
   display: inline-block;
   width: 40px;
   height: 25px;
-  background:linear-gradient(to right, rgba(255,0,0,0.16), rgba(0,119,255,0.16));
+  background-color: lightgray;
   border-radius: 25px;
   position: relative;
   cursor: pointer;
@@ -129,7 +129,7 @@ body {
   content: '';
   width: 20px;
   height: 20px;
-  background-color: rgba(255,20,147,0.5);
+  background-color:cornflowerblue;
   border-radius: 50%;
   position: absolute;
   top: 2.5px;
@@ -171,14 +171,14 @@ input[type="checkbox"] {
   text-decoration: none; /* Adiciona sublinhado no hover */
   border-radius: 10px;
   padding: 1px;
-  background-color: rgba(255, 20, 147, 0.3);
+  background-color: cornflowerblue;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .custom-link:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background-color: rgba(255, 20, 147, 0.3);
+  background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
 }
 
@@ -199,7 +199,7 @@ input[type="checkbox"] {
 
 .custom-lin:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
   padding:  3px 10px 3px 10px;
 }
@@ -217,14 +217,14 @@ input[type="checkbox"] {
 
 .custom-l:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background-color: cornflowerblue;
   border-radius: 10px;
   padding:  5px 3px 5px 3px;
 }
 
 .custom-l:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background-color:  cornflowerblue;
   border-radius: 10px;
   padding:  5px 3px 5px 3px;
 }
@@ -233,7 +233,7 @@ input[type="checkbox"] {
 
 .custom-linki {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.2), rgba(0, 119, 255, 0.2));
+  background-color:  cornflowerblue;
 
 }
 
@@ -249,7 +249,7 @@ input[type="checkbox"] {
 
 .custom-linki:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background:linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 119, 255, 0.3));
+  background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
   padding:  0.5px 5px 0.5px 5px;
 }
@@ -460,7 +460,7 @@ input[type="checkbox"] {
 }
 
 .active {
-  background-color: rgba(179, 0, 95, 0.67);
+  background-color: lightgray;
 }
 
 .language-selector {
