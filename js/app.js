@@ -113,33 +113,85 @@ document.addEventListener("keydown", function (e) {
 });
 
 
-//Imagens da pagina principal
 let slideIndex = 0;
+let slideTimer;
 
 function showSlides() {
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
+
+  // Esconde todas as imagens
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  // Exibe o slide atual
+  slides[slideIndex].style.display = "block";
+
+  // Atualiza os indicadores
   for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
+  dots[slideIndex].className += " active";
+
+  // Prepara o próximo slide
   slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
   }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  setTimeout(showSlides, 3000);
+
+  slideTimer = setTimeout(showSlides, 3000);
 }
 
+// Função para avançar ou voltar manualmente
+function plusSlides(n) {
+  clearTimeout(slideTimer);
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  // Ajusta o índice de forma circular
+  slideIndex = (slideIndex + n + slides.length) % slides.length;
+
+  // Esconde todos os slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  // Exibe o slide selecionado
+  slides[slideIndex].style.display = "block";
+
+  // Atualiza os indicadores
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex].className += " active";
+
+  slideTimer = setTimeout(showSlides, 3000);
+}
+
+// Função para selecionar um slide específico via indicadores
 function currentSlide(n) {
+  clearTimeout(slideTimer);
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  // Ajusta para o índice correto (já que os indicadores iniciam em 1)
   slideIndex = n - 1;
-  showSlides();
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex].style.display = "block";
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[slideIndex].className += " active";
+
+  slideTimer = setTimeout(showSlides, 3000);
 }
 
+// Inicia o slideshow
 showSlides();
+
 
 
 
