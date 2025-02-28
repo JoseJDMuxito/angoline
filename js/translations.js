@@ -19,7 +19,7 @@ const translations = {
     footer: "Criado por José Muxito",
     history: "Histórico de câmbio",
     clearHistory: "Limpar",
-    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00\"></i> Conversor",
+    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00; font-size: 20px\"></i> Conversor",
     insertValue: "Insira o valor",
     resultado: "Resultado",
     conversionMessage: "Já fez a sua conversão?",
@@ -30,7 +30,7 @@ const translations = {
     faq: "FAQ",
     aboutAuthor: "Autor",
     termsOfUse: "Termos",
-    privacyPolicy: "Privacidade",
+    privacyPolicy: "Política",
     ourServices: "Os nossos serviços",
     currencySale: "Venda de moedas",
     currencyDescription: "Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.",
@@ -133,6 +133,7 @@ const translations = {
     seller: "Selecione um Vendedor",
     closeit: "Fechar",
     sellerAvalavbe: "Vendedores Disponíveis",
+    ourProduct : "Nossos Produtos",
   },
 
 
@@ -155,7 +156,7 @@ const translations = {
     footer: "Created by José Muxito",
     history: "Exchange History",
     clearHistory: "Clear",
-    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00\"></i> Converter",
+    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00; font-size: 20px\"></i> Converter",
     insertValue: "Enter the value",
     resultado: "Result",
     conversionMessage: "Have you completed your conversion?",
@@ -166,7 +167,7 @@ const translations = {
     faq: "FAQ",
     aboutAuthor: "Author",
     termsOfUse: "Terms",
-    privacyPolicy: "Privacy",
+    privacyPolicy: "Policy",
     ourServices: "Our services",
     currencySale: "Currency sale",
     currencyDescription: "We sell and offer instant currency exchanges with the following currencies: € and Kz.",
@@ -269,6 +270,7 @@ const translations = {
     seller: "Select a Seller",
     closeit: "Close",
     sellerAvalavbe: "Available Sellers",
+    ourProduct : "Our Products",
   },
 
 
@@ -291,7 +293,7 @@ const translations = {
     footer: "Créé par José Muxito",
     history: "Historique des échanges",
     clearHistory: "Effacer",
-    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00\"></i> Convertisseur",
+    currencyConverter: "<i class=\"fa fa-usd\" style=\"color: #00cf00; font-size: 20px\"></i> Convertisseur",
     insertValue: "Tapez la valeur",
     resultado: "Résultat",
     conversionMessage: "Avez-vous terminé votre conversion ?",
@@ -405,5 +407,6 @@ const translations = {
     seller: "Sélectionnez un Vendeur",
     closeit: "Fermer",
     sellerAvalavbe: "Vendeurs Disponibles",
+    ourProduct : "Nos Produits",
   }
 };

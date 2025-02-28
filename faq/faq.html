@@ -199,38 +199,18 @@
     mySidebar.style.display = "none";
   }
 
-  // Seleciona o botão de alternância
+  // Seleciona o botão de alternância (desktop)
   const themeSwitch = document.getElementById('theme-switch');
-
-  // Verifica e aplica o tema salvo no localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeSwitch.checked = true;
-    applyDarkModeStyles();
-  } else {
-    applyLightModeStyles();
-  }
-
-  // Alterna entre os modos escuro e claro
-  themeSwitch.addEventListener('change', () => {
-    if (themeSwitch.checked) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-      applyDarkModeStyles();
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-      applyLightModeStyles();
-    }
-  });
-
+  // Seleciona os elementos do botão mobile (caso existam na página secundária)
+  const themeSwitchMobile = document.getElementById('theme-switch-mobile');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
   // Função para aplicar estilos do modo escuro
   function applyDarkModeStyles() {
     const customBlocks = document.querySelectorAll('.custom-block');
     customBlocks.forEach((block) => {
       block.style.backgroundColor = 'rgba(50, 50, 50, 1)'; // Ou qualquer cor preferida
-      block.style.color = '#ffffff'; // Exemplo: texto em vermelho
+      block.style.color = '#ffffff';
     });
   }
 
@@ -239,7 +219,69 @@
     const customBlocks = document.querySelectorAll('.custom-block');
     customBlocks.forEach((block) => {
       block.style.backgroundColor = 'whitesmoke'; // Ou qualquer cor preferida
-      block.style.color = 'black'; // Exemplo: texto em azul
+      block.style.color = 'black';
+    });
+  }
+
+  // Função para atualizar o ícone do botão mobile com animação
+  function updateMobileThemeIcon() {
+    if (themeSwitchMobile && themeSwitchMobile.checked) {
+      // Modo escuro: ícone de lua com cor personalizada
+      themeToggleMobile.innerHTML = `<i class="fa-solid fa-moon" style="color: #90A4AE; font-size: 24px;"></i>`;
+    } else {
+      // Modo claro: ícone de sol com cor personalizada
+      themeToggleMobile.innerHTML = `<i class="fa-solid fa-sun" style="color: #FFC107; font-size: 24px;"></i>`;
+    }
+    // Adiciona uma animação simples de rotação
+    const icon = themeToggleMobile.querySelector('i');
+    icon.classList.add('animate-icon');
+    setTimeout(() => {
+      icon.classList.remove('animate-icon');
+    }, 300);
+  }
+
+  // Função para alternar entre os temas
+  function toggleTheme(isDark) {
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+      applyDarkModeStyles();
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+      applyLightModeStyles();
+    }
+    // Atualiza o ícone do botão mobile
+    if (themeToggleMobile) updateMobileThemeIcon();
+  }
+
+  // Verifica e aplica o tema salvo no localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeSwitch) themeSwitch.checked = true;
+    if (themeSwitchMobile) themeSwitchMobile.checked = true;
+    applyDarkModeStyles();
+  } else {
+    if (themeSwitch) themeSwitch.checked = false;
+    if (themeSwitchMobile) themeSwitchMobile.checked = false;
+    applyLightModeStyles();
+  }
+
+  // Evento para o botão desktop
+  if (themeSwitch) {
+    themeSwitch.addEventListener('change', () => {
+      toggleTheme(themeSwitch.checked);
+      // Sincroniza o estado com o botão mobile, se existir
+      if (themeSwitchMobile) themeSwitchMobile.checked = themeSwitch.checked;
+    });
+  }
+
+  // Evento para o botão mobile
+  if (themeSwitchMobile) {
+    themeSwitchMobile.addEventListener('change', () => {
+      toggleTheme(themeSwitchMobile.checked);
+      // Sincroniza o estado com o botão desktop, se existir
+      if (themeSwitch) themeSwitch.checked = themeSwitchMobile.checked;
     });
   }
 
@@ -253,6 +295,10 @@
 `;
   document.head.appendChild(darkModeStyle);
 
+  // Atualiza o ícone do botão mobile ao carregar a página
+  document.addEventListener('DOMContentLoaded', function () {
+    if (themeToggleMobile) updateMobileThemeIcon();
+  });
 
 
   // Desabilitar Ctrl+U (Ver Código-Fonte) e Ctrl+Shift+I (DevTools)
