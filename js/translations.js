@@ -3,8 +3,8 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "Plataforma ideal para fazer câmbio",
-    descriptio: "Faça o seu câmbio e compre a sua moeda. Encontre aqui os nossos vendedores",
+    description: "Quer enviar dinheiro para Angola?<br>Temos o melhor câmbio para você",
+    descriptio: "Antes de continuar, encontre aqui os nossos agentes que estarão disponíveis ao atendimento",
     list : "Ver lista",
     p1: "Câmbio",
     p2: "X-FUTUR3",
