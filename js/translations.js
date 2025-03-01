@@ -3,8 +3,8 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "Quer enviar dinheiro para Angola?<br>Temos o melhor câmbio para você",
-    descriptio: "Antes de continuar, encontre aqui os nossos agentes que estarão disponíveis ao atendimento",
+    description: "Quer enviar dinheiro para Angola?<br>Temos o melhor câmbio para você",
+    descriptio: "Antes de continuar, encontre aqui os nossos agentes que estarão disponíveis para o atendimento",
     list : "Ver lista",
     p1: "Câmbio",
     p2: "X-FUTUR3",
@@ -40,7 +40,7 @@ const translations = {
     supportDescription: "Oferecemos serviço gratuito para quaisquer dificuldades ou dúvidas relacionadas aos nossos serviços.",
     whatsappInfo: "Basta clicar no ícone do WhatsApp.",
     servicesAvailable: "Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
-    tellUs: "Compre a sua moeda",
+    tellUs: "Contacte-nos",
     sendRequest: "Envia-nos o seu pedido",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Comprar",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
@@ -130,9 +130,9 @@ const translations = {
     studentComte: "Coordenador de Marketing",
     studentComt: "Estudante na Universidade Franche Comté, França",
     waiting : "Aguarde, estamos à procura de um vendedor...\n",
-    seller: "Escolha um Vendedor",
+    seller: "Escolha um Agente",
     closeit: "Fechar",
-    sellerAvalavbe: "Vendedores Disponíveis",
+    sellerAvalavbe: "Agentes Disponíveis",
     ourProduct : "Nossos Produtos",
   },
 
@@ -140,8 +140,8 @@ const translations = {
 
   en: {
     title: "Angoline",
-    description: "Ideal platform for exchanging currencies",
-    descriptio: "Exchange your money and buy your currency. Find here our sellers",
+    description: "Want to send money to Angola?<br>We offer the best exchange rate for you",
+    descriptio: "Before continuing, find our agents available to assist you",
     list : "See the list",
     p1: "Exchange",
     p2: "X-FUTUR3",
@@ -177,7 +177,7 @@ const translations = {
     supportDescription: "We offer free service for any difficulties or questions related to our services.",
     whatsappInfo: "Just click on the WhatsApp icon.",
     servicesAvailable: "Take advantage of our services!<br>Available 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
-    tellUs: "Buy your currency",
+    tellUs: "Contact us",
     sendRequest: "Send us your request",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Buy",
     currencyOptionsPlaceholder: "€, EUR, Kz or AOA",
@@ -277,8 +277,8 @@ const translations = {
 
   fr: {
     title: "Angoline",
-    description: "Plateforme idéale pour changer des devises",
-    descriptio: "Faites votre échange et achetez votre devise. Trouvez ici nos vendeurs",
+    description: "Vous souhaitez envoyer de l'argent en Angola ?<br>Nous vous proposons le meilleur taux de change",
+    descriptio: " Avant de continuer, trouvez ici nos agents qui seront disponibles pour vous assister",
     list : "Voir la liste",
     p1: "Change",
     p2: "X-FUTUR3",
@@ -314,7 +314,7 @@ const translations = {
     supportDescription: "Nous offrons un service gratuit pour toute difficulté ou question liée à nos services.",
     whatsappInfo: "Il suffit de cliquer sur l'icône WhatsApp.",
     servicesAvailable: "Profitez de nos services!<br>Disponibles 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
-    tellUs: "Achetez votre devise",
+    tellUs: "Contactez-nous",
     sendRequest: "Envoyez-nous votre demande",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Acheter",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
