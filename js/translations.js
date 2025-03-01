@@ -41,7 +41,10 @@ const translations = {
     whatsappInfo: "Basta clicar no ícone do WhatsApp.",
     servicesAvailable: "Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contacte-nos",
-    sendRequest: "Envia-nos o seu pedido",
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Clientes Satisfeitos",
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Parcerias",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Comprar",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
     amountToPay: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> Pagar",
@@ -178,7 +181,10 @@ const translations = {
     whatsappInfo: "Just click on the WhatsApp icon.",
     servicesAvailable: "Take advantage of our services!<br>Available 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contact us",
-    sendRequest: "Send us your request",
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Satisfied Clients",
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Partenerships",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Buy",
     currencyOptionsPlaceholder: "€, EUR, Kz or AOA",
     amountToPay: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> Pay",
@@ -315,7 +321,10 @@ const translations = {
     whatsappInfo: "Il suffit de cliquer sur l'icône WhatsApp.",
     servicesAvailable: "Profitez de nos services!<br>Disponibles 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contactez-nous",
-    sendRequest: "Envoyez-nous votre demande",
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Clients Satisfaits",
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+      "<br>Partenariats",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Acheter",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
     amountToPay: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> Payer",
