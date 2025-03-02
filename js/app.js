@@ -365,7 +365,12 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// --- Listener do dropdown de divisas ---
+// Ao clicar em uma opção, esconde imediatamente o dropdown e atualiza a divisa
 currencyList.addEventListener('click', (e) => {
+  // Esconde o dropdown imediatamente
+  currencyList.style.display = 'none';
+
   const li = e.target.closest('li');
   if (!li) return;
   const newCurrency = li.getAttribute('data-currency');
@@ -399,7 +404,6 @@ currencyList.addEventListener('click', (e) => {
     error1.style.display = 'none';
     comprarAgoraBtn.style.display = 'none';
   }
-  currencyList.style.display = 'none';
 });
 
 // Aplicar debounce ao campo de entrada
