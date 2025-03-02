@@ -4,7 +4,7 @@ const translations = {
   pt: {
     title: "Angoline",
     description: "Quer enviar dinheiro para Angola?<br>Temos o melhor câmbio para você",
-    descriptio: "Antes de continuar, encontre aqui os nossos agentes que estarão disponíveis para o atendimento",
+    descriptio: "Encontre aqui os nossos agentes que estarão disponíveis para o atendimento",
     list : "Ver lista",
     p1: "Câmbio",
     p2: "X-FUTUR3",
@@ -31,7 +31,7 @@ const translations = {
     aboutAuthor: "Autor",
     termsOfUse: "Termos",
     privacyPolicy: "Política",
-    ourServices: "Os nossos serviços",
+    ourServices: "Nossos serviços",
     currencySale: "Venda de moedas",
     currencyDescription: "Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.",
     transfers: "Transferências",
@@ -41,9 +41,9 @@ const translations = {
     whatsappInfo: "Basta clicar no ícone do WhatsApp.",
     servicesAvailable: "Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contacte-nos",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">63+</span>" +
       "<br>Clientes Satisfeitos",
-    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Parcerias",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Comprar",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
@@ -137,6 +137,7 @@ const translations = {
     closeit: "Fechar",
     sellerAvalavbe: "Agentes Disponíveis",
     ourProduct : "Nossos Produtos",
+    datas : "Estes dados são atualizados semanalmente",
   },
 
 
@@ -144,7 +145,7 @@ const translations = {
   en: {
     title: "Angoline",
     description: "Want to send money to Angola?<br>We offer the best exchange rate for you",
-    descriptio: "Before continuing, find our agents available to assist you",
+    descriptio: "Find our agents available to assist you",
     list : "See the list",
     p1: "Exchange",
     p2: "X-FUTUR3",
@@ -181,9 +182,9 @@ const translations = {
     whatsappInfo: "Just click on the WhatsApp icon.",
     servicesAvailable: "Take advantage of our services!<br>Available 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contact us",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">63+</span>" +
       "<br>Satisfied Clients",
-    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Partenerships",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Buy",
     currencyOptionsPlaceholder: "€, EUR, Kz or AOA",
@@ -277,6 +278,7 @@ const translations = {
     closeit: "Close",
     sellerAvalavbe: "Available Sellers",
     ourProduct : "Our Products",
+    datas : "These data are updated weekly",
   },
 
 
@@ -284,7 +286,7 @@ const translations = {
   fr: {
     title: "Angoline",
     description: "Vous souhaitez envoyer de l'argent en Angola ?<br>Nous vous proposons le meilleur taux de change",
-    descriptio: " Avant de continuer, trouvez ici nos agents qui seront disponibles pour vous assister",
+    descriptio: "Trouvez ici nos agents qui seront disponibles pour vous assister",
     list : "Voir la liste",
     p1: "Change",
     p2: "X-FUTUR3",
@@ -321,9 +323,9 @@ const translations = {
     whatsappInfo: "Il suffit de cliquer sur l'icône WhatsApp.",
     servicesAvailable: "Profitez de nos services!<br>Disponibles 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contactez-nous",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">63+</span>" +
       "<br>Clients Satisfaits",
-    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">0+</span>" +
+    sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Partenariats",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Acheter",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
@@ -417,5 +419,6 @@ const translations = {
     closeit: "Fermer",
     sellerAvalavbe: "Vendeurs Disponibles",
     ourProduct : "Nos Produits",
+    datas : "Ces données sont mises à jour chaque semaine",
   }
 };
