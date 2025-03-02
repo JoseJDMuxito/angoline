@@ -441,10 +441,10 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
+  width: 50px;
   height: 30px;
   border: 1px solid lightgray;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: white;
   position: relative;
   cursor: pointer;
@@ -457,7 +457,7 @@ input[type="checkbox"] {
   width: 60px;
   height: 30px;
   border: 1px solid lightgray;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: white;
   position: relative;
   cursor: pointer;
