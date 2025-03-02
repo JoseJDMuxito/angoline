@@ -450,6 +450,19 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+.language-selec {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
 /* ================================== */
 /*           Slideshow                */
 /* ================================== */

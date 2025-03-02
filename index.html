@@ -113,7 +113,7 @@
         <div id="group-1" class="input-group">
           <div style="display: flex; align-items: center;">
             <!-- Label com a moeda e sua bandeira (imagem com bordas arredondadas) -->
-            <label for="campo-1" style="font-weight: 500;" id="sourceCurrencyLabel">
+            <label for="campo-1" style="font-weight: 500;" id="sourceCurrencyLabel" class="language-selec">
               EUR
               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
                    alt="Bandeira da União Europeia"
@@ -133,6 +133,7 @@
               </ul>
             </div>
           </div>
+          <br>
           <input class="w3-input w3-border w3-hover-border-black cus w3-opacity d1 custom-block"
                  type="text" id="campo-1" data-i18n="insertValue" placeholder="Insira o valor" style="width: 100%;">
           <div class="error" id="error-1" style="display: none; color: red;" data-i18n="insiraOnlyNumbers">Insira apenas números</div>
@@ -147,12 +148,13 @@
 
       <div class="w3-section">
         <div id="group-2" class="input-group">
-          <label for="campo-2" style="font-weight: 500;">
+          <label for="campo-2" style="font-weight: 500;" class="language-selec">
             AOA
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg"
                  alt="Bandeira de Angola"
                  style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
           </label>
+          <br>
           <input class="w3-input w3-opacity d1 custom-block" type="text" readonly id="campo-2" data-i18n="resultado" placeholder="Resultado" style="width: 100%; pointer-events: none;">
         </div>
       </div>
