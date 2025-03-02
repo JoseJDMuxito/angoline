@@ -213,6 +213,8 @@ function w3_close() {
 // Taxas de conversão
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
+const taxaDollarParaKwanza = 1100;
+const taxaKwanzaParaDollar = 1200;
 
 // Seleção de elementos HTML
 const campo1 = document.getElementById('campo-1');
@@ -228,15 +230,20 @@ const resumoPagar = document.getElementById("resumoPagar");
 const resumoReceber = document.getElementById("resumoReceber");
 const cancelarBtn = document.getElementById("cancelar");
 const confirmarBtn = document.getElementById("confirmar");
-// Elemento para exibir o histórico de câmbio
 const historicoCambio = document.getElementById('historico-cambio');
 
+// Seleção dos elementos do seletor de moeda
+const currencySelector = document.getElementById('currencySelector');
+const currencyList = document.getElementById('currencyList');
+
 // Controle de conversão
-let isEuroToKwanza = true;
+// isSourceToKwanza: true = de moeda selecionada para AOA; false = de AOA para moeda selecionada
+let isSourceToKwanza = true;
+// selectedCurrency: "EUR" ou "USD" (padrão Euro)
+let selectedCurrency = "EUR";
 
 /*
- * Aqui você insere os dados reais dos colaboradores.
- * Para alterar os nomes, telefones e imagens, basta editar os valores deste array.
+ * Dados dos colaboradores.
  */
 const colaboradores = [
   { phone: "33628947112",  name: "Irina Chipoia", img: "img/irina.jpg" },
@@ -267,16 +274,30 @@ function calcular() {
 
   error1.style.display = "none";
 
-  if (isEuroToKwanza) {
-    const valorKwanza = valorCampo1 * taxaEuroParaKwanza;
-    campo2.value = valorKwanza.toFixed(2);
-    resultadoDiv.textContent = `${valorCampo1} € = ${valorKwanza.toFixed(2)} Kz`;
-    adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "€", "Kz");
-  } else {
-    const valorEuro = valorCampo1 / taxaKwanzaParaEuro;
-    campo2.value = valorEuro.toFixed(2);
-    resultadoDiv.textContent = `${valorCampo1} Kz = ${valorEuro.toFixed(2)} €`;
-    adicionarAoHistorico(valorCampo1, valorEuro.toFixed(2), "Kz", "€");
+  if (selectedCurrency === "EUR") {
+    if (isSourceToKwanza) {
+      const valorKwanza = valorCampo1 * taxaEuroParaKwanza;
+      campo2.value = valorKwanza.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} € = ${valorKwanza.toFixed(2)} Kz`;
+      adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "€", "Kz");
+    } else {
+      const valorEuro = valorCampo1 / taxaKwanzaParaEuro;
+      campo2.value = valorEuro.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} Kz = ${valorEuro.toFixed(2)} €`;
+      adicionarAoHistorico(valorCampo1, valorEuro.toFixed(2), "Kz", "€");
+    }
+  } else if (selectedCurrency === "USD") {
+    if (isSourceToKwanza) {
+      const valorKwanza = valorCampo1 * taxaDollarParaKwanza;
+      campo2.value = valorKwanza.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} $ = ${valorKwanza.toFixed(2)} Kz`;
+      adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "$", "Kz");
+    } else {
+      const valorDollar = valorCampo1 / taxaKwanzaParaDollar;
+      campo2.value = valorDollar.toFixed(2);
+      resultadoDiv.textContent = `${valorCampo1} Kz = ${valorDollar.toFixed(2)} $`;
+      adicionarAoHistorico(valorCampo1, valorDollar.toFixed(2), "Kz", "$");
+    }
   }
 
   // Exibe o botão "COMPRAR AGORA" somente após uma conversão válida
@@ -294,27 +315,91 @@ function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
   historicoCambio.style.display = 'block';
 }
 
-// Alternar entre Euro e Kwanza
+// Alternar entre conversão de moeda para AOA ou vice-versa
 switchBtn.addEventListener('click', () => {
-  isEuroToKwanza = !isEuroToKwanza;
+  isSourceToKwanza = !isSourceToKwanza;
 
   const group1Label = document.querySelector('#group-1 label');
   const group2Label = document.querySelector('#group-2 label');
 
-  if (isEuroToKwanza) {
-    group1Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">`;
-    group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">`;
+  if (isSourceToKwanza) {
+    // Conversão: moeda selecionada -> AOA
+    if (selectedCurrency === "EUR") {
+      group1Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency === "USD") {
+      group1Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    }
+    group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
   } else {
-    group1Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle;">`;
-    group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle;">`;
+    // Conversão: AOA -> moeda selecionada
+    group1Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    if (selectedCurrency === "EUR") {
+      group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency === "USD") {
+      group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    }
   }
 
   campo1.value = '';
   campo2.value = '';
   resultadoDiv.textContent = '';
   error1.style.display = 'none';
-  // Oculta o botão "COMPRAR AGORA" ao alternar moedas
   comprarAgoraBtn.style.display = 'none';
+});
+
+// --- Seletor de moeda (apenas o ícone da seta) ---
+// Ao clicar no botão, exibe/oculta a lista e impede que o clique se propague
+currencySelector.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (currencyList.style.display === "none" || currencyList.style.display === "") {
+    currencyList.style.display = "block";
+  } else {
+    currencyList.style.display = "none";
+  }
+});
+
+// Fechar o dropdown se clicar fora do seletor
+document.addEventListener('click', (e) => {
+  if (!currencySelector.contains(e.target)) {
+    currencyList.style.display = 'none';
+  }
+});
+
+currencyList.addEventListener('click', (e) => {
+  const li = e.target.closest('li');
+  if (!li) return;
+  const newCurrency = li.getAttribute('data-currency');
+  if (newCurrency && newCurrency !== selectedCurrency) {
+    selectedCurrency = newCurrency;
+    // Atualiza o label conforme a direção da conversão
+    if (isSourceToKwanza) {
+      if (selectedCurrency === "EUR") {
+        document.getElementById('sourceCurrencyLabel').innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      } else if (selectedCurrency === "USD") {
+        document.getElementById('sourceCurrencyLabel').innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      }
+    } else {
+      const group2Label = document.querySelector('#group-2 label');
+      if (selectedCurrency === "EUR") {
+        group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      } else if (selectedCurrency === "USD") {
+        group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      }
+    }
+    // Atualiza o conteúdo do dropdown para mostrar a opção oposta
+    if (selectedCurrency === "EUR") {
+      currencyList.innerHTML = `<li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
+    } else {
+      currencyList.innerHTML = `<li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
+    }
+    // Limpa os campos e o resultado
+    campo1.value = '';
+    campo2.value = '';
+    resultadoDiv.textContent = '';
+    error1.style.display = 'none';
+    comprarAgoraBtn.style.display = 'none';
+  }
+  currencyList.style.display = 'none';
 });
 
 // Aplicar debounce ao campo de entrada
@@ -326,9 +411,8 @@ campo1.addEventListener('input', debounce(() => {
 comprarAgoraBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
-
-  resumoPagar.textContent = ` ${valorPagar} ${isEuroToKwanza ? '€' : 'Kz'}`;
-  resumoReceber.textContent = ` ${valorReceber} ${isEuroToKwanza ? 'Kz' : '€'}`;
+  resumoPagar.textContent = ` ${valorPagar} ${isSourceToKwanza ? (selectedCurrency === "EUR" ? '€' : '$') : 'Kz'}`;
+  resumoReceber.textContent = ` ${valorReceber} ${isSourceToKwanza ? 'Kz' : (selectedCurrency === "EUR" ? '€' : '$')}`;
   modalResumo.style.display = "block";
 
   comprarAgoraBtn.style.display = "none";
@@ -380,7 +464,7 @@ function hideAguardeModal() {
   aguardeModal.style.display = "none";
 }
 
-// Botão "CONFIRMAR" – após 2 segundos, exibe a lista de colaboradores (funcionalidade original)
+// Botão "CONFIRMAR" – após 2 segundos, exibe a lista de colaboradores
 confirmarBtn.addEventListener("click", () => {
   const valorPagarParsed = parseFloat(campo1.value);
   const valorReceberParsed = parseFloat(campo2.value);
@@ -406,15 +490,15 @@ confirmarBtn.addEventListener("click", () => {
   }, 2000);
 });
 
-// Função para exibir o modal com a lista de colaboradores (funcionalidade original)
+// Função para exibir o modal com a lista de colaboradores
 function mostrarModalColaboradores(valorPagar, valorReceber) {
   const modal = document.getElementById("modalColaboradores");
   const lista = document.getElementById("listaColaboradores");
   lista.innerHTML = "";
 
   // Define os símbolos de moeda de acordo com a conversão
-  const moedaPagar = isEuroToKwanza ? '€' : 'Kz';
-  const moedaReceber = isEuroToKwanza ? 'Kz' : '€';
+  const moedaPagar = isSourceToKwanza ? (selectedCurrency === "EUR" ? '€' : '$') : 'Kz';
+  const moedaReceber = isSourceToKwanza ? 'Kz' : (selectedCurrency === "EUR" ? '€' : '$');
 
   colaboradores.forEach(colab => {
     const item = document.createElement("li");
@@ -442,7 +526,7 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     // Ao clicar, redireciona para o WhatsApp com a mensagem pré-formatada
     item.addEventListener("click", () => {
       const mensagem = encodeURIComponent(
-        `Olá,\nEu vou pagar: ${valorPagar} ${moedaPagar}\nEu vou receber: ${valorReceber} ${moedaReceber}`
+        `Olá!\nEu vou pagar: ${valorPagar} ${moedaPagar}\nEu vou receber: ${valorReceber} ${moedaReceber}`
       );
       window.open(`https://wa.me/${colab.phone}?text=${mensagem}&send=true`, '_blank');
       modal.style.display = "none";
@@ -460,7 +544,7 @@ document.getElementById("btnFecharColaboradores").addEventListener("click", () =
   document.getElementById("modalColaboradores").style.display = "none";
 });
 
-// Limpar histórico – volta ao estado original (botão aparece apenas após a primeira conversão)
+// Limpar histórico – volta ao estado original (aparece após a primeira conversão)
 clearHistoryBtn.addEventListener("click", () => {
   historyList.innerHTML = '';
   clearHistoryBtn.style.display = 'none';
@@ -470,6 +554,7 @@ clearHistoryBtn.addEventListener("click", () => {
 // Estado inicial do botão de limpar histórico e do container de histórico
 clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
+
 
 // ==============================
 // NOVA FUNCIONALIDADE: Exibir modal simples de vendedores (para o botão "Ver Vendedores")

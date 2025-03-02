@@ -1,3 +1,7 @@
+/* ================================== */
+/*           Reset & Base             */
+/* ================================== */
+
 /* Reset básico */
 * {
   margin: 0;
@@ -9,7 +13,10 @@ html, body {
   height: 100%; /* Garante que o body tenha altura completa */
 }
 
-/* Estilizando o layout principal */
+/* ================================== */
+/*          Layout Principal          */
+/* ================================== */
+
 .wrapper {
   display: flex;
   flex-direction: column; /* Layout vertical */
@@ -22,22 +29,26 @@ html, body {
   padding: 100px;
 }
 
+/* ================================== */
+/*           Footer Styling           */
+/* ================================== */
 
-   /* Estilo básico para o footer */
- footer {
-   display: flex;
-   justify-content: space-between; /* Palavras espaçadas horizontalmente */
-   align-items: center;
-   padding: 10px 20px;
-   background-color: whitesmoke;
-   font-size: 1rem;
-   height: 10vh;
- }
+/* Estilo básico para o footer */
+footer {
+  display: flex;
+  justify-content: space-between; /* Palavras espaçadas horizontalmente */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  height: 10vh;
+}
 
 footer span {
   margin: 0 10px; /* Espaçamento horizontal entre palavras */
 }
 
+/* Responsividade para o footer */
 /* Quando a tela for muito pequena */
 @media (max-width: 600px) {
   footer {
@@ -59,6 +70,9 @@ footer span {
   }
 }
 
+/* ================================== */
+/*           Div & Container          */
+/* ================================== */
 
 .div {
   height: 50px;
@@ -76,24 +90,20 @@ footer span {
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
-
 .d1 {
   border-radius: 10px 10px 10px 10px;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
-
 
 .d2 {
   border-radius: 10px 10px 0 0;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
-
 .d3 {
   border-radius: 0 0 10px 10px;
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
-
 
 .d4 {
   border-radius: 5px 5px 5px 5px;
@@ -106,12 +116,18 @@ footer span {
   /* Ordem: superior-esquerdo, superior-direito, inferior-direito, inferior-esquerdo */
 }
 
+/* ================================== */
+/*         Body Transitions           */
+/* ================================== */
 
 body {
   transition: background-color 0.5s ease, background-image 0.5s ease;
-  background:linear-gradient(to right, rgba(100, 100, 100, 0.3), rgba(0,119,255,0.1));
+  background: linear-gradient(to right, rgba(100, 100, 100, 0.3), rgba(0,119,255,0.1));
 }
 
+/* ================================== */
+/*         Switch & Toggle            */
+/* ================================== */
 
 .switch {
   display: inline-block;
@@ -129,7 +145,7 @@ body {
   content: '';
   width: 20px;
   height: 20px;
-  background-color:cornflowerblue;
+  background-color: cornflowerblue;
   border-radius: 50%;
   position: absolute;
   top: 2.5px;
@@ -149,23 +165,29 @@ input[type="checkbox"]:checked + .switch:before {
 
 /* Escondendo o checkbox */
 input[type="checkbox"] {
-  display:none;
+  display: none;
 }
+
+/* ================================== */
+/*            Icon Styling            */
+/* ================================== */
 
 .icon {
   margin: 10px;
   font-size: 40px; /* Tamanho dos ícones */
 }
 
+/* ================================== */
+/*          Custom Links              */
+/* ================================== */
+
 .custom-link {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
 
-
 .custom-link:visited {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
-
 
 .custom-link:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
@@ -176,22 +198,24 @@ input[type="checkbox"] {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .custom-link:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
 }
 
+/* ================================== */
+/*         Custom Link "custom-lin"   */
+/* ================================== */
 
 .custom-lin {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
 
-
 .custom-lin:visited {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
-
 
 .custom-lin:hover {
   text-decoration: underline; /* Adiciona sublinhado no hover */
@@ -201,47 +225,47 @@ input[type="checkbox"] {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
-  padding:  3px 10px 3px 10px;
+  padding: 3px 10px 3px 10px;
 }
+
+/* ================================== */
+/*         Custom Link "custom-l"     */
+/* ================================== */
 
 .custom-l {
   text-decoration: none; /* Adiciona sublinhado no hover */
-
 }
-
 
 .custom-l:visited {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
 
-
 .custom-l:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background-color: cornflowerblue;
   border-radius: 10px;
-  padding:  5px 3px 5px 3px;
+  padding: 5px 3px 5px 3px;
 }
 
 .custom-l:active {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background-color:  cornflowerblue;
+  background-color: cornflowerblue;
   border-radius: 10px;
-  padding:  5px 3px 5px 3px;
+  padding: 5px 3px 5px 3px;
 }
 
-
+/* ================================== */
+/*        Custom Link "custom-linki"  */
+/* ================================== */
 
 .custom-linki {
   text-decoration: none; /* Adiciona sublinhado no hover */
-  background-color:  cornflowerblue;
-
+  background-color: cornflowerblue;
 }
-
 
 .custom-linki:visited {
   text-decoration: none; /* Adiciona sublinhado no hover */
 }
-
 
 .custom-linki:hover {
   text-decoration: none; /* Adiciona sublinhado no hover */
@@ -251,9 +275,12 @@ input[type="checkbox"] {
   text-decoration: none; /* Adiciona sublinhado no hover */
   background-color: cornflowerblue;
   border-radius: 10px 10px 10px 10px;
-  padding:  0.5px 5px 0.5px 5px;
+  padding: 0.5px 5px 0.5px 5px;
 }
 
+/* ================================== */
+/*         Error & Result             */
+/* ================================== */
 
 .error {
   color: red;
@@ -261,19 +288,25 @@ input[type="checkbox"] {
   margin-top: 5px;
   display: none;
 }
+
 .result {
   font-size: 18px;
   margin-top: 20px;
   text-align: center;
   font-weight: bold;
 }
+
+/* ================================== */
+/*         Switch Button              */
+/* ================================== */
+
 .switch-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 15px 0;
-
 }
+
 .switch-btn button {
   color: #121212;
   border-radius: 50px;
@@ -284,6 +317,7 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
 }
+
 .switch-btn button:hover {
   text-decoration: none;
   background: rgba(255, 20, 147, 0.1);
@@ -293,6 +327,10 @@ input[type="checkbox"] {
   background: whitesmoke;
 }
 
+/* ================================== */
+/*           Container                */
+/* ================================== */
+
 .containe {
   height: 350px;
   max-width: 900px;
@@ -301,8 +339,10 @@ input[type="checkbox"] {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* ================================== */
+/*        Whatsapp Button             */
+/* ================================== */
 
-/* Estilo para o botão flutuante */
 .whatsapp-button {
   position: fixed;
   bottom: 70px;
@@ -331,13 +371,18 @@ input[type="checkbox"] {
   height: 35px;
 }
 
-.custom-block{
+/* ================================== */
+/*          Custom Block              */
+/* ================================== */
 
+.custom-block {
 }
 
+/* ================================== */
+/*       Language Selector            */
+/* ================================== */
 
 #language-button {
-
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -346,7 +391,6 @@ input[type="checkbox"] {
 }
 
 #language-button:hover {
-
 }
 
 #language-options {
@@ -366,7 +410,6 @@ input[type="checkbox"] {
 }
 
 #language-options.active {
-
   opacity: 1;
   transform: translateY(0);
 }
@@ -391,9 +434,25 @@ input[type="checkbox"] {
 }
 
 .lang-option:hover {
-  background:lightgray;
+  background: lightgray;
 }
 
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+/* ================================== */
+/*           Slideshow                */
+/* ================================== */
 
 .slideshow-container {
   width: 100%;
@@ -447,7 +506,6 @@ input[type="checkbox"] {
   }
 }
 
-
 .dot {
   height: 10px;
   width: 10px;
@@ -463,21 +521,10 @@ input[type="checkbox"] {
   background-color: white;
 }
 
-.language-selector {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 30px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  background-color: white;
-  position: relative;
-  cursor: pointer;
-}
+/* ================================== */
+/*          Dynamic Margin            */
+/* ================================== */
 
-
-/* Definição geral da classe */
 .dynamic-margin {
   margin-left: 16px;
   margin-right: 16px;
@@ -513,6 +560,9 @@ input[type="checkbox"] {
   text-align: left;
 }
 
+/* ================================== */
+/*              Setas                 */
+/* ================================== */
 
 .seta {
   width: 0;
@@ -520,17 +570,20 @@ input[type="checkbox"] {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
+
 .cima {
   border-bottom: 10px solid black;
   margin-bottom: 5px;
 }
+
 .baixo {
   border-top: 10px solid black;
   margin-top: 5px;
-  }
+}
 
-
-
+/* ================================== */
+/*              FAQ Section           */
+/* ================================== */
 
 .faq-question {
   font-family: 'Poppins', sans-serif;
@@ -565,26 +618,36 @@ input[type="checkbox"] {
   font-weight: bold;
 }
 
+/* ================================== */
+/*      Modal Colaboradores           */
+/* ================================== */
 
 @media (max-width: 480px) {
   #modalColaboradores .modal-content {
     width: 90%;
   }
 }
-/* Efeito de hover removido */
+
+/* ================================== */
+/*          Botão Fechar              */
+/* ================================== */
+
 .btn-fechar {
   border: none;
   cursor: pointer;
 }
+
 .btn-fechar:hover {
 }
 
-/* Transição suave para a rotação e mudança de cor */
+/* ================================== */
+/*      Theme Toggle Animation        */
+/* ================================== */
+
 #theme-toggle-mobile i {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Classe para a animação de rotação */
 .animate-icon {
   transform: rotate(360deg);
 }

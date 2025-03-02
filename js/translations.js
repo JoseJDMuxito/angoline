@@ -33,7 +33,7 @@ const translations = {
     privacyPolicy: "Política",
     ourServices: "Nossos serviços",
     currencySale: "Venda de moedas",
-    currencyDescription: "Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: € e Kz.",
+    currencyDescription: "Vendemos e oferecemos câmbios instantâneos com as seguintes moedas: €, $ e Kz.",
     transfers: "Transferências",
     transferDescription: "Realizamos transferências bancárias seguras e rápidas entre diferentes instituições financeiras angolanas : BAI, BIC, BFA...",
     support: "Suporte",
@@ -85,14 +85,14 @@ const translations = {
       "<br><strong>A todos vocês, meu mais sincero obrigado!</strong>",
     aboutSit: "Sobre o Site",
   "exchangeRateQuestion": "1. Qual é a taxa de câmbio usada no site?",
-    "exchangeRateAnswer": "Trabalhamos exclusivamente com a conversão entre <strong>euros</strong> e <strong>kwanzas</strong>, e a taxa de câmbio pode variar de acordo com as oscilações do mercado financeiro." +
+    "exchangeRateAnswer": "Trabalhamos exclusivamente com a conversão entre <strong>EUR</strong>, <strong>USD</strong> e <strong>AOA</strong>, e a taxa de câmbio pode variar de acordo com as oscilações do mercado financeiro." +
       "<br><strong>Recomendamos que consulte o conversor de moedas disponível na página principal, antes de realizar suas transações.</strong>",
     "currencyExchangeServiceQuestion": "2. Como funcionam os serviços de câmbio?",
-    "currencyExchangeServiceAnswer": "Na página principal, disponibilizamos um conversor de moedas que permite calcular valores entre <strong>Kwanza (Kz)</strong> e <strong>Euro (€)</strong>." +
+    "currencyExchangeServiceAnswer": "Na página principal, disponibilizamos um conversor de moedas." +
       "<br>Isso ajuda os usuários a terem uma ideia clara das taxas e valores antes de realizar qualquer transação.",
     "howToBuyCurrencyQuestion": "3. Como efetuar a compra de moedas?",
     "howToBuyCurrencyAnswer": "Para efetuar a compra de moedas, o usuário deve seguir os passos abaixo:",
-    step1: "<strong>Acesse o Angoline</strong> e utilize o <strong>Conversor de Moedas</strong> disponível na página principal. Escolha a moeda que deseja converter, lembrando que só é possível converter entre <strong>euros</strong> e <strong>kwanzas</strong>. Insira o valor desejado e aguarde a conversão.",
+    step1: "<strong>Acesse o Angoline</strong> e utilize o <strong>Conversor de Moedas</strong> disponível na página principal. Escolha a moeda que deseja converter. Insira o valor desejado e aguarde a conversão.",
     step2: "Assim que a conversão for feita, um botão <strong>“Comprar Agora”</strong> aparecerá. Se desejar continuar com a transação, clique no botão. Caso contrário, você pode realizar outra conversão antes de decidir.",
     step3: "Após clicar em <strong>“Comprar Agora”</strong>, um resumo das informações da conversão será exibido. Verifique os detalhes e clique em <strong>“Confirmar”</strong> para continuar ou <strong>“Cancelar”</strong> para interromper a transação.",
     step4: "Se confirmar a transação, será exibida uma lista de <strong>vendedores de moedas</strong> disponíveis. Escolha um vendedor e clique para ser redirecionado automaticamente ao <strong>WhatsApp</strong> do vendedor, já com os detalhes da conversão.",
@@ -174,7 +174,7 @@ const translations = {
     privacyPolicy: "Policy",
     ourServices: "Our services",
     currencySale: "Currency sale",
-    currencyDescription: "We sell and offer instant currency exchanges with the following currencies: € and Kz.",
+    currencyDescription: "We sell and offer instant currency exchanges with the following currencies: €, $ and Kz.",
     transfers: "Transfers",
     transferDescription: "We perform secure and fast bank transfers between different Angolan financial institutions: BAI, BIC, BFA...",
     support: "Support",
@@ -226,14 +226,14 @@ const translations = {
       "<br><strong>To all of you, my sincerest thanks!</strong>",
     aboutSit: "About the Website",
     "exchangeRateQuestion": "1. What is the exchange rate used on the website?",
-    "exchangeRateAnswer": "We work exclusively with the conversion between <strong>euros</strong> and <strong>kwanzas</strong>, and the exchange rate may vary according to financial market fluctuations." +
+    "exchangeRateAnswer": "We work exclusively with the conversion between <strong>EUR</strong>, <strong>USD</strong> and <strong>AOA</strong>, and the exchange rate may vary according to financial market fluctuations." +
       "<br><strong>We recommend checking the currency converter available on the main page before making any transactions.</strong>",
     "currencyExchangeServiceQuestion": "2. How do the currency exchange services work?",
-    "currencyExchangeServiceAnswer": "On the main page, we provide a currency converter that allows you to calculate values between <strong>Kwanza (Kz)</strong> and <strong>Euro (€)</strong>." +
+    "currencyExchangeServiceAnswer": "On the main page, we provide a currency converter." +
       "<br>This helps users have a clear idea of the rates and values before making any transactions.",
     "howToBuyCurrencyQuestion": "3. How to purchase currency?",
     "howToBuyCurrencyAnswer": "To purchase currency, the user must follow the steps below:",
-    step1: "<strong>Access Angoline</strong> and use the <strong>Currency Converter</strong> available on the main page. Choose the currency you want to convert, remembering that it is only possible to convert between <strong>euros</strong> and <strong>kwanzas</strong>. Enter the desired amount and wait for the conversion.",
+    step1: "<strong>Access Angoline</strong> and use the <strong>Currency Converter</strong> available on the main page. Choose the currency you want to convert. Enter the desired amount and wait for the conversion.",
     step2: "As soon as the conversion is done, a <strong>“Buy Now”</strong> button will appear. If you want to proceed with the transaction, click the button. Otherwise, you can make another conversion before deciding.",
     step3: "After clicking <strong>“Buy Now”</strong>, a summary of the conversion details will be displayed. Check the details and click <strong>“Confirm”</strong> to proceed or <strong>“Cancel”</strong> to stop the transaction.",
     step4: "If you confirm the transaction, a list of <strong>currency sellers</strong> will be displayed. Choose a seller and click to be automatically redirected to the seller's <strong>WhatsApp</strong>, already with the conversion details.",
@@ -315,7 +315,7 @@ const translations = {
     privacyPolicy: "Confidentialité",
     ourServices: "Nos services",
     currencySale: "Vente de devises",
-    currencyDescription: "Nous vendons et proposons des échanges de devises instantanés avec les devises suivantes : € et Kz.",
+    currencyDescription: "Nous vendons et proposons des échanges de devises instantanés avec les devises suivantes : €, $ et Kz.",
     transfers: "Transferts",
     transferDescription: "Nous effectuons des transferts bancaires sécurisés et rapides entre différentes institutions financières angolaises : BAI, BIC, BFA...",
     support: "Service Client",
@@ -367,14 +367,14 @@ const translations = {
       "<br><strong>A vous tous, mes plus sincères remerciements !</strong>",
     aboutSit: "À propos du Site",
     "exchangeRateQuestion": "1. Quel est le taux de change utilisé sur le site?",
-    "exchangeRateAnswer": "Nous travaillons exclusivement avec la conversion entre <strong>euros</strong> et <strong>kwanzas</strong>, et le taux de change peut varier en fonction des fluctuations du marché financier." +
+    "exchangeRateAnswer": "Nous travaillons exclusivement avec la conversion entre <strong>EUR</strong>, <strong>USD</strong> et <strong>AOA</strong>, et le taux de change peut varier en fonction des fluctuations du marché financier." +
       "<br><strong>Nous vous recommandons de consulter le convertisseur de devises disponible sur la page d'accueil avant d'effectuer toute transaction.</strong>",
     "currencyExchangeServiceQuestion": "2. Comment fonctionnent les services de change ?",
-    "currencyExchangeServiceAnswer": "Sur la page principale, nous mettons à disposition un convertisseur de devises qui permet de calculer les valeurs entre <strong>Kwanza (Kz)</strong> et <strong>Euro (€)</strong>." +
+    "currencyExchangeServiceAnswer": "Sur la page principale, nous mettons à disposition un convertisseur de devises." +
       "<br>Cela aide les utilisateurs à avoir une idée claire des taux et des valeurs avant d'effectuer toute transaction.",
     "howToBuyCurrencyQuestion": "3. Comment acheter des devises ?",
     "howToBuyCurrencyAnswer": "Pour acheter des devises, l'utilisateur doit suivre les étapes ci-dessous :",
-    step1: "<strong>Accédez à Angoline</strong> et utilisez le <strong>Convertisseur de Devises</strong> disponible sur la page principale. Choisissez la devise que vous souhaitez convertir, en vous rappelant qu'il est uniquement possible de convertir entre <strong>euros</strong> et <strong>kwanzas</strong>. Entrez le montant souhaité et attendez la conversion.",
+    step1: "<strong>Accédez à Angoline</strong> et utilisez le <strong>Convertisseur de Devises</strong> disponible sur la page principale. Choisissez la devise que vous souhaitez convertir. Entrez le montant souhaité et attendez la conversion.",
     step2: "Dès que la conversion est effectuée, un bouton <strong>“Acheter maintenant”</strong> apparaîtra. Si vous souhaitez poursuivre la transaction, cliquez sur le bouton. Sinon, vous pouvez effectuer une autre conversion avant de décider.",
     step3: "Après avoir cliqué sur <strong>“Acheter maintenant”</strong>, un résumé des détails de la conversion sera affiché. Vérifiez les détails et cliquez sur <strong>“Confirmer”</strong> pour continuer ou <strong>“Annuler”</strong> pour arrêter la transaction.",
     step4: "Si vous confirmez la transaction, une liste des <strong>vendeurs de devises</strong> disponibles s'affichera. Choisissez un vendeur et cliquez pour être automatiquement redirigé vers le <strong>WhatsApp</strong> du vendeur, déjà avec les détails de la conversion.",
