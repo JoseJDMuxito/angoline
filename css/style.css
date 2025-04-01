@@ -371,6 +371,22 @@ input[type="checkbox"] {
   height: 35px;
 }
 
+.whatsapp-butto {
+  position: fixed;
+  bottom: 70px;
+  right: 10px; /* Alterar para "left" se preferir */
+  color: white;
+  border: none;
+  background-color: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
 /* ================================== */
 /*          Custom Block              */
 /* ================================== */
@@ -663,4 +679,50 @@ input[type="checkbox"] {
 
 .animate-icon {
   transform: rotate(360deg);
+}
+
+
+<!-- Estilos para animação -->
+
+   /* Container com efeito de fade-in e slide para baixo */
+ #greeting-container {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   background: #fff;
+   padding: 10px 15px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+   transform: translateY(-20px);
+   animation: fadeInSlide 1s forwards;
+   z-index: 9999;
+ }
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação da mão acenando */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#waving-hand {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
 }

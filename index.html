@@ -297,6 +297,12 @@
 </div>
 </div>
 
+<!-- Container de saudação -->
+<div id="greeting-container" class="whatsapp-butto d1">
+  <img id="waving-hand" src="img/hand.png" alt="Mão acenando">
+  <p>Olá, faça-me uma pergunta!</p>
+</div>
+
 <!-- Footer -->
 <footer class="custom-block d2" style="border-top: 1px solid lightgray;">
   <span class="w3-opacity">
@@ -315,8 +321,27 @@
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
 <script src="js/app.js"></script>
-<script> window.chtlConfig = { chatbotId: "8283699317" } </script>
+<!-- Código do ChatLing -->
+<script>
+  window.chtlConfig = { chatbotId: "8283699317" }
+</script>
 <script async data-id="8283699317" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+<!-- Script para remover a saudação após alguns segundos -->
+<script>
+  window.addEventListener('load', function(){
+    // Remove o container após 5 segundos (5000ms)
+    setTimeout(function(){
+      const container = document.getElementById('greeting-container');
+      container.style.transition = 'opacity 0.5s ease-out';
+      container.style.opacity = '0';
+      setTimeout(function(){
+        container.remove();
+      }, 500);
+    }, 5000);
+  });
+</script>
+
 
 </body>
 </html>
