@@ -139,6 +139,7 @@ const translations = {
     sellerAvalavbe: "Agentes Disponíveis",
     ourProduct : "Nossos Produtos",
     datas : "Estes dados são atualizados semanalmente",
+    ChatBot: "Olá, faça-me uma pergunta!",
   },
 
 
@@ -281,6 +282,7 @@ const translations = {
     sellerAvalavbe: "Available Sellers",
     ourProduct : "Our Products",
     datas : "These data are updated weekly",
+    ChatBot: "Hello, ask me a question!",
   },
 
 
@@ -423,5 +425,6 @@ const translations = {
     sellerAvalavbe: "Vendeurs Disponibles",
     ourProduct : "Nos Produits",
     datas : "Ces données sont mises à jour chaque semaine",
+    ChatBot: "Salut, posez-moi une question!",
   }
 };
