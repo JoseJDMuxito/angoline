@@ -41,7 +41,7 @@ const translations = {
     whatsappInfo: "Basta clicar no ícone do WhatsApp.",
     servicesAvailable: "Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contacte-nos",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">103+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">23+</span>" +
       "<br>Clientes Satisfeitos",
     sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Parcerias",
@@ -184,7 +184,7 @@ const translations = {
     whatsappInfo: "Just click on the WhatsApp icon.",
     servicesAvailable: "Take advantage of our services!<br>Available 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contact us",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">103+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">23+</span>" +
       "<br>Satisfied Clients",
     sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Partenerships",
@@ -327,7 +327,7 @@ const translations = {
     whatsappInfo: "Il suffit de cliquer sur l'icône WhatsApp.",
     servicesAvailable: "Profitez de nos services!<br>Disponibles 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contactez-nous",
-    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">103+</span>" +
+    sendRequestt: "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">23+</span>" +
       "<br>Clients Satisfaits",
     sendRequest : "<span class=\"w3-xxlarge\" style=\"color: cornflowerblue\">1+</span>" +
       "<br>Partenariats",
