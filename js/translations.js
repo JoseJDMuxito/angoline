@@ -138,7 +138,7 @@ const translations = {
     closeit: "Fechar",
     sellerAvalavbe: "Agentes Disponíveis",
     ourProduct : "Nossos Produtos",
-    datas : "Estes dados são atualizados semanalmente",
+    datas : "Estes dados são atualizados diariamente",
     ChatBot: "Olá, faça-me uma pergunta!",
   },
 
@@ -281,7 +281,7 @@ const translations = {
     closeit: "Close",
     sellerAvalavbe: "Available Sellers",
     ourProduct : "Our Products",
-    datas : "These data are updated weekly",
+    datas : "This data is updated daily",
     ChatBot: "Hello, ask me a question!",
   },
 
@@ -424,7 +424,7 @@ const translations = {
     closeit: "Fermer",
     sellerAvalavbe: "Vendeurs Disponibles",
     ourProduct : "Nos Produits",
-    datas : "Ces données sont mises à jour chaque semaine",
+    datas : "Ces données sont mises à jour chaque à jour",
     ChatBot: "Salut, posez-moi une question!",
   }
 };
