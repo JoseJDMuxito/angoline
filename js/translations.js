@@ -424,7 +424,7 @@ const translations = {
     closeit: "Fermer",
     sellerAvalavbe: "Vendeurs Disponibles",
     ourProduct : "Nos Produits",
-    datas : "Ces données sont mises à jour chaque à jour",
+    datas : "Ces données sont mises à jour chaque jour",
     ChatBot: "Salut, posez-moi une question!",
   }
 };
