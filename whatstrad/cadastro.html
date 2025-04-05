@@ -1,0 +1,82 @@
+<!-- PÁGINA DE CADASTRO (register.html) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro de Vendedores</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+  </style>
+</head>
+<body class="w3-theme-l5">
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+      <i class="fa fa-user-plus w3-margin-right"></i>Cadastro de Vendedores
+    </a>
+  </div>
+</div>
+
+<div class="w3-container w3-content" style="max-width:500px; margin-top:100px">
+  <div class="w3-card-4 w3-round w3-white">
+    <div class="w3-container w3-padding">
+      <h2 class="w3-center">Crie sua Conta</h2>
+      <form id="formCadastro" onsubmit="return processarCadastro(event)">
+        <p>
+          <label>Nome Completo</label>
+          <input class="w3-input w3-border" type="text" id="nome" required>
+        </p>
+        <p>
+          <label>Email</label>
+          <input class="w3-input w3-border" type="email" id="email" required>
+        </p>
+        <p>
+          <label>Especialidade</label>
+          <input class="w3-input w3-border" type="text" id="especialidade" required>
+        </p>
+        <p>
+          <label>Localização</label>
+          <input class="w3-input w3-border" type="text" id="localizacao" required>
+        </p>
+        <p>
+          <label>Senha</label>
+          <input class="w3-input w3-border" type="password" id="senha" required>
+        </p>
+        <p>
+          <button class="w3-button w3-theme w3-block" type="submit">Cadastrar</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function processarCadastro(event) {
+    event.preventDefault();
+
+    // Coletar dados do formulário
+    const usuario = {
+      nome: document.getElementById('nome').value,
+      email: document.getElementById('email').value,
+      especialidade: document.getElementById('especialidade').value,
+      localizacao: document.getElementById('localizacao').value,
+      senha: document.getElementById('senha').value
+    };
+
+    // Salvar em localStorage
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+
+    // Redirecionar para o perfil
+    window.location.href = 'perfil.html';
+    return false;
+  }
+</script>
+
+</body>
+</html>
