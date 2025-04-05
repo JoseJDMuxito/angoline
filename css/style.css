@@ -145,7 +145,7 @@ body {
   content: '';
   width: 20px;
   height: 20px;
-  background-color: gray;
+  background-color: rgba(100, 149, 237, 0.7);
   border-radius: 50%;
   position: absolute;
   top: 2.5px;
@@ -373,7 +373,7 @@ input[type="checkbox"] {
 
 .whatsapp-butto {
   position: fixed;
-  bottom: 700px;
+  bottom: 650px;
   right: 10px; /* Alterar para "left" se preferir */
   border: none;
   background-color:white;
