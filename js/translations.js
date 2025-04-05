@@ -139,7 +139,7 @@ const translations = {
     sellerAvalavbe: "Agentes Disponíveis",
     ourProduct : "Nossos Produtos",
     datas : "Estes dados são atualizados diariamente",
-    ChatBot: "Olá, faça-me uma pergunta!",
+    ChatBot: "Bem vindo a Angoline!",
   },
 
 
@@ -282,7 +282,7 @@ const translations = {
     sellerAvalavbe: "Available Sellers",
     ourProduct : "Our Products",
     datas : "This data is updated daily",
-    ChatBot: "Hello, ask me a question!",
+    ChatBot: "Welcome to Angoline!",
   },
 
 
@@ -425,6 +425,6 @@ const translations = {
     sellerAvalavbe: "Vendeurs Disponibles",
     ourProduct : "Nos Produits",
     datas : "Ces données sont mises à jour chaque jour",
-    ChatBot: "Salut, posez-moi une question!",
+    ChatBot: "Bienvenue à Angoline!",
   }
 };
