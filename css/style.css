@@ -373,7 +373,7 @@ input[type="checkbox"] {
 
 .whatsapp-butto {
   position: fixed;
-  bottom: 650px;
+  bottom: 500px;
   right: 10px; /* Alterar para "left" se preferir */
   border: none;
   background-color:white;
