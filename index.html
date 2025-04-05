@@ -60,7 +60,7 @@
       <div class="w3-right w3-hide-small">
         <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="services"><i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS</a>
         <a href="equipa/equipa.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
-        <a href="faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-question" style="color: red"></i> FAQ</a>
+        <a href="faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-question" style="color: rgba(255,0,0,0.5)"></i> FAQ</a>
 
         <!-- Modo escuro e claro -->
         <input type="checkbox" id="theme-switch">
@@ -101,10 +101,10 @@
       <i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS
     </a>
     <a href="equipa/equipa.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="team">
-      <i class="fa fa-user" style="color: blue"></i> EQUIPA
+      <i class="fa fa-user" style="color: cornflowerblue"></i> EQUIPA
     </a>
     <a href="faq/faq.html" target="_self" onclick="w3_close()" class="w3-bar-item w3-button d1" data-i18n="">
-      <i class="fa-solid fa-question" style="color: red"></i> FAQ
+      <i class="fa-solid fa-question" style="color: rgba(255,0,0,0.5)"></i> FAQ
     </a>
     <a>
       <!-- Input oculto para controle do tema (versão mobile) -->
@@ -201,7 +201,7 @@
       </div>
 
       <!-- Botão COMPRAR AGORA -->
-      <button id="comprarAgora" data-i18n="buyNow" style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: #007bff; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
+      <button id="comprarAgora" data-i18n="buyNow" style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: cornflowerblue; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
         Comprar agora
       </button>
     </div>
@@ -258,11 +258,11 @@
 
     <!-- Modal de Resumo -->
     <div id="modalResumo" class="custom-block" style="display: none; border: 1px solid lightgray; ;position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; padding: 20px; background: whitesmoke; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
-      <div><p style="font-size: 20px"  data-i18n="youWillPay" >Você vai pagar :</p> <span style="color: red" id="resumoPagar"></span></div>
-      <div><p  style="font-size: 20px" data-i18n="youWillReceive">Você vai receber :</p> <span style="color: red" id="resumoReceber"></span></div>
+      <div><p style="font-size: 20px"  data-i18n="youWillPay" >Você vai pagar :</p> <span style="color: rgb(255,0,0)" id="resumoPagar"></span></div>
+      <div><p  style="font-size: 20px" data-i18n="youWillReceive">Você vai receber :</p> <span style="color: rgb(255,0,0)" id="resumoReceber"></span></div>
       <br>
       <p data-i18n="reverseExchangeTryAgain">Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.</p>
-      <button id="cancelar" data-i18n="cancel"  style="background-color: #dc3545; color: white; border: none; border-radius: 10px; padding: 5px; margin: 5px;">Cancelar</button>
+      <button id="cancelar" data-i18n="cancel"  style="background-color: rgba(220,53,69,0.5); color: white; border: none; border-radius: 10px; padding: 5px; margin: 5px;">Cancelar</button>
       <button id="confirmar" data-i18n="confirm" style="background-color: #28a745; color: white; border: none; border-radius: 10px; padding: 5px; margin: 5px;">Confirmar</button>
     </div>
 
