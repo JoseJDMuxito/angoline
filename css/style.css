@@ -145,7 +145,7 @@ body {
   content: '';
   width: 20px;
   height: 20px;
-  background-color: cornflowerblue;
+  background-color: gray;
   border-radius: 50%;
   position: absolute;
   top: 2.5px;
@@ -538,7 +538,7 @@ input[type="checkbox"] {
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: cornflowerblue;
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
