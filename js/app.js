@@ -248,8 +248,8 @@ let selectedCurrency = "EUR";
 const colaboradores = [
   { phone: "33628947112",  name: "Irina Chipoia", img: "img/irina.jpg" },
   { phone: "244924459808", name: "Moisés Teresa", img: "img/moises.jpg" },
-  { phone: "33761936803",  name: "Alberto Viegas", img: "img/alberto.jpg" },
-  { phone: "33762627101",  name: "Catarino Mahula", img: "img/catarino.jpg" }
+  { phone: "33762627101",  name: "Catarino Mahula", img: "img/catarino.jpg" },
+  { phone: "33761936803",  name: "Gabriel Mota", img: "img/gabriel.jpg" }
 ];
 
 // Função debounce para evitar cálculos excessivos
