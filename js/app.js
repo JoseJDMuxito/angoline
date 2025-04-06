@@ -656,7 +656,7 @@ document.getElementById("btnFecharVendedores").addEventListener("click", () => {
   * Usa uma meta de 4 passos (aproximadamente), arredondando o passo para um valor “bonito”.
   */
   function getStep(finalValue) {
-  const desiredSteps = 15;
+  const desiredSteps = 8;
   const step = finalValue / desiredSteps;
   const magnitude = Math.pow(10, Math.floor(Math.log10(step)));
   const roundedStep = Math.ceil(step / magnitude) * magnitude;
@@ -716,7 +716,7 @@ document.getElementById("btnFecharVendedores").addEventListener("click", () => {
 
   // Inicia a animação assim que a página for carregada
   window.addEventListener('load', () => {
-  const totalDuration = 10000; // duração total de 2 segundos para cada contador
+  const totalDuration = 5000; // duração total de 2 segundos para cada contador
   const parceriasEl = document.getElementById('parcerias');
   const clientesEl = document.getElementById('clientes');
   const finalParcerias = parseInt(parceriasEl.getAttribute('data-target'), 10);
