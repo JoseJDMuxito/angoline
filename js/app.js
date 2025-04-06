@@ -541,7 +541,7 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     // Ao clicar, redireciona para o WhatsApp com a mensagem pré-formatada
     item.addEventListener("click", () => {
       const mensagem = encodeURIComponent(
-        `Olá!\nVenho diretamente so site Anngoline\n\nDe acordo com o conversor de moedas\nVou pagar: ${valorPagar} ${moedaPagar}\nE vou receber: ${valorReceber} ${moedaReceber}`
+        `Olá!\nFui reencaminhado(a) pelo site angoline.net\n\nDe acordo com o conversor de moedas\n\nVou pagar: ${valorPagar} ${moedaPagar}\nE vou receber: ${valorReceber} ${moedaReceber}`
       );
       window.open(`https://wa.me/${colab.phone}?text=${mensagem}&send=true`, '_blank');
       modal.style.display = "none";
