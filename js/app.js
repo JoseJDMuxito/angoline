@@ -112,87 +112,98 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+               //Propagandas
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselInner = document.querySelector('.carousel-inner');
+  const items = document.querySelectorAll('.carousel-item');
+  const dots = document.querySelectorAll('.dot');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+  let currentIndex = 0;
+  const totalItems = items.length;
+  let autoSlideInterval;
 
-let slideIndex = 0;
-let slideTimer;
-
-function showSlides() {
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  // Esconde todas as imagens
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  // Exibe o slide atual
-  slides[slideIndex].style.display = "block";
-
-  // Atualiza os indicadores
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  dots[slideIndex].className += " active";
-
-  // Prepara o próximo slide
-  slideIndex++;
-  if (slideIndex >= slides.length) {
-    slideIndex = 0;
+  function goToSlide(index) {
+    if(index < 0) {
+      index = totalItems - 1;
+    } else if(index >= totalItems) {
+      index = 0;
+    }
+    carouselInner.style.transform = 'translateX(' + (-index * 100) + '%)';
+    currentIndex = index;
+    updateDots();
   }
 
-  slideTimer = setTimeout(showSlides, 3000);
-}
-
-// Função para avançar ou voltar manualmente
-function plusSlides(n) {
-  clearTimeout(slideTimer);
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  // Ajusta o índice de forma circular
-  slideIndex = (slideIndex + n + slides.length) % slides.length;
-
-  // Esconde todos os slides
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function updateDots() {
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentIndex);
+    });
   }
-  // Exibe o slide selecionado
-  slides[slideIndex].style.display = "block";
 
-  // Atualiza os indicadores
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
   }
-  dots[slideIndex].className += " active";
 
-  slideTimer = setTimeout(showSlides, 3000);
-}
-
-// Função para selecionar um slide específico via indicadores
-function currentSlide(n) {
-  clearTimeout(slideTimer);
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  // Ajusta para o índice correto (já que os indicadores iniciam em 1)
-  slideIndex = n - 1;
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
   }
-  slides[slideIndex].style.display = "block";
 
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  // Função de slide automático
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000);
   }
-  dots[slideIndex].className += " active";
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
 
-  slideTimer = setTimeout(showSlides, 3000);
-}
+  // Eventos para setas
+  leftArrow.addEventListener('click', () => {
+    stopAutoSlide();
+    prevSlide();
+    startAutoSlide();
+  });
+  rightArrow.addEventListener('click', () => {
+    stopAutoSlide();
+    nextSlide();
+    startAutoSlide();
+  });
 
-// Inicia o slideshow
-showSlides();
+  // Eventos para indicadores (dots)
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      stopAutoSlide();
+      goToSlide(idx);
+      startAutoSlide();
+    });
+  });
 
+  // Detecção de swipe para dispositivos móveis
+  let touchStartX = 0;
+  let touchEndX = 0;
+  carouselInner.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  carouselInner.addEventListener('touchmove', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+  });
+  carouselInner.addEventListener('touchend', function(e) {
+    if(touchEndX === 0) return;
+    let diff = touchStartX - touchEndX;
+    if(Math.abs(diff) > 50) { // limiar para swipe
+      stopAutoSlide();
+      if(diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      startAutoSlide();
+    }
+    touchStartX = 0;
+    touchEndX = 0;
+  });
 
+  startAutoSlide();
+});
 
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
@@ -645,7 +656,7 @@ document.getElementById("btnFecharVendedores").addEventListener("click", () => {
   * Usa uma meta de 4 passos (aproximadamente), arredondando o passo para um valor “bonito”.
   */
   function getStep(finalValue) {
-  const desiredSteps = 10;
+  const desiredSteps = 15;
   const step = finalValue / desiredSteps;
   const magnitude = Math.pow(10, Math.floor(Math.log10(step)));
   const roundedStep = Math.ceil(step / magnitude) * magnitude;
@@ -705,7 +716,7 @@ document.getElementById("btnFecharVendedores").addEventListener("click", () => {
 
   // Inicia a animação assim que a página for carregada
   window.addEventListener('load', () => {
-  const totalDuration = 5000; // duração total de 2 segundos para cada contador
+  const totalDuration = 10000; // duração total de 2 segundos para cada contador
   const parceriasEl = document.getElementById('parcerias');
   const clientesEl = document.getElementById('clientes');
   const finalParcerias = parseInt(parceriasEl.getAttribute('data-target'), 10);

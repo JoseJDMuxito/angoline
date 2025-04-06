@@ -482,71 +482,69 @@ input[type="checkbox"] {
 /*           Slideshow                */
 /* ================================== */
 
-.slideshow-container {
+
+.carousel {
+  position: relative;
   width: 100%;
   max-width: 1000px;
-  position: relative;
-  margin: auto;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  margin: 50px auto;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: #000;
 }
-
-.mySlides {
-  display: none;
-  position: relative;
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
-
-.mySlides img {
+.carousel-item {
+  flex: 0 0 100%;
+}
+.carousel-item img {
   width: 100%;
+  display: block;
+  border-radius: 5px;
 }
-
-.w3-display-topleft {
-  top: 10px;
-  left: 10px;
-}
-
-.w3-display-middle {
+/* Setas de navegação */
+.carousel-arrows {
+  position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
-
-.w3-display-topright {
-  top: 10px;
-  right: 10px;
-}
-
-.w3-animate-bottom {
-  animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
-  background-color: rgba(0, 0, 0, 0.7);
+.arrow {
+  font-size: 2em;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  user-select: none;
+}
+.arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+/* Indicadores (dots) */
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.dot {
   display: inline-block;
-  transition: background-color 0.6s ease;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
   cursor: pointer;
 }
-
-.active {
-  background-color: white;
+.dot.active {
+  background: rgba(255,255,255,1);
 }
 
 /* ================================== */
