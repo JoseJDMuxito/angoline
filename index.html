@@ -337,27 +337,21 @@
       </div>
     </div>
 
-
     <!-- Promo Section "Statistics" -->
-    <div class="w3-container w3-row w3-center w3-dark-grey w3-padding-10 d1" style="border: 1px solid lightgray; margin-top: 540px; margin-bottom: -500px; position: relative;  box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-      <p data-i18n="datas">Estes dados são atualizados diariamente</p>
-      <div class="w3-quarter">
-        <br>
+    <div class="card custom-block customblock" style="margin-top: 530px; border: 1px solid lightgray">
+      <!-- O atributo data-target define o valor final desejado -->
+      <div class="counter" id="parcerias" data-target="1">
+        <div class="label" data-i18n="sendRequest">Parcerias</div>
+        <div class="number"><span>0+</span></div>
       </div>
-      <div class="w3-quarter" data-i18n="sendRequest">
-        <span class="w3-xxlarge" style="color: cornflowerblue">0+</span>
-        <br>Parcerias
-      </div>
-      <div class="w3-quarter" data-i18n="sendRequestt">
-        <span class="w3-xxlarge" style="color: cornflowerblue">0+</span>
-        <br>Clientes Satisfeitos
-      </div>
-      <div class="w3-quarter">
-        <br>
+
+      <div class="counter" id="clientes" data-target="53">
+        <div class="label" data-i18n="sendRequestt">Clientes Satisfeitos</div>
+        <div class="number"><span>0+</span></div>
       </div>
     </div>
 
-    <p style="text-align: center; margin-top: 520px" data-i18n="thankYou">
+    <p style="text-align: center; margin-top: 20px" data-i18n="thankYou">
       Obrigado por utilizar os nossos serviços<br>Volte sempre! <i class="fa-solid fa-handshake" style="color: orange"></i>
     </p>
 </div>
@@ -388,23 +382,8 @@
 <script src="js/main.js"></script>
 <script src="js/app.js"></script>
 
-<!-- Script para remover a saudação após alguns segundos -->
-<script>
-  window.addEventListener('load', function(){
-    // Remove o container após 5 segundos (5000ms)
-    setTimeout(function(){
-      const container = document.getElementById('greeting-container');
-      container.style.transition = 'opacity 0.5s ease-out';
-      container.style.opacity = '0';
-      setTimeout(function(){
-        container.remove();
-      }, 500);
-    }, 1000);
-  });
-</script>
-
-
 </body>
 </html>
+
 
 

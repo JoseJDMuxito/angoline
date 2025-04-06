@@ -725,3 +725,53 @@ input[type="checkbox"] {
   animation: wave 2s infinite;
   transform-origin: 70% 70%;
 }
+
+
+/* Card com sombra e bordas arredondadas */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 40px;
+}
+/* Container do contador */
+.counter {
+  text-align: center;
+}
+.counter .label {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+/* Container do número com overflow escondido para o efeito */
+.counter .number {
+  position: relative;
+  height: 60px;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 60px;
+  overflow: hidden;
+}
+/* Cada valor é um span posicionado de forma absoluta e com transição */
+.number span {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: transform var(--step-duration) ease, opacity var(--step-duration) ease;
+}
+
+
+.customblock {
+  display: flex;
+  justify-content: center; /* centraliza os blocos no container */
+  gap: 40px; /* define o espaçamento entre eles para telas maiores */
+  padding: 0 20px; /* espaçamento interno para afastar dos cantos */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .customblock {
+    gap: 20px; /* diminui o espaçamento entre os blocos */
+  }
+}

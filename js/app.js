@@ -608,3 +608,109 @@ btnVendedores.addEventListener("click", () => {
 document.getElementById("btnFecharVendedores").addEventListener("click", () => {
   document.getElementById("modalVendedores").style.display = "none";
 });
+
+
+<!-- Script para remover a saudação após alguns segundos -->
+
+  window.addEventListener('load', function(){
+  // Remove o container após 5 segundos (5000ms)
+  setTimeout(function(){
+    const container = document.getElementById('greeting-container');
+    container.style.transition = 'opacity 0.5s ease-out';
+    container.style.opacity = '0';
+    setTimeout(function(){
+      container.remove();
+    }, 500);
+  }, 500);
+});
+
+
+              //Contador
+  /**
+  * Formata o número usando abreviações:
+  * - n ≥ 1e9: exibe em "B" (bilhões)
+  * - n ≥ 1e6: exibe em "M" (milhões)
+  * - n ≥ 1e3: exibe em "K" (milhares)
+  */
+  function formatNumber(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(1).replace(/\.0$/, '') + 'B';
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
+  return n.toString();
+}
+
+  /**
+  * Calcula um incremento “base” para que o número seja atualizado em poucos passos
+  * mantendo um ritmo de animação visível e consistente.
+  * Usa uma meta de 4 passos (aproximadamente), arredondando o passo para um valor “bonito”.
+  */
+  function getStep(finalValue) {
+  const desiredSteps = 10;
+  const step = finalValue / desiredSteps;
+  const magnitude = Math.pow(10, Math.floor(Math.log10(step)));
+  const roundedStep = Math.ceil(step / magnitude) * magnitude;
+  return roundedStep;
+}
+
+  /**
+  * Anima o contador de 0 até o valor final.
+  * A cada “passo” o valor atual sai para cima e o novo valor entra de baixo.
+  *
+  * @param {HTMLElement} counterElement - Elemento do contador.
+  * @param {number} finalValue - Valor final desejado.
+  * @param {number} totalDuration - Duração total da animação em milissegundos.
+  */
+  function animateCounter(counterElement, finalValue, totalDuration) {
+  const numberContainer = counterElement.querySelector('.number');
+  let currentValue = 0;
+  const stepValue = getStep(finalValue);
+  const steps = Math.ceil(finalValue / stepValue);
+  const stepDuration = totalDuration / steps;
+  // Define a duração da transição via variável CSS custom
+  numberContainer.style.setProperty('--step-duration', stepDuration + 'ms');
+
+  function updateStep() {
+  let nextValue = currentValue + stepValue;
+  if (nextValue > finalValue) nextValue = finalValue;
+
+  // Cria um novo span com o próximo valor formatado e adiciona o sinal de mais
+  const newSpan = document.createElement('span');
+  newSpan.textContent = formatNumber(nextValue) + '+';
+  newSpan.style.transform = 'translateY(100%)';
+  newSpan.style.opacity = '0';
+  numberContainer.appendChild(newSpan);
+
+  // Força reflow para garantir que a transição seja aplicada
+  newSpan.offsetHeight;
+
+  // Anima o span antigo (se existir) para cima
+  const oldSpan = numberContainer.querySelector('span:first-child');
+  if (oldSpan) {
+  oldSpan.style.transform = 'translateY(-100%)';
+  oldSpan.style.opacity = '0';
+}
+  // Anima o novo span para a posição final
+  newSpan.style.transform = 'translateY(0)';
+  newSpan.style.opacity = '1';
+
+  currentValue = nextValue;
+  // Após a duração do passo, remove o antigo e, se ainda não chegou ao final, continua a animação
+  setTimeout(() => {
+  if (oldSpan) numberContainer.removeChild(oldSpan);
+  if (currentValue < finalValue) updateStep();
+}, stepDuration);
+}
+  updateStep();
+}
+
+  // Inicia a animação assim que a página for carregada
+  window.addEventListener('load', () => {
+  const totalDuration = 5000; // duração total de 2 segundos para cada contador
+  const parceriasEl = document.getElementById('parcerias');
+  const clientesEl = document.getElementById('clientes');
+  const finalParcerias = parseInt(parceriasEl.getAttribute('data-target'), 10);
+  const finalClientes = parseInt(clientesEl.getAttribute('data-target'), 10);
+
+  animateCounter(parceriasEl, finalParcerias, totalDuration);
+  animateCounter(clientesEl, finalClientes, totalDuration);
+});
