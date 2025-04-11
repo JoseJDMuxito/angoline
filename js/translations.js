@@ -72,7 +72,8 @@ const translations = {
       "      <br>Este projeto é fruto de curiosidade e paixão pela programação, com a intenção de criar, inovar e desenvolver habilidades práticas.\n",
     gratitudeNote: "Nota de Agradecimento",
     gratitudeMessage: "Gostaria de expressar minha mais profunda gratidão a todas as pessoas que contribuíram direta ou indiretamente para a criação do Angoline." +
-      "<br>Este projeto não seria possível sem o apoio de:",
+      "<br>Este projeto não seria possível sem o apoio de :" +
+      "<strong>Moisés Teresa, Eliezer Mucaji, José Caetano Kitumbo, Irina Chipoia, Catarino Mahula, Alberto Viegas, Júnior Futa e Gabriel Mota<strong>",
     teamMention: "Em especial, agradeço profundamente à minha <strong>equipa</strong>, formada por pessoas que confiaram em mim e ofereceram seus dados pessoais para que se tornassem membros da Angoline.",
     contactUsInfo: "Entre em Contato",
     emailInfo: "E-mail: email@angoline.com",
@@ -213,7 +214,8 @@ const translations = {
       "                <br>This project is the result of curiosity and passion for programming, with the intention of creating, innovating, and developing practical skills.\n",
     gratitudeNote: "Gratitude Note",
     gratitudeMessage: "I would like to express my deepest gratitude to everyone who directly or indirectly contributed to the creation of Angoline." +
-      "<br>This project would not be possible without the support of:",
+      "<br>This project would not be possible without the support of :" +
+      "<strong>Moisés Teresa, Eliezer Mucaji, José Caetano Kitumbo, Irina Chipoia, Catarino Mahula, Alberto Viegas, Júnior Futa e Gabriel Mota<strong>",
     teamMention: "Special thanks to my <strong>team</strong>, composed of people who trusted me and provided their personal data to become members of Angoline.",
     contactUsInfo: "Get in Touch",
     emailInfo: "Email: email@angoline.com",
@@ -354,7 +356,8 @@ const translations = {
       "                    <br>Ce projet est le fruit de la curiosité et de la passion pour la programmation, avec l'intention de créer, innover et développer des compétences pratiques.\n",
     gratitudeNote: "Note de Gratitude",
     gratitudeMessage: "Je voudrais exprimer ma plus profonde gratitude à toutes les personnes qui ont contribué directement ou indirectement à la création d'Angoline." +
-      "<br>Ce projet ne serait pas possible sans le soutien de:",
+      "<br>Ce projet ne serait pas possible sans le soutien de :" +
+      "<strong>Moisés Teresa, Eliezer Mucaji, José Caetano Kitumbo, Irina Chipoia, Catarino Mahula, Alberto Viegas, Júnior Futa e Gabriel Mota<strong>",
     teamMention: "Un grand merci à mon <strong>équipe</strong>, composée de personnes qui m'ont fait confiance et ont fourni leurs données personnelles pour devenir membres d'Angoline.",
     contactUsInfo: "Contactez-nous",
     emailInfo: "Email : email@angoline.com",
