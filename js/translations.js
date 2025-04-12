@@ -5,7 +5,7 @@ const translations = {
     title: "Angoline",
     description: "Quer enviar dinheiro?<br>Oferecemos um câmbio flexível, adaptado às tuas necessidades",
     descriptio: "Encontre aqui os nossos agentes",
-    list : "Clique aqui",
+    list: "Clique aqui",
     p1: "Câmbio",
     p2: "X-FUTUR3",
     p3: "EUR & AOA.",
@@ -42,7 +42,7 @@ const translations = {
     servicesAvailable: "Usufrua dos nossos serviços!<br>Disponíveis 24/24 <i class=\"fa-solid fa-check-circle\" style='color: green'></i>",
     tellUs: "Contacte-nos",
     sendRequestt: "<br>Clientes Satisfeitos",
-    sendRequest : "<br>Parcerias",
+    sendRequest: "<br>Parcerias",
     currencyToBuy: "<i class=\"fa-solid fa-cart-shopping\" style=\"color: blue\"></i> Comprar",
     currencyOptionsPlaceholder: "€, EUR, Kz ou AOA",
     amountToPay: "<i class=\"fa-solid fa-credit-card\" style=\"color: orange\"></i> Pagar",
@@ -84,7 +84,7 @@ const translations = {
       "<br>Este site é um reflexo da colaboração, do apoio e das ideias que recebi ao longo do caminho.  \n" +
       "<br><strong>A todos vocês, meu mais sincero obrigado!</strong>",
     aboutSit: "Sobre o Site",
-  "exchangeRateQuestion": "1. Qual é a taxa de câmbio usada no site?",
+    "exchangeRateQuestion": "1. Qual é a taxa de câmbio usada no site?",
     "exchangeRateAnswer": "Trabalhamos exclusivamente com a conversão entre <strong>EUR</strong>, <strong>USD</strong> e <strong>AOA</strong>, e a taxa de câmbio pode variar de acordo com as oscilações do mercado financeiro." +
       "<br><strong>Recomendamos que consulte o conversor de moedas disponível na página principal, antes de realizar suas transações.</strong>",
     "currencyExchangeServiceQuestion": "2. Como funcionam os serviços de câmbio?",
@@ -123,7 +123,7 @@ const translations = {
     intellectualPropertyTitle: "4. Propriedade Intelectual",
     intellectualPropertyText: "Todos os textos do site Angoline, assim como seu design, são de nossa propriedade." +
       "<br>Algumas imagens usadas no site são de domínio público e foram obtidas de fontes que permitem uso livre.",
-    clikon:"Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
+    clikon: "Depois de clicar em 'Enviar', você será atendido por um dos nossos colaboradores via WhatsApp.",
     buyNow: "Comprar agora",
     youWillReceive: "Você vai receber :",
     youWillPay: "Você vai pagar :",
@@ -132,15 +132,20 @@ const translations = {
     cancel: "Cancelar",
     studentComte: "Coordenador de Marketing",
     studentComt: "Estudante na Universidade Franche Comté, França",
-    waiting : "Aguarde, estamos à procura de um vendedor...\n",
+    waiting: "Aguarde, estamos à procura de um vendedor...\n",
     seller: "Escolha um Agente",
     closeit: "Fechar",
     sellerAvalavbe: "Agentes Disponíveis",
-    ourProduct : "Nossos Produtos",
-    datas : "Estes dados são atualizados diariamente",
+    ourProduct: "Nossos Produtos",
+    datas: "Estes dados são atualizados diariamente",
     ChatBot: "Bem vindo a Angoline!",
+    conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
+      "  Nosso Conversor não utiliza a taxa de câmbio do mercado médio. Essa taxa é usada apenas para fins comerciais, como\n" +
+      "  compra e venda de moedas. Ao entrar em contato com um de nossos agentes, você pagará a taxa aplicada no momento.\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Consulte\n" +
+      "    nossas taxas de câmbio para mais detalhes.\n" +
+      "  </a>",
   },
-
 
 
   en: {
@@ -281,6 +286,12 @@ const translations = {
     ourProduct : "Our Products",
     datas : "This data is updated daily",
     ChatBot: "Welcome to Angoline!",
+    conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
+      "  Our Converter does not use the mid-market exchange rate. This rate is used only for business purposes, such as\n" +
+      "  currency buying and selling. You will pay the applicable rate when you contact one of our agents.\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Check\n" +
+      "    our exchange rates for more details.\n" +
+      "  </a>",
   },
 
 
@@ -423,5 +434,11 @@ const translations = {
     ourProduct : "Nos Produits",
     datas : "Ces données sont mises à jour chaque jour",
     ChatBot: "Bienvenue à Angoline!",
+    conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
+      "  Notre convertisseur n'utilise pas le taux moyen du marché. Ce taux est uniquement utilisé à des fins commerciales, telles que\n" +
+      "  l'achat et la vente de devises. Vous paierez le taux en vigueur en contactant l’un de nos agents.\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Consultez\n" +
+      "    nos taux de change pour plus de détails.\n" +
+      "  </a>",
   }
 };

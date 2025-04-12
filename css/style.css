@@ -814,3 +814,71 @@ Estilos para animação
     justify-content: space-between;
   }
 }
+
+
+/* Container geral */
+.container-tabela {
+  max-width: 600px;      /* Largura máxima para a tabela */
+  margin: 20px auto;     /* Centraliza horizontalmente */
+  padding: 20px;
+  background-color: #fdfdfd;
+  border-radius: 10px;   /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+
+}
+
+/* Título (opcional) */
+.container-tabela h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Tabela em si */
+.tabela-cambio {
+  width: 100%;
+  border-collapse: separate; /* Permite usar bordas arredondadas */
+  border-spacing: 0;         /* Remove espaçamento padrão */
+  overflow: hidden;          /* Pra borda arredondada não vazar */
+  border-radius: 8px;
+}
+
+/* Cabeçalho */
+.tabela-cambio thead {
+  background-color: #0275d8; /* Cor de fundo do cabeçalho */
+  color: #ffffff;            /* Cor do texto do cabeçalho */
+}
+
+.tabela-cambio th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Corpo da Tabela */
+.tabela-cambio td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd; /* Linha divisória */
+  vertical-align: middle;        /* Centraliza verticalmente o conteúdo */
+  font-size: 15px;
+}
+
+/* Remove a linha de baixo da última linha da tabela (opcional) */
+.tabela-cambio tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Imagens de moeda (ajuste conforme desejar) */
+.moeda-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain; /* Mantém a proporção da imagem */
+  margin-right: 5px;
+}
+
+/* Alterna a cor de fundo das linhas, se quiser */
+.tabela-cambio tbody tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
