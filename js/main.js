@@ -264,7 +264,7 @@ let firstConversionDone = false;
 
 // Quantidades padrão para exibição
 const quantidades = [1, 5, 10, 20, 30, 40, 50];
-const quantidade = [1250, 2500, 3000,6000, 10000, 50000];
+const quantidade = [1250, 2500, 3000,6000, 10000, 30000, 50000];
 
 // Dados dos colaboradores (para modais, se utilizados)
 const colaboradores = [
@@ -333,21 +333,45 @@ function calcular() {
   }
 }
 
-// Atualiza dinamicamente os blocos de conversões
-function updateDynamicConversionBlocks() {
-  labelLeft.textContent = selectedCurrency;
-  labelRight.textContent = selectedCurrency;
+// Função para retornar o HTML da bandeira correspondente em formato circular
+function getFlagImage(currency) {
+  switch(currency) {
+    case "EUR":
+      return '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="União Europeia" style="width:20px; height: 20px; border-radius:50%;">';
+    case "USD":
+      return '<img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Estados Unidos" style="width:30px; height: 50px; border-radius:50%;">';
+    case "AOA":
+      return '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Angola" style="width:20px; height: 20px; border-radius:50%;">';
+    default:
+      return '';
+  }
+}
 
+function updateDynamicConversionBlocks() {
+  // Atualiza os cabeçalhos com as bandeiras e os códigos das moedas dinâmicas
+  // Bloco da esquerda: [moeda] para AOA
+  document.getElementById("flagSourceLeft").innerHTML = getFlagImage(selectedCurrency);
+  document.getElementById("labelLeft").textContent = selectedCurrency;
+  document.getElementById("flagTargetLeft").innerHTML = getFlagImage("AOA");
+
+  // Bloco da direita: AOA para [moeda]
+  document.getElementById("flagSourceRight").innerHTML = getFlagImage("AOA");
+  document.getElementById("flagTargetRight").innerHTML = getFlagImage(selectedCurrency);
+  document.getElementById("labelRight").textContent = selectedCurrency;
+
+  // Limpa os containers de lista
   listLeft.innerHTML = "";
   listRight.innerHTML = "";
 
+  // Para conversões de [moeda] para AOA
   quantidades.forEach(qtd => {
     if (selectedCurrency === "EUR") {
       const valorAOA = qtd * taxaEuroParaKwanza;
       const liLeft = document.createElement('li');
       liLeft.style.cursor = "pointer";
-      liLeft.style.marginBottom = "5px";
-      liLeft.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} €</span> = ${valorAOA.toFixed(2)} Kz`;
+      // Cada item mostra o valor original (em azul) e o valor convertido (em preto), sem sinal de igualdade
+      liLeft.innerHTML = `<span style="color: cornflowerblue; font-weight: bold;">${qtd} €</span>
+                          <span>${valorAOA.toFixed(2)} Kz</span>`;
       liLeft.addEventListener("click", () => {
         isSourceToKwanza = true;
         campo1.value = qtd;
@@ -359,43 +383,38 @@ function updateDynamicConversionBlocks() {
       const valorAOA = qtd * taxaDollarParaKwanza;
       const liLeft = document.createElement('li');
       liLeft.style.cursor = "pointer";
-      liLeft.style.marginBottom = "5px";
-      liLeft.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} $</span> = ${valorAOA.toFixed(2)} Kz`;
+      liLeft.innerHTML = `<span style="color: cornflowerblue; font-weight: bold;">${qtd} $</span>
+                          <span>${valorAOA.toFixed(2)} Kz</span>`;
       liLeft.addEventListener("click", () => {
         isSourceToKwanza = true;
         campo1.value = qtd;
         calcular();
       });
       listLeft.appendChild(liLeft);
-
     }
   });
 
-
-
-
-
-
+  // Para conversões de AOA para [moeda]
   quantidade.forEach(qtd => {
     if (selectedCurrency === "EUR") {
       const valorEuro = qtd / taxaKwanzaParaEuro;
       const liRight = document.createElement('li');
       liRight.style.cursor = "pointer";
-      liRight.style.marginBottom = "5px";
-      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorEuro.toFixed(2)} €`;
+      liRight.innerHTML = `<span style="color: cornflowerblue; font-weight: bold;">${qtd} Kz</span>
+                           <span>${valorEuro.toFixed(2)} €</span>`;
       liRight.addEventListener("click", () => {
         isSourceToKwanza = false;
         campo1.value = qtd;
         calcular();
       });
       listRight.appendChild(liRight);
-    } else if (selectedCurrency === "USD") {
 
+    } else if (selectedCurrency === "USD") {
       const valorDollar = qtd / taxaKwanzaParaDollar;
       const liRight = document.createElement('li');
       liRight.style.cursor = "pointer";
-      liRight.style.marginBottom = "5px";
-      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorDollar.toFixed(2)} $`;
+      liRight.innerHTML = `<span style="color: cornflowerblue; font-weight: bold;">${qtd} Kz</span>
+                           <span>${valorDollar.toFixed(2)} $</span>`;
       liRight.addEventListener("click", () => {
         isSourceToKwanza = false;
         campo1.value = qtd;
@@ -405,6 +424,7 @@ function updateDynamicConversionBlocks() {
     }
   });
 }
+
 
 // Adiciona a operação ao histórico
 function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {

@@ -250,16 +250,26 @@
     <div id="dynamicConversions" style="display: none; margin-top: 510px; margin-bottom: -500px;">
       <div class="dynamic-blocks" style="display: flex; gap: 20px;">
         <!-- Bloco para conversões: [moeda] para AOA -->
-        <div id="blockLeft" class="conversion-block custom-block" style="flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-          <h4 style="margin-top: 0;">Conversões: <span id="labelLeft">EUR</span> para AOA</h4>
-          <ul id="listLeft" style="list-style: none; padding: 0; text-align: center; font-size: 20px"></ul>
+        <div id="blockLeft" class="conversion-block custom-block"
+             style="flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h4 style="margin-top: 0;" class="listLef">
+            <span id="flagSourceLeft"></span>
+            <span id="labelLeft"></span>
+            <span id="flagTargetLeft"></span>AOA
+          </h4>
+          <ul id="listLeft" style="padding: 0; list-style: none; font-size: 20px;"></ul>
         </div>
-    </div>
+      </div>
 
       <!-- Bloco para conversões: AOA para [moeda] -->
-      <div id="blockRight" class="conversion-block custom-block" style="margin-top: 10px;flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-        <h4 style="margin-top: 0;">Conversões: AOA para <span id="labelRight">EUR</span></h4>
-        <ul id="listRight" style="list-style: none; padding: 0; text-align: center; font-size: 20px"></ul>
+      <div id="blockRight" class="conversion-block custom-block"
+           style="margin-top: 10px; flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h4 style="margin-top: 0;" class="listLef">
+          <span id="flagSourceRight"></span>AOA
+          <span id="flagTargetRight"></span>
+          <span id="labelRight"></span>
+        </h4>
+        <ul id="listRight" style="padding: 0; list-style: none; font-size: 20px;"></ul>
       </div>
     </div>
     <!-- FIM do Conversor -->

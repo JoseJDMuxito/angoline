@@ -780,3 +780,37 @@ Estilos para animação
   }
 }
 
+
+   /* Cada linha de conversão será um item flex centralizado com espaçamento ajustável */
+ #listLeft li,
+ #listRight li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   max-width: 400px; /* Define a largura máxima para centralização */
+   margin: 0 auto 10px auto;
+   gap: 50px;  /* Altere este valor conforme necessário para ajustar o espaço entre os valores */
+ }
+
+@media (max-width: 600px) {
+  #listLeft li,
+  #listRight li {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+/* Cada linha de conversão será um item flex centralizado com espaçamento ajustável */
+.listLef{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .listLef{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
