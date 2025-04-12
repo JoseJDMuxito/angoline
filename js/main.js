@@ -263,7 +263,8 @@ let selectedCurrency = "EUR";
 let firstConversionDone = false;
 
 // Quantidades padrão para exibição
-const quantidades = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500];
+const quantidades = [1, 5, 10, 20, 30, 40, 50];
+const quantidade = [1250, 2500, 3000,6000, 10000, 50000];
 
 // Dados dos colaboradores (para modais, se utilizados)
 const colaboradores = [
@@ -354,17 +355,6 @@ function updateDynamicConversionBlocks() {
       });
       listLeft.appendChild(liLeft);
 
-      const valorEuro = qtd / taxaKwanzaParaEuro;
-      const liRight = document.createElement('li');
-      liRight.style.cursor = "pointer";
-      liRight.style.marginBottom = "5px";
-      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorEuro.toFixed(2)} €`;
-      liRight.addEventListener("click", () => {
-        isSourceToKwanza = false;
-        campo1.value = qtd;
-        calcular();
-      });
-      listRight.appendChild(liRight);
     } else if (selectedCurrency === "USD") {
       const valorAOA = qtd * taxaDollarParaKwanza;
       const liLeft = document.createElement('li');
@@ -377,6 +367,29 @@ function updateDynamicConversionBlocks() {
         calcular();
       });
       listLeft.appendChild(liLeft);
+
+    }
+  });
+
+
+
+
+
+
+  quantidade.forEach(qtd => {
+    if (selectedCurrency === "EUR") {
+      const valorEuro = qtd / taxaKwanzaParaEuro;
+      const liRight = document.createElement('li');
+      liRight.style.cursor = "pointer";
+      liRight.style.marginBottom = "5px";
+      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorEuro.toFixed(2)} €`;
+      liRight.addEventListener("click", () => {
+        isSourceToKwanza = false;
+        campo1.value = qtd;
+        calcular();
+      });
+      listRight.appendChild(liRight);
+    } else if (selectedCurrency === "USD") {
 
       const valorDollar = qtd / taxaKwanzaParaDollar;
       const liRight = document.createElement('li');
