@@ -166,8 +166,8 @@
     <div class="w3-panel">
       <p style="font-size: 50px; color: rgba(255,20,147,0.5)">
         <span translate="no">
-          <i class="fa-solid fa-building-columns" style="color: cornflowerblue"></i>
-          <i class="fas fa-hand-holding-usd icon" style="font-size: 60px; color: cornflowerblue"></i>
+          <i class="fa-solid fa-building-columns" style="font-size: 40px; color: cornflowerblue"></i>
+          <i class="fas fa-hand-holding-usd icon" style="font-size: 40px; color: cornflowerblue"></i>
         </span>
       </p>
       <h1 style="font-size: 28px" data-i18n="description" class="faq-question">
@@ -179,23 +179,22 @@
       <div class="w3-opacity" id="btn-vendedores" style="border-radius: 8px; cursor: pointer; color: cornflowerblue" data-i18n="list">Clique aqui</div>
     </div>
 
+    <!-- INÍCIO do Conversor (somente a parte do conversor) -->
     <div class="w3-container custom-block w3-card-4" style="margin-top: 20px; margin-bottom: -500px; border-radius: 10px; border: 1px solid lightgray; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative;">
       <div class="w3-section">
-        <div id="group-1" class="input-group">
+        <div id="group-1" class="input-group" >
           <div style="display: flex; align-items: center;">
-            <!-- Label com a moeda e sua bandeira (imagem com bordas arredondadas) -->
+            <!-- Label com a moeda e sua bandeira -->
             <label for="campo-1" style="font-weight: 500; margin-bottom: 5px" id="sourceCurrencyLabel" class="language-selec custom-block">
               EUR
               <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
                    alt="Bandeira da União Europeia"
                    style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
             </label>
-
-            <!-- Botão (ícone da seta) para trocar a moeda -->
+            <!-- Botão para trocar a moeda -->
             <div class="currency-selector" id="currencySelector" style="cursor: pointer; position: relative; margin-left: 5px;">
               <i class="fa fa-chevron-down" style="margin-bottom: 10px"></i>
               <ul class="custom-block" id="currencyList" style="display: none; list-style: none; padding: 0; margin: 0; position: absolute; background: #fff; border: 1px solid #ddd; border-radius: 5px; top: 25px; left: 0; z-index: 1000;">
-                <!-- Opção disponível (caso atual seja EUR, mostra USD; e vice-versa) -->
                 <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
                   USD
                   <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
@@ -206,8 +205,8 @@
             </div>
           </div>
           <input class="w3-input w3-border w3-hover-border-black cus w3-opacity d1 custom-block"
-                 type="text" id="campo-1" data-i18n="insertValue" placeholder="Insira o valor" style="width: 100%;">
-          <div class="error" id="error-1" style="display: none; color: red;" data-i18n="insiraOnlyNumbers">Insira apenas números</div>
+                 type="text" id="campo-1" placeholder="Insira o valor" style="width: 100%; height: 50px; font-size: 20px;">
+          <div class="error" id="error-1" style="display: none; color: red;">Insira apenas números</div>
         </div>
       </div>
 
@@ -225,26 +224,44 @@
                  alt="Bandeira de Angola"
                  style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
           </label>
-          <input class="w3-input w3-opacity d1 custom-block" type="text" readonly id="campo-2" data-i18n="resultado" placeholder="Resultado" style="width: 100%; pointer-events: none;">
+          <input class="w3-input w3-opacity d1 custom-block" type="text" readonly id="campo-2" placeholder="Resultado" style="width: 100%; height: 50px; font-size: 20px;pointer-events: none;">
         </div>
       </div>
 
-      <div class="result" id="resultado" style="margin-top: 15px; font-weight: bold;"></div>
+      <div class="result" id="resultado" style="margin-top: 15px; font-weight: bold; font-size: 30px"></div>
+
 
       <!-- Histórico dos cálculos -->
       <div id="historico" style="margin-top: 20px;">
-        <p class="w3-opacity" style="font-weight: 500;" data-i18n="history" id="historico-cambio">Histórico de câmbio</p>
+        <p class="w3-opacity" style="font-weight: 500;" id="historico-cambio">Histórico de câmbio</p>
         <ul id="history-list" class="w3-opacity" style="font-weight: 500;"></ul>
-        <div class="custom-block" id="clear-history" style="border-radius: 5px; cursor: pointer;" data-i18n="">
+        <div id="clear-history" style="border-radius: 5px; cursor: pointer;">
           <i class="fa-solid fa-trash-can"></i>
         </div>
       </div>
 
-      <!-- Botão COMPRAR AGORA -->
-      <button id="comprarAgora" data-i18n="buyNow" style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: cornflowerblue; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
+      <!-- Botão "COMPRAR AGORA" -->
+      <button id="comprarAgora" style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: cornflowerblue; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
         Comprar agora
       </button>
     </div>
+
+    <!-- Blocos dinâmicos de conversões -->
+    <div id="dynamicConversions" style="display: none; margin-top: 510px; margin-bottom: -500px;">
+      <div class="dynamic-blocks" style="display: flex; gap: 20px;">
+        <!-- Bloco para conversões: [moeda] para AOA -->
+        <div id="blockLeft" class="conversion-block custom-block" style="flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h4 style="margin-top: 0;">Conversões: <span id="labelLeft">EUR</span> para AOA</h4>
+          <ul id="listLeft" style="list-style: none; padding: 0; text-align: center;"></ul>
+        </div>
+        <!-- Bloco para conversões: AOA para [moeda] -->
+        <div id="blockRight" class="conversion-block custom-block" style="flex: 1; background-color: whitesmoke; border: 1px solid #ccc; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <h4 style="margin-top: 0;">Conversões: AOA para <span id="labelRight">EUR</span></h4>
+          <ul id="listRight" style="list-style: none; padding: 0; text-align: center;"></ul>
+        </div>
+      </div>
+    </div>
+    <!-- FIM do Conversor -->
 
 
 
@@ -326,9 +343,9 @@
       </div>
     </div>
 
-    <!-- Promo Section "Statistics" -->
-    <div class="card custom-block customblock" style="margin-top: 10px;border: 1px solid lightgray">
-      <!-- O atributo data-target define o valor final desejado -->
+    <!-- Promo Section "Statistics"
+    <div class="card custom-block customblock" style="margin-top: 10px;border: 1px solid lightgray"> -->
+      <!-- O atributo data-target define o valor final desejado
       <div class="counter" id="parcerias" data-target="1">
         <div class="label" data-i18n="sendRequest">Parcerias</div>
         <div class="number"><span>0+</span></div>
@@ -338,7 +355,7 @@
         <div class="label" data-i18n="sendRequestt">Clientes Satisfeitos</div>
         <div class="number"><span>0+</span></div>
       </div>
-    </div>
+    </div>-->
 
     <p style="text-align: center; margin-top: 20px" data-i18n="thankYou">
       Obrigado por utilizar os nossos serviços<br>Volte sempre! <i class="fa-solid fa-handshake" style="color: orange"></i>

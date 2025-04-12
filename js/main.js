@@ -221,13 +221,14 @@ function w3_close() {
   mySidebar.style.display = "none";
 }
 
+// ------------------------------
 // Taxas de conversão
 const taxaEuroParaKwanza = 1150;
 const taxaKwanzaParaEuro = 1250;
 const taxaDollarParaKwanza = 1100;
 const taxaKwanzaParaDollar = 1200;
 
-// Seleção de elementos HTML
+// Seleção dos elementos do conversor
 const campo1 = document.getElementById('campo-1');
 const campo2 = document.getElementById('campo-2');
 const resultadoDiv = document.getElementById('resultado');
@@ -247,23 +248,32 @@ const historicoCambio = document.getElementById('historico-cambio');
 const currencySelector = document.getElementById('currencySelector');
 const currencyList = document.getElementById('currencyList');
 
+// Seleção dos elementos dos blocos dinâmicos
+const dynamicConversions = document.getElementById('dynamicConversions');
+const labelLeft = document.getElementById('labelLeft');
+const labelRight = document.getElementById('labelRight');
+const listLeft = document.getElementById('listLeft');
+const listRight = document.getElementById('listRight');
+
 // Controle de conversão
-// isSourceToKwanza: true = de moeda selecionada para AOA; false = de AOA para moeda selecionada
-let isSourceToKwanza = true;
-// selectedCurrency: "EUR" ou "USD" (padrão Euro)
+let isSourceToKwanza = true; // true: moeda → AOA; false: AOA → moeda
 let selectedCurrency = "EUR";
 
-/*
- * Dados dos colaboradores.
- */
+// Flag para primeira conversão
+let firstConversionDone = false;
+
+// Quantidades padrão para exibição
+const quantidades = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 100, 200, 300, 400, 500];
+
+// Dados dos colaboradores (para modais, se utilizados)
 const colaboradores = [
   { phone: "33628947112",  name: "Irina Chipoia", img: "img/irina.jpg" },
   { phone: "244924459808", name: "Moisés Teresa", img: "img/moises.jpg" },
   { phone: "33762627101",  name: "Catarino Mahula", img: "img/catarino.jpg" },
-  { phone: "33763042311",  name: "Gabriel Mota", img: "img/gabriel.jpg" }
+  { phone: "33763042311",  name: "Gabriel Mota",   img: "img/gabriel.jpg" }
 ];
 
-// Função debounce para evitar cálculos excessivos
+// Função debounce para limitar execução
 function debounce(func, delay) {
   let timeout;
   return function (...args) {
@@ -272,69 +282,133 @@ function debounce(func, delay) {
   };
 }
 
-// Função para calcular a conversão
+// FUNÇÃO PRINCIPAL: calcula a conversão com base no valor inserido
 function calcular() {
   const valorCampo1 = parseFloat(campo1.value);
-
   if (!valorCampo1 || valorCampo1 <= 0) {
     campo2.value = '';
     resultadoDiv.textContent = '';
     error1.style.display = "block";
     return;
   }
-
   error1.style.display = "none";
+  let mensagemResultado = "";
 
   if (selectedCurrency === "EUR") {
     if (isSourceToKwanza) {
       const valorKwanza = valorCampo1 * taxaEuroParaKwanza;
       campo2.value = valorKwanza.toFixed(2);
-      resultadoDiv.textContent = `${valorCampo1} € = ${valorKwanza.toFixed(2)} Kz`;
+      mensagemResultado = `${valorCampo1} € = ${valorKwanza.toFixed(2)} Kz`;
       adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "€", "Kz");
     } else {
       const valorEuro = valorCampo1 / taxaKwanzaParaEuro;
       campo2.value = valorEuro.toFixed(2);
-      resultadoDiv.textContent = `${valorCampo1} Kz = ${valorEuro.toFixed(2)} €`;
+      mensagemResultado = `${valorCampo1} Kz = ${valorEuro.toFixed(2)} €`;
       adicionarAoHistorico(valorCampo1, valorEuro.toFixed(2), "Kz", "€");
     }
   } else if (selectedCurrency === "USD") {
     if (isSourceToKwanza) {
       const valorKwanza = valorCampo1 * taxaDollarParaKwanza;
       campo2.value = valorKwanza.toFixed(2);
-      resultadoDiv.textContent = `${valorCampo1} $ = ${valorKwanza.toFixed(2)} Kz`;
+      mensagemResultado = `${valorCampo1} $ = ${valorKwanza.toFixed(2)} Kz`;
       adicionarAoHistorico(valorCampo1, valorKwanza.toFixed(2), "$", "Kz");
     } else {
       const valorDollar = valorCampo1 / taxaKwanzaParaDollar;
       campo2.value = valorDollar.toFixed(2);
-      resultadoDiv.textContent = `${valorCampo1} Kz = ${valorDollar.toFixed(2)} $`;
+      mensagemResultado = `${valorCampo1} Kz = ${valorDollar.toFixed(2)} $`;
       adicionarAoHistorico(valorCampo1, valorDollar.toFixed(2), "Kz", "$");
     }
   }
 
-  // Exibe o botão "COMPRAR AGORA" somente após uma conversão válida
+  resultadoDiv.textContent = mensagemResultado;
   comprarAgoraBtn.style.display = "block";
+
+  // Atualiza os blocos dinâmicos
+  updateDynamicConversionBlocks();
+
+  if (!firstConversionDone) {
+    firstConversionDone = true;
+    dynamicConversions.style.display = "block";
+  }
 }
 
-// Função para adicionar a operação ao histórico
+// Atualiza dinamicamente os blocos de conversões
+function updateDynamicConversionBlocks() {
+  labelLeft.textContent = selectedCurrency;
+  labelRight.textContent = selectedCurrency;
+
+  listLeft.innerHTML = "";
+  listRight.innerHTML = "";
+
+  quantidades.forEach(qtd => {
+    if (selectedCurrency === "EUR") {
+      const valorAOA = qtd * taxaEuroParaKwanza;
+      const liLeft = document.createElement('li');
+      liLeft.style.cursor = "pointer";
+      liLeft.style.marginBottom = "5px";
+      liLeft.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} €</span> = ${valorAOA.toFixed(2)} Kz`;
+      liLeft.addEventListener("click", () => {
+        isSourceToKwanza = true;
+        campo1.value = qtd;
+        calcular();
+      });
+      listLeft.appendChild(liLeft);
+
+      const valorEuro = qtd / taxaKwanzaParaEuro;
+      const liRight = document.createElement('li');
+      liRight.style.cursor = "pointer";
+      liRight.style.marginBottom = "5px";
+      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorEuro.toFixed(2)} €`;
+      liRight.addEventListener("click", () => {
+        isSourceToKwanza = false;
+        campo1.value = qtd;
+        calcular();
+      });
+      listRight.appendChild(liRight);
+    } else if (selectedCurrency === "USD") {
+      const valorAOA = qtd * taxaDollarParaKwanza;
+      const liLeft = document.createElement('li');
+      liLeft.style.cursor = "pointer";
+      liLeft.style.marginBottom = "5px";
+      liLeft.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} $</span> = ${valorAOA.toFixed(2)} Kz`;
+      liLeft.addEventListener("click", () => {
+        isSourceToKwanza = true;
+        campo1.value = qtd;
+        calcular();
+      });
+      listLeft.appendChild(liLeft);
+
+      const valorDollar = qtd / taxaKwanzaParaDollar;
+      const liRight = document.createElement('li');
+      liRight.style.cursor = "pointer";
+      liRight.style.marginBottom = "5px";
+      liRight.innerHTML = `<span style="color: blue; font-weight: bold;">${qtd} Kz</span> = ${valorDollar.toFixed(2)} $`;
+      liRight.addEventListener("click", () => {
+        isSourceToKwanza = false;
+        campo1.value = qtd;
+        calcular();
+      });
+      listRight.appendChild(liRight);
+    }
+  });
+}
+
+// Adiciona a operação ao histórico
 function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
   const novoItem = document.createElement('li');
   novoItem.textContent = `${origem} ${moedaOrigem} = ${destino} ${moedaDestino}`;
   historyList.appendChild(novoItem);
-
-  // Exibe o botão de limpar histórico (apenas após a primeira conversão)
   clearHistoryBtn.style.display = 'block';
   historicoCambio.style.display = 'block';
 }
 
-// Alternar entre conversão de moeda para AOA ou vice-versa
+// Alterna o sentido da conversão (moeda → AOA ou AOA → moeda)
 switchBtn.addEventListener('click', () => {
   isSourceToKwanza = !isSourceToKwanza;
-
   const group1Label = document.querySelector('#group-1 label');
   const group2Label = document.querySelector('#group-2 label');
 
   if (isSourceToKwanza) {
-    // Conversão: moeda selecionada -> AOA
     if (selectedCurrency === "EUR") {
       group1Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     } else if (selectedCurrency === "USD") {
@@ -342,7 +416,6 @@ switchBtn.addEventListener('click', () => {
     }
     group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
   } else {
-    // Conversão: AOA -> moeda selecionada
     group1Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     if (selectedCurrency === "EUR") {
       group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
@@ -350,7 +423,6 @@ switchBtn.addEventListener('click', () => {
       group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     }
   }
-
   campo1.value = '';
   campo2.value = '';
   resultadoDiv.textContent = '';
@@ -358,8 +430,7 @@ switchBtn.addEventListener('click', () => {
   comprarAgoraBtn.style.display = 'none';
 });
 
-// --- Seletor de moeda (apenas o ícone da seta) ---
-// Ao clicar no botão, exibe/oculta a lista e impede que o clique se propague
+// Seletor de moeda: exibe/oculta a lista
 currencySelector.addEventListener('click', (e) => {
   e.stopPropagation();
   if (currencyList.style.display === "none" || currencyList.style.display === "") {
@@ -368,26 +439,18 @@ currencySelector.addEventListener('click', (e) => {
     currencyList.style.display = "none";
   }
 });
-
-// Fechar o dropdown se clicar fora do seletor
 document.addEventListener('click', (e) => {
   if (!currencySelector.contains(e.target)) {
     currencyList.style.display = 'none';
   }
 });
-
-// --- Listener do dropdown de divisas ---
-// Ao clicar em uma opção, esconde imediatamente o dropdown e atualiza a divisa
 currencyList.addEventListener('click', (e) => {
-  // Esconde o dropdown imediatamente
   currencyList.style.display = 'none';
-
   const li = e.target.closest('li');
   if (!li) return;
   const newCurrency = li.getAttribute('data-currency');
   if (newCurrency && newCurrency !== selectedCurrency) {
     selectedCurrency = newCurrency;
-    // Atualiza o label conforme a direção da conversão
     if (isSourceToKwanza) {
       if (selectedCurrency === "EUR") {
         document.getElementById('sourceCurrencyLabel').innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
@@ -402,13 +465,11 @@ currencyList.addEventListener('click', (e) => {
         group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
       }
     }
-    // Atualiza o conteúdo do dropdown para mostrar a opção oposta
     if (selectedCurrency === "EUR") {
       currencyList.innerHTML = `<li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
     } else {
       currencyList.innerHTML = `<li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
     }
-    // Limpa os campos e o resultado
     campo1.value = '';
     campo2.value = '';
     resultadoDiv.textContent = '';
@@ -417,104 +478,109 @@ currencyList.addEventListener('click', (e) => {
   }
 });
 
-// Aplicar debounce ao campo de entrada
+// Aplica debounce para o campo de entrada
 campo1.addEventListener('input', debounce(() => {
   calcular();
 }, 500));
 
-// Botão "COMPRAR AGORA" – exibe o modal de resumo
+// Botão "COMPRAR AGORA" – exibe o modal de resumo, se existir
 comprarAgoraBtn.addEventListener("click", () => {
   const valorPagar = campo1.value;
   const valorReceber = campo2.value;
-  resumoPagar.textContent = ` ${valorPagar} ${isSourceToKwanza ? (selectedCurrency === "EUR" ? '€' : '$') : 'Kz'}`;
-  resumoReceber.textContent = ` ${valorReceber} ${isSourceToKwanza ? 'Kz' : (selectedCurrency === "EUR" ? '€' : '$')}`;
-  modalResumo.style.display = "block";
-
+  resumoPagar.textContent = `${valorPagar} ${isSourceToKwanza ? (selectedCurrency === "EUR" ? '€' : '$') : 'Kz'}`;
+  resumoReceber.textContent = `${valorReceber} ${isSourceToKwanza ? 'Kz' : (selectedCurrency === "EUR" ? '€' : '$')}`;
+  if (modalResumo) {
+    modalResumo.style.display = "block";
+  }
   comprarAgoraBtn.style.display = "none";
 });
 
-// Botão "CANCELAR" – fecha o modal de resumo
-cancelarBtn.addEventListener("click", () => {
-  modalResumo.style.display = "none";
-});
-
-// Criação do modal de "Aguarde" com spinner
-const aguardeModal = document.createElement("div");
-aguardeModal.id = "aguardeModal";
-aguardeModal.style.position = "fixed";
-aguardeModal.style.top = "0";
-aguardeModal.style.left = "0";
-aguardeModal.style.width = "100%";
-aguardeModal.style.height = "100%";
-aguardeModal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-aguardeModal.style.display = "none";
-aguardeModal.style.justifyContent = "center";
-aguardeModal.style.alignItems = "center";
-aguardeModal.style.zIndex = "1000";
-aguardeModal.innerHTML = `
-  <div style="text-align: center; color: #fff;">
-    <div class="spinner" style="margin-bottom: 10px;">
-      <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-    </div>
-    <div data-i18n="waiting">Aguarde, estamos à procura de um agente...</div>
-  </div>
-`;
-document.body.appendChild(aguardeModal);
-
-// Animação CSS para o spinner
-const styleElem = document.createElement("style");
-styleElem.innerHTML = `
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}`;
-document.head.appendChild(styleElem);
-
-// Funções para exibir e esconder o modal de aguarde
-function showAguardeModal() {
-  aguardeModal.style.display = "flex";
+// Botão "CANCELAR" – fecha o modal de resumo, se existir
+if (cancelarBtn) {
+  cancelarBtn.addEventListener("click", () => {
+    if (modalResumo) modalResumo.style.display = "none";
+  });
 }
 
-function hideAguardeModal() {
+// Criação do modal "Aguarde" com spinner – criada apenas uma vez
+if (!document.getElementById("aguardeModal")) {
+  const aguardeModal = document.createElement("div");
+  aguardeModal.id = "aguardeModal";
+  aguardeModal.style.position = "fixed";
+  aguardeModal.style.top = "0";
+  aguardeModal.style.left = "0";
+  aguardeModal.style.width = "100%";
+  aguardeModal.style.height = "100%";
+  aguardeModal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   aguardeModal.style.display = "none";
+  aguardeModal.style.justifyContent = "center";
+  aguardeModal.style.alignItems = "center";
+  aguardeModal.style.zIndex = "1000";
+  aguardeModal.innerHTML = `
+    <div style="text-align: center; color: #fff;">
+      <div class="spinner" style="margin-bottom: 10px;">
+        <div style="width: 40px; height: 40px; border: 4px solid #fff; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      </div>
+      <div>Aguarde, estamos à procura de um agente...</div>
+    </div>
+  `;
+  document.body.appendChild(aguardeModal);
 }
 
-// Botão "CONFIRMAR" – após 2 segundos, exibe a lista de colaboradores
-confirmarBtn.addEventListener("click", () => {
-  const valorPagarParsed = parseFloat(campo1.value);
-  const valorReceberParsed = parseFloat(campo2.value);
+// Animação CSS para o spinner – criada apenas uma vez
+if (!document.getElementById("spinner-style")) {
+  const styleElem = document.createElement("style");
+  styleElem.id = "spinner-style";
+  styleElem.innerHTML = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(styleElem);
+}
 
-  if (
-    isNaN(valorPagarParsed) || isNaN(valorReceberParsed) ||
-    campo1.value.trim() === "" || campo2.value.trim() === ""
-  ) {
-    alert("Faça o seu câmbio, por favor!");
-    return;
-  }
+// Funções para exibir e esconder o modal "Aguarde"
+function showAguardeModal() {
+  const aguardeModal = document.getElementById("aguardeModal");
+  if (aguardeModal) aguardeModal.style.display = "flex";
+}
+function hideAguardeModal() {
+  const aguardeModal = document.getElementById("aguardeModal");
+  if (aguardeModal) aguardeModal.style.display = "none";
+}
 
-  const valorPagar = campo1.value;
-  const valorReceber = campo2.value;
+// Botão "CONFIRMAR" – após 2 segundos, exibe o modal de colaboradores (se os elementos existirem)
+if (confirmarBtn) {
+  confirmarBtn.addEventListener("click", () => {
+    const valorPagarParsed = parseFloat(campo1.value);
+    const valorReceberParsed = parseFloat(campo2.value);
+    if (
+      isNaN(valorPagarParsed) || isNaN(valorReceberParsed) ||
+      campo1.value.trim() === "" || campo2.value.trim() === ""
+    ) {
+      alert("Faça o seu câmbio, por favor!");
+      return;
+    }
+    const valorPagar = campo1.value;
+    const valorReceber = campo2.value;
+    if (modalResumo) modalResumo.style.display = "none";
+    showAguardeModal();
+    setTimeout(() => {
+      hideAguardeModal();
+      mostrarModalColaboradores(valorPagar, valorReceber);
+    }, 2000);
+  });
+}
 
-  // Fecha o modal de resumo e exibe o modal de aguarde
-  modalResumo.style.display = "none";
-  showAguardeModal();
-
-  setTimeout(() => {
-    hideAguardeModal();
-    mostrarModalColaboradores(valorPagar, valorReceber);
-  }, 2000);
-});
-
-// Função para exibir o modal com a lista de colaboradores
+// Função para exibir o modal com a lista de colaboradores, se existir
 function mostrarModalColaboradores(valorPagar, valorReceber) {
   const modal = document.getElementById("modalColaboradores");
   const lista = document.getElementById("listaColaboradores");
+  if (!modal || !lista) return;
   lista.innerHTML = "";
-
-  // Define os símbolos de moeda de acordo com a conversão
   const moedaPagar = isSourceToKwanza ? (selectedCurrency === "EUR" ? '€' : '$') : 'Kz';
   const moedaReceber = isSourceToKwanza ? 'Kz' : (selectedCurrency === "EUR" ? '€' : '$');
-
   colaboradores.forEach(colab => {
     const item = document.createElement("li");
     item.className = "colaborador-item";
@@ -523,7 +589,6 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     item.style.cursor = "pointer";
     item.style.padding = "10px";
     item.style.borderBottom = "1px solid #ddd";
-
     const img = document.createElement("img");
     img.src = colab.img;
     img.alt = colab.name;
@@ -531,14 +596,10 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
     img.style.height = "40px";
     img.style.borderRadius = "50%";
     img.style.marginRight = "10px";
-
     const span = document.createElement("span");
     span.textContent = colab.name;
-
     item.appendChild(img);
     item.appendChild(span);
-
-    // Ao clicar, redireciona para o WhatsApp com a mensagem pré-formatada
     item.addEventListener("click", () => {
       const mensagem = encodeURIComponent(
         `Olá!\nFui reencaminhado(a) pelo site angoline.net\n\nDe acordo com o conversor de moedas\n\nVou pagar: ${valorPagar} ${moedaPagar}\nE vou receber: ${valorReceber} ${moedaReceber}`
@@ -546,48 +607,43 @@ function mostrarModalColaboradores(valorPagar, valorReceber) {
       window.open(`https://wa.me/${colab.phone}?text=${mensagem}&send=true`, '_blank');
       modal.style.display = "none";
     });
-
     lista.appendChild(item);
   });
-
-  // Exibe o modal centralizado
   modal.style.display = "flex";
 }
 
-// Evento para o botão "Fechar" do modal de colaboradores
-document.getElementById("btnFecharColaboradores").addEventListener("click", () => {
-  document.getElementById("modalColaboradores").style.display = "none";
-});
+// Evento para o botão "Fechar" do modal de colaboradores, se existir
+const btnFecharColaboradores = document.getElementById("btnFecharColaboradores");
+if (btnFecharColaboradores) {
+  btnFecharColaboradores.addEventListener("click", () => {
+    const modal = document.getElementById("modalColaboradores");
+    if (modal) modal.style.display = "none";
+  });
+}
 
-// Limpar histórico – volta ao estado original (aparece após a primeira conversão)
+// Evento para limpar o histórico
 clearHistoryBtn.addEventListener("click", () => {
   historyList.innerHTML = '';
   clearHistoryBtn.style.display = 'none';
   historicoCambio.style.display = 'none';
 });
-
-// Estado inicial do botão de limpar histórico e do container de histórico
 clearHistoryBtn.style.display = 'none';
 historicoCambio.style.display = 'none';
 
-
-// ==============================
-// NOVA FUNCIONALIDADE: Exibir modal simples de vendedores (para o botão "Ver Vendedores")
-// ==============================
+// Modal simples de vendedores – se os elementos existirem
 function mostrarModalVendedores() {
   const modal = document.getElementById("modalVendedores");
   const lista = document.getElementById("listaVendedores");
+  if (!modal || !lista) return;
   lista.innerHTML = "";
-
   colaboradores.forEach(colab => {
     const item = document.createElement("li");
     item.className = "colaborador-item";
     item.style.display = "flex";
     item.style.alignItems = "center";
-    item.style.pointerEvents = "none"; // desabilita ações de clique
+    item.style.pointerEvents = "none";
     item.style.padding = "10px";
     item.style.borderBottom = "1px solid #ddd";
-
     const img = document.createElement("img");
     img.src = colab.img;
     img.alt = colab.name;
@@ -595,30 +651,31 @@ function mostrarModalVendedores() {
     img.style.height = "40px";
     img.style.borderRadius = "50%";
     img.style.marginRight = "10px";
-
     const span = document.createElement("span");
     span.textContent = colab.name;
-
     item.appendChild(img);
     item.appendChild(span);
-
     lista.appendChild(item);
   });
-
   modal.style.overflowY = "auto";
   modal.style.display = "flex";
 }
 
-// Evento para o botão "Ver Vendedores"
 const btnVendedores = document.getElementById("btn-vendedores");
-btnVendedores.addEventListener("click", () => {
-  mostrarModalVendedores();
-});
+if (btnVendedores) {
+  btnVendedores.addEventListener("click", () => {
+    mostrarModalVendedores();
+  });
+}
 
-// Evento para o botão "Fechar" do modal de vendedores
-document.getElementById("btnFecharVendedores").addEventListener("click", () => {
-  document.getElementById("modalVendedores").style.display = "none";
-});
+const btnFecharVendedores = document.getElementById("btnFecharVendedores");
+if (btnFecharVendedores) {
+  btnFecharVendedores.addEventListener("click", () => {
+    const modal = document.getElementById("modalVendedores");
+    if (modal) modal.style.display = "none";
+  });
+}
+
 
 
 <!-- Script para remover a saudação após alguns segundos -->
