@@ -142,7 +142,7 @@ const translations = {
     conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
       "  Nosso Conversor não utiliza a taxa de câmbio do mercado médio. Essa taxa é usada apenas para fins comerciais, como\n" +
       "  compra e venda de moedas. Ao entrar em contato com um de nossos agentes, você pagará a taxa aplicada no momento.\n" +
-      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Consulte\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Consulte\n" +
       "    nossas taxas de câmbio para mais detalhes.\n" +
       "  </a>",
   },
@@ -289,7 +289,7 @@ const translations = {
     conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
       "  Our Converter does not use the mid-market exchange rate. This rate is used only for business purposes, such as\n" +
       "  currency buying and selling. You will pay the applicable rate when you contact one of our agents.\n" +
-      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Check\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Check\n" +
       "    our exchange rates for more details.\n" +
       "  </a>",
   },
@@ -437,7 +437,7 @@ const translations = {
     conversor: " <i class=\"fa-solid fa-circle-info\" style=\"margin-right: 5px;\"></i>\n" +
       "  Notre convertisseur n'utilise pas le taux moyen du marché. Ce taux est uniquement utilisé à des fins commerciales, telles que\n" +
       "  l'achat et la vente de devises. Vous paierez le taux en vigueur en contactant l’un de nos agents.\n" +
-      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\" class=\"w3-opacity\">Consultez\n" +
+      "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Consultez\n" +
       "    nos taux de change pour plus de détails.\n" +
       "  </a>",
   }
