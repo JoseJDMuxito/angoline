@@ -3,7 +3,7 @@
 const translations = {
   pt: {
     title: "Angoline",
-    description: "Quer enviar dinheiro para Angola?<br>Oferecemos um câmbio flexível, adaptado às tuas necessidades",
+    description: "Quer enviar dinheiro?<br>Oferecemos um câmbio flexível, adaptado às tuas necessidades",
     descriptio: "Encontre aqui os nossos agentes",
     list : "Clique aqui",
     p1: "Câmbio",
@@ -145,7 +145,7 @@ const translations = {
 
   en: {
     title: "Angoline",
-    description: "Want to send money to Angola?<br>We offer a flexible exchange rate, tailored to your needs",
+    description: "Want to send money?<br>We offer a flexible exchange rate, tailored to your needs",
     descriptio: "Find here our agents",
     list : "Click here",
     p1: "Exchange",
@@ -287,7 +287,7 @@ const translations = {
 
   fr: {
     title: "Angoline",
-    description: "Vous souhaitez envoyer de l'argent en Angola?<br>Nous proposons un taux de change flexible, adapté à vos besoins",
+    description: "Vous souhaitez envoyer de l'argent?<br>Nous proposons un taux de change flexible, adapté à vos besoins",
     descriptio: "Trouvez ici nos agents",
     list : "Cliquez ici",
     p1: "Change",
