@@ -599,16 +599,16 @@ input[type="checkbox"] {
 /* ================================== */
 
 .dynamic-margi {
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-left: 0;
+  margin-right: 0;
   text-align: left; /* Alinhamento inicial */
 }
 
 /* Estilo para ecrãs pequenos (máximo 768px) */
 @media (max-width: 768px) {
   .dynamic-margi {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -909,4 +909,226 @@ Estilos para animação
 /* Alterna a cor de fundo das linhas, se quiser */
 .tabela-cambio tbody tr:nth-child(odd) {
   background-color: #f7f7f7;
+}
+
+
+
+/* ---------------------------------------------------
+CONTAINER PRINCIPAL
+--------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------------------------------------------------
+Cabeçalho fixo
+--------------------------------------------------- */
+.header-nav {
+  background: #2c3e50;
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.header-tab {
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+.header-tab i {
+  font-size: 16px;
+}
+.header-tab:hover,
+.header-tab.active {
+  background: rgba(0, 0, 0, 0.34);
+}
+
+/* ---------------------------------------------------
+Área de Conteúdo (páginas/modais)
+--------------------------------------------------- */
+.pages-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+.page.active {
+  transform: translateX(0);
+}
+
+/* ---------------------------------------------------
+Conteúdo da Página "Conversor"
+--------------------------------------------------- */
+.painel-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+.painel {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.painel-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #555;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.painel-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+.painel-content img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.select-icon {
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.conversion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  background: #fff;
+  margin: -10px auto;
+}
+.conversion-icon i {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+/* ---------------------------------------------------
+RESULTADOS E INFORMAÇÕES
+--------------------------------------------------- */
+.resultado-row {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.resultado-left {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.4;
+}
+.resultado-left .valor-convertido {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.resultado-right {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+.resultado-right a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+.resultado-right a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------
+Media Queries
+--------------------------------------------------- */
+@media (max-width: 768px) {
+  .header-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .header-tab {
+    flex: 0 0 auto;
+  }
+  .resultado-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .resultado-left {
+    width: 100%;
+    order: 1;
+  }
+  .resultado-right {
+    width: 100%;
+    order: 2;
+    margin-top: 25px !important; /* Margem aumentada e priorizada */
+  }
+}
+
+@media (min-width: 769px) {
+  .converter-content {
+    padding-bottom: 10px;
+  }
+  .painel-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .painel {
+    flex: 1;
+  }
+  .conversion-icon {
+    margin: 0;
+    align-self: center;
+  }
+  .conversion-icon i {
+    transform: rotate(0deg);
+  }
+  .resultado-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .resultado-left {
+    flex: 1;
+  }
+  .resultado-right {
+    flex-shrink: 0;
+    margin-left: 40px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .conversion-icon i {
+    transform: rotate(90deg);
+  }
 }

@@ -145,6 +145,7 @@ const translations = {
       "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Consulte\n" +
       "    nossas taxas de câmbio para mais detalhes.\n" +
       "  </a>",
+    exchangeRateQuestio:"Taxa de Câmbio",
   },
 
 
@@ -292,6 +293,7 @@ const translations = {
       "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Check\n" +
       "    our exchange rates for more details.\n" +
       "  </a>",
+    exchangeRateQuestio:"Exchange Rate",
   },
 
 
@@ -440,5 +442,6 @@ const translations = {
       "  <a href=\"taxa/taxa.html\" style=\" margin-top: 500px ;text-align: center; text-decoration: underline;\">Consultez\n" +
       "    nos taux de change pour plus de détails.\n" +
       "  </a>",
+    exchangeRateQuestio:"Taux de Change",
   }
 };

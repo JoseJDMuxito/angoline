@@ -486,9 +486,9 @@ currencyList.addEventListener('click', (e) => {
     selectedCurrency = newCurrency;
     if (isSourceToKwanza) {
       if (selectedCurrency === "EUR") {
-        document.getElementById('sourceCurrencyLabel').innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+        document.getElementById('sourceCurrencyLabel').innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 30px; height: 30px; vertical-align: middle; border-radius: 50%;"> EUR - Euro`;
       } else if (selectedCurrency === "USD") {
-        document.getElementById('sourceCurrencyLabel').innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+        document.getElementById('sourceCurrencyLabel').innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 30px; height: 50px; vertical-align: middle; border-radius: 50%;"> USD - Dollar`;
       }
     } else {
       const group2Label = document.querySelector('#group-2 label');
@@ -525,7 +525,6 @@ comprarAgoraBtn.addEventListener("click", () => {
   if (modalResumo) {
     modalResumo.style.display = "block";
   }
-  comprarAgoraBtn.style.display = "none";
 });
 
 // Botão "CANCELAR" – fecha o modal de resumo, se existir
@@ -726,92 +725,54 @@ if (btnFecharVendedores) {
 });
 
 
-              //Contador
-  /**
-  * Formata o número usando abreviações:
-  * - n ≥ 1e9: exibe em "B" (bilhões)
-  * - n ≥ 1e6: exibe em "M" (milhões)
-  * - n ≥ 1e3: exibe em "K" (milhares)
-  */
-  function formatNumber(n) {
-  if (n >= 1e9) return (n / 1e9).toFixed(1).replace(/\.0$/, '') + 'B';
-  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
-  if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
-  return n.toString();
+              // Novo conversor
+
+const pagesOrder = ['Conversor', 'Comprar Moeda', 'Vendedores', 'Histórico de Câmbio'];
+const modalMapping = {
+  'Conversor': 'conversor',
+  'Comprar Moeda': 'comprar',
+  'Vendedores': 'vendedores',
+  'Histórico de Câmbio': 'historic'
+};
+
+const tabs = document.querySelectorAll('.header-tab');
+
+function getTabIndex(tabText) {
+  return pagesOrder.indexOf(tabText);
 }
 
-  /**
-  * Calcula um incremento “base” para que o número seja atualizado em poucos passos
-  * mantendo um ritmo de animação visível e consistente.
-  * Usa uma meta de 4 passos (aproximadamente), arredondando o passo para um valor “bonito”.
-  */
-  function getStep(finalValue) {
-  const desiredSteps = 5;
-  const step = finalValue / desiredSteps;
-  const magnitude = Math.pow(10, Math.floor(Math.log10(step)));
-  const roundedStep = Math.ceil(step / magnitude) * magnitude;
-  return roundedStep;
+let currentIndex = 0;
+
+function changePage(newTabText) {
+  const targetPageId = modalMapping[newTabText];
+  if (!targetPageId) return;
+
+  const targetPage = document.getElementById(targetPageId);
+  const currentPage = document.querySelector('.page.active');
+
+  if (currentPage.id === targetPageId) return;
+
+  const newIndex = getTabIndex(newTabText);
+  const direction = newIndex > currentIndex ? 'left' : 'right';
+
+  currentPage.classList.remove('active');
+
+  currentPage.style.transform = direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)';
+  targetPage.style.transform = direction === 'left' ? 'translateX(100%)' : 'translateX(-100%)';
+
+  targetPage.offsetWidth; // Reflow
+
+  targetPage.classList.add('active');
+  targetPage.style.transform = 'translateX(0)';
+
+  currentIndex = newIndex;
 }
 
-  /**
-  * Anima o contador de 0 até o valor final.
-  * A cada “passo” o valor atual sai para cima e o novo valor entra de baixo.
-  *
-  * @param {HTMLElement} counterElement - Elemento do contador.
-  * @param {number} finalValue - Valor final desejado.
-  * @param {number} totalDuration - Duração total da animação em milissegundos.
-  */
-  function animateCounter(counterElement, finalValue, totalDuration) {
-  const numberContainer = counterElement.querySelector('.number');
-  let currentValue = 0;
-  const stepValue = getStep(finalValue);
-  const steps = Math.ceil(finalValue / stepValue);
-  const stepDuration = totalDuration / steps;
-  // Define a duração da transição via variável CSS custom
-  numberContainer.style.setProperty('--step-duration', stepDuration + 'ms');
-
-  function updateStep() {
-  let nextValue = currentValue + stepValue;
-  if (nextValue > finalValue) nextValue = finalValue;
-
-  // Cria um novo span com o próximo valor formatado e adiciona o sinal de mais
-  const newSpan = document.createElement('span');
-  newSpan.textContent = formatNumber(nextValue) + '+';
-  newSpan.style.transform = 'translateY(100%)';
-  newSpan.style.opacity = '0';
-  numberContainer.appendChild(newSpan);
-
-  // Força reflow para garantir que a transição seja aplicada
-  newSpan.offsetHeight;
-
-  // Anima o span antigo (se existir) para cima
-  const oldSpan = numberContainer.querySelector('span:first-child');
-  if (oldSpan) {
-  oldSpan.style.transform = 'translateY(-100%)';
-  oldSpan.style.opacity = '0';
-}
-  // Anima o novo span para a posição final
-  newSpan.style.transform = 'translateY(0)';
-  newSpan.style.opacity = '1';
-
-  currentValue = nextValue;
-  // Após a duração do passo, remove o antigo e, se ainda não chegou ao final, continua a animação
-  setTimeout(() => {
-  if (oldSpan) numberContainer.removeChild(oldSpan);
-  if (currentValue < finalValue) updateStep();
-}, stepDuration);
-}
-  updateStep();
-}
-
-  // Inicia a animação assim que a página for carregada
-  window.addEventListener('load', () => {
-  const totalDuration = 3000; // duração total de 2 segundos para cada contador
-  const parceriasEl = document.getElementById('parcerias');
-  const clientesEl = document.getElementById('clientes');
-  const finalParcerias = parseInt(parceriasEl.getAttribute('data-target'), 10);
-  const finalClientes = parseInt(clientesEl.getAttribute('data-target'), 10);
-
-  animateCounter(parceriasEl, finalParcerias, totalDuration);
-  animateCounter(clientesEl, finalClientes, totalDuration);
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const tabText = tab.querySelector('span').innerText.trim();
+    changePage(tabText);
+  });
 });
