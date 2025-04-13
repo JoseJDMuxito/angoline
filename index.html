@@ -29,7 +29,7 @@
   <!-- Estilo Inline -->
   <style>
     html, body, h1, h2, h3, h4, pre, p, div {
-      font-family: "Raleway", sans-serif;
+      font-family: "Lato", sans-serif;
     }
   </style>
 
@@ -176,14 +176,14 @@
     </div>
 
 
-      <!-- Botão "COMPRAR AGORA" -->
+      <!-- Botão "COMPRAR AGORA"
       <button  style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: cornflowerblue; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
         Comprar agora
       </button>
-    </div>
+    </div>-->
 
 
-    <div class="container custom-block" style="margin-bottom: -500px;">
+    <div class="container custom-block dynamic-margin" style="margin-bottom: -500px;">
       <nav class="header-nav">
         <div class="header-tab active">
           <i class="fa-solid fa-coins"></i>
@@ -203,7 +203,7 @@
         </div>
       </nav>
 
-      <div class="pages-container">
+      <div class="pages-container" style="margin-top: 50px;">
         <!-- Página Conversor -->
         <section id="conversor" class="page active">
           <div class="converter-content">
@@ -244,8 +244,8 @@
             <div class="resultado-row">
               <div class="resultado-left">
                 <div id="campo-2"></div>
-                <div class="valor-convertido"><div id="resultado" style="margin-top: 15px; font-weight: bold; font-size: 30px"></div></div>
-                <div id="clear-history">1 EUR = 1150 AOA<br>1250 AOA = 1 EUR</div>
+                <div class="valor-convertido  custom-block"><div id="resultado" style="margin-top: 15px; font-weight: bold; font-size: 30px"></div></div>
+                <div id="clear-history" class=" custom-block" style="font-size: 15px">1 EUR = 1150 AOA<br>1250 AOA = 1 EUR</div>
               </div>
               <div class="resultado-right custom-block">
                 Conversão de <a href="#">Euro/Dólar</a> para <a href="#">Kwanza</a> — Última atualização 13 de abr. de 2025, 06:46 UTC
@@ -268,7 +268,7 @@
           </div>
         </section>
 
-        <section id="vendedores" class="page">
+        <section id="vendedores" class="page" >
           <div class="simulado">
             <!-- Modal para exibição dos vendedores (usado exclusivamente pelo botão "Ver Vendedores") -->
             <div id="modalVendedores">
@@ -282,7 +282,7 @@
           </div>
         </section>
 
-        <section id="historic" class="page">
+        <section id="historic" class="page" style="margin-top: -30px">
           <div class="simulado">
             <!-- Histórico dos cálculos -->
             <div id="historico" >

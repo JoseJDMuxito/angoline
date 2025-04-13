@@ -922,18 +922,20 @@ CONTAINER PRINCIPAL
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
+  padding: 10px;
   overflow: hidden;
   position: relative;
+
 }
 
 /* ---------------------------------------------------
 Cabeçalho fixo
 --------------------------------------------------- */
+
 .header-nav {
-  background: #2c3e50;
+  background: gray;
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 5px 5px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -951,13 +953,16 @@ Cabeçalho fixo
   gap: 6px;
   font-size: 14px;
 }
+
 .header-tab i {
   font-size: 16px;
 }
+
 .header-tab:hover,
 .header-tab.active {
   background: rgba(0, 0, 0, 0.34);
 }
+
 
 /* ---------------------------------------------------
 Área de Conteúdo (páginas/modais)
@@ -1099,6 +1104,9 @@ Media Queries
 @media (min-width: 769px) {
   .converter-content {
     padding-bottom: 10px;
+  }
+  .container{
+    height: 450px;
   }
   .painel-row {
     flex-direction: row;
