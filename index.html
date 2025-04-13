@@ -206,7 +206,7 @@
         <section id="conversor" class="page active">
           <div class="converter-content">
             <div class="painel-row" id="group-1">
-              <input class="painel painel-valor custom-block" style="font-size: 20px" type="text" id="campo-1" placeholder="Valor : 1,00 €">
+              <input class="painel painel-valor custom-block" style="font-size: 20px" type="text" id="campo-1" placeholder="Valor ">
               <div class="error" id="error-1" style="display: none; color: red;">Insira apenas números</div>
               <div class="painel painel-de">
                 <div class="painel-title custom-block">De</div>
@@ -217,7 +217,7 @@
                 <!-- Botão para trocar a moeda -->
                 <div class="currency-selector" id="currencySelector" style="cursor: pointer; position: relative; margin-left: 5px;">
                   <i class="fa-solid fa-chevron-down select-icon" style="font-size: 25px"></i>
-                  <ul class="custom-block" id="currencyList" style="display: none; list-style: none; padding: 0; margin: 0; position: absolute; background: #fff; border: 1px solid #ddd; border-radius: 5px; top: 25px; left: 0; z-index: 1000;">
+                  <ul class="custom-block" id="currencyList" style="display: none; list-style: none; padding: 10px; margin: 0; position: absolute; background: #fff; border: 1px solid #ddd; border-radius: 10px; top: 25px; left: 0; z-index: 1000; width: 100px; max-height: 100px;">
                     <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
                       <img src="https://flagcdn.com/us.svg"
                            alt="Bandeira dos Estados Unidos"
@@ -232,9 +232,21 @@
               </div>
               <div class="painel painel-para">
                 <div class="painel-title custom-block">Para</div>
-                <div class="painel-content custom-block">
+                <div class="painel-content custom-block" id="sourceCurrencyLabel2">
                   <img src="https://flagcdn.com/ao.svg" alt="Kwanza" />
                   <span>AOA - Kwanza</span>
+                </div>
+                <!-- Botão para trocar a moeda -->
+                <div class="currency-selector" id="currencySelector2" style="cursor: pointer; position: relative; margin-left: 5px;">
+                  <i class="fa-solid fa-chevron-down select-icon" style="font-size: 25px"></i>
+                  <ul class="custom-block" id="currencyList2" style="display: none; list-style: none; padding: 10px; margin: 0; position: absolute; background: #fff; border: 1px solid #ddd; border-radius: 5px; top: 25px; left: 0; z-index: 1000; width: 100px; max-height: 100px;;">
+                    <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
+                      <img src="https://flagcdn.com/us.svg"
+                           alt="Bandeira dos Estados Unidos"
+                           style="width: 20px; height: 15px; vertical-align: middle; border-radius: 5px;">
+                      <span>USD - Dollar</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

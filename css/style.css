@@ -607,8 +607,8 @@ input[type="checkbox"] {
 /* Estilo para ecrãs pequenos (máximo 768px) */
 @media (max-width: 768px) {
   .dynamic-margi {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 

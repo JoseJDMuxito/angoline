@@ -436,16 +436,20 @@ function adicionarAoHistorico(origem, destino, moedaOrigem, moedaDestino) {
 }
 
 // Alterna o sentido da conversão (moeda → AOA ou AOA → moeda)
+// Código para a primeira instância (já usado)
 switchBtn.addEventListener('click', () => {
   isSourceToKwanza = !isSourceToKwanza;
   const group1Label = document.querySelector('#group-1 label');
   const group2Label = document.querySelector('#group-2 label');
 
   if (isSourceToKwanza) {
+    // Conversão: moeda estrangeira → Kwanza
     if (selectedCurrency === "EUR") {
       group1Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     } else if (selectedCurrency === "USD") {
       group1Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency === "AOA") {
+      group1Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     }
     group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
   } else {
@@ -454,6 +458,8 @@ switchBtn.addEventListener('click', () => {
       group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     } else if (selectedCurrency === "USD") {
       group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency === "AOA") {
+      group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
     }
   }
   campo1.value = '';
@@ -463,7 +469,6 @@ switchBtn.addEventListener('click', () => {
   comprarAgoraBtn.style.display = 'none';
 });
 
-// Seletor de moeda: exibe/oculta a lista
 currencySelector.addEventListener('click', (e) => {
   e.stopPropagation();
   if (currencyList.style.display === "none" || currencyList.style.display === "") {
@@ -482,6 +487,7 @@ currencyList.addEventListener('click', (e) => {
   const li = e.target.closest('li');
   if (!li) return;
   const newCurrency = li.getAttribute('data-currency');
+  if (!newCurrency) return;
   if (newCurrency && newCurrency !== selectedCurrency) {
     selectedCurrency = newCurrency;
     if (isSourceToKwanza) {
@@ -489,6 +495,8 @@ currencyList.addEventListener('click', (e) => {
         document.getElementById('sourceCurrencyLabel').innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 30px; height: 30px; vertical-align: middle; border-radius: 50%;"> EUR - Euro`;
       } else if (selectedCurrency === "USD") {
         document.getElementById('sourceCurrencyLabel').innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 30px; height: 50px; vertical-align: middle; border-radius: 50%;"> USD - Dollar`;
+      } else if (selectedCurrency === "AOA") {
+        document.getElementById('sourceCurrencyLabel').innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 30px; height: 30px; vertical-align: middle; border-radius: 50%;"> AOA - Kwanza`;
       }
     } else {
       const group2Label = document.querySelector('#group-2 label');
@@ -496,13 +504,38 @@ currencyList.addEventListener('click', (e) => {
         group2Label.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
       } else if (selectedCurrency === "USD") {
         group2Label.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      } else if (selectedCurrency === "AOA") {
+        group2Label.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
       }
     }
+
+    // Atualiza a lista de moedas disponíveis para seleção
     if (selectedCurrency === "EUR") {
-      currencyList.innerHTML = `<li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
-    } else {
-      currencyList.innerHTML = `<li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;"></li>`;
+      currencyList.innerHTML = `
+        <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
+          USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="AOA" style="padding: 5px 10px; cursor: pointer;">
+          AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
+    } else if (selectedCurrency === "USD") {
+      currencyList.innerHTML = `
+        <li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">
+          EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="AOA" style="padding: 5px 10px; cursor: pointer;">
+          AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
+    } else if (selectedCurrency === "AOA") {
+      currencyList.innerHTML = `
+        <li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">
+          EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
+          USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
     }
+
     campo1.value = '';
     campo2.value = '';
     resultadoDiv.textContent = '';
@@ -510,6 +543,129 @@ currencyList.addEventListener('click', (e) => {
     comprarAgoraBtn.style.display = 'block';
   }
 });
+
+
+// Variáveis para os novos elementos com IDs atualizados
+const switchBtn2 = document.getElementById('switchBtn2'); // botão correspondente para a nova instância
+let isSourceToKwanza2 = false; // estado independente
+let selectedCurrency2 = selectedCurrency; // se desejar iniciar com a mesma moeda ou definir outra
+const campo1_2 = document.getElementById('campo1_2');
+const campo2_2 = document.getElementById('campo2_2');
+const resultadoDiv2 = document.getElementById('resultadoDiv2');
+const error1_2 = document.getElementById('error1_2');
+const comprarAgoraBtn2 = document.getElementById('comprarAgoraBtn2');
+
+// Seletores para os elementos reutilizados
+const sourceCurrencyLabel2 = document.getElementById('sourceCurrencyLabel2');
+const currencySelector2 = document.getElementById('currencySelector2');
+const currencyList2 = document.getElementById('currencyList2');
+
+switchBtn2.addEventListener('click', () => {
+  isSourceToKwanza2 = !isSourceToKwanza2;
+  const group1Label2 = document.querySelector('#group-1-2 label');
+  const group2Label2 = document.querySelector('#group-2-2 label');
+
+  if (isSourceToKwanza2) {
+    if (selectedCurrency2 === "EUR") {
+      group1Label2.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency2 === "USD") {
+      group1Label2.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency2 === "AOA") {
+      group1Label2.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    }
+    group2Label2.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+  } else {
+    group1Label2.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    if (selectedCurrency2 === "EUR") {
+      group2Label2.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency2 === "USD") {
+      group2Label2.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    } else if (selectedCurrency2 === "AOA") {
+      group2Label2.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+    }
+  }
+  campo1_2.value = '';
+  campo2_2.value = '';
+  resultadoDiv2.textContent = '';
+  error1_2.style.display = 'none';
+  comprarAgoraBtn2.style.display = 'none';
+});
+
+currencySelector2.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (currencyList2.style.display === "none" || currencyList2.style.display === "") {
+    currencyList2.style.display = "block";
+  } else {
+    currencyList2.style.display = "none";
+  }
+});
+document.addEventListener('click', (e) => {
+  if (!currencySelector2.contains(e.target)) {
+    currencyList2.style.display = 'none';
+  }
+});
+currencyList2.addEventListener('click', (e) => {
+  currencyList2.style.display = 'none';
+  const li = e.target.closest('li');
+  if (!li) return;
+  const newCurrency = li.getAttribute('data-currency');
+  if (!newCurrency) return;
+  if (newCurrency && newCurrency !== selectedCurrency2) {
+    selectedCurrency2 = newCurrency;
+    if (isSourceToKwanza2) {
+      if (selectedCurrency2 === "EUR") {
+        sourceCurrencyLabel2.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 30px; height: 30px; vertical-align: middle; border-radius: 50%;"> EUR - Euro`;
+      } else if (selectedCurrency2 === "USD") {
+        sourceCurrencyLabel2.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 30px; height: 50px; vertical-align: middle; border-radius: 50%;"> USD - Dollar`;
+      } else if (selectedCurrency2 === "AOA") {
+        sourceCurrencyLabel2.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 30px; height: 30px; vertical-align: middle; border-radius: 50%;"> AOA - Kwanza`;
+      }
+    } else {
+      const group2Label2 = document.querySelector('#group-2-2 label');
+      if (selectedCurrency2 === "EUR") {
+        group2Label2.innerHTML = `EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      } else if (selectedCurrency2 === "USD") {
+        group2Label2.innerHTML = `USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      } else if (selectedCurrency2 === "AOA") {
+        group2Label2.innerHTML = `AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">`;
+      }
+    }
+
+    if (selectedCurrency2 === "EUR") {
+      currencyList2.innerHTML = `
+        <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
+          USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="AOA" style="padding: 5px 10px; cursor: pointer;">
+          AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
+    } else if (selectedCurrency2 === "USD") {
+      currencyList2.innerHTML = `
+        <li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">
+          EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="AOA" style="padding: 5px 10px; cursor: pointer;">
+          AOA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" alt="Bandeira de Angola" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
+    } else if (selectedCurrency2 === "AOA") {
+      currencyList2.innerHTML = `
+        <li data-currency="EUR" style="padding: 5px 10px; cursor: pointer;">
+          EUR <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="Bandeira da União Europeia" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>
+        <li data-currency="USD" style="padding: 5px 10px; cursor: pointer;">
+          USD <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos Estados Unidos" style="width: 20px; height: 15px; vertical-align: middle; border-radius: 3px;">
+        </li>`;
+    }
+
+    campo1_2.value = '';
+    campo2_2.value = '';
+    resultadoDiv2.textContent = '';
+    error1_2.style.display = 'none';
+    comprarAgoraBtn2.style.display = 'block';
+  }
+});
+
+
 
 // Aplica debounce para o campo de entrada
 campo1.addEventListener('input', debounce(() => {
