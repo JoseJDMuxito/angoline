@@ -507,7 +507,7 @@ currencyList.addEventListener('click', (e) => {
     campo2.value = '';
     resultadoDiv.textContent = '';
     error1.style.display = 'none';
-    comprarAgoraBtn.style.display = 'none';
+    comprarAgoraBtn.style.display = 'block';
   }
 });
 

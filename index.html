@@ -175,13 +175,11 @@
       </h1>
     </div>
 
-
       <!-- Botão "COMPRAR AGORA"
       <button  style="display: none; position: absolute; bottom: 5px; right: 5px; background-color: cornflowerblue; color: white; padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer;">
         Comprar agora
       </button>
     </div>-->
-
 
     <div class="container custom-block dynamic-margin" style="margin-bottom: -500px;">
       <nav class="header-nav">
@@ -241,11 +239,11 @@
               </div>
             </div>
 
-            <div class="resultado-row">
+            <div class="resultado-row" style="overflow-y: auto; height: 300px">
               <div class="resultado-left">
                 <div id="campo-2"></div>
                 <div class="valor-convertido  custom-block"><div id="resultado" style="margin-top: 15px; font-weight: bold; font-size: 30px"></div></div>
-                <div id="clear-history" class=" custom-block" style="font-size: 15px">1 EUR = 1150 AOA<br>1250 AOA = 1 EUR</div>
+                <div class=" custom-block" style="font-size: 15px">1 EUR = 1150 AOA<br>1250 AOA = 1 EUR</div>
               </div>
               <div class="resultado-right custom-block">
                 Conversão de <a href="#">Euro/Dólar</a> para <a href="#">Kwanza</a> — Última atualização 13 de abr. de 2025, 06:46 UTC
@@ -255,7 +253,7 @@
         </section>
 
         <!-- Outras páginas -->
-        <section id="comprar" class="page">
+        <section id="comprar" class="page" style="overflow-y: auto; height: 300px">
           <div class="simulado">
             <!-- Modal de Resumo -->
             <div id="modalResumo" >
@@ -268,7 +266,7 @@
           </div>
         </section>
 
-        <section id="vendedores" class="page" >
+        <section id="vendedores" class="page" style="overflow-y: auto; height: 450px;">
           <div class="simulado">
             <!-- Modal para exibição dos vendedores (usado exclusivamente pelo botão "Ver Vendedores") -->
             <div id="modalVendedores">
@@ -282,12 +280,14 @@
           </div>
         </section>
 
-        <section id="historic" class="page" style="margin-top: -30px">
+        <section id="historic" class="page" style="margin-top: -30px; ">
           <div class="simulado">
             <!-- Histórico dos cálculos -->
             <div id="historico" >
-              <div id="historico-cambio">
+              <div id="historico-cambio" style="overflow-y: auto; height: 300px">
               <li id="history-list" style="font-weight: 500; font-size: 20px"></li>
+                <br>
+                <button id="clear-history" class="btn-fechar" style="border-radius: 8px">Limpar</button>
               </div>
             </div>
           </div>
