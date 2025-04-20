@@ -220,9 +220,6 @@
               <div class="currency-selector" id="currencySelector2" style="cursor:pointer; position:relative; margin-left:5px;">
                 <i class="fa-solid fa-chevron-down select-icon" style="font-size:25px;"></i>
                 <ul id="currencyList2">
-                  <li data-currency="AOA"><img src="https://flagcdn.com/ao.svg" alt="Kwanza"> AOA - Kwanza</li>
-                  <li data-currency="EUR"><img src="https://flagcdn.com/eu.svg" alt="Euro"> EUR - Euro</li>
-                  <li data-currency="USD"><img src="https://flagcdn.com/us.svg" alt="Dollar"> USD - Dollar</li>
                 </ul>
               </div>
             </div>
@@ -258,11 +255,12 @@
         <div class="simulado">
           <!-- Modal para exibição dos vendedores (usado exclusivamente pelo botão "Ver Vendedores") -->
           <div id="modalVendedores">
-            <div class="modal-content custom-block" style="border: 1px solid lightgray; background: whitesmoke; padding: 20px; border-radius: 10px; max-width: 400px; width: 100%; margin: 0 20px; position: relative;">
-              <h4 style="text-align: center; color: green; font-weight: 700" data-i18n="sellerAvalavbe">Vendedores Disponíveis</h4>
-              <ul id="listaVendedores" style="list-style: none; padding: 0; margin: 0; max-height: 300px; overflow-y: auto;">
-                <!-- Itens dos vendedores serão gerados dinamicamente -->
-              </ul>
+            <div class="modal-content custom-block" style="border:1px solid lightgray; background:whitesmoke; padding:20px; border-radius:10px; max-width:400px; width:100%; margin:0 20px; position:relative;">
+              <h4 style="text-align:center; color:green; font-weight:700;" data-i18n="sellerAvalavbe">Vendedores Disponíveis</h4>
+              <hr style="margin:-10px 0;">
+              <ul style="list-style:none; padding:0; max-height:300px; overflow-y:auto;"></ul>
+              <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+              </div>
             </div>
           </div>
         </div>
