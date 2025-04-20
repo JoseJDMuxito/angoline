@@ -87,32 +87,39 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar custom-block w3-card" id="myNavbar">
-      <a class="w3-bar-item w3-wide custom-block" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
+      <a  class="w3-bar-item w3-wide custom-block" style="color: rgba(4,50,166,0.8); font-weight: 600; font-size: 16px">
         <img src="img/LOGO.jpg" alt="LOGO" usemap="#workmap" style="height: 20px; width: 20px; border-radius: 40px;"> Angoline
       </a>
-      <map name="workmap"><area shape="default" href="#"></map>
+
+      <map name="workmap">
+        <area shape="default" href="#">
+      </map>
 
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
-        <a href="servico/servico.html" class="w3-bar-item w3-button d1"><i class="fa-solid fa-wallet" style="color: saddlebrown"></i> SERVIÇOS</a>
-        <a href="equipa/equipa.html" class="w3-bar-item w3-button d1"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
-        <a href="whatstrad/whatstrad.html" class="w3-bar-item w3-button d1"><i class="fa-solid fa-comment-dots" style="color: cornflowerblue"></i> WhatsTrad</a>
-        <a href="faq/faq.html" class="w3-bar-item w3-button d1"><i class="fa-solid fa-question" style="color: rgba(255,0,0,0.5)"></i> FAQ</a>
+        <a href="servico/servico.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="services"><i class="fa-solid fa-wallet" style='color: saddlebrown'></i> SERVIÇOS</a>
+        <a href="equipa/equipa.html" target="_self" class="w3-bar-item w3-button d1" data-i18n="team"><i class="fa fa-user" style="color: blue"></i> EQUIPA</a>
+        <a href="whatstrad/whatstrad.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-comment-dots" style="color: cornflowerblue"></i> WhatsTrad</a>
+        <a href="faq/faq.html" target="_self" class="w3-bar-item w3-button d1" data-i18n=""><i class="fa-solid fa-question" style="color: rgba(255,0,0,0.5)"></i> FAQ</a>
+
+        <!-- Modo escuro e claro -->
         <input type="checkbox" id="theme-switch">
-        <label for="theme-switch" class="switch" style="margin: 5px 10px;"></label>
+        <label for="theme-switch" class="switch" style="margin-right: 10px; margin-left: 10px"></label>
       </div>
 
-      <!-- Hide right-floated links on small screens -->
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()" style="border-radius: 10px; padding: 0 10px;">
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()" style="border-radius: 10px; padding-left: 10px; padding-right: 10px;">
         <i class="fa fa-bars" style="font-size: 25px;"></i>
       </a>
 
-      <div class="language-selector w3-right custom-block" style="margin: 7px 10px; gap: 5px;">
+      <div class="language-selector w3-right custom-block" style="margin-right: 10px; margin-top: 7px; gap: 5px">
         <img id="language-flag" src="img/Flag_of_Portugal.svg" alt="Idioma" style="height: 25px; width: 25px; border-radius: 50px;">
-        <i class="fa fa-chevron-down w3-opacity" id="language-button" style="font-size: 15px;"></i>
+        <i class="fa fa-chevron-down w3-opacity"  id="language-button" style="font-size: 15px"></i>
       </div>
+
+      <!-- Botão de Idiomas -->
       <div id="language-options" class="custom-block">
-        <button class="lang-option custom-block" data-lang="pt">
+        <button class="lang-option custom-block " data-lang="pt">
           <img src="img/Flag_of_Portugal.svg" alt="Português"> Português
         </button>
         <button class="lang-option custom-block" data-lang="en">
@@ -156,7 +163,7 @@
 </div>
 
 <!-- Content -->
-<div class="w3-content">
+<div class="w3-content dynamic-margin">
   <!-- Slideshow -->
   <div class="w3-container" style="margin-top: -120px;">
     <div class="w3-panel">
@@ -170,7 +177,7 @@
     </div>
   </div>
 
-  <div class="container custom-block dynamic-margin" style="margin-bottom:-500px; border:1px solid lightgray;">
+  <div class="container custom-block" style="margin-bottom:-500px; border:1px solid lightgray;">
     <nav class="header-nav">
       <div class="header-tab active"><i class="fa-solid fa-coins"></i><span>Conversor</span></div>
       <div class="header-tab" id="comprarAgora"><i class="fa-solid fa-paper-plane"></i><span>Comprar</span></div>
