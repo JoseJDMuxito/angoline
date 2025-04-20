@@ -1140,3 +1140,34 @@ Media Queries
     transform: rotate(90deg);
   }
 }
+
+
+/* Inline responsivo para dropdown do conversor */
+#currencyList, #currencyList2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 120px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#currencyList li, #currencyList2 li {
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#currencyList li img, #currencyList2 li img {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
