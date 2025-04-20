@@ -832,9 +832,9 @@ if (btnFecharVendedores) {
 const pagesOrder = ['Conversor', 'Comprar Moeda', 'Vendedores', 'Histórico de Câmbio'];
 const modalMapping = {
   'Conversor': 'conversor',
-  'Comprar Moeda': 'comprar',
+  'Comprar': 'comprar',
   'Vendedores': 'vendedores',
-  'Histórico de Câmbio': 'historic'
+  'Histórico': 'historic'
 };
 
 const tabs = document.querySelectorAll('.header-tab');
