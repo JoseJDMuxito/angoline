@@ -206,7 +206,7 @@ function calcular() {
   error1.style.display = 'none';
   const key = `${currencyFrom}->${currencyTo}`;
   if (!(key in TAXAS)) {
-    resultadoDiv.textContent = 'combinação impossível';
+    resultadoDiv.textContent = '--- --- ---';
     return;
   }
   const res = v * TAXAS[key];
