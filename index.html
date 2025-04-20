@@ -72,9 +72,6 @@
       ]
     }
   </script>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3268914616447960"
-          crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -198,9 +195,9 @@
               <div class="painel-content custom-block" id="sourceCurrencyLabel">
                 <img src="https://flagcdn.com/eu.svg" alt="Euro" style="width:20px;height:20px;border-radius:50%;"> <span>EUR - Euro</span>
               </div>
-              <div class="currency-selector" id="currencySelector" style="cursor:pointer; position:relative; margin-left:5px;">
+              <div class="currency-selector custom-block" id="currencySelector" style="cursor:pointer; position:relative; margin-left:5px;">
                 <i class="fa-solid fa-chevron-down select-icon" style="font-size:25px;"></i>
-                <ul id="currencyList">
+                <ul id="currencyList" class="custom-block">
                   <li data-currency="EUR"><img src="https://flagcdn.com/eu.svg" alt="Euro"> EUR - Euro</li>
                   <li data-currency="USD"><img src="https://flagcdn.com/us.svg" alt="Dollar"> USD - Dollar</li>
                   <li data-currency="AOA"><img src="https://flagcdn.com/ao.svg" alt="Kwanza"> AOA - Kwanza</li>
@@ -218,7 +215,6 @@
                 <img src="https://flagcdn.com/ao.svg" alt="Kwanza" style="width:20px;height:20px;border-radius:50%;"> <span>AOA - Kwanza</span>
               </div>
               <div class="currency-selector" id="currencySelector2" style="cursor:pointer; position:relative; margin-left:5px;">
-                <i class="fa-solid fa-chevron-down select-icon" style="font-size:25px;"></i>
                 <ul id="currencyList2">
                 </ul>
               </div>
@@ -253,14 +249,42 @@
 
       <section id="vendedores" class="page" style="overflow-y: auto; height: 450px;">
         <div class="simulado">
-          <!-- Modal para exibição dos vendedores (usado exclusivamente pelo botão "Ver Vendedores") -->
+          <!-- Modal para exibição dos vendedores-->
           <div id="modalVendedores">
-            <div class="modal-content custom-block" style="border:1px solid lightgray; background:whitesmoke; padding:20px; border-radius:10px; max-width:400px; width:100%; margin:0 20px; position:relative;">
-              <h4 style="text-align:center; color:green; font-weight:700;" data-i18n="sellerAvalavbe">Vendedores Disponíveis</h4>
+            <div class="modal-content custom-block"
+                 style="border:1px solid lightgray;
+                  background:whitesmoke;
+                  padding:20px;
+                  border-radius:10px;
+                  margin:0 20px;
+                  position:relative;">
+              <h4 style="text-align:center; color:green; font-weight:700;"
+                  data-i18n="sellerAvalavbe">
+                Vendedores Disponíveis
+              </h4>
               <hr style="margin:-10px 0;">
-              <ul style="list-style:none; padding:0; max-height:300px; overflow-y:auto;"></ul>
-              <div style="display:flex; justify-content:flex-end; margin-top:10px;">
-              </div>
+
+              <ul>
+                <li>
+                  <img src="img/irina.jpg" alt="Irina Chipoia">
+                  <span>Irina Chipoia</span>
+                </li>
+                <hr style="margin:-10px 0;">
+                <li>
+                  <img src="img/moises.jpg" alt="Moisés Teresa">
+                  <span>Moisés Teresa</span>
+                </li>
+                <hr style="margin:-10px 0;">
+                <li>
+                  <img src="img/catarino.jpg" alt="Catarino Mahula">
+                  <span>Catarino Mahula</span>
+                </li>
+                <hr style="margin:-10px 0;">
+                <li>
+                  <img src="img/gabriel.jpg" alt="Gabriel Mota">
+                  <span>Gabriel Mota</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -293,7 +317,7 @@
       </ul>
       <!-- Botão fechar posicionado no canto inferior direito -->
       <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-        <button id="btnFecharColaboradores" class="btn-fechar" data-i18n="closeit" style="border-radius: 8px">Fechar</button>
+        <button id="btnCloseVendedores" class="btn-fechar" data-i18n="closeit" style="border-radius: 8px">Fechar</button>
       </div>
     </div>
   </div>

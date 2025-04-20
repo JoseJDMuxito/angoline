@@ -940,6 +940,7 @@ Cabeçalho fixo
   align-items: center;
   justify-content: space-around;
   margin-bottom: 20px;
+  border: 1px solid lightgray;
 }
 .header-tab {
   color: #fff;
@@ -1170,4 +1171,40 @@ Media Queries
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+/* Container responsivo */
+#modalVendedores .modal-content {
+  max-width: 400px;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  #modalVendedores .modal-content {
+    width: 400px;
+  }
+}
+
+/* Lista de vendedores */
+#modalVendedores ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+/* Aumento de espaço entre items */
+#modalVendedores li {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;       /* antes era 10px */
+}
+/* Remove a linha do último item */
+#modalVendedores li:last-child {
+  border-bottom: none;
+}
+#modalVendedores img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }

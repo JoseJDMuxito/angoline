@@ -200,7 +200,7 @@ function calcular() {
   const v = parseFloat(campo1.value.replace(',', '.'));
   if (isNaN(v) || v <= 0) {
     resultadoDiv.textContent = '';
-    error1.style.display = 'block';
+    error1.style.display = '';
     return;
   }
   error1.style.display = 'none';
@@ -474,8 +474,8 @@ window.addEventListener('load', function(){
     if (!container) return;
     container.style.transition = 'opacity 0.5s ease-out';
     container.style.opacity = '0';
-    setTimeout(() => container.remove(), 500);
-  }, 5000);
+    setTimeout(() => container.remove(), 250);
+  }, 500);
 });
 
 // ------------------------------
@@ -522,3 +522,31 @@ tabs.forEach(tab => {
 });
 
 
+// Fecha o modal de vendedores ao clicar em "Fechar"
+document.getElementById('btnCloseVendedores')
+  .addEventListener('click', function(){
+    document.getElementById('modalColaboradores').style.display = 'none';
+  });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.header-nav');
+  const tabs = nav.querySelectorAll('.header-tab');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Atualiza classe active
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Calcula posição para centralizar
+      const navWidth   = nav.clientWidth;
+      const tabWidth   = tab.clientWidth;
+      const tabOffset  = tab.offsetLeft;
+      const scrollLeft = tabOffset - (navWidth  / 2 - tabWidth / 2);
+
+      // Rola suavemente até centralizar
+      nav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    });
+  });
+});
