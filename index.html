@@ -174,12 +174,24 @@
     </div>
   </div>
 
-  <div class="container custom-block" style="margin-bottom:-500px; border:1px solid lightgray;">
+  <div class="container custom-block" style="margin-bottom:-500px; border:1px solid lightgray; position: relative;">
     <nav class="header-nav">
-      <div class="header-tab active"><i class="fa-solid fa-coins"></i><span>Conversor</span></div>
-      <div class="header-tab" id="comprarAgora"><i class="fa-solid fa-paper-plane"></i><span>Comprar</span></div>
-      <div class="header-tab" id="btn-vendedores"><i class="fa fa-user"></i><span>Vendedores</span></div>
-      <div class="header-tab"><i class="fa-solid fa-trash-can"></i><span>Histórico</span></div>
+      <div class="header-tab active">
+        <i class="fa-solid fa-coins"></i>
+        <span data-i18n="currencyConverter">Conversor</span>
+      </div>
+      <div class="header-tab" id="comprarAgora">
+        <i class="fa-solid fa-paper-plane"></i>
+        <span data-i18n="buyy">Comprar Moeda</span>
+      </div>
+      <div class="header-tab" id="btn-vendedores">
+        <i class="fa fa-user"></i>
+        <span data-i18n="sellers">Vendedores</span>
+      </div>
+      <div class="header-tab">
+        <i class="fa-solid fa-trash-can"></i>
+        <span data-i18n="history">Histórico de Câmbio</span>
+      </div>
     </nav>
 
     <div class="pages-container" style="margin-top:50px;">
@@ -187,83 +199,162 @@
       <section id="conversor" class="page active">
         <div class="converter-content">
           <div class="painel-row" id="group-1">
-            <input class="painel painel-valor custom-block" style="font-size:20px;" type="text" id="campo-1" placeholder="Valor ">
-            <div class="error" id="error-1" style="display:none; color:red;">Insira apenas números</div>
+            <input
+              class="painel painel-valor custom-block"
+              style="font-size:20px;"
+              type="text"
+              id="campo-1"
+              placeholder="Valor "
+              data-i18n="amountt"
+            >
+            <div
+              class="error"
+              id="error-1"
+              style="display:none; color:red;"
+              data-i18n="insiraOnlyNumbers"
+            >Insira apenas números</div>
 
-            <div class="painel painel-de">
-              <div class="painel-title custom-block">De</div>
+            <!-- Origem com dropdown animado inline -->
+            <div class="painel painel-de" style="position: relative;">
+              <div class="painel-title custom-block" data-i18n="de">De</div>
               <div class="painel-content custom-block" id="sourceCurrencyLabel">
-                <img src="https://flagcdn.com/eu.svg" alt="Euro" style="width:20px;height:20px;border-radius:50%;"> <span>EUR - Euro</span>
+                <img
+                  src="https://flagcdn.com/eu.svg"
+                  alt="Euro"
+                  style="width:20px;height:20px;border-radius:50%;"
+                >
+                <span>EUR - Euro</span>
               </div>
-              <div class="currency-selector custom-block" id="currencySelector" style="cursor:pointer; position:relative; margin-left:5px;">
+              <div
+                class="currency-selector custom-block"
+                id="currencySelector"
+                style="cursor:pointer; margin-left:5px; position: relative;"
+              >
                 <i class="fa-solid fa-chevron-down select-icon" style="font-size:25px;"></i>
-                <ul id="currencyList" class="custom-block">
-                  <li data-currency="EUR"><img src="https://flagcdn.com/eu.svg" alt="Euro"> EUR - Euro</li>
-                  <li data-currency="USD"><img src="https://flagcdn.com/us.svg" alt="Dollar"> USD - Dollar</li>
-                  <li data-currency="AOA"><img src="https://flagcdn.com/ao.svg" alt="Kwanza"> AOA - Kwanza</li>
+                <ul
+                  id="currencyList"
+                  style="
+                  position: absolute;
+                  right: 0;
+                  left: -150px;
+                  top: calc(100% + 8px);
+                  margin-right: 0;
+                  padding: 0;
+                  list-style: none;
+                  background: #fff;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                  display: none;
+                  opacity: 0;
+                  transform: translateX(20px);
+                  transition: transform 0.3s ease, opacity 0.3s ease;
+                  z-index: 1000;
+                  max-height: 200px;
+                  overflow-y: auto;
+                "
+                >
+                  <li data-currency="EUR">
+                    <img src="https://flagcdn.com/eu.svg" alt="Euro"> EUR - Euro
+                  </li>
+                  <li data-currency="USD">
+                    <img src="https://flagcdn.com/us.svg" alt="Dollar"> USD - Dollar
+                  </li>
+                  <li data-currency="AOA">
+                    <img src="https://flagcdn.com/ao.svg" alt="Kwanza"> AOA - Kwanza
+                  </li>
                 </ul>
               </div>
             </div>
 
+            <!-- Botão de inverter -->
             <div class="conversion-icon custom-block">
               <i id="switch-btn" class="fa-solid fa-retweet" style="cursor:pointer;"></i>
             </div>
 
+            <!-- Destino sem dropdown -->
             <div class="painel painel-para">
-              <div class="painel-title custom-block">Para</div>
+              <div class="painel-title custom-block" data-i18n="para">Para</div>
               <div class="painel-content custom-block" id="sourceCurrencyLabel2">
-                <img src="https://flagcdn.com/ao.svg" alt="Kwanza" style="width:20px;height:20px;border-radius:50%;"> <span>AOA - Kwanza</span>
-              </div>
-              <div class="currency-selector" id="currencySelector2" style="cursor:pointer; position:relative; margin-left:5px;">
-                <ul id="currencyList2">
-                </ul>
+                <img
+                  src="https://flagcdn.com/ao.svg"
+                  alt="Kwanza"
+                  style="width:20px;height:20px;border-radius:50%;"
+                >
+                <span>AOA - Kwanza</span>
               </div>
             </div>
           </div>
 
           <div class="resultado-row" style="overflow-y:auto; height:300px;">
             <div class="resultado-left">
-              <div class="valor-convertido custom-block" id="resultado" style="margin-top:15px; font-weight:bold; font-size:30px;"></div>
-              <div class="custom-block" style="font-size:11px;">1 EUR = 1150 AOA<br>1250 AOA = 1 EUR</div>
+              <div
+                class="valor-convertido custom-block"
+                id="resultado"
+                style="margin-top:15px; font-weight:bold; font-size:30px;"
+              ></div>
+              <div class="custom-block" style="font-size:11px;">
+                1 EUR = 1150 AOA<br>1250 AOA = 1 EUR
+              </div>
             </div>
-            <div class="resultado-right custom-block">
+            <div class="resultado-right custom-block" data-i18n="update">
               Conversão de <a href="#">Euro/Dólar</a> para <a href="#">Kwanza</a> — Última atualização 13 de abr. de 2025, 06:46 UTC
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Outras páginas -->
-      <section id="comprar" class="page" style="overflow-y: auto; height: 300px">
+      <!-- Página Comprar -->
+      <section id="comprar" class="page" style="overflow-y: auto; height: 300px;">
         <div class="simulado">
-          <!-- Modal de Resumo -->
-          <div id="modalResumo" >
-            <div><p class="faq-question"  data-i18n="youWillPay" >Você vai pagar :</p> <span style="font-weight: 700; color: cornflowerblue; font-size: 25px" id="resumoPagar"></span></div>
-            <div><p class="faq-question" data-i18n="youWillReceive">Você vai receber :</p> <span style="font-weight: 700; color: cornflowerblue; font-size: 25px" id="resumoReceber"></span></div>
+          <div id="modalResumo">
+            <div>
+              <p class="faq-question" data-i18n="youWillPay">Você vai pagar :</p>
+              <span
+                style="font-weight: 700; color: cornflowerblue; font-size: 25px"
+                id="resumoPagar"
+              ></span>
+            </div>
+            <div>
+              <p class="faq-question" data-i18n="youWillReceive">Você vai receber :</p>
+              <span
+                style="font-weight: 700; color: cornflowerblue; font-size: 25px"
+                id="resumoReceber"
+              ></span>
+            </div>
             <br>
-            <p data-i18n="reverseExchangeTryAgain">Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.</p>
-            <button id="confirmar" data-i18n="confirm" style="border: none;  border-radius: 10px; padding: 5px; background-color: #00cf00">Confirmar</button>
+            <p data-i18n="reverseExchangeTryAgain">
+              Se não for isto, inverta o sentido do câmbio e volte a tentar, por favor.
+            </p>
+            <button
+              id="confirmar"
+              data-i18n="confirm"
+              style="border: none; border-radius: 10px; padding: 5px; background-color: #00cf00;"
+            >Confirmar</button>
           </div>
         </div>
       </section>
 
+      <!-- Página Vendedores -->
       <section id="vendedores" class="page" style="overflow-y: auto; height: 450px;">
         <div class="simulado">
-          <!-- Modal para exibição dos vendedores-->
           <div id="modalVendedores">
-            <div class="modal-content custom-block"
-                 style="border:1px solid lightgray;
-                  background:whitesmoke;
-                  padding:20px;
-                  border-radius:10px;
-                  margin:0 20px;
-                  position:relative;">
-              <h4 style="text-align:center; color:green; font-weight:700;"
-                  data-i18n="sellerAvalavbe">
-                Vendedores Disponíveis
-              </h4>
+            <div
+              class="modal-content custom-block"
+              style="
+              border:1px solid lightgray;
+              background:whitesmoke;
+              padding:20px;
+              border-radius:10px;
+              margin:0 20px;
+              position:relative;
+            "
+            >
+              <h4
+                style="text-align:center; color:green; font-weight:700;"
+                data-i18n="sellerAvalavbe"
+              >Vendedores Disponíveis</h4>
               <hr style="margin:-10px 0;">
-
               <ul>
                 <li>
                   <img src="img/irina.jpg" alt="Irina Chipoia">
@@ -290,19 +381,24 @@
         </div>
       </section>
 
-      <section id="historic" class="page" style="margin-top: -30px; ">
+      <!-- Página Histórico -->
+      <section id="historic" class="page" style="margin-top: -30px;">
         <div class="simulado">
-          <!-- Histórico dos cálculos -->
-          <div id="historico" >
-            <div id="historico-cambio" style="overflow-y: auto; height: 350px">
-              <li id="history-list" style="font-weight: 500; font-size: 20px"></li>
+          <div id="historico">
+            <div id="historico-cambio" style="overflow-y: auto; height: 350px;">
+              <li id="history-list" style="font-weight: 500; font-size: 20px;"></li>
             </div>
-            <button id="clear-history" class="btn-fechar" style="border-radius: 8px">Limpar</button>
+            <button
+              id="clear-history"
+              class="btn-fechar"
+              style="border-radius: 8px;"
+            >Limpar</button>
           </div>
         </div>
       </section>
     </div>
   </div>
+
 
 
   <!-- Modal para exibição da lista de colaboradores (usado na funcionalidade do botão Confirmar) -->

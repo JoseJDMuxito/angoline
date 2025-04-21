@@ -151,26 +151,23 @@ function w3_close() {
 // ------------------------------
 // Conversor de moedas
 
-const taxaEuroParaKwanza = 1150;
-const taxaKwanzaParaEuro = 1250;
+const taxaEuroParaKwanza   = 1150;
+const taxaKwanzaParaEuro   = 1250;
 const taxaDollarParaKwanza = 1100;
 const taxaKwanzaParaDollar = 1200;
 
-const campo1 = document.getElementById('campo-1');
-const resultadoDiv = document.getElementById('resultado');
-const error1 = document.getElementById('error-1');
-const switchBtn = document.getElementById('switch-btn');
+const campo1               = document.getElementById('campo-1');
+const resultadoDiv         = document.getElementById('resultado');
+const error1               = document.getElementById('error-1');
+const switchBtn            = document.getElementById('switch-btn');
 
-const currencySelector = document.getElementById('currencySelector');
-const currencyList = document.getElementById('currencyList');
-const sourceCurrencyLabel = document.getElementById('sourceCurrencyLabel');
-
-const currencySelector2 = document.getElementById('currencySelector2');
-const currencyList2 = document.getElementById('currencyList2');
-const targetCurrencyLabel = document.getElementById('sourceCurrencyLabel2');
+const currencySelector     = document.getElementById('currencySelector');
+const currencyList         = document.getElementById('currencyList');
+const sourceCurrencyLabel  = document.getElementById('sourceCurrencyLabel');
+const targetCurrencyLabel  = document.getElementById('sourceCurrencyLabel2');
 
 let currencyFrom = 'EUR';
-let currencyTo = 'AOA';
+let currencyTo   = 'AOA';
 
 const TAXAS = {
   'EUR->AOA': taxaEuroParaKwanza,
@@ -200,66 +197,70 @@ function calcular() {
   const v = parseFloat(campo1.value.replace(',', '.'));
   if (isNaN(v) || v <= 0) {
     resultadoDiv.textContent = '';
-    error1.style.display = '';
+    error1.style.display   = '';
     return;
   }
   error1.style.display = 'none';
+
   const key = `${currencyFrom}->${currencyTo}`;
   if (!(key in TAXAS)) {
     resultadoDiv.textContent = '--- --- ---';
     return;
   }
-  const res = v * TAXAS[key];
+
+  const res  = v * TAXAS[key];
   const symF = currencyFrom === 'EUR' ? '€' : currencyFrom === 'USD' ? '$' : 'Kz';
-  const symT = currencyTo === 'EUR' ? '€' : currencyTo === 'USD' ? '$' : 'Kz';
+  const symT = currencyTo   === 'EUR' ? '€' : currencyTo   === 'USD' ? '$' : 'Kz';
   resultadoDiv.textContent = `${v.toFixed(2)} ${symF} = ${res.toFixed(2)} ${symT}`;
 }
 
+// inverte moedas e recalcula
 switchBtn.addEventListener('click', () => {
   [currencyFrom, currencyTo] = [currencyTo, currencyFrom];
   initLabels();
-  campo1.value = '';
+  campo1.value             = '';
   resultadoDiv.textContent = '';
-  error1.style.display = 'none';
+  error1.style.display     = 'none';
+  calcular();
 });
 
-// Dropdown origem
-
+// abre/fecha dropdown de origem com animação da direita para a esquerda
 currencySelector.addEventListener('click', e => {
   e.stopPropagation();
-  currencyList.style.display =
-    currencyList.style.display === 'block' ? 'none' : 'block';
+  const isOpen = window.getComputedStyle(currencyList).display === 'block';
+  if (isOpen) {
+    currencyList.style.opacity   = '0';
+    currencyList.style.transform = 'translateX(20px)';
+    setTimeout(() => { currencyList.style.display = 'none'; }, 300);
+  } else {
+    currencyList.style.display   = 'block';
+    // força reflow
+    void currencyList.offsetWidth;
+    currencyList.style.opacity   = '1';
+    currencyList.style.transform = 'translateX(0)';
+  }
 });
+
+// seleciona moeda
 currencyList.addEventListener('click', e => {
   const li = e.target.closest('li');
   if (!li) return;
   currencyFrom = li.getAttribute('data-currency');
   initLabels();
-  currencyList.style.display = 'none';
+  // fecha
+  currencyList.style.opacity   = '0';
+  currencyList.style.transform = 'translateX(20px)';
+  setTimeout(() => { currencyList.style.display = 'none'; }, 300);
   calcular();
 });
 
-// Dropdown destino
-
-currencySelector2.addEventListener('click', e => {
-  e.stopPropagation();
-  currencyList2.style.display =
-    currencyList2.style.display === 'block' ? 'none' : 'block';
-});
-currencyList2.addEventListener('click', e => {
-  const li = e.target.closest('li');
-  if (!li) return;
-  currencyTo = li.getAttribute('data-currency');
-  initLabels();
-  currencyList2.style.display = 'none';
-  calcular();
-});
-
-// Fecha dropdowns ao clicar fora
-
+// fecha dropdown ao clicar fora
 document.addEventListener('click', () => {
-  currencyList.style.display = 'none';
-  currencyList2.style.display = 'none';
+  if (window.getComputedStyle(currencyList).display === 'block') {
+    currencyList.style.opacity   = '0';
+    currencyList.style.transform = 'translateX(20px)';
+    setTimeout(() => { currencyList.style.display = 'none'; }, 300);
+  }
 });
 
 // Debounce no input
@@ -478,35 +479,44 @@ window.addEventListener('load', function(){
   }, 500);
 });
 
-// ------------------------------
-// Navegação entre abas do conversor, comprar, vendedores, histórico
-
-const pagesOrder = ['Conversor', 'Comprar', 'Vendedores', 'Histórico'];
+// Navegação entre abas e transição de páginas usando data-i18n
+const pagesOrder   = ['currencyConverter', 'buyy', 'sellers', 'history'];
 const modalMapping = {
-  'Conversor': 'conversor',
-  'Comprar': 'comprar',
-  'Vendedores': 'vendedores',
-  'Histórico': 'historic'
+  currencyConverter: 'conversor',
+  buyy:              'comprar',
+  sellers:           'vendedores',
+  history:           'historic'
 };
-const tabs = document.querySelectorAll('.header-tab');
-let currentIndex = 0;
 
-function getTabIndex(tabText) {
-  return pagesOrder.indexOf(tabText);
+const tabs         = document.querySelectorAll('.header-tab');
+let currentIndex   = 0;
+
+function getTabIndex(i18nKey) {
+  return pagesOrder.indexOf(i18nKey);
 }
 
-function changePage(newTabText) {
-  const targetPageId = modalMapping[newTabText];
+function changePage(i18nKey) {
+  const targetPageId = modalMapping[i18nKey];
   if (!targetPageId) return;
-  const targetPage = document.getElementById(targetPageId);
+  const targetPage  = document.getElementById(targetPageId);
   const currentPage = document.querySelector('.page.active');
   if (currentPage.id === targetPageId) return;
-  const newIndex = getTabIndex(newTabText);
+
+  const newIndex  = getTabIndex(i18nKey);
   const direction = newIndex > currentIndex ? 'left' : 'right';
+
   currentPage.classList.remove('active');
-  currentPage.style.transform = direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)';
-  targetPage.style.transform = direction === 'left' ? 'translateX(100%)' : 'translateX(-100%)';
+  currentPage.style.transform = direction === 'left'
+    ? 'translateX(-100%)'
+    : 'translateX(100%)';
+
+  targetPage.style.transform = direction === 'left'
+    ? 'translateX(100%)'
+    : 'translateX(-100%)';
+
+  // força reflow antes da animação
   void targetPage.offsetWidth;
+
   targetPage.classList.add('active');
   targetPage.style.transform = 'translateX(0)';
   currentIndex = newIndex;
@@ -516,40 +526,34 @@ tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-    const text = tab.querySelector('span').innerText.trim();
-    changePage(text);
+
+    const i18nKey = tab.querySelector('span').dataset.i18n;
+    changePage(i18nKey);
   });
 });
 
-
-// Fecha o modal de vendedores ao clicar em "Fechar"
+// Fechar modal de vendedores
 document.getElementById('btnCloseVendedores')
-  .addEventListener('click', function(){
+  .addEventListener('click', () => {
     document.getElementById('modalColaboradores').style.display = 'none';
   });
 
-
+// Scroll suave para centralizar aba selecionada
 document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('.header-nav');
+  const nav  = document.querySelector('.header-nav');
   const tabs = nav.querySelectorAll('.header-tab');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Atualiza classe active
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Calcula posição para centralizar
       const navWidth   = nav.clientWidth;
       const tabWidth   = tab.clientWidth;
       const tabOffset  = tab.offsetLeft;
-      const scrollLeft = tabOffset - (navWidth  / 2 - tabWidth / 2);
+      const scrollLeft = tabOffset - (navWidth / 2 - tabWidth / 2);
 
-      // Rola suavemente até centralizar
       nav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
     });
   });
 });
-
-
-
