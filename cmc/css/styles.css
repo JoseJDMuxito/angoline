@@ -756,3 +756,46 @@ footer {
     font-size: 1.8rem;
   }
 }
+
+
+/* Scroll Horizontal */
+.scroll-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 5px;
+  margin: 8px 0;
+}
+
+.mode-buttons,
+.speed-buttons,
+.difficulty-buttons,
+.number-type-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: max-content;
+}
+
+/* Botões */
+.mode-btn,
+.speed-btn,
+.difficulty-btn,
+.number-type-btn {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Esconder Scrollbar */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

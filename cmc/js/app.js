@@ -215,3 +215,44 @@ function initLanguage() {
     }
 }
 
+// Função de Scroll Horizontal
+function setupHorizontalScroll(containerSelector, buttonSelector) {
+  document.querySelectorAll(buttonSelector).forEach(button => {
+    button.addEventListener('click', function() {
+      const container = this.closest(containerSelector);
+      const containerWidth = container.offsetWidth;
+      const buttonPosition = this.offsetLeft;
+      const buttonWidth = this.offsetWidth;
+
+      container.scrollTo({
+        left: buttonPosition - (containerWidth / 2) + (buttonWidth / 2),
+        behavior: 'smooth'
+      });
+
+      // Remove classe active dos irmãos
+      this.parentNode.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+}
+
+// Configurar todos os grupos
+document.addEventListener('DOMContentLoaded', () => {
+  // Matemática
+  setupHorizontalScroll('.scroll-container', '#settings-modal .mode-btn');
+  setupHorizontalScroll('.scroll-container', '#settings-modal .number-type-btn');
+
+  // Morse
+  setupHorizontalScroll('.scroll-container', '#settings-modal-morse .mode-btn');
+  setupHorizontalScroll('.scroll-container', '#settings-modal-morse .speed-btn');
+  setupHorizontalScroll('.scroll-container', '#settings-modal-morse .difficulty-btn');
+
+  // Fechar Modais
+  document.getElementById('close-settings-math').addEventListener('click', () => {
+    document.getElementById('settings-modal').style.display = 'none';
+  });
+
+  document.getElementById('close-settings-morse').addEventListener('click', () => {
+    document.getElementById('settings-modal-morse').style.display = 'none';
+  });
+});

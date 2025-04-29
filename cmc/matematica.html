@@ -144,6 +144,7 @@
   </div>
 </div>
 
+
 <div id="settings-modal" class="modal">
   <div class="modal-content">
     <h2 data-i18n="titulo_matematica">Matemática</h2>
@@ -164,18 +165,21 @@
       </div>
     </div>
 
+    <!-- Modal Matemática -->
     <div class="settings-group">
       <label data-i18n="modos">Modos</label>
-      <div class="mode-buttons">
-        <button id="mode-addition" class="mode-btn active" data-i18n="adicao">Adição</button>
-        <button id="mode-subtraction" class="mode-btn" data-i18n="subtracao">Subtração</button>
-        <button id="mode-multiplication" class="mode-btn" data-i18n="multiplicacao">Multiplicação</button>
-        <button id="mode-division" class="mode-btn" data-i18n="divisao">Divisão</button>
-        <button id="mode-square" class="mode-btn" data-i18n="raiz_quadrada">Raiz Quadrada</button>
-        <button id="mode-exponent-2" class="mode-btn" data-i18n="expoente_2">Expoente 2</button>
-        <button id="mode-exponent-3" class="mode-btn" data-i18n="expoente_3">Expoente 3</button>
-        <button id="mode-greater" class="mode-btn" data-i18n="maior">Maior</button>
-        <button id="mode-less" class="mode-btn" data-i18n="menor">Menor</button>
+      <div class="scroll-container">
+        <div class="mode-buttons">
+          <button id="mode-addition" class="mode-btn active" data-i18n="adicao">Adição</button>
+          <button id="mode-subtraction" class="mode-btn" data-i18n="subtracao">Subtração</button>
+          <button id="mode-multiplication" class="mode-btn" data-i18n="multiplicacao">Multiplicação</button>
+          <button id="mode-division" class="mode-btn" data-i18n="divisao">Divisão</button>
+          <button id="mode-square" class="mode-btn" data-i18n="raiz_quadrada">Raiz Quadrada</button>
+          <button id="mode-exponent-2" class="mode-btn" data-i18n="expoente_2">Expoente 2</button>
+          <button id="mode-exponent-3" class="mode-btn" data-i18n="expoente_3">Expoente 3</button>
+          <button id="mode-greater" class="mode-btn" data-i18n="maior">Maior</button>
+          <button id="mode-less" class="mode-btn" data-i18n="menor">Menor</button>
+        </div>
       </div>
     </div>
 
@@ -186,10 +190,12 @@
 
     <div class="settings-group">
       <label data-i18n="positivo_negativo">Positivo ou negativo</label>
+      <div class="scroll-container">
       <div class="number-type-buttons">
         <button id="type-positive" class="number-type-btn active" data-i18n="apenas_positivo">Apenas positivo</button>
         <button id="type-random" class="number-type-btn" data-i18n="aleatorio">Aleatório</button>
         <button id="type-negative" class="number-type-btn" data-i18n="apenas_negativo">Apenas negativo</button>
+      </div>
       </div>
     </div>
 
