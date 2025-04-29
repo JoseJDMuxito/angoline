@@ -440,53 +440,9 @@
     font-size: 1rem;
   }
 
-  /* --- Empilha verticalmente e centraliza todo o conteúdo do footer --- */
-  footer {
-    display: flex;
-    flex-direction: column;    /* copia a ordem natural: copyright em cima, links embaixo */
-    align-items: center;       /* mantém tudo centralizado */
+  .nav-links a {
+    font-size: 0.8rem;
   }
-
-  /* --- Garante que a frase “© 2025 ▶ PLAY CmC. Todos os direitos reservados.” fique sempre em cima --- */
-  copyright {
-    /* nada precisa aqui além do estilo que você já tinha,
-       a ordem vem naturalmente antes de .footer-links */
-  }
-
-  /* --- Links sempre em linha, com espaçamento horizontal --- */
-  .footer-links {
-    display: flex;        /* força alinhamento horizontal */
-    flex-wrap: nowrap;    /* impede quebra de linha entre os links */
-    gap: 16px;            /* distância obrigatória entre cada item */
-    justify-content: center;
-    width: 100%;          /* para alinhar melhor em telas largas */
-    box-sizing: border-box;
-  }
-
-  /* --- Impede quebra interna de cada link / texto --- */
-  .footer-links a,
-  .footer-links span {
-    white-space: nowrap;
-  }
-
-  /* (Opcional) ajuste de estilo que você já tenha: */
-  /*
-  .copyright {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-  }
-
-  .footer-links a,
-  .footer-links span {
-    font-size: 0.85rem;
-    text-decoration: none;
-    color: #333;
-  }
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  */
-
 
   .math-expression, .morse-code {
     font-size: 1.8rem;
