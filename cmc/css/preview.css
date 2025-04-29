@@ -1,0 +1,228 @@
+/* Preview Page Styles */
+.preview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.preview-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.preview-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.preview-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.preview-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.preview-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.preview-header p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.preview-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.preview-expression, .preview-morse {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Preview Stats style similar to the game stats */
+.preview-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.preview-stat {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.preview-stat.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.preview-stat.incorrect {
+    background-color: #F44336;
+    color: white;
+}
+
+.preview-stat.time {
+    background-color: #FFC107;
+    color: white;
+}
+
+.preview-input-container {
+    width: 100%;
+}
+
+.preview-input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--input-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.preview-button {
+    padding: 0.75rem;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.preview-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.preview-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cta-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Animation for math expressions */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.preview-expression, .preview-morse {
+    animation: fadeInOut 5s infinite;
+}
+
+/* Animation for the input text blinking cursor */
+.preview-input::placeholder {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Animation for the stats counters */
+.preview-stat span {
+    transition: all 0.3s ease;
+}
+
+.preview-stat.animate span {
+    transform: scale(1.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .preview-container {
+        padding: 1rem;
+    }
+
+    .preview-title {
+        font-size: 2rem;
+    }
+
+    .preview-description {
+        font-size: 1rem;
+    }
+
+    .preview-expression, .preview-morse {
+        font-size: 1.8rem;
+    }
+}

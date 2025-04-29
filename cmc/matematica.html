@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática - Code Quest</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/matematica.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Google Tag Manager e Google Analytics -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBE45L8NM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9GBE45L8NM');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l] = w[l] || [];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MXS6LZS6');
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Angoline",
+      "url": "https://www.angoline.net",
+      "logo": "https://www.angoline.net/img/LOGO.png",
+      "sameAs": [
+        "https://www.facebook.com/jose.gelson.988",
+        "https://x.com/jose__muxito",
+        "https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/",
+        "https://www.instagram.com/jose_muxit0/"
+      ]
+    }
+  </script>
+</head>
+<body>
+<div class="app-container">
+  <header>
+    <div class="logo">
+      <a href="cmc.html"><span class="play-symbol" style="color: var(--text-color);">▶</span> PLAY CmC</a>
+    </div>
+    <nav class="nav-links">
+      <a href="cmc.html" data-i18n="inicio">Início</a>
+      <a href="#" id="opcoes-link" data-i18n="opcoes">Opções</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="math-game-container">
+      <div class="game-expression" id="math-expression"></div>
+
+      <div class="game-stats">
+        <div class="stat correct"><span id="correct-count">0</span> ✓</div>
+        <div class="stat time"><span id="time-counter">0s</span></div>
+        <div class="stat incorrect"><span id="incorrect-count">0</span> ✕</div>
+      </div>
+
+      <div class="game-answer-container" id="answer-container">
+        <input type="text" id="answer-input" class="answer-input" placeholder="Resultado..." data-i18n-placeholder="resultado_placeholder" autocomplete="off">
+        <button id="submit-answer" class="submit-btn" data-i18n="confirmar">Confirmar</button>
+      </div>
+
+      <div class="true-false-buttons hidden" id="true-false-container">
+        <button id="true-btn" class="tf-btn true-btn">
+          <i class="fas fa-check"></i> <span data-i18n="verdadeiro">Verdadeiro</span>
+        </button>
+        <button id="false-btn" class="tf-btn false-btn">
+          <i class="fas fa-times"></i> <span data-i18n="falso">Falso</span>
+        </button>
+      </div>
+
+      <div class="history-container">
+        <button class="history-toggle" id="history-toggle">
+          <i class="fas fa-chevron-down"></i>
+          <span data-i18n="historico">Histórico</span>
+        </button>
+        <div class="history-content" id="history-content">
+          <ul id="history-list">
+            <!-- History items will be added here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="copyright" data-i18n="copyright">© 2025 <span class="play-symbol">▶</span> PLAY CmC. Todos os direitos reservados.</div>
+    <div class="footer-links">
+      <a href="contacto.html" data-i18n="contato">Contacto</a>
+      <a href="preview.html" data-i18n="preview">Preview</a>
+      <a href="#" id="github-link">Github</a>
+    </div>
+  </footer>
+</div>
+
+<div class="score-modal" id="score-popup">
+  <div class="score-modal-content">
+    <div class="score-modal-header">
+      <h2 data-i18n="pontuacao">Pontuação</h2>
+    </div>
+    <ul class="score-list">
+      <li class="score-item correct">
+        <div class="score-label">
+          <i class="fas fa-check"></i>
+          <span data-i18n="certos">Certos</span>
+        </div>
+        <div class="score-value" id="popup-correct">0</div>
+      </li>
+      <li class="score-item incorrect">
+        <div class="score-label">
+          <i class="fas fa-times"></i>
+          <span data-i18n="errados">Errados</span>
+        </div>
+        <div class="score-value" id="popup-incorrect">0</div>
+      </li>
+      <li class="score-item time">
+        <div class="score-label">
+          <i class="fas fa-clock"></i>
+          <span data-i18n="tempo">Tempo</span>
+        </div>
+        <div class="score-value" id="popup-time">0</div>
+      </li>
+    </ul>
+    <button id="restart-btn" class="score-restart-btn" data-i18n="reiniciar">Reiniciar</button>
+  </div>
+</div>
+
+<div id="settings-modal" class="modal">
+  <div class="modal-content">
+    <h2 data-i18n="titulo_matematica">Matemática</h2>
+
+    <div class="settings-group">
+      <label data-i18n="tempo_maximo">Tempo máximo</label>
+      <div class="select-container">
+        <select id="time-limit">
+          <option value="15" data-i18n="segundos_15">15 segundos</option>
+          <option value="30" data-i18n="segundos_30">30 segundos</option>
+          <option value="60" selected data-i18n="minuto_1">1 minuto</option>
+          <option value="300" data-i18n="minutos_5">5 minutos</option>
+          <option value="600" data-i18n="minutos_10">10 minutos</option>
+          <option value="1800" data-i18n="minutos_30">30 minutos</option>
+          <option value="0" data-i18n="sem_limite">Sem limite</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <label data-i18n="modos">Modos</label>
+      <div class="mode-buttons">
+        <button id="mode-addition" class="mode-btn active" data-i18n="adicao">Adição</button>
+        <button id="mode-subtraction" class="mode-btn" data-i18n="subtracao">Subtração</button>
+        <button id="mode-multiplication" class="mode-btn" data-i18n="multiplicacao">Multiplicação</button>
+        <button id="mode-division" class="mode-btn" data-i18n="divisao">Divisão</button>
+        <button id="mode-square" class="mode-btn" data-i18n="raiz_quadrada">Raiz Quadrada</button>
+        <button id="mode-exponent-2" class="mode-btn" data-i18n="expoente_2">Expoente 2</button>
+        <button id="mode-exponent-3" class="mode-btn" data-i18n="expoente_3">Expoente 3</button>
+        <button id="mode-greater" class="mode-btn" data-i18n="maior">Maior</button>
+        <button id="mode-less" class="mode-btn" data-i18n="menor">Menor</button>
+      </div>
+    </div>
+
+    <div class="settings-group">
+      <label data-i18n="valor_maximo">Valor máximo</label>
+      <input type="number" id="max-value" class="max-value-input" value="100" min="10" max="1000">
+    </div>
+
+    <div class="settings-group">
+      <label data-i18n="positivo_negativo">Positivo ou negativo</label>
+      <div class="number-type-buttons">
+        <button id="type-positive" class="number-type-btn active" data-i18n="apenas_positivo">Apenas positivo</button>
+        <button id="type-random" class="number-type-btn" data-i18n="aleatorio">Aleatório</button>
+        <button id="type-negative" class="number-type-btn" data-i18n="apenas_negativo">Apenas negativo</button>
+      </div>
+    </div>
+
+    <button id="close-settings" class="modal-close" data-i18n="fechar">Fechar</button>
+  </div>
+</div>
+
+<div id="opcoes-modal" class="modal">
+  <div class="modal-content">
+    <h2 data-i18n="opcoes">Opções</h2>
+    <div class="option-group">
+      <label for="theme" data-i18n="tema">Tema:</label>
+      <select id="theme">
+        <option value="light" data-i18n="tema_claro">Claro</option>
+        <option value="dark" data-i18n="tema_escuro">Escuro</option>
+        <option value="auto" data-i18n="tema_auto">Automático</option>
+      </select>
+    </div>
+    <div class="option-group">
+      <label for="language" data-i18n="idioma">Idioma:</label>
+      <select id="language">
+        <option value="pt-BR">Português (Brasil)</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+    <div class="option-group">
+      <label for="sound" data-i18n="som">Som:</label>
+      <div class="toggle-switch">
+        <input type="checkbox" id="sound" checked>
+        <label for="sound"></label>
+      </div>
+    </div>
+    <button id="close-modal" class="modal-close" data-i18n="fechar">Fechar</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+<script src="js/matematica.js"></script>
+</body>
+</html>

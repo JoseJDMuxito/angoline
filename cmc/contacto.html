@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Code Quest</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Google Tag Manager e Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBE45L8NM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9GBE45L8NM');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MXS6LZS6');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Angoline",
+            "url": "https://www.angoline.net",
+            "logo": "https://www.angoline.net/img/LOGO.png",
+            "sameAs": [
+                "https://www.facebook.com/jose.gelson.988",
+                "https://x.com/jose__muxito",
+                "https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/",
+                "https://www.instagram.com/jose_muxit0/"
+            ]
+        }
+    </script>
+</head>
+<body>
+<div class="app-container">
+    <header>
+        <div class="logo">
+            <a href="cmc.html"><span class="play-symbol" style="color: var(--text-color)">▶</span> PLAY CmC</a>
+        </div>
+        <nav class="nav-links">
+            <a href="cmc.html" data-i18n="inicio">Início</a>
+            <a href="#" id="opcoes-link" data-i18n="opcoes">Opções</a>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1 data-i18n="entre_em_contato">Entre em contato</h1>
+            <p data-i18n="envie_mensagem">Envie-nos uma mensagem e entraremos em contato o mais breve possível.</p>
+
+            <div class="contact-card">
+                <h2 data-i18n="info_contato">Informações de Contato</h2>
+                <div class="contact-item">
+                    <div class="contact-icon phone-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <span class="contact-label" data-i18n="telefone">Telefone</span>
+                        <a href="tel: +33772026889"><span class="contact-value">+33 772 026 889</span></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon email-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <span class="contact-label" data-i18n="email_label">Email</span>
+                        <a href="mailto: muxitojose123@gmail.com"><span class="contact-value">muxitojose123@gmail.com</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h2 data-i18n="redes_sociais">Redes Sociais</h2>
+                <div class="social-grid">
+                    <a href="https://whatsapp.com/channel/0029VbAJqnZHgZWls83IVz0k" class="social-item">
+                        <div class="social-icon whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61575938840603" class="social-item">
+                        <div class="social-icon facebook-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://x.com/jose__muxito" class="social-item">
+                        <div class="social-icon twitter-icon">
+                            <i class="fab fa-x-twitter"></i>
+                        </div>
+                        <span>X (Twitter)</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/" class="social-item">
+                        <div class="social-icon linkedin-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="copyright" data-i18n="copyright">© 2025 <span class="play-symbol">▶</span> PLAY CmC. Todos os direitos reservados.</div>
+        <div class="footer-links">
+            <a href="contacto.html" data-i18n="contato">Contacto</a>
+            <a href="preview.html" data-i18n="preview">Preview</a>
+            <a data-i18n="criador">Criado por José Muxito</a>
+        </div>
+    </footer>
+</div>
+
+<div id="opcoes-modal" class="modal">
+    <div class="modal-content">
+        <h2 data-i18n="opcoes">Opções</h2>
+        <div class="option-group">
+            <label for="theme" data-i18n="tema">Tema:</label>
+            <select id="theme">
+                <option value="light" data-i18n="tema_claro">Claro</option>
+                <option value="dark" data-i18n="tema_escuro">Escuro</option>
+                <option value="auto" data-i18n="tema_auto">Automático</option>
+            </select>
+        </div>
+        <div class="option-group">
+            <label for="language" data-i18n="idioma">Idioma:</label>
+            <select id="language">
+                <option value="pt-BR">Português</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+        <div class="option-group">
+            <label for="sound" data-i18n="som">Som:</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="sound" checked>
+                <label for="sound"></label>
+            </div>
+        </div>
+        <button id="close-modal" class="modal-close" data-i18n="fechar">Fechar</button>
+    </div>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

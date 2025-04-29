@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração - Code Quest</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/preview.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Google Tag Manager e Google Analytics -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GBE45L8NM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9GBE45L8NM');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l] = w[l] || [];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MXS6LZS6');
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Angoline",
+      "url": "https://www.angoline.net",
+      "logo": "https://www.angoline.net/img/LOGO.png",
+      "sameAs": [
+        "https://www.facebook.com/jose.gelson.988",
+        "https://x.com/jose__muxito",
+        "https://www.linkedin.com/in/jos%C3%A9-muxito-0a2502329/",
+        "https://www.instagram.com/jose_muxit0/"
+      ]
+    }
+  </script>
+</head>
+
+<body>
+<div class="app-container">
+  <header>
+    <div class="logo">
+      <a href="cmc.html"><span class="play-symbol" style="color: var(--text-color)">▶</span> PLAY CmC</a>
+    </div>
+    <nav class="nav-links">
+      <a href="cmc.html" data-i18n="inicio">Início</a>
+      <a href="#" id="opcoes-link" data-i18n="opcoes">Opções</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="preview-container">
+      <h1 class="preview-title" data-i18n="titulo_demonstracao">Demonstração</h1>
+      <p class="preview-description" data-i18n="descricao_demonstracao">Veja uma demonstração dos jogos disponíveis.</p>
+
+      <div class="preview-grid">
+        <!-- Matemática Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <h2 data-i18n="titulo_matematica">Matemática</h2>
+            <p data-i18n="descricao_matematica">Gere cálculos matemáticos aleatórios.</p>
+          </div>
+          <div class="preview-content" id="math-preview">
+            <div class="preview-expression">47 + 7</div>
+
+            <div class="preview-stats">
+              <div class="preview-stat correct"><span>0</span> ✓</div>
+              <div class="preview-stat time"><span>0s</span></div>
+              <div class="preview-stat incorrect"><span>0</span> ✕</div>
+            </div>
+
+            <div class="preview-input-container">
+              <input type="text" class="preview-input" placeholder="Resultado..." disabled>
+            </div>
+
+            <button class="preview-button" disabled data-i18n="confirmar">Confirmar</button>
+          </div>
+        </div>
+
+        <!-- Morse Preview -->
+        <div class="preview-card">
+          <div class="preview-header">
+            <h2 data-i18n="titulo_morse">Morse</h2>
+            <p data-i18n="descricao_morse">Gere códigos morse aleatórios.</p>
+          </div>
+          <div class="preview-content" id="morse-preview">
+            <div class="preview-morse">• — • —</div>
+
+            <div class="preview-stats">
+              <div class="preview-stat correct"><span>0</span> ✓</div>
+              <div class="preview-stat time"><span>0s</span></div>
+              <div class="preview-stat incorrect"><span>0</span> ✕</div>
+            </div>
+
+            <div class="preview-input-container">
+              <input type="text" class="preview-input" placeholder="Resultado..." disabled>
+            </div>
+
+            <button class="preview-button" disabled data-i18n="confirmar">Confirmar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-cta">
+        <p data-i18n="cta_demonstracao">Gostou das demonstrações? Experimente jogar de verdade!</p>
+        <div class="preview-buttons">
+          <a href="matematica.html" class="cta-button" data-i18n="jogar_matematica">Jogar Matemática</a>
+          <a href="morse.html" class="cta-button" data-i18n="jogar_morse">Jogar Morse</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="copyright" data-i18n="copyright">© 2025 <span class="play-symbol">▶</span> PLAY CmC. Todos os direitos reservados.</div>
+    <div class="footer-links">
+      <a href="contacto.html" data-i18n="contato">Contacto</a>
+      <a href="preview.html" data-i18n="preview">Preview</a>
+      <a data-i18n="criador">Criado por José Muxito</a>
+    </div>
+  </footer>
+</div>
+
+<div id="opcoes-modal" class="modal">
+  <div class="modal-content">
+    <h2 data-i18n="configuracoes">Configurações</h2>
+    <div class="option-group">
+      <label for="theme" data-i18n="tema">Tema:</label>
+      <select id="theme">
+        <option value="light" data-i18n="tema_claro">Claro</option>
+        <option value="dark" data-i18n="tema_escuro">Escuro</option>
+        <option value="auto" data-i18n="tema_auto">Automático</option>
+      </select>
+    </div>
+    <div class="option-group">
+      <label for="language" data-i18n="idioma">Idioma:</label>
+      <select id="language">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+    <div class="option-group">
+      <label for="sound" data-i18n="som">Som:</label>
+      <div class="toggle-switch">
+        <input type="checkbox" id="sound" checked>
+        <label for="sound"></label>
+      </div>
+    </div>
+    <button id="close-modal" class="modal-close" data-i18n="fechar">Fechar</button>
+  </div>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/app.js"></script>
+<script src="js/preview.js"></script>
+</body>
+</html>
