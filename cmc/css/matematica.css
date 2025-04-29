@@ -398,15 +398,23 @@
   }
 
   .game-stats {
-    flex-direction: column;
-    align-items: center;
+    display: flex;        /* ativa o flexbox */
+    flex-direction: row;  /* força itens na horizontal */
+    flex-wrap: nowrap;    /* impede quebra de linha */
+    gap: 5px;             /* espaço entre os blocos */
+    overflow-x: auto;     /* scroll horizontal se necessário */
+    align-items: center;  /* centraliza verticalmente dentro do container */
+    padding: 8px;         /* opcional, para dar um respiro interno */
   }
 
   .stat {
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 8px;
+    flex: 0 0 auto;       /* cada item mantém sua largura mínima */
+    min-width: 5px;      /* largura mínima para não ficar muito estreito */
+    text-align: center;   /* centraliza o conteúdo de cada bloco */
+    padding: 4px 1px;     /* ajuste interno */
+    border-radius: 10px;   /* cantos arredondados, opcional */
   }
+
 
   .nav-links {
     gap: 12px;
